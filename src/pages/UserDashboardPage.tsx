@@ -86,7 +86,7 @@ export const UserDashboardPage: React.FC = () => {
     navigate(`/post-ad?edit=${adId}`);
   };
 
-  const handleRenewAd = async (adId: string) => {
+  const handleRenewAd = async (_adId: string) => {
     if (!window.confirm('Renew this ad for 30 more days?')) return;
     
     try {

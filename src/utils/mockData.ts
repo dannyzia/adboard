@@ -195,8 +195,7 @@ export function generateMockAd(index: number): Ad {
   return {
     _id: `mock-${index}`,
     title: titles[category][titleIndex],
-    shortDescription: descriptions[category][titleIndex],
-    fullDescription: `${descriptions[category][titleIndex]}\n\nThis is a detailed description with more information about this listing. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n\nKey features:\n- Feature 1\n- Feature 2\n- Feature 3\n\nContact us for more details!`,
+    description: descriptions[category][titleIndex],
     category,
     price: category === 'Products' || category === 'Real Estate' ? ((index * 37) % 30) * 100 + 100 : undefined, // Consistent price based on index
     images: [images[index % images.length]],

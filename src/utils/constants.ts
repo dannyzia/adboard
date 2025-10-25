@@ -7,7 +7,7 @@ export const CATEGORY_COLORS: Record<string, string> = {};
 export const CATEGORIES: CategoryType[] = [];
 
 // Helper to convert backend category to Tailwind class
-export const getCategoryColor = (category: string, color: string): string => {
+export const getCategoryColor = (_category: string, color: string): string => {
   return `bg-${color}-600`;
 };
 
