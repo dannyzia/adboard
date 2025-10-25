@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Ad } from '../../types';
-import { CURRENCIES } from '../../utils/constants';
+import { CURRENCIES, getCategoryColor } from '../../utils/constants';
 import { formatTimeAgo } from '../../utils/helpers';
 import { useCategories } from '../../hooks/useCategories';
 
@@ -12,7 +12,7 @@ interface AdCardProps {
 export const AdCard: React.FC<AdCardProps> = ({ ad, onClick }) => {
   const { categories } = useCategories();
   const category = categories.find(c => c.value === ad.category);
-  const categoryColor = category ? `bg-${category.color}-600` : 'bg-gray-600';
+  const categoryColor = category ? getCategoryColor(ad.category, category.color) : 'bg-gray-600';
   const [showMenu, setShowMenu] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -115,12 +115,9 @@ export const AdCard: React.FC<AdCardProps> = ({ ad, onClick }) => {
 
         {/* Card Content */}
         <div className="p-2">
-          <h4 className="font-semibold text-xs text-gray-800 mb-1 line-clamp-1">
+          <h4 className="font-semibold text-xs text-gray-800 mb-1 line-clamp-2">
             {ad.title}
           </h4>
-          <p className="text-gray-600 text-[9px] mb-1.5 line-clamp-2">
-            {ad.description?.substring(0, 100)}
-          </p>
           <div className="flex items-center justify-between text-[9px] text-gray-500">
             <span className="truncate">{ad.location.city}</span>
             <span className="whitespace-nowrap">

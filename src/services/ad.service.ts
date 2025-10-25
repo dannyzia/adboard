@@ -66,8 +66,25 @@ export const adService = {
     if (filters?.priceMin !== undefined) params.priceMin = filters.priceMin;
     if (filters?.priceMax !== undefined) params.priceMax = filters.priceMax;
 
-    const response = await api.get<PaginatedAdsResponse>('/ads', { params });
-    return response.data;
+    const response = await api.get<{
+      success: boolean;
+      ads: Ad[];
+      pagination: {
+        total: number;
+        page: number;
+        pages: number;
+        limit: number;
+      };
+    }>('/ads', { params });
+    
+    // Transform backend response to match expected format
+    return {
+      ads: response.data.ads,
+      page: response.data.pagination.page,
+      totalPages: response.data.pagination.pages,
+      totalAds: response.data.pagination.total,
+      hasMore: response.data.pagination.page < response.data.pagination.pages,
+    };
   },
 
   /**

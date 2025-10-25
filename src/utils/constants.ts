@@ -7,8 +7,31 @@ export const CATEGORY_COLORS: Record<string, string> = {};
 export const CATEGORIES: CategoryType[] = [];
 
 // Helper to convert backend category to Tailwind class
+// Use explicit class names so Tailwind can detect them at build time
 export const getCategoryColor = (_category: string, color: string): string => {
-  return `bg-${color}-600`;
+  const colorMap: Record<string, string> = {
+    'blue': 'bg-blue-600',
+    'indigo': 'bg-indigo-600',
+    'orange': 'bg-orange-600',
+    'cyan': 'bg-cyan-600',
+    'purple': 'bg-purple-600',
+    'pink': 'bg-pink-600',
+    'green': 'bg-green-600',
+    'red': 'bg-red-600',
+    'yellow': 'bg-yellow-600',
+    'amber': 'bg-amber-600',
+    'lime': 'bg-lime-600',
+    'sky': 'bg-sky-600',
+    'emerald': 'bg-emerald-600',
+    'violet': 'bg-violet-600',
+    'rose': 'bg-rose-600',
+    'fuchsia': 'bg-fuchsia-600',
+    'slate': 'bg-slate-600',
+    'teal': 'bg-teal-600',
+    'gray': 'bg-gray-600',
+  };
+  
+  return colorMap[color] || 'bg-gray-600';
 };
 
 export const COUNTRIES = [
@@ -436,7 +459,7 @@ export const CURRENCIES = [
   { code: 'LKR', symbol: 'Rs', name: 'Sri Lankan Rupee' },
 ];
 
-export const ADS_PER_PAGE = 24;
+export const ADS_PER_PAGE = 48;
 
 export const MAX_IMAGES = 5;
 export const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5MB
