@@ -66,25 +66,52 @@ export const adService = {
     if (filters?.priceMin !== undefined) params.priceMin = filters.priceMin;
     if (filters?.priceMax !== undefined) params.priceMax = filters.priceMax;
 
-    const response = await api.get<{
-      success: boolean;
-      ads: Ad[];
-      pagination: {
-        total: number;
-        page: number;
-        pages: number;
-        limit: number;
+    try {
+      const response = await api.get<{
+        success: boolean;
+        ads: Ad[];
+        pagination: {
+          total: number;
+          page: number;
+          pages: number;
+          limit: number;
+        };
+      }>('/ads', { params });
+      
+      // Transform backend response to match expected format
+      return {
+        ads: response.data.ads,
+        page: response.data.pagination.page,
+        totalPages: response.data.pagination.pages,
+        totalAds: response.data.pagination.total,
+        hasMore: response.data.pagination.page < response.data.pagination.pages,
       };
-    }>('/ads', { params });
-    
-    // Transform backend response to match expected format
-    return {
-      ads: response.data.ads,
-      page: response.data.pagination.page,
-      totalPages: response.data.pagination.pages,
-      totalAds: response.data.pagination.total,
-      hasMore: response.data.pagination.page < response.data.pagination.pages,
-    };
+    } catch (error: any) {
+      // If rate limited (429), wait and retry once
+      if (error.response?.status === 429) {
+        console.warn('Rate limited, retrying ads fetch in 2 seconds...');
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        const retryResponse = await api.get<{
+          success: boolean;
+          ads: Ad[];
+          pagination: {
+            total: number;
+            page: number;
+            pages: number;
+            limit: number;
+          };
+        }>('/ads', { params });
+        
+        return {
+          ads: retryResponse.data.ads,
+          page: retryResponse.data.pagination.page,
+          totalPages: retryResponse.data.pagination.pages,
+          totalAds: retryResponse.data.pagination.total,
+          hasMore: retryResponse.data.pagination.page < retryResponse.data.pagination.pages,
+        };
+      }
+      throw error;
+    }
   },
 
   /**
