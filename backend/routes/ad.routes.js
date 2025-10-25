@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
   try {
     const {
       page = 1,
-      limit = 12,
+      limit = 48,
       category,
       country,
       state,
