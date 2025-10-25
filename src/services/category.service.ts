@@ -17,10 +17,10 @@ class CategoryService {
       const response = await api.get<CategoriesResponse>('/categories');
       return response.data.categories;
     } catch (error: any) {
-      // If rate limited (429), wait and retry once
+      // If rate limited (429), wait and retry once with longer delay
       if (error.response?.status === 429) {
-        console.warn('Rate limited, retrying categories fetch in 2 seconds...');
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        console.warn('Rate limited, retrying categories fetch in 5 seconds...');
+        await new Promise(resolve => setTimeout(resolve, 5000));
         const retryResponse = await api.get<CategoriesResponse>('/categories');
         return retryResponse.data.categories;
       }

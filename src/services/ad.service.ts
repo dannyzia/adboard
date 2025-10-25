@@ -87,10 +87,10 @@ export const adService = {
         hasMore: response.data.pagination.page < response.data.pagination.pages,
       };
     } catch (error: any) {
-      // If rate limited (429), wait and retry once
+      // If rate limited (429), wait and retry once with longer delay
       if (error.response?.status === 429) {
-        console.warn('Rate limited, retrying ads fetch in 2 seconds...');
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        console.warn('Rate limited, retrying ads fetch in 5 seconds...');
+        await new Promise(resolve => setTimeout(resolve, 5000));
         const retryResponse = await api.get<{
           success: boolean;
           ads: Ad[];

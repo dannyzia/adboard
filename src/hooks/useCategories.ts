@@ -9,13 +9,13 @@ export const useCategories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        // Check if categories are cached in sessionStorage (with 5 minute expiry)
+        // Check if categories are cached in sessionStorage (with 15 minute expiry)
         const cached = sessionStorage.getItem('categories');
         const cacheTimestamp = sessionStorage.getItem('categories_timestamp');
         const now = Date.now();
-        const fiveMinutes = 5 * 60 * 1000; // 5 minutes in milliseconds
+        const fifteenMinutes = 15 * 60 * 1000; // 15 minutes in milliseconds
 
-        if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < fiveMinutes) {
+        if (cached && cacheTimestamp && (now - parseInt(cacheTimestamp)) < fifteenMinutes) {
           setCategories(JSON.parse(cached));
           setLoading(false);
           return;
