@@ -9,20 +9,9 @@ export const useCategories = () => {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        // Check if categories are cached in sessionStorage
-        const cached = sessionStorage.getItem('categories');
-        if (cached) {
-          setCategories(JSON.parse(cached));
-          setLoading(false);
-          return;
-        }
-
         // Fetch from API
         const data = await categoryService.getCategories();
         setCategories(data);
-        
-        // Cache in sessionStorage
-        sessionStorage.setItem('categories', JSON.stringify(data));
         setLoading(false);
       } catch (err) {
         console.error('Failed to fetch categories:', err);
