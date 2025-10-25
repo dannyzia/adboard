@@ -204,10 +204,8 @@ export function generateMockAd(index: number): Ad {
       link1: hasLink1 ? link1Options[index % link1Options.length] : undefined,
       link2: hasLink2 ? link2Options[index % link2Options.length] : undefined,
     },
-    contact: {
-      email: 'contact@example.com',
-      phone: '+1 (555) 123-4567',
-    },
+    contactEmail: 'contact@example.com',
+    contactPhone: '+1 (555) 123-4567',
     userId: 'mock-user-1',
     views: (index * 17) % 2000, // Consistent views based on index
     isFeatured: index % 5 === 0, // Every 5th ad is featured
