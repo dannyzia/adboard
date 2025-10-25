@@ -1,0 +1,9 @@
+This is an ad guide from one of the newspaper of Bangladesh. 
+
+I want you to go through the PDF. 
+
+Make a List of places to put ad, type of ads, name them, list whether image or text or video to upload, whether for online or offline version.
+
+can you make a website showing exact location and the those will mention all the infor and will ahve a button to input the image. Make it intuitive. 
+
+Hint: Page 4 to 17 shows the exact place, media and files needed. 
