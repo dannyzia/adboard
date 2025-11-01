@@ -1,880 +1,631 @@
-import React, { useState, useEffect } from 'react';
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Navbar } from '../components/layout/Navbar';
 import { useAuth } from '../hooks/useAuth';
+// import { categoryFields } from '../config/categoryFields';
+import { ImageUploadZone } from '../components/forms/ImageUploadZone';
+import { getCountries, getStates, getCities } from '../utils/constants';
 import { adService } from '../services/ad.service';
 import { uploadService } from '../services/upload.service';
-import { COUNTRIES, STATES, CITIES, CURRENCIES } from '../utils/constants';
-import { useCategories } from '../hooks/useCategories';
-import type { CategoryType, CreateAdData } from '../types/ad.types';
-import { ImageUploadZone } from '../components/forms/ImageUploadZone';
 
-export const PostAdPage: React.FC = () => {
-  const navigate = useNavigate();
-  const { user, isAuthenticated } = useAuth();
-  const [searchParams] = useSearchParams();
-  const editAdId = searchParams.get('edit');
-  const { categories, loading: categoriesLoading } = useCategories();
+type DynamicDetails = Record<string, any>;
 
-  const [formData, setFormData] = useState<CreateAdData>({
-    title: '',
-    description: '',
-    category: '' as CategoryType,
-    price: undefined,
-    currency: 'USD',
-    images: [],
-    location: {
-      country: 'United States',
-      state: '',
-      city: '',
-    },
-    links: {
-      link1: '',
-      link2: '',
-    },
-    contactEmail: '',
-    contactPhone: '',
-    customDuration: undefined, // Will default to plan's max duration if not set
-  });
-
-  const [imageUrls, setImageUrls] = useState<string[]>(['', '', '', '']);
-  const [imageFiles, setImageFiles] = useState<File[]>([]);
-  const [uploadProgress, setUploadProgress] = useState<number>(0);
-  const [loading, setLoading] = useState(false);
-  const [errors, setErrors] = useState<Record<string, string>>({});
-  const [draftSaved, setDraftSaved] = useState(false);
-  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
-  const [upgradeMessage, setUpgradeMessage] = useState('');
-
-  useEffect(() => {
-    if (!isAuthenticated) {
-      navigate('/login');
-      return;
-    }
-
-    // Pre-fill contact info from user
-    if (user) {
-      setFormData(prev => ({
-        ...prev,
-        contact: {
-          email: user.email,
-          phone: user.phone || '',
-        },
-      }));
-    }
-
-    // Load ad data if editing
-    if (editAdId) {
-      loadAdData(editAdId);
-    } else {
-      // Load draft from localStorage
-      loadDraft();
-    }
-  }, [isAuthenticated, user, editAdId, navigate]);
-
-  // Auto-save draft every 30 seconds
-  useEffect(() => {
-    if (!editAdId && formData.title.trim()) {
-      const timer = setTimeout(() => {
-        saveDraft();
-      }, 30000); // 30 seconds
-
-      return () => clearTimeout(timer);
-    }
-  }, [formData, imageUrls, imageFiles, editAdId]);
-
-  const loadAdData = async (adId: string) => {
-    try {
-      const ad = await adService.getAdById(adId);
-      
-      // Convert images to string array (extract URLs from objects if needed)
-      const imageStrings = ad.images.map(img => 
-        typeof img === 'string' ? img : img.url
-      );
-      
-      setFormData({
-        title: ad.title,
-        description: ad.description,
-        category: ad.category,
-        price: ad.price,
-        currency: ad.currency || 'USD',
-        images: imageStrings,
-        location: ad.location,
-        links: ad.links || { link1: '', link2: '' },
-        contactEmail: ad.contactEmail || '',
-        contactPhone: ad.contactPhone || '',
-      });
-      setImageUrls([...imageStrings, '', '', '', ''].slice(0, 4));
-    } catch (error) {
-      console.error('Error loading ad:', error);
-      alert('Failed to load ad data');
-    }
-  };
-
-  const validateForm = (): boolean => {
-    const newErrors: Record<string, string> = {};
-
-    if (!formData.title.trim()) newErrors.title = 'Title is required';
-    if (formData.title.length > 100) newErrors.title = 'Title must be less than 100 characters';
-    
-    if (!formData.description.trim()) newErrors.description = 'Description is required';
-    if (formData.description.length > 5000) newErrors.description = 'Description must be less than 5000 characters';
-    
-    if (!formData.location.state) newErrors.state = 'State is required';
-    if (!formData.location.city) newErrors.city = 'City is required';
-    
-    if (!formData.contactEmail) {
-      newErrors.email = 'Email is required';
-    } else if (!/\S+@\S+\.\S+/.test(formData.contactEmail)) {
-      newErrors.email = 'Invalid email format';
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!validateForm()) {
-      alert('Please fix the errors in the form');
-      return;
-    }
-
-    setLoading(true);
-    try {
-      // Helper function to normalize URLs
-      const normalizeUrl = (url: string): string => {
-        if (!url) return '';
-        const trimmed = url.trim();
-        if (!trimmed) return '';
-        // Add https:// if no protocol is specified
-        if (!trimmed.startsWith('http://') && !trimmed.startsWith('https://')) {
-          return `https://${trimmed}`;
-        }
-        return trimmed;
-      };
-
-      // Upload files first
-      const uploadedImageUrls = await uploadImages();
-
-      // Convert all images to the format expected by backend: {url, publicId?, order}
-      const validImages = [
-        // URL inputs - convert to object format
-        ...imageUrls
-          .filter(url => url.trim() !== '')
-          .map((url, index) => ({
-            url: normalizeUrl(url),
-            order: index
-          })),
-        // Cloudinary uploads - already have url and publicId
-        ...uploadedImageUrls.map((item, index) => ({
-          url: item.url,
-          publicId: item.publicId,
-          order: imageUrls.filter(url => url.trim() !== '').length + index
-        }))
-      ];
-      
-      const adData: CreateAdData = {
-        ...formData,
-        images: validImages,
-        links: {
-          link1: normalizeUrl(formData.links?.link1 || ''),
-          link2: normalizeUrl(formData.links?.link2 || ''),
-        },
-      };
-
-      if (editAdId) {
-        await adService.updateAd(editAdId, adData);
-        alert('Ad updated successfully!');
-      } else {
-        await adService.createAd(adData);
-        alert('Ad posted successfully!');
-        clearDraft(); // Clear draft after successful post
-      }
-      
-      navigate('/dashboard');
-    } catch (error: any) {
-      console.error('Error posting ad:', error);
-      
-      // Check if it's an upgrade required error
-      if (error.response?.data?.upgradeRequired) {
-        setUpgradeMessage(error.response.data.message || 'Please upgrade your plan to use this feature.');
-        setShowUpgradeModal(true);
-      } else {
-        alert(error.response?.data?.message || 'Failed to post ad. Please try again.');
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleImageUrlChange = (index: number, url: string) => {
-    const newUrls = [...imageUrls];
-    newUrls[index] = url;
-    setImageUrls(newUrls);
-  };
-
-  const handleFileUpload = (files: FileList) => {
-    const newFiles = Array.from(files);
-    setImageFiles(prev => [...prev, ...newFiles]);
-  };
-
-  const handleRemoveFile = (index: number) => {
-    setImageFiles(prev => prev.filter((_, i) => i !== index));
-  };
-
-  const uploadImages = async (): Promise<Array<{url: string, publicId: string}>> => {
-    if (imageFiles.length === 0) return [];
-
-    try {
-      const uploadedResults: Array<{url: string, publicId: string}> = [];
-      
-      // Upload images to Cloudinary
-      for (let i = 0; i < imageFiles.length; i++) {
-        setUploadProgress(Math.round(((i + 1) / imageFiles.length) * 100));
-        
-        const result = await uploadService.uploadImage(imageFiles[i]);
-        uploadedResults.push({ url: result.url, publicId: result.publicId });
-      }
-
-      setUploadProgress(0);
-      setImageFiles([]); // Clear files after upload
-      return uploadedResults;
-    } catch (error) {
-      console.error('Error uploading images:', error);
-      setUploadProgress(0);
-      throw new Error('Failed to upload images. Please try again.');
-    }
-  };
-
-  const saveDraft = () => {
-    try {
-      const draft = {
-        formData,
-        imageUrls,
-        timestamp: new Date().toISOString(),
-      };
-      localStorage.setItem('adDraft', JSON.stringify(draft));
-      setDraftSaved(true);
-      setTimeout(() => setDraftSaved(false), 2000);
-    } catch (error) {
-      console.error('Failed to save draft:', error);
-    }
-  };
-
-  const loadDraft = () => {
-    try {
-      const savedDraft = localStorage.getItem('adDraft');
-      if (savedDraft) {
-        const draft = JSON.parse(savedDraft);
-        setFormData(draft.formData);
-        setImageUrls(draft.imageUrls);
-      }
-    } catch (error) {
-      console.error('Failed to load draft:', error);
-    }
-  };
-
-  const clearDraft = () => {
-    localStorage.removeItem('adDraft');
-  };
-
-  const availableStates = STATES[formData.location.country] || [];
-  const availableCities = CITIES[formData.location.state] || [];
-
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <Navbar />
-      
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="bg-white rounded-lg shadow-sm p-8">
-          <div className="flex items-center justify-between mb-6">
-            <h1 className="text-3xl font-bold text-gray-900">
-              {editAdId ? 'Edit Ad' : 'Post a New Ad'}
-            </h1>
-            {!editAdId && (
-              <div className="flex items-center gap-2">
-                {draftSaved && (
-                  <span className="text-sm text-green-600 flex items-center gap-1">
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Draft saved
-                  </span>
-                )}
-                <button
-                  type="button"
-                  onClick={saveDraft}
-                  className="px-4 py-2 text-sm border border-gray-300 rounded-lg hover:bg-gray-50 transition flex items-center gap-2"
-                >
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3 3m0 0l-3-3m3 3V4"></path>
-                  </svg>
-                  Save Draft
-                </button>
-              </div>
-            )}
-          </div>
-
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Title */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Title <span className="text-red-500">*</span>
-              </label>
-              <input
-                type="text"
-                value={formData.title}
-                onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  errors.title ? 'border-red-500' : 'border-gray-300'
-                }`}
-                placeholder="e.g., Full Stack Developer Needed"
-                maxLength={100}
-              />
-              {errors.title && <p className="text-red-500 text-sm mt-1">{errors.title}</p>}
-              <p className="text-gray-500 text-xs mt-1">{(formData.title || '').length}/100 characters</p>
-            </div>
-
-            {/* Category */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Category <span className="text-red-500">*</span>
-              </label>
-              <select
-                value={formData.category}
-                onChange={(e) => setFormData({ ...formData, category: e.target.value as CategoryType })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                disabled={categoriesLoading}
-              >
-                <option value="">Select a category</option>
-                {categories.map((cat) => (
-                  <option key={cat.value} value={cat.value}>
-                    {cat.label}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Description */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Description <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                value={formData.description}
-                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                  errors.description ? 'border-red-500' : 'border-gray-300'
-                }`}
-                rows={6}
-                placeholder="Detailed description of your ad"
-                maxLength={5000}
-              />
-              {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description}</p>}
-              <p className="text-gray-500 text-xs mt-1">{(formData.description || '').length}/5000 characters</p>
-            </div>
-
-            {/* Price and Currency */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              {/* Currency Selector */}
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Currency <span className="text-red-600">*</span>
-                </label>
-                <select
-                  value={formData.currency}
-                  onChange={(e) => setFormData({ ...formData, currency: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                  {CURRENCIES.map((curr) => (
-                    <option key={curr.code} value={curr.code}>
-                      {curr.code} - {curr.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              {/* Price Input */}
-              <div className="md:col-span-2">
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Price {formData.category === 'Jobs' || formData.category === 'Events' || formData.category === 'Notices' ? '(Optional - e.g., Salary/Ticket Price)' : '(Optional)'}
-                </label>
-                <div className="relative">
-                  <span className="absolute left-4 top-2 text-gray-500">
-                    {CURRENCIES.find(c => c.code === formData.currency)?.symbol || '$'}
-                  </span>
-                  <input
-                    type="number"
-                    value={formData.price || ''}
-                    onChange={(e) => setFormData({ ...formData, price: e.target.value ? parseFloat(e.target.value) : undefined })}
-                    className="w-full pl-12 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder={
-                      formData.category === 'Jobs' ? 'Annual salary or hourly rate' :
-                      formData.category === 'Events' ? 'Ticket price (leave blank if free)' :
-                      formData.category === 'Real Estate' ? 'Sale/Rent price' :
-                      '0.00'
-                    }
-                    min="0"
-                    step="0.01"
-                  />
-                </div>
-              </div>
-            </div>
-            <div>
-              {formData.category === 'Jobs' && (
-                <p className="text-gray-500 text-xs mt-1">For jobs, you can enter annual salary, hourly rate, or leave blank</p>
-              )}
-              {formData.category === 'Real Estate' && (
-                <p className="text-gray-500 text-xs mt-1">Enter sale price or monthly rent amount</p>
-              )}
-            </div>
-
-            {/* Additional Info Fields */}
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                Additional Information
-              </h3>
-              <div className="space-y-3 text-sm text-gray-700">
-                {formData.category === 'Jobs' && (
-                  <div className="space-y-2">
-                    <p><strong>For Jobs:</strong></p>
-                    <ul className="list-disc list-inside space-y-1 ml-2">
-                      <li>Use <strong>Full Description</strong> for job requirements, qualifications, and responsibilities</li>
-                      <li>Add company website or application portal in <strong>Link 1</strong></li>
-                      <li>Add LinkedIn job posting or company page in <strong>Link 2</strong></li>
-                      <li>Use <strong>Price</strong> for salary range (optional)</li>
-                    </ul>
-                  </div>
-                )}
-                {formData.category === 'Products' && (
-                  <div className="space-y-2">
-                    <p><strong>For Products:</strong></p>
-                    <ul className="list-disc list-inside space-y-1 ml-2">
-                      <li>Use <strong>Full Description</strong> for product specifications and condition</li>
-                      <li>Add product listing URL in <strong>Link 1</strong> (e.g., Amazon, eBay)</li>
-                      <li>Add manufacturer website in <strong>Link 2</strong></li>
-                      <li>Enter price in the <strong>Price</strong> field</li>
-                    </ul>
-                  </div>
-                )}
-                {formData.category === 'Services' && (
-                  <div className="space-y-2">
-                    <p><strong>For Services:</strong></p>
-                    <ul className="list-disc list-inside space-y-1 ml-2">
-                      <li>Use <strong>Full Description</strong> for service details and what's included</li>
-                      <li>Add your business website in <strong>Link 1</strong></li>
-                      <li>Add booking/appointment link in <strong>Link 2</strong></li>
-                      <li>Use <strong>Price</strong> for service rates (optional)</li>
-                    </ul>
-                  </div>
-                )}
-                {formData.category === 'Real Estate' && (
-                  <div className="space-y-2">
-                    <p><strong>For Real Estate:</strong></p>
-                    <ul className="list-disc list-inside space-y-1 ml-2">
-                      <li>Use <strong>Full Description</strong> for property details, amenities, and features</li>
-                      <li>Add virtual tour or property listing URL in <strong>Link 1</strong></li>
-                      <li>Add real estate agent website in <strong>Link 2</strong></li>
-                      <li>Enter sale/rent price in the <strong>Price</strong> field</li>
-                    </ul>
-                  </div>
-                )}
-                {formData.category === 'Events' && (
-                  <div className="space-y-2">
-                    <p><strong>For Events:</strong></p>
-                    <ul className="list-disc list-inside space-y-1 ml-2">
-                      <li>Use <strong>Full Description</strong> for event details, schedule, and agenda</li>
-                      <li>Add event registration/ticketing link in <strong>Link 1</strong></li>
-                      <li>Add event website or Facebook event page in <strong>Link 2</strong></li>
-                      <li>Use <strong>Price</strong> for ticket cost (leave blank if free)</li>
-                    </ul>
-                  </div>
-                )}
-                {formData.category === 'Notices' && (
-                  <div className="space-y-2">
-                    <p><strong>For Notices:</strong></p>
-                    <ul className="list-disc list-inside space-y-1 ml-2">
-                      <li>Use <strong>Full Description</strong> for complete notice details</li>
-                      <li>Add reference/source link in <strong>Link 1</strong></li>
-                      <li>Add related information link in <strong>Link 2</strong></li>
-                      <li><strong>Price</strong> field is typically not used for notices</li>
-                    </ul>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* Location */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Country <span className="text-red-500">*</span>
-                </label>
-                <select
-                  value={formData.location.country}
-                  onChange={(e) => setFormData({
-                    ...formData,
-                    location: { ...formData.location, country: e.target.value, state: '', city: '' }
-                  })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
-                  {COUNTRIES.map((country) => (
-                    <option key={country} value={country}>
-                      {country}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  State/Province <span className="text-red-500">*</span>
-                </label>
-                <select
-                  value={formData.location.state}
-                  onChange={(e) => setFormData({
-                    ...formData,
-                    location: { ...formData.location, state: e.target.value, city: '' }
-                  })}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                    errors.state ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                >
-                  <option value="">Select State</option>
-                  {availableStates.map((state) => (
-                    <option key={state} value={state}>
-                      {state}
-                    </option>
-                  ))}
-                </select>
-                {errors.state && <p className="text-red-500 text-sm mt-1">{errors.state}</p>}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  City <span className="text-red-500">*</span>
-                </label>
-                <select
-                  value={formData.location.city}
-                  onChange={(e) => setFormData({
-                    ...formData,
-                    location: { ...formData.location, city: e.target.value }
-                  })}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                    errors.city ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  disabled={!formData.location.state}
-                >
-                  <option value="">Select City</option>
-                  {availableCities.map((city) => (
-                    <option key={city} value={city}>
-                      {city}
-                    </option>
-                  ))}
-                </select>
-                {errors.city && <p className="text-red-500 text-sm mt-1">{errors.city}</p>}
-              </div>
-            </div>
-
-            {/* Images */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Images (up to 5)
-              </label>
-
-              {/* Upload Progress */}
-              {uploadProgress > 0 && (
-                <div className="mb-4">
-                  <div className="flex items-center justify-between text-sm text-gray-700 mb-2">
-                    <span>Uploading images...</span>
-                    <span>{uploadProgress}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2">
-                    <div
-                      className="bg-blue-600 h-2 rounded-full transition-all duration-300"
-                      style={{ width: `${uploadProgress}%` }}
-                    ></div>
-                  </div>
-                </div>
-              )}
-
-              {/* Drag & Drop Upload Zone */}
-              <div className="mb-4">
-                <ImageUploadZone
-                  images={imageFiles}
-                  onUpload={handleFileUpload}
-                  onRemove={handleRemoveFile}
-                  maxImages={5}
-                  maxSize={5}
-                />
-              </div>
-
-              {/* OR Divider */}
-              <div className="relative my-6">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300"></div>
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-4 bg-white text-gray-500 font-medium">OR use image URLs</span>
-                </div>
-              </div>
-              
-              {/* Image Upload Guidelines */}
-              <div className="mb-4 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg">
-                <h4 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                  <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path>
-                  </svg>
-                  Image URL Guidelines
-                </h4>
-                <div className="space-y-2 text-sm text-gray-700">
-                  <p><strong>Free Image Hosting Service:</strong></p>
-                  <ul className="list-disc list-inside ml-4 space-y-1">
-                    <li><strong>PostImg.cc</strong> - Fast, no registration, direct links (recommended)</li>
-                  </ul>
-                  <p className="text-xs text-gray-600 mt-2">
-                    <strong>Tip:</strong> Upload your images to any hosting service above, then copy the <strong>direct image link</strong> 
-                    (must end in .jpg, .png, .gif, or .webp) and paste it below. You can also use www.domain.com format.
-                  </p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {imageUrls.map((url, index) => (
-                  <div key={index}>
-                    <input
-                      type="text"
-                      value={url}
-                      onChange={(e) => handleImageUrlChange(index, e.target.value)}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                      placeholder={`Image URL ${index + 1} (e.g., https://i.imgur.com/image.jpg)`}
-                    />
-                    {url && (
-                      <img
-                        src={url.startsWith('http') ? url : `https://${url}`}
-                        alt={`Preview ${index + 1}`}
-                        className="mt-2 w-full h-32 object-cover rounded-lg border border-gray-200"
-                        onError={(e) => {
-                          e.currentTarget.src = 'https://via.placeholder.com/400x300/e5e7eb/6b7280?text=Invalid+Image+URL';
-                        }}
-                      />
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Links */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                External Links (Optional)
-              </label>
-              <p className="text-sm text-gray-600 mb-3">
-                Add external links related to your ad (websites, social media, product pages, etc.). 
-                You can enter URLs with or without https:// - we'll handle it automatically.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                  <label className="block text-xs font-medium text-gray-600 mb-1">
-                    Link 1
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.links?.link1 || ''}
-                    onChange={(e) => setFormData({
-                      ...formData,
-                      links: { ...formData.links, link1: e.target.value }
-                    })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="www.example.com or https://example.com"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-xs font-medium text-gray-600 mb-1">
-                    Link 2
-                  </label>
-                  <input
-                    type="text"
-                    value={formData.links?.link2 || ''}
-                    onChange={(e) => setFormData({
-                      ...formData,
-                      links: { ...formData.links, link2: e.target.value }
-                    })}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="www.example.com or https://example.com"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Contact */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Contact Email <span className="text-red-500">*</span>
-                </label>
-                <input
-                  type="email"
-                  value={formData.contactEmail || ''}
-                  onChange={(e) => setFormData({
-                    ...formData,
-                    contactEmail: e.target.value
-                  })}
-                  className={`w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-                    errors.email ? 'border-red-500' : 'border-gray-300'
-                  }`}
-                  placeholder="your@email.com"
-                />
-                {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Contact Phone (Optional)
-                </label>
-                <input
-                  type="tel"
-                  value={formData.contactPhone || ''}
-                  onChange={(e) => setFormData({
-                    ...formData,
-                    contactPhone: e.target.value
-                  })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  placeholder="+1 (555) 123-4567"
-                />
-              </div>
-            </div>
-
-            {/* Ad Duration */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Ad Duration
-              </label>
-              <select
-                value={formData.customDuration || ''}
-                onChange={(e) => {
-                  const value = e.target.value;
-                  setFormData({
-                    ...formData,
-                    customDuration: value ? parseInt(value) : undefined
-                  });
-                }}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value="">Use plan default ({
-                  user?.subscription?.tier === 'free' ? '7 days' :
-                  user?.subscription?.tier === 'basic' ? '30 days' :
-                  user?.subscription?.tier === 'pro' ? '90 days' : '7 days'
-                })</option>
-                <option value="1">1 day</option>
-                <option value="3">3 days</option>
-                <option value="7">7 days</option>
-                {(user?.subscription?.tier === 'basic' || user?.subscription?.tier === 'pro') && (
-                  <>
-                    <option value="14">14 days</option>
-                    <option value="21">21 days</option>
-                    <option value="30">30 days</option>
-                  </>
-                )}
-                {user?.subscription?.tier === 'pro' && (
-                  <>
-                    <option value="60">60 days</option>
-                    <option value="90">90 days</option>
-                  </>
-                )}
-              </select>
-              <p className="text-xs text-gray-500 mt-1">
-                Your {user?.subscription?.tier || 'free'} plan allows ads up to {
-                  user?.subscription?.tier === 'free' ? '7' :
-                  user?.subscription?.tier === 'basic' ? '30' :
-                  user?.subscription?.tier === 'pro' ? '90' : '7'
-                } days. 
-                {user?.subscription?.tier !== 'pro' && (
-                  <span className="text-blue-600"> <a href="/pricing" className="underline">Upgrade</a> for longer durations.</span>
-                )}
-              </p>
-            </div>
-
-            {/* Subscription Info */}
-            {user && (
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <div className="flex items-center gap-2 text-blue-800">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  <span className="font-medium">
-                    {user.subscription?.tier === 'pro' 
-                      ? 'Pro Plan: Unlimited Ads' 
-                      : `Free Plan: ${user.subscription?.adsRemaining || 0} ads remaining`}
-                  </span>
-                </div>
-              </div>
-            )}
-
-          {/* Submit Buttons */}
-          <div className="flex gap-4 pt-4">
-            <button
-              type="submit"
-              disabled={loading}
-              className="flex-1 bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition font-semibold disabled:bg-gray-400 disabled:cursor-not-allowed"
-            >
-              {loading ? 'Posting...' : editAdId ? 'Update Ad' : 'Post Ad'}
-            </button>
-            <button
-              type="button"
-              onClick={() => navigate('/dashboard')}
-              className="px-8 py-3 border border-gray-300 rounded-lg hover:bg-gray-50 transition font-semibold"
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    {/* Upgrade Required Modal */}
-    {showUpgradeModal && (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-        <div className="bg-white rounded-lg max-w-md w-full p-6">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-              <svg className="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-              </svg>
-            </div>
-            <h3 className="text-xl font-bold text-gray-900">Upgrade Required</h3>
-          </div>
-          
-          <p className="text-gray-600 mb-6">{upgradeMessage}</p>
-          
-          <div className="flex gap-3">
-            <button
-              onClick={() => {
-                setShowUpgradeModal(false);
-                navigate('/pricing');
-              }}
-              className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition font-semibold"
-            >
-              View Plans
-            </button>
-            <button
-              onClick={() => setShowUpgradeModal(false)}
-              className="flex-1 bg-gray-200 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-300 transition font-semibold"
-            >
-              Cancel
-            </button>
-          </div>
-        </div>
-      </div>
-    )}
-    </div>
-  );
+type FormState = {
+    title: string;
+    description: string;
+    category: string;
+    price?: number | string;
+    priceType?: string;
+    currency: string;
+    images: File[];
+    imageUrls?: string[];
+    location: { country: string; state: string; city: string };
+    links: { link1?: string; link2?: string };
+    contactEmail?: string;
+    contactPhone?: string;
+    details: DynamicDetails;
+    customDuration?: number | '';
 };
 
-export default PostAdPage;
+export const PostAdPage: React.FC = () => {
+    const navigate = useNavigate();
+    useAuth();
+    const [formData, setFormData] = useState<FormState>({
+        title: '',
+        description: '',
+        category: '',
+        price: '',
+        priceType: 'Fixed',
+        currency: 'USD',
+        images: [] as File[],
+            imageUrls: ['', '', '', ''],
+        location: { country: '', state: '', city: '' },
+            links: { link1: '', link2: '' },
+        contactEmail: '',
+        contactPhone: '',
+        details: {},
+        customDuration: '',
+    });
+    const [formConfig, setFormConfig] = useState<any>(null);
+    const [dynamicFields, setDynamicFields] = useState<any[]>([]);
+    const [currencies, setCurrencies] = useState<{ code: string; name: string }[]>([]);
+    const [imageFiles, setImageFiles] = useState<File[]>([]);
+    const [countries, setCountries] = useState<string[]>([]);
+    const [states, setStates] = useState<string[]>([]);
+    const [cities, setCities] = useState<string[]>([]);
+    const [submitting, setSubmitting] = useState(false);
+
+    useEffect(() => {
+        fetch('/api/currencies')
+            .then((res) => res.json())
+            .then((data) => setCurrencies(data.currencies || []))
+            .catch(() => setCurrencies([{ code: 'USD', name: 'US Dollar' }]));
+    }, []);
+
+    // Fetch form config from backend
+    useEffect(() => {
+        fetch('/api/form-config')
+            .then((res) => res.json())
+            .then((data) => setFormConfig(data))
+            .catch(() => setFormConfig(null));
+    }, []);
+
+    useEffect(() => {
+        if (formConfig && formData.category && formConfig.specificFields[formData.category]) {
+            setDynamicFields(formConfig.specificFields[formData.category]);
+        } else {
+            setDynamicFields([]);
+        }
+    }, [formConfig, formData.category]);
+
+    // Ensure logical ordering: when price and priceType both exist, render price before priceType.
+    const orderedDynamicFields = (() => {
+        if (!dynamicFields || dynamicFields.length === 0) return dynamicFields;
+        const fields = [...dynamicFields];
+        const priceIndex = fields.findIndex((f: any) => f.name === 'price');
+        const priceTypeIndex = fields.findIndex((f: any) => f.name === 'priceType');
+        // If priceType appears before price, move it to immediately after price
+        if (priceIndex !== -1 && priceTypeIndex !== -1 && priceTypeIndex < priceIndex) {
+            const [pt] = fields.splice(priceTypeIndex, 1);
+            const insertAt = fields.findIndex((f: any) => f.name === 'price') + 1;
+            fields.splice(insertAt, 0, pt);
+        }
+        // Ensure any declared `currency` field appears before `price` or `startingBid`
+        const currencyIndex = fields.findIndex((f: any) => f.name === 'currency');
+        const startingBidIndex = fields.findIndex((f: any) => f.name === 'startingBid');
+        const effectivePriceIndex = priceIndex !== -1 ? fields.findIndex((f: any) => f.name === 'price') : -1;
+        // If currency exists and appears after price or startingBid, move it before the earliest of price/startingBid
+        if (currencyIndex !== -1) {
+            // determine earliest target index (price takes precedence)
+            let targetIndex = -1;
+            if (effectivePriceIndex !== -1) targetIndex = effectivePriceIndex;
+            else if (startingBidIndex !== -1) targetIndex = startingBidIndex;
+            if (targetIndex !== -1 && currencyIndex > targetIndex) {
+                const [c] = fields.splice(currencyIndex, 1);
+                const insertAt = Math.max(0, fields.findIndex((f: any) => f.name === (effectivePriceIndex !== -1 ? 'price' : 'startingBid')));
+                fields.splice(insertAt, 0, c);
+            }
+        }
+        return fields;
+    })();
+
+    // Helper: whether the selected category already declares a currency field (after ordering adjustments)
+    const hasCurrencyField = orderedDynamicFields.some((f: any) => f.name === 'currency');
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        if (submitting) return;
+
+        // Client-side validation for auctions
+        if (formData.category === 'Auction') {
+            const auctionEndValue = formData.details['auctionEnd'];
+            const startingBidValue = formData.details['startingBid'];
+
+            if (!auctionEndValue) {
+                alert('Please provide an Auction End Date');
+                return;
+            }
+
+            const end = new Date(auctionEndValue);
+            if (isNaN(end.getTime())) {
+                alert('Auction End Date is invalid');
+                return;
+            }
+            if (end <= new Date()) {
+                alert('Auction End Date must be in the future');
+                return;
+            }
+
+            const starting = parseFloat(startingBidValue);
+            if (isNaN(starting) || starting <= 0) {
+                alert('Starting Bid must be a number greater than 0');
+                return;
+            }
+
+            // If category doesn't declare currency field, ensure currency is selected
+            if (!hasCurrencyField && (!formData.currency || formData.currency === '')) {
+                alert('Please select a currency for the starting bid');
+                return;
+            }
+        }
+
+        setSubmitting(true);
+        try {
+            // Upload files if any image Files are present
+            let uploadedImages: Array<{ url: string; publicId?: string }> = [];
+            if (imageFiles && imageFiles.length > 0) {
+                try {
+                    uploadedImages = await uploadService.uploadImages(imageFiles);
+                } catch (err) {
+                    console.error('Image upload failed:', err);
+                    alert('Failed to upload images. Please try again.');
+                    setSubmitting(false);
+                    return;
+                }
+            }
+
+            // Include imageUrls manually entered by user
+            const manualUrls = (formData.imageUrls || []).filter(Boolean).map((u) => ({ url: u }));
+
+            const imagesPayload = [...uploadedImages, ...manualUrls];
+
+            // Build payload expected by backend/createAd
+            const payload: any = {
+                title: formData.title,
+                description: formData.description,
+                category: formData.category,
+                location: formData.location,
+                images: imagesPayload,
+                contactEmail: formData.contactEmail,
+                contactPhone: formData.contactPhone,
+                links: formData.links,
+                customDuration: formData.customDuration || undefined,
+                currency: formData.currency || undefined,
+            };
+
+            if (formData.category === 'Auction') {
+                // Convert datetime-local to ISO
+                const auctionEndIso = new Date(formData.details['auctionEnd']).toISOString();
+                payload.auctionEnd = auctionEndIso;
+                payload.startingBid = parseFloat(formData.details['startingBid']);
+                if (formData.details['reservePrice']) payload.reservePrice = parseFloat(formData.details['reservePrice']);
+            } else {
+                if (formData.price !== undefined && formData.price !== '') payload.price = Number(formData.price);
+                if (formData.currency) payload.currency = formData.currency;
+            }
+
+            // Attach remaining dynamic details (category-specific) into details or top-level as needed
+            payload.details = formData.details;
+
+            // Call backend
+            const createdAd = await adService.createAd(payload as any);
+
+            // Navigate to ad page
+            navigate(`/ad/${createdAd._id}`);
+        } catch (err: any) {
+            console.error('Create ad error:', err);
+            alert(err?.message || 'Failed to create ad');
+        } finally {
+            setSubmitting(false);
+        }
+    };
+
+    const handleFileUpload = (files: FileList | null) => {
+        if (!files) return;
+        const arr = Array.from(files);
+        setImageFiles(arr);
+        setFormData((prev) => ({ ...prev, images: arr }));
+    };
+    const handleRemoveFile = (index: number) => {
+        const arr = imageFiles.slice();
+        arr.splice(index, 1);
+        setImageFiles(arr);
+        setFormData((prev) => ({ ...prev, images: arr }));
+    };
+
+    useEffect(() => {
+        Promise.resolve(getCountries()).then(setCountries);
+    }, []);
+    useEffect(() => {
+        if (formData.location.country) {
+            Promise.resolve(getStates(formData.location.country)).then(setStates);
+        } else {
+            setStates([]);
+        }
+    }, [formData.location.country]);
+    useEffect(() => {
+        if (formData.location.state) {
+            Promise.resolve(getCities(formData.location.state)).then(setCities);
+        } else {
+            setCities([]);
+        }
+    }, [formData.location.state]);
+
+    return (
+        <>
+            <Navbar />
+            <div className="container mx-auto py-8">
+                <h1 className="text-2xl font-bold mb-6">Post an Ad</h1>
+                <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white rounded-lg shadow-md p-8 space-y-6 border border-gray-200">
+                    {/* Title */}
+                    <div>
+                        <label className="block mb-2 font-semibold text-gray-700">Title</label>
+                        <input
+                            type="text"
+                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            value={formData.title}
+                            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+                            required
+                        />
+                    </div>
+                    {/* Description */}
+                    <div>
+                        <label className="block mb-2 font-semibold text-gray-700">Description</label>
+                        <textarea
+                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            value={formData.description}
+                            onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                            required
+                        />
+                    </div>
+                    {/* Category */}
+                    <div>
+                        <label className="block mb-2 font-semibold text-gray-700">Category</label>
+                        <select
+                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            value={formData.category}
+                            onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                            required
+                        >
+                            <option value="">Select category</option>
+                            {formConfig && formConfig.categories && formConfig.categories.map((cat: string) => (
+                                <option key={cat} value={cat}>{cat}</option>
+                            ))}
+                        </select>
+                    </div>
+                    {/* Image Upload Section */}
+                    <div>
+                        <label className="block mb-2 font-semibold text-gray-700">Images</label>
+                        <ImageUploadZone
+                            images={imageFiles}
+                            onUpload={(files) => handleFileUpload(files)}
+                            onRemove={handleRemoveFile}
+                        />
+                    </div>
+
+                    {/* Image URL Guidelines and Inputs */}
+                    <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-6 mb-2">
+                        <div className="flex items-center mb-2">
+                            <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" /></svg>
+                            <span className="font-semibold text-blue-700">Image URL Guidelines</span>
+                        </div>
+                        <div className="text-sm text-blue-800 mb-1">
+                            <span className="font-semibold">Free Image Hosting Service:</span>
+                            <ul className="list-disc ml-6">
+                                <li><a href="https://postimg.cc/" target="_blank" rel="noopener noreferrer" className="underline text-blue-600">PostImg.cc</a> - Fast, no registration, direct links (recommended)</li>
+                            </ul>
+                            <div className="mt-2"><span className="font-semibold">Tip:</span> Upload your images to any hosting service above, then copy the <span className="font-semibold">direct image link</span> (must end in .jpg, .png, .gif, or .webp) and paste it below. You can also use www.domain.com format.</div>
+                        </div>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        {[1,2,3,4].map((i) => (
+                            <input
+                                key={i}
+                                type="url"
+                                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                placeholder={`Image URL ${i} (e.g., https://i.imgur.com/image.jpg)`}
+                                value={formData.imageUrls && formData.imageUrls[i-1] !== undefined ? formData.imageUrls[i-1] : ''}
+                                onChange={e => {
+                                    const urls = formData.imageUrls ? [...formData.imageUrls] : ['', '', '', ''];
+                                    urls[i-1] = e.target.value;
+                                    setFormData({ ...formData, imageUrls: urls });
+                                }}
+                            />
+                        ))}
+                    </div>
+
+                    {/* External Links (Optional) */}
+                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+                        <div className="font-semibold text-gray-700 mb-1">External Links (Optional)</div>
+                        <div className="text-sm text-gray-600 mb-3">Add external links related to your ad (websites, social media, product pages, etc.). You can enter URLs with or without https:// - we'll handle it automatically.</div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {[1,2].map((i) => (
+                                <div key={i}>
+                                    <label className="block mb-1 font-medium text-gray-600">Link {i}</label>
+                                    <input
+                                        type="url"
+                                        className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                        placeholder={`www.example.com or https://example.com`}
+                                        value={formData.links && (formData.links as any)[`link${i}`] ? (formData.links as any)[`link${i}`] : ''}
+                                        onChange={e => {
+                                            setFormData({
+                                                ...formData,
+                                                links: { ...formData.links, [`link${i}`]: e.target.value },
+                                            });
+                                        }}
+                                    />
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Location Selection */}
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label className="block mb-2 font-semibold text-gray-700">Country</label>
+                            <select
+                                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                value={formData.location.country}
+                                onChange={(e) => setFormData({
+                                    ...formData,
+                                    location: { ...formData.location, country: e.target.value, state: '', city: '' },
+                                })}
+                                required
+                            >
+                                <option value="">Select country</option>
+                                {countries.map((country) => (
+                                    <option key={country} value={country}>{country}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="block mb-2 font-semibold text-gray-700">State</label>
+                            <select
+                                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                value={formData.location.state}
+                                onChange={(e) => setFormData({
+                                    ...formData,
+                                    location: { ...formData.location, state: e.target.value, city: '' },
+                                })}
+                                required
+                            >
+                                <option value="">Select state</option>
+                                {states.map((state) => (
+                                    <option key={state} value={state}>{state}</option>
+                                ))}
+                            </select>
+                        </div>
+                        <div>
+                            <label className="block mb-2 font-semibold text-gray-700">City</label>
+                            <select
+                                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                value={formData.location.city}
+                                onChange={(e) => setFormData({
+                                    ...formData,
+                                    location: { ...formData.location, city: e.target.value },
+                                })}
+                                required
+                            >
+                                <option value="">Select city</option>
+                                {cities.map((city) => (
+                                    <option key={city} value={city}>{city}</option>
+                                ))}
+                            </select>
+                        </div>
+                    </div>
+                    {/* Contact Info */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label className="block mb-2 font-semibold text-gray-700">Contact Email</label>
+                            <input
+                                type="email"
+                                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                value={formData.contactEmail}
+                                onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label className="block mb-2 font-semibold text-gray-700">Contact Phone</label>
+                            <input
+                                type="tel"
+                                className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                value={formData.contactPhone}
+                                onChange={(e) => setFormData({ ...formData, contactPhone: e.target.value })}
+                            />
+                        </div>
+                    </div>
+
+                    {/* Ad Duration Section */}
+                    <div className="mb-6">
+                        <label className="block mb-2 font-semibold text-gray-700">Ad Duration (days)</label>
+                        <div className="flex items-center gap-2">
+                            <button type="button" className="px-3 py-1 bg-gray-200 rounded" onClick={() => setFormData({ ...formData, customDuration: Math.max(1, (formData.customDuration || 1) - 1) })}>-</button>
+                            <input
+                                type="number"
+                                min={1}
+                                max={7}
+                                value={formData.customDuration || 1}
+                                onChange={e => {
+                                    const val = Number(e.target.value);
+                                    setFormData({ ...formData, customDuration: val });
+                                }}
+                                className="w-20 px-4 py-2 border border-gray-300 rounded text-center focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            />
+                            <button type="button" className="px-3 py-1 bg-gray-200 rounded" onClick={() => setFormData({ ...formData, customDuration: Math.min(7, (formData.customDuration || 1) + 1) })}>+</button>
+                        </div>
+                        <div className="text-sm text-gray-600 mt-1">
+                            Your free plan allows ads up to <span className="font-bold">7 days</span>. <a href="#" className="text-blue-600 underline">Upgrade for longer durations.</a>
+                        </div>
+                        {(formData.customDuration || 1) > 7 && (
+                            <div className="text-red-600 mt-2 font-semibold">You have exceeded your plan's limit. Please <a href="#" className="underline">upgrade</a> for longer durations.</div>
+                        )}
+                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mt-4 flex items-center">
+                            <svg className="w-5 h-5 text-blue-500 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" /></svg>
+                            <span className="font-semibold text-blue-700">Free Plan: 1 ads remaining</span>
+                        </div>
+                    </div>
+                    {/* Removed hard-coded Currency/Price/PriceType/Condition block to avoid duplicates.
+                       These fields are now expected to be provided by `form-config.json` and rendered
+                       inside the "Additional Details" area alongside other category-specific fields. */}
+                    {/* Dynamic fields (from form-config) */}
+                    {dynamicFields.length > 0 && (
+                        <div className="bg-gray-50 rounded-lg p-4 border border-gray-200 mt-4">
+                            <h2 className="text-lg font-bold mb-4 text-blue-700">Additional Details</h2>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {orderedDynamicFields.map((field: any) => {
+                                    if (["title", "description", "category", "images", "contactEmail", "contactPhone"].includes(field.name)) return null;
+
+                                    // If this is the price field, render currency first (if category doesn't already declare it)
+                                    if (field.name === 'price') {
+                                        return (
+                                            <div key={field.name} className="mb-2">
+                                                {!hasCurrencyField && (
+                                                    <div className="mb-2">
+                                                        <label className="block mb-1 font-medium text-gray-600">Currency</label>
+                                                        <select
+                                                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                                            value={formData.currency}
+                                                            onChange={e => setFormData({ ...formData, currency: e.target.value })}
+                                                        >
+                                                            {currencies.length === 0 ? (
+                                                                <option value="">Loading...</option>
+                                                            ) : (
+                                                                currencies.map((currency) => (
+                                                                    <option key={currency.code} value={currency.code}>{currency.code} - {currency.name}</option>
+                                                                ))
+                                                            )}
+                                                        </select>
+                                                    </div>
+                                                )}
+                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <input
+                                                    type={field.type}
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                                    value={formData.details[field.name] || ''}
+                                                    onChange={e => setFormData({
+                                                        ...formData,
+                                                        details: { ...formData.details, [field.name]: e.target.value },
+                                                    })}
+                                                />
+                                            </div>
+                                        );
+                                    }
+
+                                    // If this is the startingBid field (auction), render currency first (if category doesn't already declare it)
+                                    if (field.name === 'startingBid') {
+                                        return (
+                                            <div key={field.name} className="mb-2">
+                                                {!hasCurrencyField && (
+                                                    <div className="mb-2">
+                                                        <label className="block mb-1 font-medium text-gray-600">Currency</label>
+                                                        <select
+                                                            className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                                            value={formData.currency}
+                                                            onChange={e => setFormData({ ...formData, currency: e.target.value })}
+                                                        >
+                                                            {currencies.length === 0 ? (
+                                                                <option value="">Loading...</option>
+                                                            ) : (
+                                                                currencies.map((currency) => (
+                                                                    <option key={currency.code} value={currency.code}>{currency.code} - {currency.name}</option>
+                                                                ))
+                                                            )}
+                                                        </select>
+                                                    </div>
+                                                )}
+                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <input
+                                                    type={field.type}
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                                    value={formData.details[field.name] || ''}
+                                                    onChange={e => setFormData({
+                                                        ...formData,
+                                                        details: { ...formData.details, [field.name]: e.target.value },
+                                                    })}
+                                                />
+                                            </div>
+                                        );
+                                    }
+
+                                    // Special currency-select type: render a currency dropdown bound to formData.currency
+                                    if (field.type === 'currency-select') {
+                                        return (
+                                            <div key={field.name} className="mb-2">
+                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <select
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                                    value={formData.currency}
+                                                    onChange={e => setFormData({ ...formData, currency: e.target.value })}
+                                                >
+                                                    {currencies.length === 0 ? (
+                                                        <option value="">Loading...</option>
+                                                    ) : (
+                                                        currencies.map((currency) => (
+                                                            <option key={currency.code} value={currency.code}>{currency.code} - {currency.name}</option>
+                                                        ))
+                                                    )}
+                                                </select>
+                                            </div>
+                                        );
+                                    }
+
+                                    if (field.type === 'select') {
+                                        return (
+                                            <div key={field.name} className="mb-2">
+                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <select
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                                    value={formData.details[field.name] || ''}
+                                                    onChange={e => setFormData({
+                                                        ...formData,
+                                                        details: { ...formData.details, [field.name]: e.target.value },
+                                                    })}
+                                                >
+                                                    <option value="">Select {field.label}</option>
+                                                    {field.options && field.options.map((opt: string) => (
+                                                        <option key={opt} value={opt}>{opt}</option>
+                                                    ))}
+                                                </select>
+                                            </div>
+                                        );
+                                    }
+                                    if (field.type === 'textarea') {
+                                        return (
+                                            <div key={field.name} className="mb-2">
+                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <textarea
+                                                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                                    value={formData.details[field.name] || ''}
+                                                    onChange={e => setFormData({
+                                                        ...formData,
+                                                        details: { ...formData.details, [field.name]: e.target.value },
+                                                    })}
+                                                />
+                                            </div>
+                                        );
+                                    }
+                                    // Default to text/number
+                                    return (
+                                        <div key={field.name} className="mb-2">
+                                            <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                            <input
+                                                type={field.type}
+                                                className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
+                                                value={formData.details[field.name] || ''}
+                                                onChange={e => setFormData({
+                                                    ...formData,
+                                                    details: { ...formData.details, [field.name]: e.target.value },
+                                                })}
+                                            />
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    )}
+
+
+                    {/* Submit Button */}
+                    <button
+                        type="submit"
+                        disabled={submitting}
+                        className={`w-full py-3 ${submitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} text-white font-bold rounded-lg shadow transition`}
+                    >
+                        {submitting ? 'Posting...' : 'Submit Ad'}
+                    </button>
+                </form>
+            </div>
+        </>
+    );
+}

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { Navbar } from '../components/layout/Navbar';
 import { useAuth } from '../hooks/useAuth';
 import { adService } from '../services/ad.service';
+import { bidService } from '../services/bid.service';
 import type { Ad } from '../types/ad.types';
 
 export const UserDashboardPage: React.FC = () => {
@@ -10,8 +11,10 @@ export const UserDashboardPage: React.FC = () => {
   const { user } = useAuth();
   const [myAds, setMyAds] = useState<Ad[]>([]);
   const [favoriteAds, setFavoriteAds] = useState<Ad[]>([]);
+  const [myBids, setMyBids] = useState<any[]>([]);
+  const [myAuctions, setMyAuctions] = useState<Ad[]>([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState<'my-ads' | 'favorites' | 'settings'>('my-ads');
+  const [activeTab, setActiveTab] = useState<'my-ads' | 'favorites' | 'settings' | 'my-bids' | 'my-auctions'>('my-ads');
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [passwordData, setPasswordData] = useState({
     currentPassword: '',
@@ -57,6 +60,18 @@ export const UserDashboardPage: React.FC = () => {
       
       console.log('Filtered user ads:', userAds);
       setMyAds(userAds);
+
+      // Load auctions posted by the user
+      const auctions = userAds.filter(a => a.category === 'Auction');
+      setMyAuctions(auctions);
+
+      // Load user's bids
+      try {
+        const bids = await bidService.getMyBids();
+        setMyBids(bids);
+      } catch (err) {
+        console.error('Error loading bids:', err);
+      }
 
       // Load favorite ads
       if (user?.favorites && user.favorites.length > 0) {
@@ -290,6 +305,26 @@ export const UserDashboardPage: React.FC = () => {
                 Favorites ({favoriteAds.length})
               </button>
               <button
+                onClick={() => setActiveTab('my-bids')}
+                className={`py-4 px-2 font-medium transition border-b-2 ${
+                  activeTab === 'my-bids'
+                    ? 'border-blue-600 text-blue-600'
+                    : 'border-transparent text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                My Bids ({myBids.length})
+              </button>
+              <button
+                onClick={() => setActiveTab('my-auctions')}
+                className={`py-4 px-2 font-medium transition border-b-2 ${
+                  activeTab === 'my-auctions'
+                    ? 'border-blue-600 text-blue-600'
+                    : 'border-transparent text-gray-600 hover:text-gray-900'
+                }`}
+              >
+                My Auctions ({myAuctions.length})
+              </button>
+              <button
                 onClick={() => setActiveTab('settings')}
                 className={`py-4 px-2 font-medium transition border-b-2 ${
                   activeTab === 'settings'
@@ -421,6 +456,67 @@ export const UserDashboardPage: React.FC = () => {
                               {ad.price && (
                                 <p className="text-lg font-bold text-blue-600 mt-2">${ad.price.toLocaleString()}</p>
                               )}
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                )}
+
+                {activeTab === 'my-bids' && (
+                  <div className="space-y-4">
+                    {myBids.length === 0 ? (
+                      <div className="text-center py-12">
+                        <p className="text-gray-600 mb-4">You haven't placed any bids yet</p>
+                      </div>
+                    ) : (
+                      myBids.map((b: any) => (
+                        <div key={b._id} className="border border-gray-200 rounded-lg p-4">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h3 className="text-lg font-semibold text-gray-900">Bid on: {b.auctionId?.title || 'Auction'}</h3>
+                              <p className="text-sm text-gray-600">Amount: {b.bidAmount}</p>
+                              <p className="text-sm text-gray-500">Placed: {formatDate(b.placedAt)}</p>
+                            </div>
+                            <div className="text-sm text-right">
+                              <span className="px-3 py-1 rounded-full bg-gray-100 text-gray-800">{b.status}</span>
+                            </div>
+                          </div>
+                        </div>
+                      ))
+                    )}
+                  </div>
+                )}
+
+                {activeTab === 'my-auctions' && (
+                  <div className="space-y-4">
+                    {myAuctions.length === 0 ? (
+                      <div className="text-center py-12">
+                        <p className="text-gray-600 mb-4">You haven't posted any auctions yet</p>
+                        <button
+                          onClick={() => navigate('/post-ad')}
+                          className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition"
+                        >
+                          Post an Auction
+                        </button>
+                      </div>
+                    ) : (
+                      myAuctions.map((ad) => (
+                        <div key={ad._id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <h3 className="text-lg font-semibold text-gray-900">{ad.title}</h3>
+                              <p className="text-sm text-gray-600">Status: {ad.auctionDetails?.auctionStatus || 'N/A'}</p>
+                              <p className="text-sm text-gray-500">Ends: {formatDate(ad.auctionDetails?.auctionEnd || '')}</p>
+                            </div>
+                            <div className="text-right">
+                              <button
+                                onClick={() => navigate(`/ad/${ad._id}`)}
+                                className="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded-lg transition"
+                              >
+                                View
+                              </button>
                             </div>
                           </div>
                         </div>

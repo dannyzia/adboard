@@ -62,6 +62,23 @@ app.get('/health', (req, res) => {
     timestamp: new Date().toISOString()
   });
 });
+// Serve dynamic form config
+const path = require('path');
+const fs = require('fs');
+app.get('/api/form-config', (req, res) => {
+  const configPath = path.join(__dirname, 'config', 'form-config.json');
+  fs.readFile(configPath, 'utf8', (err, data) => {
+    if (err) {
+      return res.status(500).json({ success: false, message: 'Could not load form config.' });
+    }
+    try {
+      const config = JSON.parse(data);
+      res.json(config);
+    } catch (parseErr) {
+      res.status(500).json({ success: false, message: 'Invalid form config format.' });
+    }
+  });
+});
 
 // API Routes
 app.use('/api/auth', require('./routes/auth.routes'));
@@ -72,6 +89,12 @@ app.use('/api/subscriptions', require('./routes/subscription.routes'));
 app.use('/api/payments', require('./routes/payment.routes'));
 app.use('/api/admin', require('./routes/admin.routes'));
 app.use('/api/upload', require('./routes/upload.routes'));
+app.use('/api/locations', require('./routes/location.routes'));
+app.use('/api/currencies', require('./routes/currency.routes'));
+// Bids / Auctions
+app.use('/api/bids', require('./routes/bid.routes'));
+
+// NOTE: auction sweep job is started after DB connection in startServer()
 
 // 404 Handler
 app.use((req, res) => {
@@ -96,13 +119,23 @@ app.use((err, req, res, next) => {
 // DATABASE CONNECTION
 // ============================================
 
+// Support an in-memory MongoDB for local development when MONGODB_URI is not provided.
+let _mongodInstance; // if we start an in-memory server, keep reference for shutdown
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-    
+    let mongoUri = process.env.MONGODB_URI;
+
+    if (!mongoUri) {
+      // Start an in-memory MongoDB server for local development (no mongod required)
+      // This is safe for development/testing only.
+      const { MongoMemoryServer } = require('mongodb-memory-server');
+      _mongodInstance = await MongoMemoryServer.create();
+      mongoUri = _mongodInstance.getUri();
+      console.log('⚠️  No MONGODB_URI provided — using in-memory MongoDB for development');
+    }
+
+    const conn = await mongoose.connect(mongoUri);
+
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);
     console.log(`📊 Database: ${conn.connection.name}`);
   } catch (error) {
@@ -132,6 +165,19 @@ const startServer = async () => {
     console.log('🚀 ========================================');
     console.log('');
   });
+
+  // Start auction sweep job (runs every minute) AFTER DB connection
+  try {
+    const { runAuctionSweep } = require('./jobs/auction.job');
+    // Run once on startup
+    runAuctionSweep().catch(err => console.error('Initial auction sweep error:', err));
+    // Schedule repeated runs (every 60 seconds)
+    setInterval(() => {
+      runAuctionSweep().catch(err => console.error('Scheduled auction sweep error:', err));
+    }, 60 * 1000);
+  } catch (err) {
+    console.warn('Auction job not started:', err.message || err);
+  }
 };
 
 // Handle Graceful Shutdown

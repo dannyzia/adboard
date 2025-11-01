@@ -163,7 +163,6 @@ router.get('/:id', async (req, res) => {
 router.post('/', protect, checkAdLimit, [
   body('title').trim().notEmpty().withMessage('Title is required'),
   body('description').trim().notEmpty().withMessage('Description is required'),
-  body('price').isNumeric().withMessage('Price must be a number'),
   body('category').notEmpty().withMessage('Category is required'),
   body('location.country').notEmpty().withMessage('Country is required'),
   body('location.state').notEmpty().withMessage('State is required'),
@@ -226,11 +225,10 @@ router.post('/', protect, checkAdLimit, [
     const expiresAt = new Date();
     expiresAt.setDate(expiresAt.getDate() + listingDuration);
     
-    // Create ad
-    const ad = await Ad.create({
+    // If Auction category, expect auctionDetails fields instead of price
+    let adPayload = {
       title,
       description,
-      price,
       currency,
       category,
       location,
@@ -241,7 +239,53 @@ router.post('/', protect, checkAdLimit, [
       user: req.user._id,
       isFeatured: plan.features.isFeatured,
       expiresAt
-    });
+    };
+
+    if (category === 'Auction') {
+      const { auctionEnd, startingBid, reservePrice } = req.body;
+      if (!auctionEnd || !startingBid) {
+        return res.status(400).json({ success: false, message: 'Auction requires auctionEnd and startingBid' });
+      }
+
+      // Validate auctionEnd is a valid future date and startingBid is positive
+      const auctionEndDate = new Date(auctionEnd);
+      if (isNaN(auctionEndDate.getTime())) {
+        return res.status(400).json({ success: false, message: 'Invalid auctionEnd date' });
+      }
+      if (auctionEndDate <= new Date()) {
+        return res.status(400).json({ success: false, message: 'auctionEnd must be a future date/time' });
+      }
+      const starting = parseFloat(startingBid);
+      if (isNaN(starting) || starting <= 0) {
+        return res.status(400).json({ success: false, message: 'startingBid must be a number greater than 0' });
+      }
+
+      adPayload.contactVisible = false; // hide contact until auction completes and paid
+      adPayload.auctionDetails = {
+        auctionEnd: new Date(auctionEnd),
+        startingBid: parseFloat(startingBid),
+        reservePrice: reservePrice ? parseFloat(reservePrice) : undefined,
+        currentBid: undefined,
+        currentWinnerId: undefined,
+        bidCount: 0,
+        auctionStatus: 'active',
+        winnerId: undefined,
+        winningBid: undefined,
+        paymentDeadline: undefined,
+        paymentReceived: false
+      };
+
+      // Do not set price for auction postings
+    } else {
+      // Non-auction: price is required
+      if (price === undefined || price === null || price === '') {
+        return res.status(400).json({ success: false, message: 'Price is required for non-auction listings' });
+      }
+      adPayload.price = parseFloat(price);
+    }
+
+    // Create ad
+    const ad = await Ad.create(adPayload);
     
     // Update user's ad usage
     req.user.subscription.adsUsed += 1;

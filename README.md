@@ -1,4 +1,29 @@
 # AdBoard - Classified Ads Platform
+Project README (original full documentation).
+
+# Adboard — runtime README
+
+This repository has been trimmed for runtime use. Non-runtime documentation, guides, and build artifacts were moved to `adboard_instructions/removed_for_run/` to keep the project root small and focused on running the application.
+
+If you need full documentation or build outputs (guides, setup notes, backups, or generated dist files), open:
+
+	adboard_instructions/removed_for_run/
+
+Status: runtime-ready. The app includes the dynamic Post Ad form with currency support; configuration files were validated to preserve runtime stability.
+
+Developer notes:
+- To restore any moved file, copy it from `adboard_instructions/removed_for_run/` back into the repo root.
+- After changes, run the TypeScript check:
+
+```powershell
+cd 'c:\Users\callz\OneDrive\Documents\My Projects\Websites\adboard'
+npx tsc --noEmit
+```
+
+For backend development (example): set your env vars and start the backend from the `backend/` folder.
+
+If you want me to also start a dev-server smoke test or restore the full `form-config.json`, tell me and I'll proceed.
+# AdBoard - Classified Ads Platform
 
 A modern, responsive classified ads platform built with React, TypeScript, and Tailwind CSS. Features infinite scroll, authentication, and a clean minimal UI.
 

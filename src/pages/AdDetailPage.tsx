@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { adService } from '../services/ad.service';
+import { bidService } from '../services/bid.service';
+import { useAuth } from '../hooks/useAuth';
 import { Ad } from '../types';
 import { LoadingSpinner } from '../components/layout/LoadingSpinner';
 import { formatTimeAgo, formatDate } from '../utils/helpers';
@@ -16,6 +18,12 @@ export const AdDetailPage: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [showShareModal, setShowShareModal] = useState(false);
   const [copySuccess, setCopySuccess] = useState(false);
+  const { user } = useAuth();
+  const [bids, setBids] = useState<any[]>([]);
+  const [bidAmount, setBidAmount] = useState<string>('');
+  const [placingBid, setPlacingBid] = useState(false);
+  const [bidError, setBidError] = useState<string | null>(null);
+  const [bidSuccess, setBidSuccess] = useState<string | null>(null);
 
   // Helper to get image URL (handle both string and object formats)
   const getImageUrl = (image: string | { url: string; publicId?: string; order?: number } | undefined): string => {
@@ -30,13 +38,23 @@ export const AdDetailPage: React.FC = () => {
       
       try {
         setLoading(true);
-        const fetchedAd = await adService.getAdById(id);
-        setAd(fetchedAd);
+  const fetchedAd = await adService.getAdById(id);
+  setAd(fetchedAd);
         
         // Fetch similar ads (only if location exists)
         if (fetchedAd.location) {
           const similar = await adService.getSimilarAds(id, fetchedAd.category, fetchedAd.location);
           setSimilarAds(similar);
+        }
+
+        // If auction, load bids
+        if (fetchedAd.category === 'Auction') {
+          try {
+            const fetchedBids = await bidService.getAuctionBids(fetchedAd._id);
+            setBids(fetchedBids || []);
+          } catch (err) {
+            console.error('Failed to load bids:', err);
+          }
         }
       } catch (err: any) {
         setError(err.message || 'Failed to load ad');
@@ -342,6 +360,92 @@ export const AdDetailPage: React.FC = () => {
                 </div>
               </div>
             </div>
+
+            {/* Auction / Bidding Widget */}
+            {ad.category === 'Auction' && (
+              <div className="bg-white rounded-lg shadow p-6 mb-6 sticky top-24">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">Auction</h3>
+                <div className="mb-3">
+                  <div className="text-sm text-gray-600">Current Bid</div>
+                  <div className="text-2xl font-bold text-blue-600">{ad.auctionDetails?.currentBid ? `${ad.auctionDetails.currentBid} ${ad.currency || 'USD'}` : `Starting ${ad.auctionDetails?.startingBid || '0'} ${ad.currency || 'USD'}`}</div>
+                </div>
+                <div className="mb-3">
+                  <div className="text-sm text-gray-600">Ends</div>
+                  <div className="text-sm text-gray-800">{ad.auctionDetails?.auctionEnd ? formatDate(ad.auctionDetails.auctionEnd) : 'N/A'}</div>
+                </div>
+
+                <div className="mb-3">
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Your Bid</label>
+                  <input
+                    type="number"
+                    min={0}
+                    step="0.01"
+                    value={bidAmount}
+                    onChange={(e) => setBidAmount(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                    placeholder={`Enter amount in ${ad.currency || 'USD'}`}
+                  />
+                </div>
+
+                {bidError && <div className="text-red-600 text-sm mb-2">{bidError}</div>}
+                {bidSuccess && <div className="text-green-600 text-sm mb-2">{bidSuccess}</div>}
+
+                <button
+                  onClick={async () => {
+                    setBidError(null);
+                    setBidSuccess(null);
+                    if (!user) {
+                      setBidError('You must be logged in to place a bid');
+                      return;
+                    }
+                    const amount = parseFloat(bidAmount);
+                    const current = ad.auctionDetails?.currentBid ?? ad.auctionDetails?.startingBid ?? 0;
+                    if (isNaN(amount) || amount <= current) {
+                      setBidError(`Bid must be greater than current bid (${current})`);
+                      return;
+                    }
+
+                    setPlacingBid(true);
+                    try {
+                      await bidService.placeBid(ad._id, amount);
+                      setBidSuccess('Bid placed successfully');
+                      // Refresh ad and bids
+                      const refreshed = await adService.getAdById(ad._id);
+                      setAd(refreshed);
+                      const updatedBids = await bidService.getAuctionBids(ad._id);
+                      setBids(updatedBids || []);
+                      setBidAmount('');
+                    } catch (err: any) {
+                      console.error('Place bid error:', err);
+                      setBidError(err?.response?.data?.message || err?.message || 'Failed to place bid');
+                    } finally {
+                      setPlacingBid(false);
+                    }
+                  }}
+                  disabled={placingBid}
+                  className={`w-full py-3 ${placingBid ? 'bg-gray-400 cursor-not-allowed' : 'bg-green-600 hover:bg-green-700'} text-white font-bold rounded-lg transition`}
+                >
+                  {placingBid ? 'Placing bid...' : 'Place Bid'}
+                </button>
+
+                {/* Simple bid history */}
+                <div className="mt-4">
+                  <h4 className="text-sm font-semibold text-gray-700 mb-2">Recent Bids</h4>
+                  {bids.length === 0 ? (
+                    <div className="text-sm text-gray-600">No bids yet</div>
+                  ) : (
+                    <div className="space-y-2 max-h-48 overflow-y-auto">
+                      {bids.map((b: any) => (
+                        <div key={b._id} className="flex justify-between text-sm">
+                          <div>{b.bidderId?.name || 'User'}</div>
+                          <div className="font-medium">{b.bidAmount}</div>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+            )}
 
             {/* Similar Ads */}
             {similarAds.length > 0 && (

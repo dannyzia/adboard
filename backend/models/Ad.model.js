@@ -15,13 +15,49 @@ const adSchema = new mongoose.Schema({
   },
   price: {
     type: Number,
-    required: [true, 'Price is required'],
+    // Price is optional because Auction category uses auctionDetails.startingBid/currentBid
     min: [0, 'Price cannot be negative']
   },
   currency: {
     type: String,
     default: 'USD',
     uppercase: true
+  },
+  // Whether seller contact info is visible to non-logged users (set to false for auctions by default)
+  contactVisible: {
+    type: Boolean,
+    default: true
+  },
+
+  // Auction-specific details (present when category === 'Auction')
+  auctionDetails: {
+    startingBid: Number,
+    reservePrice: Number,
+    currentBid: Number,
+    currentWinnerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    bidCount: {
+      type: Number,
+      default: 0
+    },
+    auctionEnd: Date,
+    auctionStatus: {
+      type: String,
+      enum: ['scheduled', 'active', 'ended', 'payment-pending', 'completed', 'failed'],
+      default: 'scheduled'
+    },
+    winnerId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    winningBid: Number,
+    paymentDeadline: Date,
+    paymentReceived: {
+      type: Boolean,
+      default: false
+    }
   },
   category: {
     type: String,
@@ -130,7 +166,13 @@ const adSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
-  archiveReason: String
+  archiveReason: String,
+
+  // Flexible details for category-specific fields
+    details: {
+      type: mongoose.Schema.Types.Mixed,
+      default: {}
+    }
   
 }, {
   timestamps: true
@@ -141,7 +183,6 @@ adSchema.index({ status: 1, createdAt: -1 });
 adSchema.index({ category: 1, status: 1 });
 adSchema.index({ 'location.country': 1, 'location.state': 1, 'location.city': 1 });
 adSchema.index({ user: 1 });
-adSchema.index({ slug: 1 });
 adSchema.index({ expiresAt: 1 });
 
 // Generate slug before saving

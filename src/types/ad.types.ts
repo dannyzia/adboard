@@ -51,6 +51,20 @@ export interface Ad {
   deletionReason?: string;
   legalHold?: boolean;
   retentionUntil?: string;
+  // Auction details (optional, present when category === 'Auction')
+  auctionDetails?: {
+    auctionEnd?: string;
+    startingBid?: number;
+    reservePrice?: number;
+    currentBid?: number;
+    currentWinnerId?: string;
+    bidCount?: number;
+    auctionStatus?: 'scheduled' | 'active' | 'ended' | 'payment-pending' | 'completed' | 'failed';
+    winnerId?: string;
+    winningBid?: number;
+    paymentDeadline?: string;
+    paymentReceived?: boolean;
+  };
 }
 
 export interface AdFilters {

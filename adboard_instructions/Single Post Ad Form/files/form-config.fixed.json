@@ -1,0 +1,1519 @@
+{
+  "categories": [
+    "Electronics",
+    "Cars & Trucks",
+    "Motorcycles",
+    "Boats & Marine",
+    "RVs & Campers",
+    "Houses for Sale",
+    "Apartments for Rent",
+    "Commercial Property",
+    "Vacation Rentals",
+    "Jobs",
+    "Services",
+    "Fashion",
+    "Home & Garden",
+    "Sports",
+    "Books",
+    "Pets",
+    "Food & Dining",
+    "Travel & Resorts",
+    "Deals & Offers",
+    "Tickets",
+    "Events & Shows",
+    "Auction",
+    "Buy & Sell",
+    "Notices",
+    "Health & Beauty",
+    "Baby & Kids",
+    "Arts & Crafts",
+    "Musical Instruments",
+    "Office Supplies",
+    "Digital Products",
+    "Software & Apps",
+    "Tutoring & Lessons",
+    "Home Repair",
+    "Free",
+    "Other"
+  ],
+  "specificFields": {
+    "Electronics": [
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used",
+          "Refurbished"
+        ]
+      },
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number"
+      },
+      {
+        "name": "warranty",
+        "label": "Warranty",
+        "type": "select",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "specifications",
+        "label": "Specifications",
+        "type": "textarea"
+      },
+      {
+        "name": "color",
+        "label": "Color",
+        "type": "text"
+      },
+      {
+        "name": "storageCapacity",
+        "label": "Storage Capacity",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable",
+          "Auction"
+        ]
+      }
+    ],
+    "Cars & Trucks": [
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number"
+      },
+      {
+        "name": "mileage",
+        "label": "Mileage",
+        "type": "number"
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "fuelType",
+        "label": "Fuel Type",
+        "type": "select",
+        "options": [
+          "Gasoline",
+          "Diesel",
+          "Electric"
+        ]
+      },
+      {
+        "name": "transmission",
+        "label": "Transmission",
+        "type": "select",
+        "options": [
+          "Auto",
+          "Manual"
+        ]
+      },
+      {
+        "name": "vin",
+        "label": "VIN",
+        "type": "text"
+      },
+      {
+        "name": "color",
+        "label": "Color",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Motorcycles": [
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number"
+      },
+      {
+        "name": "mileage",
+        "label": "Mileage",
+        "type": "number"
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "engineSize",
+        "label": "Engine Size (cc)",
+        "type": "number"
+      },
+      {
+        "name": "type",
+        "label": "Type",
+        "type": "select",
+        "options": [
+          "Sport",
+          "Cruiser",
+          "Scooter"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Boats & Marine": [
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number"
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "length",
+        "label": "Length",
+        "type": "text"
+      },
+      {
+        "name": "engineType",
+        "label": "Engine Type",
+        "type": "select",
+        "options": [
+          "Inboard",
+          "Outboard"
+        ]
+      },
+      {
+        "name": "hullMaterial",
+        "label": "Hull Material",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "RVs & Campers": [
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "year",
+        "label": "Year",
+        "type": "number"
+      },
+      {
+        "name": "mileage",
+        "label": "Mileage",
+        "type": "number"
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "sleepingCapacity",
+        "label": "Sleeping Capacity",
+        "type": "number"
+      },
+      {
+        "name": "amenities",
+        "label": "Amenities",
+        "type": "checkbox",
+        "options": [
+          "Kitchen",
+          "Bathroom",
+          "AC"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Houses for Sale": [
+      {
+        "name": "propertyType",
+        "label": "Property Type",
+        "type": "text"
+      },
+      {
+        "name": "bedrooms",
+        "label": "Bedrooms",
+        "type": "number"
+      },
+      {
+        "name": "bathrooms",
+        "label": "Bathrooms",
+        "type": "number"
+      },
+      {
+        "name": "squareFootage",
+        "label": "Square Footage",
+        "type": "number"
+      },
+      {
+        "name": "lotSize",
+        "label": "Lot Size",
+        "type": "number"
+      },
+      {
+        "name": "yearBuilt",
+        "label": "Year Built",
+        "type": "number"
+      },
+      {
+        "name": "garage",
+        "label": "Garage",
+        "type": "select",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable",
+          "Auction"
+        ]
+      }
+    ],
+    "Apartments for Rent": [
+      {
+        "name": "propertyType",
+        "label": "Property Type",
+        "type": "text"
+      },
+      {
+        "name": "bedrooms",
+        "label": "Bedrooms",
+        "type": "number"
+      },
+      {
+        "name": "bathrooms",
+        "label": "Bathrooms",
+        "type": "number"
+      },
+      {
+        "name": "rentFrequency",
+        "label": "Rent Frequency",
+        "type": "select",
+        "options": [
+          "Monthly",
+          "Weekly"
+        ]
+      },
+      {
+        "name": "utilitiesIncluded",
+        "label": "Utilities Included",
+        "type": "checkbox",
+        "options": [
+          "Water",
+          "Electricity"
+        ]
+      },
+      {
+        "name": "furnished",
+        "label": "Furnished",
+        "type": "select",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Rent Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Commercial Property": [
+      {
+        "name": "propertyType",
+        "label": "Property Type",
+        "type": "text"
+      },
+      {
+        "name": "bedrooms",
+        "label": "Bedrooms (if applicable)",
+        "type": "number"
+      },
+      {
+        "name": "bathrooms",
+        "label": "Bathrooms",
+        "type": "number"
+      },
+      {
+        "name": "squareFootage",
+        "label": "Square Footage",
+        "type": "number"
+      },
+      {
+        "name": "zoningType",
+        "label": "Zoning Type",
+        "type": "select",
+        "options": [
+          "Retail",
+          "Office"
+        ]
+      },
+      {
+        "name": "leaseTerms",
+        "label": "Lease Terms",
+        "type": "textarea"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Vacation Rentals": [
+      {
+        "name": "propertyType",
+        "label": "Property Type",
+        "type": "text"
+      },
+      {
+        "name": "bedrooms",
+        "label": "Bedrooms",
+        "type": "number"
+      },
+      {
+        "name": "bathrooms",
+        "label": "Bathrooms",
+        "type": "number"
+      },
+      {
+        "name": "checkInOutDates",
+        "label": "Check-in/Check-out Dates",
+        "type": "date"
+      },
+      {
+        "name": "amenities",
+        "label": "Amenities",
+        "type": "checkbox",
+        "options": [
+          "Pool",
+          "WiFi"
+        ]
+      },
+      {
+        "name": "maxGuests",
+        "label": "Max Guests",
+        "type": "number"
+      },
+      {
+        "name": "price",
+        "label": "Price per Night",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Seasonal"
+        ]
+      }
+    ],
+    "Jobs": [
+      {
+        "name": "jobType",
+        "label": "Job Type",
+        "type": "select",
+        "options": [
+          "Full-time",
+          "Part-time",
+          "Freelance"
+        ]
+      },
+      {
+        "name": "salaryRange",
+        "label": "Salary Range",
+        "type": "text"
+      },
+      {
+        "name": "experienceRequired",
+        "label": "Experience Required (years)",
+        "type": "number"
+      },
+      {
+        "name": "remoteOnsite",
+        "label": "Remote/On-site",
+        "type": "select",
+        "options": [
+          "Remote",
+          "On-site",
+          "Hybrid"
+        ]
+      },
+      {
+        "name": "applicationDeadline",
+        "label": "Application Deadline",
+        "type": "date"
+      },
+      {
+        "name": "compensationType",
+        "label": "Compensation Type",
+        "type": "select",
+        "options": [
+          "Annual",
+          "Hourly",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Services": [
+      {
+        "name": "serviceType",
+        "label": "Service Type",
+        "type": "text"
+      },
+      {
+        "name": "availability",
+        "label": "Availability",
+        "type": "text"
+      },
+      {
+        "name": "experienceLevel",
+        "label": "Experience Level (years)",
+        "type": "number"
+      },
+      {
+        "name": "certifications",
+        "label": "Certifications",
+        "type": "textarea"
+      },
+      {
+        "name": "price",
+        "label": "Service Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Hourly",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Fashion": [
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "size",
+        "label": "Size",
+        "type": "select",
+        "options": [
+          "XS",
+          "S",
+          "M",
+          "L",
+          "XL"
+        ]
+      },
+      {
+        "name": "material",
+        "label": "Material",
+        "type": "text"
+      },
+      {
+        "name": "gender",
+        "label": "Gender",
+        "type": "select",
+        "options": [
+          "Male",
+          "Female",
+          "Unisex"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Home & Garden": [
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "dimensions",
+        "label": "Dimensions",
+        "type": "text"
+      },
+      {
+        "name": "material",
+        "label": "Material",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Sports": [
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "sportType",
+        "label": "Sport Type",
+        "type": "select",
+        "options": [
+          "Soccer",
+          "Gym",
+          "Cycling"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Books": [
+      {
+        "name": "author",
+        "label": "Author",
+        "type": "text"
+      },
+      {
+        "name": "genre",
+        "label": "Genre",
+        "type": "text"
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "isbn",
+        "label": "ISBN",
+        "type": "text"
+      },
+      {
+        "name": "edition",
+        "label": "Edition",
+        "type": "number"
+      },
+      {
+        "name": "format",
+        "label": "Format",
+        "type": "select",
+        "options": [
+          "Paperback",
+          "Hardcover",
+          "Ebook"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Pets": [
+      {
+        "name": "petType",
+        "label": "Pet Type",
+        "type": "text"
+      },
+      {
+        "name": "breed",
+        "label": "Breed",
+        "type": "text"
+      },
+      {
+        "name": "age",
+        "label": "Age",
+        "type": "text"
+      },
+      {
+        "name": "gender",
+        "label": "Gender",
+        "type": "select",
+        "options": [
+          "Male",
+          "Female"
+        ]
+      },
+      {
+        "name": "vaccinated",
+        "label": "Vaccinated",
+        "type": "select",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Adoption Fee",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Food & Dining": [
+      {
+        "name": "cuisineType",
+        "label": "Cuisine Type",
+        "type": "select",
+        "options": [
+          "Italian",
+          "Asian",
+          "Fast Food"
+        ]
+      },
+      {
+        "name": "dietaryOptions",
+        "label": "Dietary Options",
+        "type": "checkbox",
+        "options": [
+          "Vegan",
+          "Gluten-Free"
+        ]
+      },
+      {
+        "name": "ingredients",
+        "label": "Ingredients",
+        "type": "textarea"
+      },
+      {
+        "name": "expirationDate",
+        "label": "Expiration Date",
+        "type": "date"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Per Item"
+        ]
+      }
+    ],
+    "Travel & Resorts": [
+      {
+        "name": "venue",
+        "label": "Venue/Destination",
+        "type": "text"
+      },
+      {
+        "name": "duration",
+        "label": "Duration (days)",
+        "type": "number"
+      },
+      {
+        "name": "inclusions",
+        "label": "Inclusions",
+        "type": "checkbox",
+        "options": [
+          "Flights",
+          "Meals"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Per Person"
+        ]
+      }
+    ],
+    "Deals & Offers": [
+      {
+        "name": "discountPercentage",
+        "label": "Discount Percentage",
+        "type": "number"
+      },
+      {
+        "name": "validityPeriod",
+        "label": "Validity Period",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Offer Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Discounted",
+          "Bundle"
+        ]
+      }
+    ],
+    "Tickets": [
+      {
+        "name": "eventDate",
+        "label": "Event Date",
+        "type": "date"
+      },
+      {
+        "name": "venue",
+        "label": "Venue",
+        "type": "text"
+      },
+      {
+        "name": "ticketType",
+        "label": "Ticket Type",
+        "type": "select",
+        "options": [
+          "VIP",
+          "General"
+        ]
+      },
+      {
+        "name": "quantityAvailable",
+        "label": "Quantity Available",
+        "type": "number"
+      },
+      {
+        "name": "price",
+        "label": "Ticket Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Group Discount"
+        ]
+      }
+    ],
+    "Events & Shows": [
+      {
+        "name": "eventDate",
+        "label": "Event Date",
+        "type": "date"
+      },
+      {
+        "name": "venue",
+        "label": "Venue",
+        "type": "text"
+      },
+      {
+        "name": "organizer",
+        "label": "Organizer",
+        "type": "text"
+      },
+      {
+        "name": "capacity",
+        "label": "Capacity",
+        "type": "number"
+      },
+      {
+        "name": "price",
+        "label": "Ticket Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Donation",
+          "Free"
+        ]
+      }
+    ],
+    "Auction": [
+      {
+        "name": "auctionEnd",
+        "label": "Auction End",
+        "type": "date"
+      },
+      {
+        "name": "startingBid",
+        "label": "Starting Bid",
+        "type": "number"
+      },
+      {
+        "name": "reservePrice",
+        "label": "Reserve Price",
+        "type": "number"
+      },
+      {
+        "name": "itemLocation",
+        "label": "Item Location",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Current Bid",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Auction"
+        ]
+      }
+    ],
+    "Buy & Sell": [
+      {
+        "name": "deliveryOptions",
+        "label": "Delivery Options",
+        "type": "select",
+        "options": [
+          "Pickup",
+          "Shipping"
+        ]
+      },
+      {
+        "name": "paymentMethods",
+        "label": "Payment Methods",
+        "type": "checkbox",
+        "options": [
+          "Cash",
+          "Card"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Notices": [
+      {
+        "name": "noticeType",
+        "label": "Notice Type",
+        "type": "text"
+      },
+      {
+        "name": "effectiveDate",
+        "label": "Effective Date",
+        "type": "date"
+      },
+      {
+        "name": "contactPerson",
+        "label": "Contact Person",
+        "type": "text"
+      }
+    ],
+    "Health & Beauty": [
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "ingredients",
+        "label": "Ingredients",
+        "type": "textarea"
+      },
+      {
+        "name": "expirationDate",
+        "label": "Expiration Date",
+        "type": "date"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Baby & Kids": [
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "age",
+        "label": "Age Range",
+        "type": "text"
+      },
+      {
+        "name": "safetyCertifications",
+        "label": "Safety Certifications",
+        "type": "select",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Arts & Crafts": [
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "medium",
+        "label": "Medium",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Musical Instruments": [
+      {
+        "name": "instrumentType",
+        "label": "Instrument Type",
+        "type": "text"
+      },
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "accessoriesIncluded",
+        "label": "Accessories Included",
+        "type": "select",
+        "options": [
+          "Yes",
+          "No"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ],
+    "Office Supplies": [
+      {
+        "name": "condition",
+        "label": "Condition",
+        "type": "select",
+        "options": [
+          "New",
+          "Used"
+        ]
+      },
+      {
+        "name": "brandModel",
+        "label": "Brand/Model",
+        "type": "text"
+      },
+      {
+        "name": "quantity",
+        "label": "Quantity",
+        "type": "number"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Per Unit"
+        ]
+      }
+    ],
+    "Digital Products": [
+      {
+        "name": "digitalFormat",
+        "label": "Digital Format",
+        "type": "text"
+      },
+      {
+        "name": "fileSize",
+        "label": "File Size (MB)",
+        "type": "number"
+      },
+      {
+        "name": "compatibility",
+        "label": "Compatibility",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Subscription"
+        ]
+      }
+    ],
+    "Software & Apps": [
+      {
+        "name": "digitalFormat",
+        "label": "Digital Format",
+        "type": "text"
+      },
+      {
+        "name": "licenseType",
+        "label": "License Type",
+        "type": "select",
+        "options": [
+          "Perpetual",
+          "Subscription"
+        ]
+      },
+      {
+        "name": "version",
+        "label": "Version",
+        "type": "text"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Subscription"
+        ]
+      }
+    ],
+    "Tutoring & Lessons": [
+      {
+        "name": "lessonType",
+        "label": "Lesson Type",
+        "type": "text"
+      },
+      {
+        "name": "subject",
+        "label": "Subject",
+        "type": "text"
+      },
+      {
+        "name": "level",
+        "label": "Level",
+        "type": "select",
+        "options": [
+          "Beginner",
+          "Advanced"
+        ]
+      },
+      {
+        "name": "mode",
+        "label": "Mode",
+        "type": "select",
+        "options": [
+          "Online",
+          "In-person"
+        ]
+      },
+      {
+        "name": "price",
+        "label": "Lesson Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Per Hour",
+          "Package"
+        ]
+      }
+    ],
+    "Home Repair": [
+      {
+        "name": "repairType",
+        "label": "Repair Type",
+        "type": "text"
+      },
+      {
+        "name": "pickupLocation",
+        "label": "Pickup Location",
+        "type": "text"
+      },
+      {
+        "name": "toolsRequired",
+        "label": "Tools Required",
+        "type": "textarea"
+      },
+      {
+        "name": "price",
+        "label": "Repair Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Estimate"
+        ]
+      }
+    ],
+    "Free": [
+      {
+        "name": "reasonForGivingAway",
+        "label": "Reason for Giving Away",
+        "type": "textarea"
+      },
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number",
+        "value": 0,
+        "readOnly": true
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "text",
+        "value": "Free",
+        "readOnly": true
+      }
+    ],
+    "Other": [
+      {
+        "name": "price",
+        "label": "Price",
+        "type": "number"
+      },
+      {
+        "name": "priceType",
+        "label": "Price Type",
+        "type": "select",
+        "options": [
+          "Fixed",
+          "Negotiable"
+        ]
+      }
+    ]
+  }
+}
