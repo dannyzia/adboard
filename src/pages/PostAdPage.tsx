@@ -247,6 +247,22 @@ export const PostAdPage: React.FC = () => {
             <div className="container mx-auto py-8">
                 <h1 className="text-2xl font-bold mb-6">Post an Ad</h1>
                 <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white rounded-lg shadow-md p-8 space-y-6 border border-gray-200">
+                    {/* Category (moved to top) */}
+                    <div>
+                        <label className="block mb-2 font-semibold text-gray-700">Category</label>
+                        <select
+                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            value={formData.category}
+                            onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+                            required
+                        >
+                            <option value="">Select category</option>
+                            {formConfig && formConfig.categories && formConfig.categories.map((cat: string) => (
+                                <option key={cat} value={cat}>{cat}</option>
+                            ))}
+                        </select>
+                    </div>
+
                     {/* Title */}
                     <div>
                         <label className="block mb-2 font-semibold text-gray-700">Title</label>
@@ -267,21 +283,6 @@ export const PostAdPage: React.FC = () => {
                             onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                             required
                         />
-                    </div>
-                    {/* Category */}
-                    <div>
-                        <label className="block mb-2 font-semibold text-gray-700">Category</label>
-                        <select
-                            className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
-                            value={formData.category}
-                            onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                            required
-                        >
-                            <option value="">Select category</option>
-                            {formConfig && formConfig.categories && formConfig.categories.map((cat: string) => (
-                                <option key={cat} value={cat}>{cat}</option>
-                            ))}
-                        </select>
                     </div>
                     {/* Image Upload Section */}
                     <div>
