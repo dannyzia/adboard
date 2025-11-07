@@ -1,0 +1,17 @@
+[
+  {
+    "country": "Moldova",
+    "currencyCode": "MDL",
+    "currencyName": "Moldovan Leu",
+    "states": [
+      {"name": "Drochia District", "cities": ["Drochia", "Antoneuca", "Baroncea", "Chetroșica", "Cotova", "Gribova", "Măcăreuca", "Mihailovca", "Popeștii Noi", "Șuri", "Zgurița"]},
+      {"name": "Dubăsari District", "cities": ["Cocieri", "Corjova", "Coșnița", "Doroțcaia", "Holercani", "Marcăuți", "Molovata", "Oxentea", "Pîrîta", "Ustia", "Varnița"]},
+      {"name": "Edineț District", "cities": ["Edineț", "Alexăndreni", "Bleșteni", "Brătușeni", "Burlănești", "Chipăreni", "Cupcini", "Fetești", "Gașpar", "Gordinești", "Hancăuți", "Hincăuți", "Lopatnic", "Parcova", "Ruseni", "Zăbriceni"]},
+      {"name": "Fălești District", "cities": ["Fălești", "Albinețul Vechi", "Bălănești", "Bocani", "Călinești", "Călugăr", "Chetrosu", "Cîmpulung", "Costiș", "Doltu", "Glinjeni", "Hiliuți", "Hîncești", "Ișnovăț", "Izvoraș", "Măgura", "Mărinești", "Musteața", "Năpădeni", "Ocnița", "Pietrosu", "Pîrlița", "Pocrovca", "Rădoaia", "Răuseni", "Sărata", "Scumpia", "Sofia"]},
+      {"name": "Florești District", "cities": ["Florești", "Alexeevca", "Băhrinești", "Căprești", "Cernița", "Ciumul", "Ciutulești", "Cobîlea", "Cuhureștii de Sus", "Cunicea", "Domulgeni", "Frumușica", "Ghindești", "Gura Căinarului", "Gura Camencii", "Iliciovca", "Izvoare", "Lunga", "Mărculești", "Nicolaevca", "Prajila", "Prodănești", "Putinești", "Rădulenii Noi", "Rădulenii Vechi", "Roșietici", "Sănătăuca", "Sevirova", "Ștefănești", "Temeleuți", "Tîrgul Vertiujeni", "Tirnova", "Unchitești", "Vărvăreuca", "Verejeni", "Viișoara", "Zăluceni"]},
+      {"name": "Gagauzia", "cities": ["Comrat", "Ceadîr-Lunga", "Vulcănești", "Copceac", "Congaz", "Avdarma", "Baurci", "Beșalma", "Beșghioz", "Bugeac", "Carbalia", "Cazaclia", "Chioselia", "Chiriet-Lunga", "Cioc-Maidan", "Cișmichioi", "Congazcic", "Copceac", "Cotovscoe", "Dezghingea", "Dudulești", "Etulia", "Ferapontievca", "Gaidar", "Ivanovca", "Joltai", "Svetlîi", "Tomai", "Valea Perjei"]},
+      {"name": "Glodeni District", "cities": ["Glodeni", "Balatina", "Camenca", "Călinești", "Cuhnești", "Danu", "Dușmani", "Fundurii Noi", "Fundurii Vechi", "Hîjdieni", "Iabloana", "Limbenii Noi", "Limbenii Vechi", "Petrunea", "Sturzovca", "Ustia", "Viișoara"]},
+      {"name": "Hîncești District", "cities": ["Hîncești", "Bobeica", "Boghiceni", "Bozieni", "Bujor", "Caracui", "Cărpineni", "Cățălânga", "Cioara", "Ciuciuleni", "Cornești", "Cotul Morii", "Drăgușenii Noi", "Drăgușenii Vechi", "Ivanovca", "Leușeni", "Lăpușna", "Mereșeni", "Mingir", "Mirești", "Nemțeni", "Obileni", "Onești", "Pașcani", "Pereni", "Pogănești", "Rusca", "Sărata-Galbenă", "Sărata-Mereșeni", "Secăreni", "Stolniceni", "Șipoteni"]}
+    ]
+  }
+]

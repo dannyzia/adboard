@@ -62,7 +62,7 @@ Day 4: Final Testing
 Open PowerShell in your backend folder:
 
 ```powershell
-cd "C:\Users\callz\OneDrive\Documents\My Projects\Websites\adboard\backend"
+cd backend
 npm install
 ```
 

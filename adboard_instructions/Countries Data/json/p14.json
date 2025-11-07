@@ -1,0 +1,58 @@
+[
+  {
+    "country": "Mongolia",
+    "currencyCode": "MNT",
+    "currencyName": "Mongolian Tögrög",
+    "states": [
+      {"name": "Khövsgöl Province", "cities": ["Mörön", "Alag-Erdene", "Arbulag", "Bayanzürkh", "Bürentogtokh", "Chandmani-Öndör", "Erdenebulgan", "Galt", "Ikh-Uul", "Jargalant", "Rashaant", "Rinchinlhumbe", "Shine-Ider", "Tarialan", "Tosontsengel", "Tömörbulag", "Tsagaannuur", "Tsagaan-Uul", "Tsetserleg", "Tünel", "Ulaan-Uul"]},
+      {"name": "Orkhon Province", "cities": ["Erdenet", "Jargalant", "Bayangol", "Bayan-Undur"]},
+      {"name": "Ömnögovi Province", "cities": ["Dalanzadgad", "Bayan-Ovoo", "Bayandalai", "Bulgan", "Gurvan tes", "Khanbogd", "Khan khongor", "Khürmen", "Mandal-Ovoo", "Manlai", "Noen", "Noyon", "Savrai", "Sevrei", "Tsogt-Ovoo", "Tsogttsetsii"]},
+      {"name": "Övörkhangai Province", "cities": ["Arvaikheer", "Baruunbayan-Ulaan", "Bat-Ölzii", "Bayan-Öndör", "Bayangol", "Bogd", "Bürd", "Guchin-Us", "Khairkhandulaan", "Kharkhorin", "Khujirt", "Nariinteel", "Ölziit", "Sant", "Taragt", "Tögrög", "Uyanga", "Yesönzüil"]},
+      {"name": "Selenge Province", "cities": ["Sükhbaatar", "Altanbulag", "Baruunbüren", "Bayangol", "Javhlant", "Khüder", "Mandal", "Orkhon", "Orkhontuul", "Sant", "Saikhan", "Shaamar", "Tsagaannuur", "Tüshig", "Yeröö", "Züünbüren"]},
+      {"name": "Sükhbaatar Province", "cities": ["Baruun-Urt", "Asgat", "Bayandelger", "Dariganga", "Erdenetsagaan", "Khalzan", "Mönkhkhaan", "Naran", "Ongon", "Sükhbaatar", "Tüvshinshiree", "Uulbayan"]},
+      {"name": "Töv Province", "cities": ["Zuunmod", "Altanbulag", "Argalant", "Arkhust", "Batsümber", "Bayan", "Bayan-Önjüül", "Bayanchandmani", "Bayandelger", "Bayanjargalan", "Bayankhangai", "Bayantsagaan", "Bayantsogt", "Büren", "Delgerkhaan", "Erdene", "Jargalant", "Lün", "Möngönmorit", "Öndörshireet", "Sergelen", "Sümber", "Tseel", "Ugtaal", "Zaamar"]},
+      {"name": "Ulaanbaatar", "cities": ["Ulaanbaatar", "Bayangol", "Bayanzürkh", "Sükhbaatar", "Khan-Uul", "Songino Khairkhan", "Chingeltei", "Nalaikh", "Baganuur", "Bagakhangai"]},
+      {"name": "Uvs Province", "cities": ["Ulaangom", "Baruunturuun", "Böhmörön", "Davst", "Khovd", "Khyargas", "Malchin", "Naranbulag", "Ölgii", "Ömnögovi", "Öndörkhaan", "Sagil", "Tarialan", "Tes", "Tsagaankhairkhan", "Türgen", "Zavkhan", "Züüngovi"]},
+      {"name": "Zavkhan Province", "cities": ["Uliastai", "Aldarkhaan", "Asgat", "Bayantes", "Bayankhairkhan", "Dörvöljin", "Erdenekhairkhan", "Ider", "Ikh-Uul", "Numrug", "Otgon", "Santmargats", "Shiluustei", "Songino", "Telmen", "Tes", "Tosontsengel", "Tsagaanchuluut", "Tsetsen-Uul", "Tüdevtei", "Urgamal", "Yaruu", "Zavkhanmandal"]}
+    ]
+  },
+  {
+    "country": "Montenegro",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {"name": "Andrijevica Municipality", "cities": ["Andrijevica"]},
+      {"name": "Bar Municipality", "cities": ["Bar", "Sutomore", "Šušanj", "Stari Bar", "Crmnica", "Dobri Vrh", "Gornja Poda", "Krajina", "Kunje", "Lisičine", "Mirošica", "Orahovo", "Pečurice", "Polje", "Selište", "Sozina", "Stari Bar", "Šušanj", "Tomba", "Trnovo", "Tuđemili", "Viti Do", "Volujica", "Zupci"]},
+      {"name": "Berane Municipality", "cities": ["Berane", "Budimlja", "Džakovo", "Godijeva", "Lubnica", "Mojkovac", "Petnjica", "Polica", "Seoca", "Šipačno", "Vrbica", "Zagorice"]},
+      {"name": "Bijelo Polje Municipality", "cities": ["Bijelo Polje", "Bistrica", "Bratogošti", "Brniševo", "Bruško", "Crnča", "Dobrinje", "Donje Luge", "Donje Selo", "Donji Rašak", "Gornje Luge", "Gornje Selo", "Gornji Rašak", "Gračanica", "Jagnjilo", "Jasen", "Kaluđerski Laz", "Klenak", "Kokoti", "Kosovo", "Kruševo", "Lazarev Krst", "Lješnica", "Ljutava", "Mala Crna Gora", "Mijatovo", "Mojkovac", "Nova Varoš", "Novakovići", "Novi Selo", "Oblatno", "Orahovo", "Osoje", "Pavino Polje", "Pavlovići", "Poda", "Podgora", "Polica", "Ponor", "Ponor", "Potok", "Prijepolje", "Radojeva Glava", "Rasovo", "Ravna Rijeka", "Rudine", "Ržani Do", "Seoca", "Sikirica", "Smailagića Polje", "Smrduša", "Srednja Rijeka", "Stari Grad", "Stublo", "Šahovići", "Šipovice", "Trebaljevo", "Trgovište", "Trnovica", "Tupan", "Vasiljevo", "Vesovići", "Vodice", "Vojkovići", "Vraneš", "Vranjak", "Vrbica", "Vrbička Rijeka", "Vrulja", "Zagorice", "Zaljuće", "Zaton", "Zminica"]},
+      {"name": "Budva Municipality", "cities": ["Budva", "Bečići", "Boreti", "Brajići", "Buljarica", "Čelobrdo", "Drobnići", "Glušci", "Golići", "Gorići", "Gradac", "Grbavci", "Ivanovići", "Jaz", "Kaluderac", "Kruševica", "Lapčići", "Mačić", "Maine", "Markovići", "Miločer", "Mojdež", "Novi Selo", "Petrovac", "Pobori", "Podbabac", "Podostrog", "Prijevor", "Pržno", "Rađenovići", "Rijeka Reževići", "Sveti Stefan", "Trešnjica", "Trsteno", "Ubli", "Viti Do", "Vranovići", "Zukovica"]},
+      {"name": "Danilovgrad Municipality", "cities": ["Danilovgrad", "Bare", "Brajkovići", "Bubanje", "Buronji", "Dabovići", "Doljani", "Donje Selo", "Donji Martinići", "Donji Zaton", "Dugi Do", "Dujeva", "Đurkovići", "Glavica", "Gornje Selo", "Gornji Martinići", "Gornji Zaton", "Gostilj", "Grabovica", "Klikova", "Kopitovice", "Kosić", "Kovači", "Lipa", "Lješkopolje", "Lopate", "Lukavica", "Mala Gorica", "Mali Ostros", "Mijaje", "Miranji", "Moračnik", "Orja Luka", "Ožegovice", "Podglavica", "Podgor", "Prenc", "Rudine", "Samoniklo", "Slap", "Spuž", "Sutomore", "Suvodo", "Štitari", "Trešnjevo", "Vraćenovići", "Vrbica", "Vukovci", "Zabrđe", "Zagreda", "Zaljut", "Zupci"]},
+      {"name": "Gusinje Municipality", "cities": ["Gusinje", "Vusanje"]},
+      {"name": "Herceg Novi Municipality", "cities": ["Herceg Novi", "Baošići", "Bijela", "Bjelila", "Bogdašići", "Borići", "Đenovići", "Dragalj", "Glavatica", "Gornja Lastva", "Gornji Kamenari", "Grablje", "Igalo", "Jasen", "Kamenari", "Kumbor", "Ljenobud", "Luštica", "Mali Iđoš", "Mali Zalaz", "Meljine", "Mokrine", "Njivice", "Podi", "Podlapač", "Poljice", "Ratiševina", "Sutorina", "Sušćepan", "Topla", "Zelenika", "Zvijezda"]},
+      {"name": "Kolašin Municipality", "cities": ["Kolašin", "Babljak", "Bare", "Bare Kraljske", "Blatina", "Bojovići", "Breza", "Cerovice", "Crkvine", "Donje Lipovo", "Donje Luge", "Donje Selo", "Donji Brčeli", "Donji Zaton", "Dragovac", "Drežnik", "Dubovo", "Duga", "Đudevina", "Đurđevića Tara", "Gornje Lipovo", "Gornje Luge", "Gornje Selo", "Gornji Brčeli", "Gornji Zaton", "Grabovica", "Grahovo", "Gusar", "Jablan", "Jabuka", "Jasen", "Jasenica", "Jelovica", "Jovanovići", "Kamenica", "Kneževići", "Kokoti", "Komarnica", "Kosjerić", "Kovač", "Kralje", "Kruščica", "Lijeva Rijeka", "Lipovo", "Lješnica", "Lješnica", "Lješkopolje", "Lopate", "Lozica", "Lukavica", "Lješnica", "Mala Crna Gora", "Mali Ostros", "Mali Zalaz", "Mijaje", "Miranji", "Moračnik", "Orja Luka", "Ožegovice", "Podglavica", "Podgor", "Prenc", "Rudine", "Samoniklo", "Slap", "Spuž", "Sutomore", "Suvodo", "Štitari", "Trešnjevo", "Vraćenovići", "Vrbica", "Vukovci", "Zabrđe", "Zagreda", "Zaljut", "Zupci"]},
+      {"name": "Kotor Municipality", "cities": ["Kotor", "Bigova", "Bogdašići", "Bonići", "Donji Morinj", "Donji Orahovac", "Dragalj", "Dražin Vrt", "Dub", "Glavati", "Gornji Morinj", "Gornji Orahovac", "Gospa od Škrpjela", "Grbalj", "Kavač", "Lastva Grbaljska", "Lepetane", "Lješevići", "Mrčevac", "Muo", "Nalježići", "Pelinovo", "Perast", "Prčanj", "Risno", "Škaljari", "Stoliv", "Strp", "Sutvara", "Ubli", "Unijerina", "Višnjeva", "Vranovići", "Zagora", "Zvečava"]}
+    ]
+  },
+  {
+    "country": "Morocco",
+    "currencyCode": "MAD",
+    "currencyName": "Moroccan Dirham",
+    "states": [
+      {"name": "Agadir-Ida-Ou-Tanane Prefecture", "cities": ["Agadir", "Aït Melloul", "Dcheira El Jihadia", "Inzegane", "Temsia", "Aourir", "Taghazout", "Tamraght", "Aït Baha", "Aït Iaâza", "Aït Youssef Ou Ali", "Ida Ougnidif", "Imouzzer Ida Ou Tanane"]},
+      {"name": "Al Haouz Province", "cities": ["Tahannaout", "Aït Ourir", "Amizmiz", "Asni", "Iguerferouane", "Lalla Takerkoust", "Ouirgane", "Tameslouht", "Tidili Mesfioua", "Aït Faska", "Aït Hkim", "Aït Sidi Daoud", "Ghmate", "Ijjoukak", "Imi n'Tlit", "Sidi Badhaj", "Tamaguert", "Tazart", "Tighedouine", "Timoulilt", "Zerkten"]},
+      {"name": "Al Hoceïma Province", "cities": ["Al Hoceïma", "Bni Bouayach", "Imzouren", "Targuist", "Ajdir", "Bni Hadifa", "Issaguen", "Ketama", "Rouadi", "Senada", "Tamasint", "Tifarouine", "Zarkt"]},
+      {"name": "Aousserd Province", "cities": ["Aousserd", "Bir Gandouz", "Zoug"]},
+      {"name": "Assa-Zag Province", "cities": ["Assa", "Zag", "Touizgui", "Aouinat Torkoz", "Labouirat", "Tighirt", "Toufelaaz", "Zagora"]},
+      {"name": "Azilal Province", "cities": ["Azilal", "Afourar", "Aït M'Hamed", "Béni Mellal", "Bzou", "Demnate", "Foum Jemaa", "Ouaouizeght", "Tabant", "Tagleft", "Tamda Noumercid", "Tilougguite", "Timoulilt", "Zaouïa Cheikh", "Zawyat Ahansal"]},
+      {"name": "Ben Slimane Province", "cities": ["Ben Slimane", "Bouznika", "El Mansouria", "Sidi Bettache", "Ziaïda"]},
+      {"name": "Béni Mellal-Khénifra Region", "cities": ["Béni Mellal", "Khénifra", "Kasba Tadla", "Fquih Ben Salah", "Azilal", "El Ksiba", "Ouaouizeght", "Zaouïa Cheikh", "Aghbala", "Aït Oum El Bekht", "Bni Oukil", "Bzou", "Demnate", "Foum Jemaa", "Kaf Nsour", "Oulad Ayad", "Oulad M'Barek", "Oulad Yaïch", "Sidi Jaber", "Tafetachte", "Taghzirt", "Tanant", "Tizi Nisly"]},
+      {"name": "Béni Mellal Province", "cities": ["Béni Mellal", "Kasba Tadla", "Fquih Ben Salah", "Oulad Yaïch", "Sidi Jaber", "Zaouïa Cheikh", "Aghbala", "Bni Oukil", "Oulad M'Barek", "Tafetachte", "Tanant"]},
+      {"name": "Berkane Province", "cities": ["Berkane", "Ahfir", "Aklim", "Bni Drar", "Bni Mathar", "Bni Tadjite", "Chouihia", "Madagh", "Ras El Ma", "Saidia", "Sidi Bouhria", "Sidi Slimane", "Tafoughalt", "Talsint", "Tendrara", "Zegzel"]},
+      {"name": "Berrechid Province", "cities": ["Berrechid", "Deroua", "El Gara", "Had Soualem", "Lagfaf", "Loulad", "Oulad Abbou", "Oulad Azzouz", "Oulad Frej", "Oulad Saïd", "Sidi Rahal Chataï", "Soualem"]},
+      {"name": "Boujdour Province", "cities": ["Boujdour", "Lamssid", "Cabo Bojador"]},
+      {"name": "Boulemane Province", "cities": ["Boulemane", "Imouzzer Marmoucha", "Missour", "Outat El Haj", "Skoura", "Tissaf", "El Mers"]},
+      {"name": "Casablanca-Settat Region", "cities": ["Casablanca", "Mohammedia", "Settat", "Benslimane", "Berrechid", "El Jadida", "Nouaceur", "Médiouna", "Sidi Bennour", "Al Fida-Mers Sultan", "Aïn Chock", "Aïn Sebaâ", "Ben Msik", "Hay Hassani", "Hay Mohammadi", "Mâarif", "Mers Sultan", "Roches Noires", "Sbata", "Sidi Bernoussi", "Sidi Moumen", "Sidi Othmane"]},
+      {"name": "Chefchaouen Province", "cities": ["Chefchaouen", "Bab Berred", "Bab Taza", "Bni Ahmed Cherqia", "Bni Ahmed Gharbia", "Bni Bouzra", "Bni Darkoul", "Bni Faghloum", "Bni Mansour", "Bni Selmane", "Bni Smih", "Bni Ykhlef", "Moulay Abdelkader", "Moulay Ahmed Cherif", "Oued Malha", "Steha", "Talambote", "Tanaqob", "Targuist", "Tassift"]}
+    ]
+  }
+]

@@ -12,7 +12,19 @@ class LocationService {
   async getCountries(): Promise<string[]> {
     try {
       const response = await api.get('/locations/countries');
-      return response.data.data || [];
+      const payload = response.data.data || [];
+      // Return normalized array of country objects: { name, slug, currencyCode }
+      if (Array.isArray(payload)) {
+        return payload.map((p: any) => {
+          if (typeof p === 'string') return { name: p } as any;
+          return {
+            name: p.name || p.country || '',
+            slug: p.slug || p.code || undefined,
+            currencyCode: p.currencyCode || p.currency || undefined
+          };
+        }).filter((c: any) => c.name);
+      }
+      return [];
     } catch (error) {
       console.error('Error fetching countries:', error);
       // Fallback to empty array
@@ -28,7 +40,12 @@ class LocationService {
   async getStates(country: string): Promise<string[]> {
     try {
       const response = await api.get(`/locations/states/${encodeURIComponent(country)}`);
-      return response.data.data || [];
+      const payload = response.data.data || [];
+      // Normalize: backend may return [{ name, slug }, ...]
+      if (Array.isArray(payload) && payload.length > 0 && typeof payload[0] === 'object') {
+        return payload.map((p: any) => p.name || '').filter(Boolean);
+      }
+      return payload;
     } catch (error) {
       console.error('Error fetching states:', error);
       return [];

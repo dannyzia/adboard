@@ -1,0 +1,165 @@
+[
+  {
+    "country": "Morocco",
+    "currencyCode": "MAD",
+    "currencyName": "Moroccan Dirham",
+    "states": [
+      {
+        "name": "Chichaoua Province",
+        "cities": ["Chichaoua", "Aïn Tazitounte", "Bouabout", "Bouabout Amdlane", "Imintanoute", "M'Zouda", "Oulad M'Barek", "Sidi Abdelkader", "Sidi Bouzid", "Sidi Ghanem", "Sidi Mokhtar", "Tamri", "Timoulilt", "Zagora"]
+      },
+      {
+        "name": "Dakhla-Oued Ed-Dahab Region",
+        "cities": ["Dakhla", "Bir Gandouz", "Guelta Zemmur", "Aousserd", "Labouirat", "Tichla", "Zoug"]
+      },
+      {
+        "name": "Drâa-Tafilalet Region",
+        "cities": ["Errachidia", "Ouarzazate", "Tinghir", "Zagora", "Alnif", "Boumalne Dades", "Erfoud", "Goulmima", "Jorf", "Kelaat M'Gouna", "Mhamid", "Midelt", "Nkob", "Rissani", "Skoura", "Tafraoute", "Tazzarine", "Tinjdad", "Tissint", "Zagoura"]
+      },
+      {
+        "name": "El Hajeb Province",
+        "cities": ["El Hajeb", "Aït Boubidmane", "Aït Yaazem", "Bni Ayat", "Jbabra", "Moulay Bouazza", "Sabaa Aiyoun", "Sebt Jamaâ", "Sidi Amar", "Sidi Slimane Moul Al Kifane"]
+      },
+      {
+        "name": "El Jadida Province",
+        "cities": ["El Jadida", "Azemmour", "Bir Jdid", "Boulaouane", "Chouiter", "Haouzia", "Jorf Lasfar", "Moulay Abdallah", "Oualidia", "Oulad Amrane", "Oulad Frej", "Oulad Ghadbane", "Oulad Hriz Sahel", "Sidi Abed", "Sidi Ali Ben Hamdouche", "Sidi Bouzid", "Sidi Smail"]
+      },
+      {
+        "name": "Errachidia Province",
+        "cities": ["Errachidia", "Aoufous", "Arfoud", "Boudnib", "Goulmima", "Jorf", "Mechraa Hammadi", "Meski", "Rachidia", "Rissani", "Tinejdad", "Tizounine", "Zrigat"]
+      },
+      {
+        "name": "Es-Semara Province",
+        "cities": ["Es-Semara", "Amgala", "Bir Anzarane", "Bir Gandouz", "Boujdour", "Guelta Zemmur", "Jdiriya", "Lamssid", "Mahbes", "Tifariti"]
+      },
+      {
+        "name": "Essaouira Province",
+        "cities": ["Essaouira", "Aït Daoud", "Bni Antar", "Bouzemmour", "Chichaoua", "Had Dra", "Imi n'Tlit", "Khemis des Aït Ouakrim", "Moulay Bouzerktoun", "Ouad Lbour", "Sidi Ahmed Ou Moussa", "Sidi Ali El Korati", "Sidi Ishaq", "Sidi Kaouki", "Tafedna", "Talmest", "Tamanar", "Tidzi", "Tleta des Aït Ouakrim"]
+      },
+      {
+        "name": "Fès-Meknès Region",
+        "cities": ["Fès", "Meknès", "Sefrou", "Boulemane", "El Hajeb", "Ifrane", "Moulay Yacoub", "Taounate", "Taza", "Guigou", "Imouzzer Kandar", "Missour", "Oued Amlil", "Oulad Tayeb", "Ribate El Kheir", "Sebt Jahjouh", "Sidi Harazem"]
+      },
+      {
+        "name": "Fès Prefecture",
+        "cities": ["Fès", "Aïn Chkef", "Oulad Tayeb", "Sidi Harazem", "Zouagha"]
+      },
+      {
+        "name": "Figuig Province",
+        "cities": ["Figuig", "Aïn Chouater", "Bni Tadjite", "Bouanane", "Bouarfa", "Ich", "Talsint", "Tendrara"]
+      },
+      {
+        "name": "Guelmim-Oued Noun Region",
+        "cities": ["Guelmim", "Sidi Ifni", "Tan-Tan", "Assa", "Fam El Hisn", "Taghjijt", "Tata", "Abteh", "Aït Herbil", "Bouizakarne", "Lamsabih", "Tighirt", "Tiznit"]
+      },
+      {
+        "name": "Guelmim Province",
+        "cities": ["Guelmim", "Aït Baha", "Bouizakarne", "Fam El Hisn", "Taghjijt", "Tamanar", "Tassila", "Tighirt"]
+      },
+      {
+        "name": "Ifrane Province",
+        "cities": ["Ifrane", "Azrou", "Bhalil", "Bni Ayat", "El Hajeb", "Imouzzer Kandar", "Moulay Bouazza", "Sefrou", "Timahdite"]
+      },
+      {
+        "name": "Inezgane-Aït Melloul Prefecture",
+        "cities": ["Inezgane", "Aït Melloul", "Dcheira El Jihadia", "Lqliaa", "Oulad Teima", "Temsia"]
+      },
+      {
+        "name": "Kelaat Sraghna Province",
+        "cities": ["Kelaat Sraghna", "Laattaouia", "Sidi Rahhal", "Oulad M'Barek", "Jemaat Moul Blad", "Tamallalt", "Chtaiba", "Sidi Aissa", "Zemamra", "Oulad Yaich", "Laaounate", "Lambarkien", "Skhour Rehamna", "Bouya Omar", "Jemaat Oulad Mhamed"]
+      }
+	
+	  {
+        "name": "Khémisset Province",
+        "cities": ["Khémisset", "Aït Yaazem", "Bni Oual", "Bouknadel", "El Kansera", "Ouled Ben Hammadi", "Rommani", "Sidi Allal Tazi", "Sidi El Kacem", "Sidi Mohamed Lahmar", "Tiddas"]
+      },
+      {
+        "name": "Khénifra Province",
+        "cities": ["Khénifra", "Aguelmous", "El Kbab", "Kerrouchen", "M'rirt", "Moulay Bouazza", "Ouaoumana", "Sidi Yahya Ou Saad", "Tighassaline"]
+      },
+      {
+        "name": "Khouribga Province",
+        "cities": ["Khouribga", "Beni Mellal", "Boujniba", "Boulanouare", "Hattane", "Oued Zem", "Ras El Ain", "Sidi Hajjaj", "Tlet"]
+      },
+      {
+        "name": "Laâyoune-Sakia El Hamra Region",
+        "cities": ["Laâyoune", "Boujdour", "El Marsa", "Tarfaya"]
+      },
+      {
+        "name": "Larache Province",
+        "cities": ["Larache", "Ksar El Kebir", "Souk Larbaa", "Zaouiat Sidi Kacem", "Bni Garfett", "Bou Jedyane", "Rissana", "Tatoft", "Zouada"]
+      },
+      {
+        "name": "Marrakech-Safi Region",
+        "cities": ["Marrakech", "Safi", "El Kelaa des Sraghna", "Essaouira", "Rehamna", "Al Haouz", "Chichaoua", "Youssoufia", "Sidi Bennour", "El Kelaâ des Sraghna", "Ait Ourir", "Amizmiz", "Ben Guerir", "Sidi Bou Othmane", "Tahannaout"]
+      },
+      {
+        "name": "Médiouna Province",
+        "cities": ["Médiouna", "Tit Mellil", "Sidi Hajjaj", "Lahlaf", "Al Majjatia", "Sidi Moussa"]
+      },
+      {
+        "name": "Meknès Prefecture",
+        "cities": ["Meknès", "Al Machouar Stinia", "Bni M'Hamed", "Toulal", "Ouislane"]
+      },
+      {
+        "name": "Midelt Province",
+        "cities": ["Midelt", "Aït Oufella", "Boumia", "Errachidia", "Gourrama", "Itzer", "Khenifra", "M'rirt", "Rich", "Tounfite"]
+      },
+      {
+        "name": "Mohammadia Prefecture",
+        "cities": ["Mohammadia", "Aïn Harrouda", "Benslimane", "Bouskoura", "Nouaceur", "Sidi Moussa", "Tit Mellil"]
+      },
+      {
+        "name": "Nador Province",
+        "cities": ["Nador", "Al Aroui", "Bni Ansar", "Bni Chiker", "Farkhana", "Iaazzanene", "Kariat Arkmane", "Oulad Settout", "Selouane", "Zaio"]
+      },
+      {
+        "name": "Nouaceur Province",
+        "cities": ["Nouaceur", "Bouskoura", "Dar Bouazza", "Oulad Azzouz", "Sidi Hajjaj", "Sidi Moussa"]
+      },
+      {
+        "name": "Ouarzazate Province",
+        "cities": ["Ouarzazate", "Aït Benhaddou", "Amerzgane", "Boumalne Dades", "Skoura", "Tazzarine", "Tinghir", "Zagora"]
+      },
+      {
+        "name": "Oued Ed-Dahab Province",
+        "cities": ["Dakhla", "Guelta Zemmur", "Labouirat", "Ntirett", "Tichla"]
+      },
+      {
+        "name": "Ouezzane Province",
+        "cities": ["Ouezzane", "Bni Quolla", "Masmouda", "Moulay Abdelkader", "Sidi Bousber", "Sidi Redouane", "Zghira"]
+      },
+      {
+        "name": "Oujda-Angad Prefecture",
+        "cities": ["Oujda", "Aïn Sefra", "Angad", "Bni Khaled", "Bsara", "Isly", "Naima", "Sidi Boulenouar", "Sidi Moussa", "Tafrata"]
+      },
+      {
+        "name": "Rabat-Salé-Kénitra Region",
+        "cities": ["Rabat", "Salé", "Kénitra", "Skhirate", "Témara", "Sidi Kacem", "Sidi Slimane", "Sidi Yahya El Gharb", "Aïn Aouda", "Harhoura", "Khémisset", "Tiflet"]
+      },
+      {
+        "name": "Rehamna Province",
+        "cities": ["Sidi Bou Othmane", "Ben Guerir", "Jemaa Haouafate", "Sidi Abdelkhaleq", "Sidi Ali Labrach", "Sidi El Aidi", "Sidi Ghanem", "Sidi Hammadi", "Slimane", "Zemamra"]
+      },
+      {
+        "name": "Safi Province",
+        "cities": ["Safi", "Bouguedra", "Jamaat Shaim", "Labkhati", "Lakhsas", "Lakhoualqa", "Nagga", "Sebt Gzoula", "Sidi Ahmed", "Sidi Aissa", "Sidi Bouzid", "Sidi Chiker", "Youssoufia"]
+      },
+      {
+        "name": "Salé Prefecture",
+        "cities": ["Salé", "Hssaine", "Sidi Bouknadel", "Tabriquet"]
+      },
+      {
+        "name": "Sefrou Province",
+        "cities": ["Sefrou", "Bhalil", "El Menzel", "Ighzrane", "Imouzzer Kandar", "Ras Tabouda", "Tazouta"]
+      },
+      {
+        "name": "Settat Province",
+        "cities": ["Settat", "Ben Ahmed", "Berrechid", "El Borouj", "El Gara", "Guisser", "Loulad", "Oulad Abbou", "Oulad Hriz Sahel", "Sidi Rahhal", "Znata"]
+      }
+    ]
+  }
+]
+    ]
+  }
+]

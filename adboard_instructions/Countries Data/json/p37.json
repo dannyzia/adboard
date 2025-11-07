@@ -1,0 +1,193 @@
+[
+  {
+    "country": "Armenia",
+    "currencyCode": "AMD",
+    "currencyName": "Armenian Dram",
+    "states": [
+      {
+        "name": "Aragatsotn",
+        "cities": ["Ashtarak", "Aparan", "Talin", "Oshakan", "Byurakan", "Karbi", "Ushi", "Aghdzk"]
+      },
+      {
+        "name": "Ararat",
+        "cities": ["Artashat", "Ararat", "Masis", "Vedi", "Ayntap", "Urtsadzor", "Dimitrov", "Mkhchyan"]
+      },
+      {
+        "name": "Armavir",
+        "cities": ["Armavir", "Vagharshapat", "Metsamor", "Echmiadzin", "Musaler", "Bambakashat", "Janfida", "Margara"]
+      },
+      {
+        "name": "Gegharkunik",
+        "cities": ["Gavar", "Sevan", "Martuni", "Vardenis", "Chambarak", "Tsovagyugh", "Lchashen", "Noratus"]
+      },
+      {
+        "name": "Kotayk",
+        "cities": ["Hrazdan", "Abovyan", "Byureghavan", "Charentsavan", "Nor Hachn", "Tsaghkadzor", "Bjrni", "Arzni"]
+      },
+      {
+        "name": "Lori",
+        "cities": ["Vanadzor", "Spitak", "Alaverdi", "Stepanavan", "Tashir", "Shamlugh", "Akhtala", "Metsavan"]
+      },
+      {
+        "name": "Shirak",
+        "cities": ["Gyumri", "Artik", "Maralik", "Akhuryan", "Ani", "Amasia", "Pemzashen", "Azatan"]
+      },
+      {
+        "name": "Syunik",
+        "cities": ["Kapan", "Goris", "Sisian", "Meghri", "Kajaran", "Agara", "Dastakert", "Shinuhayr"]
+      },
+      {
+        "name": "Tavush",
+        "cities": ["Ijevan", "Dilijan", "Berd", "Noyemberyan", "Ayrum", "Koghb", "Chinari", "Berdavan"]
+      },
+      {
+        "name": "Vayots Dzor",
+        "cities": ["Yeghegnadzor", "Vayk", "Jermuk", "Shatin", "Malishka", "Areni", "Gladzor", "Hermon"]
+      },
+      {
+        "name": "Yerevan",
+        "cities": ["Yerevan", "Ajapnyak", "Arabkir", "Avan", "Davtashen", "Erebuni", "Kanaker-Zeytun", "Kentron", "Malatia-Sebastia", "Nor Nork", "Nork-Marash", "Nubarashen", "Shengavit"]
+      }
+    ]
+  },
+  {
+    "country": "Aruba",
+    "currencyCode": "AWG",
+    "currencyName": "Aruban Florin",
+    "states": [
+      {
+        "name": "Aruba",
+        "cities": ["Oranjestad", "San Nicolas", "Noord", "Santa Cruz", "Savaneta", "Paradera", "Pos Chiquito", "Druif", "Cerro Colorado", "Palm Beach", "Eagle Beach", "Malmok", "Bubali", "Angochi"]
+      }
+    ]
+  },
+  {
+    "country": "Australia",
+    "currencyCode": "AUD",
+    "currencyName": "Australian Dollar",
+    "states": [
+      {
+        "name": "Australian Capital Territory",
+        "cities": ["Canberra", "Belconnen", "Gungahlin", "Woden", "Tuggeranong", "Weston Creek", "Kingston", "Manuka", "Barton", "Dickson", "Civic"]
+      },
+      {
+        "name": "New South Wales",
+        "cities": ["Sydney", "Newcastle", "Wollongong", "Central Coast", "Maitland", "Albury", "Wagga Wagga", "Tamworth", "Orange", "Queanbeyan", "Dubbo", "Lismore", "Coffs Harbour", "Port Macquarie"]
+      },
+      {
+        "name": "Northern Territory",
+        "cities": ["Darwin", "Alice Springs", "Palmerston", "Katherine", "Nhulunbuy", "Tennant Creek", "Jabiru", "Yulara", "Howard Springs", "Nightcliff"]
+      },
+      {
+        "name": "Queensland",
+        "cities": ["Brisbane", "Gold Coast", "Sunshine Coast", "Townsville", "Cairns", "Toowoomba", "Mackay", "Rockhampton", "Bundaberg", "Hervey Bay", "Gladstone", "Maryborough", "Mount Isa", "Ipswich"]
+      },
+      {
+        "name": "South Australia",
+        "cities": ["Adelaide", "Mount Gambier", "Whyalla", "Murray Bridge", "Port Augusta", "Port Lincoln", "Port Pirie", "Victor Harbor", "Gawler", "Reynella", "Noarlunga", "Elizabeth"]
+      },
+      {
+        "name": "Tasmania",
+        "cities": ["Hobart", "Launceston", "Devonport", "Burnie", "Ulverstone", "Kingston", "Sorell", "New Norfolk", "Wynyard", "George Town", "Penguin", "Richmond"]
+      },
+      {
+        "name": "Victoria",
+        "cities": ["Melbourne", "Geelong", "Ballarat", "Bendigo", "Melton", "Mildura", "Shepparton", "Warrnambool", "Wodonga", "Sunbury", "Echuca", "Wangaratta", "Traralgon", "Moe"]
+      },
+      {
+        "name": "Western Australia",
+        "cities": ["Perth", "Mandurah", "Bunbury", "Geraldton", "Kalgoorlie", "Albany", "Karratha", "Broome", "Busselton", "Port Hedland", "Fremantle", "Rockingham", "Joondalup", "Armadale"]
+      }
+    ]
+  },
+  {
+    "country": "Austria",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {
+        "name": "Burgenland",
+        "cities": ["Eisenstadt", "Rust", "Neusiedl am See", "Mattersburg", "Oberpullendorf", "Oberwart", "Güssing", "Jennersdorf", "Deutschkreutz", "Pinkafeld"]
+      },
+      {
+        "name": "Carinthia",
+        "cities": ["Klagenfurt", "Villach", "Wolfsberg", "Spittal an der Drau", "Feldkirchen", "St. Veit an der Glan", "Völkermarkt", "St. Andrä", "Bleiburg", "Ferndorf"]
+      },
+      {
+        "name": "Lower Austria",
+        "cities": ["St. Pölten", "Wiener Neustadt", "Krems", "Baden", "Amstetten", "Mödling", "Schwechat", "Tulln", "Wr. Neudorf", "Hollabrunn", "Korneuburg", "Neunkirchen", "Sankt Valentin", "Waidhofen"]
+      },
+      {
+        "name": "Salzburg",
+        "cities": ["Salzburg", "Hallein", "Saalfelden", "Bischofshofen", "Zell am See", "Neumarkt", "Oberndorf", "St. Johann", "Mittersill", "Taxenbach"]
+      },
+      {
+        "name": "Styria",
+        "cities": ["Graz", "Leoben", "Kapfenberg", "Bruck an der Mur", "Knittelfeld", "Köflach", "Voitsberg", "Judenburg", "Weiz", "Deutschlandsberg", "Feldbach", "Bad Radkersburg", "Mürzzuschlag"]
+      },
+      {
+        "name": "Tyrol",
+        "cities": ["Innsbruck", "Kufstein", "Telfs", "Schwaz", "Hall in Tirol", "Wörgl", "Lienz", "Imst", "St. Johann", "Kitzbühel", "Landeck", "Rum", "Zirl", "Sillian"]
+      },
+      {
+        "name": "Upper Austria",
+        "cities": ["Linz", "Wels", "Steyr", "Leonding", "Traun", "Braunau", "Ansfelden", "Bad Ischl", "Enns", "Gmunden", "Marchtrenk", "Vöcklabruck", "Ried", "Eferding"]
+      },
+      {
+        "name": "Vienna",
+        "cities": ["Vienna", "Innere Stadt", "Leopoldstadt", "Landstraße", "Wieden", "Margareten", "Mariahilf", "Neubau", "Josefstadt", "Alsergrund", "Favoriten", "Simmering", "Meidling", "Hietzing", "Penzing", "Rudolfsheim", "Ottakring", "Hernals", "Währing", "Döbling", "Brigittenau", "Floridsdorf", "Donaustadt", "Liesing"]
+      },
+      {
+        "name": "Vorarlberg",
+        "cities": ["Bregenz", "Dornbirn", "Feldkirch", "Lustenau", "Hohenems", "Bludenz", "Hard", "Rankweil", "Götzis", "Lauterach", "Wolfurt", "Hörbranz", "Mittelberg"]
+      }
+    ]
+  },
+  {
+    "country": "Azerbaijan",
+    "currencyCode": "AZN",
+    "currencyName": "Azerbaijani Manat",
+    "states": [
+      {
+        "name": "Absheron",
+        "cities": ["Khirdalan", "Sumqayit", "Qala", "Saray", "Masazir", "Goradil", "Fatmayi", "Digah", "Novxani", "Mehdiabad"]
+      },
+      {
+        "name": "Ganja-Gazakh",
+        "cities": ["Ganja", "Naftalan", "Qazax", "Aghstafa", "Tovuz", "Gadabay", "Samukh", "Dashkasan", "Goranboy", "Goygol"]
+      },
+      {
+        "name": "Shirvan-Salyan",
+        "cities": ["Shirvan", "Salyan", "Neftchala", "Hajigabul", "Beylagan", "Sabirabad", "Saatly", "Imishli", "Kurdamir", "Ujar", "Zardab"]
+      },
+      {
+        "name": "Lankaran-Astara",
+        "cities": ["Lankaran", "Astara", "Lerik", "Masally", "Yardimly", "Jalilabad", "Bilasuvar"]
+      },
+      {
+        "name": "Guba-Khachmaz",
+        "cities": ["Quba", "Khachmaz", "Qusar", "Shabran", "Siyazan", "Xaçmaz", "Quba", "Divichi", "Devechi", "Qusar"]
+      },
+      {
+        "name": "Mountainous Shirvan",
+        "cities": ["Shamakhi", "Ismayilli", "Aghsu", "Gobustan", "Shamakhi", "Mughan", "Pirgulu", "Meysari", "Gobustan"]
+      },
+      {
+        "name": "Nakhchivan",
+        "cities": ["Nakhchivan", "Ordubad", "Julfa", "Sharur", "Babek", "Sadarak", "Shahbuz", "Kangarli"]
+      },
+      {
+        "name": "Karabakh",
+        "cities": ["Shusha", "Khojaly", "Khojavend", "Agdam", "Fuzuli", "Jabrayil", "Zangilan", "Qubadli", "Lachin", "Kalbajar"]
+      },
+      {
+        "name": "East Zangezur",
+        "cities": ["Jabrayil", "Zangilan", "Qubadli", "Lachin", "Kalbajar"]
+      },
+      {
+        "name": "Baku",
+        "cities": ["Baku", "Surakhany", "Sabunchu", "Khazar", "Binagadi", "Narimanov", "Nasimi", "Nizami", "Pirallahi", "Garadagh", "Sabail", "Yasamal", "Khatai", "Bilajari", "Lokbatan", "Hovsan", "Zabrat", "Ramana", "Badamdar"]
+      }
+    ]
+  }
+]

@@ -178,6 +178,18 @@ export const adminService = {
     await api.delete(`/admin/ads/${id}`, { data: { reason } });
   },
 
+  // Approve an ad (admin)
+  async approveAd(adId: string) {
+    const response = await api.post(`/ads/${adId}/approve`);
+    return response.data;
+  },
+
+  // Reject an ad (admin) with a reason
+  async rejectAd(adId: string, reason: string) {
+    const response = await api.post(`/ads/${adId}/reject`, { reason });
+    return response.data;
+  },
+
   /**
    * Bulk actions on ads
    */

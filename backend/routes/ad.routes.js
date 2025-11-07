@@ -4,7 +4,8 @@ const { body } = require('express-validator');
 const Ad = require('../models/Ad.model');
 const User = require('../models/User.model');
 const SubscriptionPlan = require('../models/SubscriptionPlan.model');
-const { protect, checkAdLimit } = require('../middleware/auth.middleware');
+const { protect, checkAdLimit, admin } = require('../middleware/auth.middleware');
+const { generateUniqueSlug } = require('../utils/slug.util');
 
 // @route   GET /api/ads
 // @desc    Get all ads with filters and pagination
@@ -21,11 +22,20 @@ router.get('/', async (req, res) => {
       minPrice,
       maxPrice,
       search,
-      sort = '-createdAt'
+      sort = '-createdAt',
+      status: statusFilter
     } = req.query;
     
     // Build filter query
-    const filter = { status: 'active' };
+    const filter = {};
+
+    if (statusFilter && statusFilter !== 'all') {
+      filter.status = statusFilter;
+    } else if (statusFilter === 'all') {
+      // show all statuses
+    } else {
+      filter.status = 'active'; // default
+    }
     
     if (category && category !== 'All Categories') {
       filter.category = category;
@@ -130,8 +140,15 @@ router.get('/similar', async (req, res) => {
 // @access  Public
 router.get('/:id', async (req, res) => {
   try {
-    const ad = await Ad.findById(req.params.id)
-      .populate('user', 'name avatar email phone memberSince');
+    const identifier = req.params.id;
+
+    // If identifier looks like a Mongo ObjectId, find by id; otherwise treat as slug
+    let ad;
+    if (/^[0-9a-fA-F]{24}$/.test(identifier)) {
+      ad = await Ad.findById(identifier).populate('user', 'name avatar email phone memberSince');
+    } else {
+      ad = await Ad.findOne({ slug: identifier }).populate('user', 'name avatar email phone memberSince');
+    }
     
     if (!ad) {
       return res.status(404).json({
@@ -240,6 +257,8 @@ router.post('/', protect, checkAdLimit, [
       isFeatured: plan.features.isFeatured,
       expiresAt
     };
+    // New ads start as pending until admin review
+    adPayload.status = 'pending';
 
     if (category === 'Auction') {
       const { auctionEnd, startingBid, reservePrice } = req.body;
@@ -285,7 +304,41 @@ router.post('/', protect, checkAdLimit, [
     }
 
     // Create ad
-    const ad = await Ad.create(adPayload);
+    // Generate SEO-friendly slug based on title and user's name
+    try {
+      const username = req.user && (req.user.name || req.user.email.split('@')[0]) ? (req.user.name || req.user.email.split('@')[0]) : 'user';
+      const slug = await generateUniqueSlug(Ad, title, username);
+      adPayload.slug = slug;
+    } catch (err) {
+      console.warn('Slug generation failed, continuing without slug:', err);
+    }
+
+    // Try create with a few retries in case of slug duplicate key race conditions
+    let ad;
+    const MAX_CREATE_ATTEMPTS = 3;
+    for (let attempt = 1; attempt <= MAX_CREATE_ATTEMPTS; attempt++) {
+      try {
+        ad = await Ad.create(adPayload);
+        break;
+      } catch (createErr) {
+        // Duplicate slug -> regenerate and retry
+        if (createErr && createErr.code === 11000 && createErr.keyPattern && createErr.keyPattern.slug) {
+          console.warn(`Slug duplicate detected on attempt ${attempt}, regenerating slug and retrying`);
+          if (attempt === MAX_CREATE_ATTEMPTS) throw createErr;
+          try {
+            const username = req.user && (req.user.name || req.user.email.split('@')[0]) ? (req.user.name || req.user.email.split('@')[0]) : 'user';
+            const newSlug = await generateUniqueSlug(Ad, title, username);
+            adPayload.slug = newSlug;
+            // continue to next attempt
+          } catch (regenErr) {
+            console.warn('Slug regeneration failed during retry:', regenErr);
+            throw createErr; // bail out if we cannot regenerate
+          }
+        } else {
+          throw createErr;
+        }
+      }
+    }
     
     // Update user's ad usage
     req.user.subscription.adsUsed += 1;
@@ -341,6 +394,24 @@ router.put('/:id', protect, async (req, res) => {
         ad[field] = req.body[field];
       }
     });
+
+    // Allow updating additional structured fields when provided by the client
+    if (req.body.details !== undefined) {
+      ad.details = req.body.details;
+    }
+    if (req.body.location !== undefined) {
+      ad.location = req.body.location;
+    }
+    if (req.body.customDuration !== undefined) {
+      ad.customDuration = req.body.customDuration;
+    }
+
+    // Special case: allow owner to resubmit a previously rejected ad by setting status to 'pending'
+    if (req.body.status && req.body.status === 'pending' && ad.status === 'rejected') {
+      ad.status = 'pending';
+      // clear previous reject reason when resubmitting
+      ad.rejectReason = undefined;
+    }
     
     await ad.save();
     
@@ -463,6 +534,48 @@ router.post('/:id/favorite', protect, async (req, res) => {
       success: false,
       message: 'Error toggling favorite'
     });
+  }
+});
+
+// @route   POST /api/ads/:id/approve
+// @desc    Approve pending ad (Admin only)
+// @access  Private/Admin
+router.post('/:id/approve', protect, admin, async (req, res) => {
+  try {
+    const ad = await Ad.findById(req.params.id);
+    if (!ad) {
+      return res.status(404).json({ success: false, message: 'Ad not found' });
+    }
+
+    ad.status = 'active';
+    await ad.save();
+
+    res.json({ success: true, message: 'Ad approved successfully', ad });
+  } catch (error) {
+    console.error('Approve ad error:', error);
+    res.status(500).json({ success: false, message: 'Error approving ad' });
+  }
+});
+
+// @route   POST /api/ads/:id/reject
+// @desc    Reject pending ad (Admin only)
+// @access  Private/Admin
+router.post('/:id/reject', protect, admin, async (req, res) => {
+  try {
+    const ad = await Ad.findById(req.params.id);
+    if (!ad) {
+      return res.status(404).json({ success: false, message: 'Ad not found' });
+    }
+
+    const { reason } = req.body;
+    ad.status = 'rejected';
+    ad.rejectReason = reason || 'Does not meet guidelines';
+    await ad.save();
+
+    res.json({ success: true, message: 'Ad rejected', ad });
+  } catch (error) {
+    console.error('Reject ad error:', error);
+    res.status(500).json({ success: false, message: 'Error rejecting ad' });
   }
 });
 

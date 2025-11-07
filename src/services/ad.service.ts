@@ -241,8 +241,8 @@ export const adService = {
    * Get user's ads
    */
   async getMyAds(): Promise<Ad[]> {
-    const response = await api.get<Ad[]>('/ads/my-ads');
-    return response.data;
+    const response = await api.get<{ success: boolean; ads: Ad[] }>('/users/my-ads');
+    return response.data.ads || [];
   },
 
   /**
@@ -256,7 +256,15 @@ export const adService = {
    * Get user's favorite ads
    */
   async getFavorites(): Promise<Ad[]> {
-    const response = await api.get<Ad[]>('/ads/favorites');
+    const response = await api.get<{ success: boolean; favorites: Ad[] }>('/users/favorites');
+    return response.data.favorites || [];
+  },
+  
+  /**
+   * Report an ad for moderation
+   */
+  async reportAd(adId: string, reason: string): Promise<any> {
+    const response = await api.post(`/ads/${adId}/report`, { reason });
     return response.data;
   },
 };

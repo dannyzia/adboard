@@ -7,6 +7,8 @@ import { ImageUploadZone } from '../components/forms/ImageUploadZone';
 import { getCountries, getStates, getCities } from '../utils/constants';
 import { adService } from '../services/ad.service';
 import { uploadService } from '../services/upload.service';
+import { useLocation } from 'react-router-dom';
+import { useToast } from '../components/ui/ToastContext';
 
 type DynamicDetails = Record<string, any>;
 
@@ -30,6 +32,8 @@ type FormState = {
 export const PostAdPage: React.FC = () => {
     const navigate = useNavigate();
     useAuth();
+    const location = useLocation();
+    const toast = useToast();
     const [formData, setFormData] = useState<FormState>({
         title: '',
         description: '',
@@ -54,6 +58,8 @@ export const PostAdPage: React.FC = () => {
     const [states, setStates] = useState<string[]>([]);
     const [cities, setCities] = useState<string[]>([]);
     const [submitting, setSubmitting] = useState(false);
+    const [editingAdId, setEditingAdId] = useState<string | null>(null);
+    const [originalStatus, setOriginalStatus] = useState<string | null>(null);
 
     useEffect(() => {
         fetch('/api/currencies')
@@ -69,6 +75,45 @@ export const PostAdPage: React.FC = () => {
             .then((data) => setFormConfig(data))
             .catch(() => setFormConfig(null));
     }, []);
+
+    // Detect edit query param and load ad for editing
+    useEffect(() => {
+        const params = new URLSearchParams(location.search);
+        const editId = params.get('edit');
+        if (editId) {
+            setEditingAdId(editId);
+            (async () => {
+                try {
+                    const ad = await adService.getAdById(editId);
+                    // remember original status so we can resubmit if necessary
+                    setOriginalStatus(ad.status || null);
+                    // Map ad to form state where possible
+                    setFormData({
+                        title: ad.title || '',
+                        description: ad.description || '',
+                        category: ad.category || '',
+                        price: ad.price ?? '',
+                        priceType: (ad as any).priceType || 'Fixed',
+                        currency: ad.currency || 'USD',
+                        images: [] as File[],
+                        imageUrls: (ad.images || []).map((i: any) => (typeof i === 'string' ? i : i.url)),
+                        location: ad.location || { country: '', state: '', city: '' },
+                        links: ad.links || { link1: '', link2: '' },
+                        contactEmail: (ad as any).contactEmail || '',
+                        contactPhone: (ad as any).contactPhone || '',
+                        details: (ad as any).details || {},
+                        customDuration: (ad as any).customDuration || '',
+                    });
+                } catch (err) {
+                    console.error('Failed to load ad for editing', err);
+                    // If loading fails, clear edit id and continue as new
+                    setEditingAdId(null);
+                    setOriginalStatus(null);
+                    toast.showToast('Failed to load ad for editing', 'error');
+                }
+            })();
+        }
+    }, [location.search]);
 
     useEffect(() => {
         if (formConfig && formData.category && formConfig.specificFields[formData.category]) {
@@ -183,6 +228,9 @@ export const PostAdPage: React.FC = () => {
                 currency: formData.currency || undefined,
             };
 
+            // Determine price value: it may be stored in formData.price or in dynamic details
+            const determinedPrice = (formData.price !== undefined && formData.price !== '') ? formData.price : (formData.details && formData.details['price']) ? formData.details['price'] : undefined;
+
             if (formData.category === 'Auction') {
                 // Convert datetime-local to ISO
                 const auctionEndIso = new Date(formData.details['auctionEnd']).toISOString();
@@ -190,21 +238,34 @@ export const PostAdPage: React.FC = () => {
                 payload.startingBid = parseFloat(formData.details['startingBid']);
                 if (formData.details['reservePrice']) payload.reservePrice = parseFloat(formData.details['reservePrice']);
             } else {
-                if (formData.price !== undefined && formData.price !== '') payload.price = Number(formData.price);
+                if (determinedPrice !== undefined && determinedPrice !== '') payload.price = Number(determinedPrice);
                 if (formData.currency) payload.currency = formData.currency;
             }
 
             // Attach remaining dynamic details (category-specific) into details or top-level as needed
             payload.details = formData.details;
 
-            // Call backend
-            const createdAd = await adService.createAd(payload as any);
-
-            // Navigate to ad page
-            navigate(`/ad/${createdAd._id}`);
+            // Call backend (create or update depending on editing state)
+            if (editingAdId) {
+                // If the ad was previously rejected, mark as pending for re-review
+                if (originalStatus === 'rejected') {
+                    (payload as any).status = 'pending';
+                }
+                await adService.updateAd(editingAdId, payload as any);
+                toast.showToast(originalStatus === 'rejected' ? 'Ad updated and resubmitted for review' : 'Ad updated successfully', 'success');
+                // After update, navigate to ad detail
+                navigate(`/ad/${editingAdId}`);
+            } else {
+                await adService.createAd(payload as any);
+                // Show pending message and return to dashboard for review
+                toast.showToast('Ad submitted successfully! It will be visible after admin review.', 'success');
+                navigate('/dashboard');
+            }
         } catch (err: any) {
             console.error('Create ad error:', err);
-            alert(err?.message || 'Failed to create ad');
+            // Prefer server-provided error message when available
+            const serverMessage = err?.response?.data?.message || err?.response?.data?.error;
+            alert(serverMessage || err?.message || 'Failed to create ad');
         } finally {
             setSubmitting(false);
         }
@@ -226,6 +287,24 @@ export const PostAdPage: React.FC = () => {
     useEffect(() => {
         Promise.resolve(getCountries()).then(setCountries);
     }, []);
+    // When country changes, set currency based on country metadata (if available)
+    useEffect(() => {
+        const country = formData.location.country;
+        if (!country) return;
+        try {
+            const currency = (async () => {
+                const { getCurrencyForCountry } = await import('../utils/constants');
+                // ensure countries are loaded into cache
+                await getCountries();
+                return getCurrencyForCountry(country);
+            })();
+            currency.then((c) => {
+                if (c) setFormData(prev => ({ ...prev, currency: c }));
+            });
+        } catch (err) {
+            // ignore
+        }
+    }, [formData.location.country]);
     useEffect(() => {
         if (formData.location.country) {
             Promise.resolve(getStates(formData.location.country)).then(setStates);
@@ -623,7 +702,7 @@ export const PostAdPage: React.FC = () => {
                         disabled={submitting}
                         className={`w-full py-3 ${submitting ? 'bg-gray-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'} text-white font-bold rounded-lg shadow transition`}
                     >
-                        {submitting ? 'Posting...' : 'Submit Ad'}
+                        {submitting ? (editingAdId ? 'Saving...' : 'Posting...') : (editingAdId ? 'Update Ad' : 'Submit Ad')}
                     </button>
                 </form>
             </div>

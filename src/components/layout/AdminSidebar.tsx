@@ -2,9 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 export const AdminSidebar: React.FC = () => {
-  const navItems = [
+  const navItems: Array<{ path: string; icon: string; label: string }> = [
     { path: '/admin/dashboard', icon: '📊', label: 'Dashboard' },
     { path: '/admin/ads', icon: '📢', label: 'Manage Ads' },
+    { path: '/admin/blogs', icon: '📝', label: 'Manage Blogs' },
     { path: '/admin/users', icon: '👥', label: 'Manage Users' },
     { path: '/admin/subscriptions', icon: '💳', label: 'Subscriptions' },
     { path: '/admin/reports', icon: '🚨', label: 'Reports' },

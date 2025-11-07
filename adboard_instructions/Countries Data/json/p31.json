@@ -1,0 +1,227 @@
+[
+  {
+    "country": "Ukraine",
+    "currencyCode": "UAH",
+    "currencyName": "Ukrainian Hryvnia",
+    "states": [
+      {
+        "name": "Autonomous Republic of Crimea",
+        "cities": ["Simferopol", "Sevastopol", "Kerch", "Yevpatoria", "Yalta", "Feodosia", "Dzhankoy", "Bakhchysarai", "Alushta", "Krasnoperekopsk"]
+      },
+      {
+        "name": "Cherkasy Oblast",
+        "cities": ["Cherkasy", "Uman", "Smila", "Zolotonosha", "Kaniv", "Korsun-Shevchenkivskyi", "Vatutine", "Zhashkiv", "Talne", "Horodyshche"]
+      },
+      {
+        "name": "Chernihiv Oblast",
+        "cities": ["Chernihiv", "Nizhyn", "Pryluky", "Bakhmach", "Novhorod-Siverskyi", "Mena", "Korop", "Ichnia", "Snovsk", "Borzna"]
+      },
+      {
+        "name": "Chernivtsi Oblast",
+        "cities": ["Chernivtsi", "Storozhynets", "Khotyn", "Novodnistrovsk", "Sokyriany", "Zastavna", "Hlyboka", "Kitsman", "Kelmentsi", "Vashkivtsi"]
+      },
+      {
+        "name": "Dnipropetrovsk Oblast",
+        "cities": ["Dnipro", "Kryvyi Rih", "Kamianske", "Nikopol", "Pavlohrad", "Novomoskovsk", "Zhovti Vody", "Marhanets", "Pokrov", "Synelnykove", "Pershotravensk", "Ternivka", "Vilnohirsk"]
+      },
+      {
+        "name": "Donetsk Oblast",
+        "cities": ["Donetsk", "Mariupol", "Makiivka", "Horlivka", "Kramatorsk", "Sloviansk", "Yenakiieve", "Kostiantynivka", "Bakhmut", "Druzhkivka", "Shakhtarsk", "Toretsk", "Myrnohrad", "Snizhne", "Khrestivka", "Pokrovsk", "Avdiivka", "Selydove", "Dobropillia", "Volnovakha"]
+      },
+      {
+        "name": "Ivano-Frankivsk Oblast",
+        "cities": ["Ivano-Frankivsk", "Kalush", "Kolomyia", "Nadvirna", "Dolyna", "Burshtyn", "Yaremche", "Bohorodchany", "Tysmenytsia", "Sniatyn", "Horodenka", "Kosiv", "Rohatyn"]
+      },
+      {
+        "name": "Kharkiv Oblast",
+        "cities": ["Kharkiv", "Lozova", "Izium", "Chuhuiv", "Pervomaiskyi", "Balakliia", "Merefa", "Kupiansk", "Vovchansk", "Derhachi", "Liubotyn", "Krasnohrad", "Valky", "Barvinkove", "Zmiiv"]
+      },
+      {
+        "name": "Kherson Oblast",
+        "cities": ["Kherson", "Nova Kakhovka", "Kakhovka", "Oleshky", "Skadovsk", "Tavriisk", "Hola Prystan", "Kalanchak", "Chaplynka", "Henichesk"]
+      },
+      {
+        "name": "Khmelnytskyi Oblast",
+        "cities": ["Khmelnytskyi", "Kamianets-Podilskyi", "Shepetivka", "Netishyn", "Slavuta", "Starokostiantyniv", "Iziaslav", "Derazhnia", "Volochysk", "Polonne", "Horodok", "Dunaivtsi"]
+      },
+      {
+        "name": "Kirovohrad Oblast",
+        "cities": ["Kropyvnytskyi", "Oleksandriia", "Svitlovodsk", "Znamianka", "Dolynska", "Haivoron", "Novoukrainka", "Mala Vyska", "Bobrynets", "Novhorodka"]
+      },
+      {
+        "name": "Kyiv Oblast",
+        "cities": ["Kyiv", "Bila Tserkva", "Brovy", "Boryspil", "Fastiv", "Irpin", "Vyshhorod", "Bucha", "Vasylkiv", "Boyarka", "Obukhiv", "Pereiaslav", "Slavutych", "Yahotyn", "Skvyra", "Myronivka", "Ukrainka", "Kagarlyk", "Vyshneve"]
+      },
+      {
+        "name": "Luhansk Oblast",
+        "cities": ["Luhansk", "Sievierodonetsk", "Alchevsk", "Lysychansk", "Khrustalnyi", "Rubizhne", "Antratsyt", "Dovzhansk", "Pervomaisk", "Brianka", "Rovenky", "Sorokyne", "Kadiivka", "Kreminna", "Svatove", "Starobilsk", "Shchastia", "Zolote", "Hirske"]
+      },
+      {
+        "name": "Lviv Oblast",
+        "cities": ["Lviv", "Drohobych", "Chervonohrad", "Stryi", "Boryslav", "Sambir", "Truskavets", "Zhovkva", "Mykolaiv", "Novoyavorivske", "Sokal", "Novyi Rozdil", "Vynnyky", "Yavoriv", "Zolochiv", "Horodok", "Kamianka-Buzka", "Morshyn", "Pustomyty", "Radekhiv", "Skole", "Zhydachiv"]
+      },
+      {
+        "name": "Mykolaiv Oblast",
+        "cities": ["Mykolaiv", "Pervomaisk", "Yuzhnoukrainsk", "Ochakiv", "Voznesensk", "Nova Odesa", "Snihurivka", "Bashtanka", "Vradiivka", "Berezanka", "Kazanka", "Kryve Ozero", "Vitovka"]
+      },
+      {
+        "name": "Odesa Oblast",
+        "cities": ["Odesa", "Izmail", "Chornomorsk", "Bilhorod-Dnistrovskyi", "Podilsk", "Yuzhne", "Kiliia", "Rozdilna", "Tatarbunary", "Bolhrad", "Artsyz", "Ananyiv", "Berezivka", "Teplodar", "Vylkove"]
+      },
+      {
+        "name": "Poltava Oblast",
+        "cities": ["Poltava", "Kremenchuk", "Lubny", "Myrhorod", "Horishni Plavni", "Komsomolsk", "Karlivka", "Pyriatyn", "Zinkiv", "Kobeliaky", "Lokhvytsia", "Hadyach", "Reshetylivka", "Dykanka"]
+      },
+      {
+        "name": "Rivne Oblast",
+        "cities": ["Rivne", "Varash", "Dubno", "Kostopil", "Sarny", "Zdolbuniv", "Berezne", "Korets", "Volodymyrets", "Rokytne", "Mlyniv", "Dubrovytsia"]
+      },
+      {
+        "name": "Sumy Oblast",
+        "cities": ["Sumy", "Konotop", "Shostka", "Okhtyrka", "Romny", "Lebedyn", "Hlukhiv", "Trostianets", "Krolevets", "Bilopillia", "Vorozhba", "Druzhba", "Seredyna-Buda", "Yampil", "Lypova Dolyna", "Nedryhailiv"]
+      },
+      {
+        "name": "Ternopil Oblast",
+        "cities": ["Ternopil", "Chortkiv", "Kremenets", "Berezhany", "Zbarazh", "Zalishchyky", "Buchach", "Terebovlia", "Pochaiv", "Lanivtsi", "Shumsk", "Khorostkiv", "Kozova", "Monastyryska"]
+      },
+      {
+        "name": "Vinnytsia Oblast",
+        "cities": ["Vinnytsia", "Zhmerynka", "Mohyliv-Podilskyi", "Khmilnyk", "Koziatyn", "Ladyzhyn", "Haisyn", "Bar", "Kalynivka", "Bershad", "Tulchyn", "Illintsi", "Pohrebyshche", "Nemyriv", "Yampil", "Sharhorod", "Kryzhopil"]
+      },
+      {
+        "name": "Volyn Oblast",
+        "cities": ["Lutsk", "Kovel", "Novovolynsk", "Volodymyr", "Kivertsi", "Rozhyshche", "Ustyluh", "Berestechko", "Manevychi", "Liuboml", "Horokhiv", "Shatsk", "Turiisk", "Ivanychi"]
+      },
+      {
+        "name": "Zakarpattia Oblast",
+        "cities": ["Uzhhorod", "Mukachevo", "Khust", "Berehove", "Vynohradiv", "Svaliava", "Rakhiv", "Tiachiv", "Irshava", "Perechyn", "Chop", "Mizhhiria", "Volovets", "Zhovkva", "Dubove", "Jasina", "Bushtyno"]
+      },
+      {
+        "name": "Zaporizhzhia Oblast",
+        "cities": ["Zaporizhzhia", "Melitopol", "Berdiansk", "Enerhodar", "Tokmak", "Pology", "Dniprorudne", "Vasylivka", "Orikhiv", "Huliaipole", "Kamianka-Dniprovska", "Yakymivka", "Vilniansk", "Molochansk", "Ternuvate", "Kyrylivka", "Vesele"]
+      },
+      {
+        "name": "Zhytomyr Oblast",
+        "cities": ["Zhytomyr", "Berdychiv", "Korosten", "Novohrad-Volynskyi", "Malyn", "Korostyshiv", "Olevsk", "Radomyshl", "Baranivka", "Ovruch", "Andrushivka", "Chernyakhiv", "Chudniv", "Brusyliv", "Popilnia", "Ruzhyn", "Horodnytsia", "Luhyny", "Narodychi", "Yemilchyne"]
+      }
+    ]
+  },
+  {
+    "country": "United Arab Emirates",
+    "currencyCode": "AED",
+    "currencyName": "UAE Dirham",
+    "states": [
+      {
+        "name": "Abu Dhabi",
+        "cities": ["Abu Dhabi", "Al Ain", "Madinat Zayed", "Ruwais", "Liwa Oasis", "Ghayathi", "Mirfa", "Sila", "Delma Island", "Tarif"]
+      },
+      {
+        "name": "Ajman",
+        "cities": ["Ajman", "Al Manama", "Masfout"]
+      },
+      {
+        "name": "Dubai",
+        "cities": ["Dubai", "Jebel Ali", "Hatta", "Al Aweer", "Lehbab"]
+      },
+      {
+        "name": "Fujairah",
+        "cities": ["Fujairah", "Dibba Al-Fujairah", "Al Bithnah", "Al Badiyah", "Mirbah", "Saqamqam", "Tayyibah"]
+      },
+      {
+        "name": "Ras al-Khaimah",
+        "cities": ["Ras Al Khaimah", "Al Jazirah Al Hamra", "Digdaga", "Khatt", "Al Rams", "Al Hamraniyah", "Al Uraibi", "Shamal"]
+      },
+      {
+        "name": "Sharjah",
+        "cities": ["Sharjah", "Khor Fakkan", "Kalba", "Dhaid", "Al Madam", "Al Batayeh", "Mileiha", "Al Sajaa", "Nahwa", "Wadi Al Helo"]
+      },
+      {
+        "name": "Umm al-Quwain",
+        "cities": ["Umm Al Quwain", "Al Sinniyah", "Al Raas", "Falaj Al Mualla", "Khallet", "Al Ramlah"]
+      }
+    ]
+  },
+  {
+    "country": "Uruguay",
+    "currencyCode": "UYU",
+    "currencyName": "Uruguayan Peso",
+    "states": [
+      {
+        "name": "Artigas",
+        "cities": ["Artigas", "Bella Unión", "Tomás Gomensoro", "Javier de Viana", "Pintadito", "Sequeira", "Cerro Ejido"]
+      },
+      {
+        "name": "Canelones",
+        "cities": ["Canelones", "Ciudad de la Costa", "Las Piedras", "Pando", "La Paz", "Barros Blancos", "Progreso", "Joaquín Suárez", "Toledo", "Santa Lucía", "San Ramón", "Sauce", "Atlántida", "Parque del Plata", "Salinas", "Neptunia", "Cerrillos", "Fracc. Camino Maldonado", "Villa Crespo y San Andrés"]
+      },
+      {
+        "name": "Cerro Largo",
+        "cities": ["Melo", "Río Branco", "Fraile Muerto", "Aceguá", "Tupambaé", "Arbolito", "Isidoro Noblía", "Plácido Rosas"]
+      },
+      {
+        "name": "Colonia",
+        "cities": ["Colonia del Sacramento", "Carmelo", "Juan Lacaze", "Nueva Helvecia", "Rosario", "Nueva Palmira", "Tarariras", "Florencio Sánchez", "Ombúes de Lavalle", "Colonia Valdense", "La Paz", "Conchillas"]
+      },
+      {
+        "name": "Durazno",
+        "cities": ["Durazno", "Sarandí del Yí", "Villa del Carmen", "La Paloma", "Centenario", "Santa Bernardina", "Blanquillo", "Carlos Reyles"]
+      },
+      {
+        "name": "Flores",
+        "cities": ["Trinidad", "Ismael Cortinas", "Andresito", "La Casilla", "Juan José Castro", "Cerro Colorado"]
+      },
+      {
+        "name": "Florida",
+        "cities": ["Florida", "Sarandí Grande", "Casupá", "Fray Marcos", "Cardal", "25 de Agosto", "25 de Mayo", "Alejandro Gallinal", "Capilla del Sauce", "Chamizo", "Mendoza", "Nico Pérez"]
+      },
+      {
+        "name": "Lavalleja",
+        "cities": ["Minas", "José Pedro Varela", "Solís de Mataojo", "Mariscala", "José Batlle y Ordóñez", "Zapicán"]
+      },
+      {
+        "name": "Maldonado",
+        "cities": ["Maldonado", "Punta del Este", "San Carlos", "Piriápolis", "Pan de Azúcar", "Aiguá", "Solis", "Garzon", "La Barra", "Punta Ballena", "San Rafael", "Cerro Pelado", "Balneario Buenos Aires"]
+      },
+      {
+        "name": "Montevideo",
+        "cities": ["Montevideo", "Ciudad Vieja", "Centro", "Barrio Sur", "Cordón", "Palermo", "Parque Rodó", "Pocitos", "Punta Carretas", "Malvín", "Carrasco", "Las Canteras", "Punta Gorda", "Unión", "Bella Vista", "Colón", "Lezica", "Manga", "Toledo Chico", "Villa Española", "Cerro", "Casabó", "Pajas Blancas", "Paso de la Arena", "Santiago Vázquez", "Ituzaingó", "Peñarol", "Capurro", "Belvedere", "La Blanqueada", "Atahualpa", "Jacinto Vera", "La Comercial", "Tres Cruces", "Villa Muñoz", "Brazo Oriental", "Aguada", "Reducto", "Castro", "Prado", "Colón", "Nuevo París", "Piedras Blancas", "Manga", "Tres Ombúes", "Villa Dolores", "Parque Batlle", "Buceo", "Malvín Norte", "Maroñas", "Flor de Maroñas", "Las Acacias", "Jardines del Hipódromo", "Sayago", "Conciliación", "Belvedere", "Nuevo París", "Paso de las Duranas", "Pueblo Victoria", "Cerrito", "La Teja", "Tres Ombúes", "Casavalle", "Manga", "Punta de Rieles", "Bañados de Carrasco", "Carrasco Norte", "Carrasco", "Lomas de Carrasco"]
+      },
+      {
+        "name": "Paysandú",
+        "cities": ["Paysandú", "Guichón", "Quebracho", "San Félix", "Piedras Coloradas", "Lorenzo Geyres", "Orgoroso", "Chapicuy", "Esperanza", "Porvenir", "Tres Quintas", "Cuchilla de Buricayupí"]
+      },
+      {
+        "name": "Río Negro",
+        "cities": ["Fray Bentos", "Young", "Nuevo Berlín", "San Javier", "Algorta", "Grecco", "Barrio Anglo", "Sara", "Menafra", "Bellaco"]
+      },
+      {
+        "name": "Rivera",
+        "cities": ["Rivera", "Tranqueras", "Vichadero", "Minas de Corrales", "La Pedrera", "Mandubí", "Santa Teresa", "Laguna de Rocha", "Lapuente"]
+      },
+      {
+        "name": "Rocha",
+        "cities": ["Rocha", "Chuy", "Castillos", "Lascano", "La Paloma", "Cebollatí", "San Luis", "18 de Julio", "La Aguada", "Punta del Diablo", "Barra del Chuy", "Velázquez", "Aguas Dulces", "La Coronilla", "Cabo Polonio"]
+      },
+      {
+        "name": "Salto",
+        "cities": ["Salto", "Daymán", "Termas del Arapey", "Belén", "San Antonio", "Constitución", "Colonia Lavalleja", "Rincón de Valentín", "Cerro de Vera", "Pueblo Fernández", "Biassini", "Garibaldi"]
+      },
+      {
+        "name": "San José",
+        "cities": ["San José de Mayo", "Ciudad del Plata", "Libertad", "Delta del Tigre", "Puntas de Valdez", "Ecilda Paullier", "Rafael Perazza", "Rodríguez", "Capurro", "Ituzaingó", "Villa María", "Pueblo Nuevo", "Monte Grande", "Mal Abrigo", "Rincón de la Bolsa", "Villa Borja"]
+      },
+      {
+        "name": "Soriano",
+        "cities": ["Mercedes", "Dolores", "Cardona", "Chacras de Dolores", "José Enrique Rodó", "Palmitas", "Villa Soriano", "Egaña", "Risso", "Caa Yari", "Perseverano", "Agraciada", "Palmar"]
+      },
+      {
+        "name": "Tacuarembó",
+        "cities": ["Tacuarembó", "Paso de los Toros", "San Gregorio de Polanco", "Ansina", "Tambores", "Curtina", "La Pedrera", "Achar", "Paso Bonilla", "Clara", "Cuchilla de Peralta", "Balneario Iporá"]
+      },
+      {
+        "name": "Treinta y Tres",
+        "cities": ["Treinta y Tres", "Santa Clara de Olimar", "Vergara", "Cerro Chato", "Ejido de Treinta y Tres", "Isla Patrulla", "Arrozal Treinta y Tres", "Maria Albina", "Quebracho", "Rincón", "Villa Sara"]
+      }
+    ]
+  }
+]

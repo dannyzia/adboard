@@ -1,0 +1,3280 @@
+[
+  {
+    "country": "Afghanistan",
+    "currencyCode": "AFN",
+    "currencyName": "Afghan Afghani",
+    "states": [
+      {
+        "name": "Badakhshan",
+        "cities": [
+          "Fayzabad",
+          "Eshkashem",
+          "Jurm",
+          "Khash"
+        ]
+      },
+      {
+        "name": "Badghis",
+        "cities": [
+          "Qala-e-Naw",
+          "Bala Murghab",
+          "Ab Kamari"
+        ]
+      },
+      {
+        "name": "Baghlan",
+        "cities": [
+          "Puli Khumri",
+          "Baghlan",
+          "Dahana-e-Ghori"
+        ]
+      },
+      {
+        "name": "Balkh",
+        "cities": [
+          "Mazar-i-Sharif",
+          "Balkh",
+          "Shulgara"
+        ]
+      },
+      {
+        "name": "Bamyan",
+        "cities": [
+          "Bamyan",
+          "Panjab",
+          "Shibar"
+        ]
+      },
+      {
+        "name": "Daykundi",
+        "cities": [
+          "Nili",
+          "Khedir",
+          "Gizab"
+        ]
+      },
+      {
+        "name": "Farah",
+        "cities": [
+          "Farah",
+          "Anar Dara",
+          "Khak-e-Safid"
+        ]
+      },
+      {
+        "name": "Faryab",
+        "cities": [
+          "Maymana",
+          "Andkhoy",
+          "Dawlat Abad"
+        ]
+      },
+      {
+        "name": "Ghazni",
+        "cities": [
+          "Ghazni",
+          "Rashidan",
+          "Waghaz"
+        ]
+      },
+      {
+        "name": "Ghor",
+        "cities": [
+          "Chaghcharan",
+          "Shahrak",
+          "Taywara"
+        ]
+      },
+      {
+        "name": "Helmand",
+        "cities": [
+          "Lashkargah",
+          "Sangin",
+          "Kajaki"
+        ]
+      },
+      {
+        "name": "Herat",
+        "cities": [
+          "Herat",
+          "Ghoryan",
+          "Guzara"
+        ]
+      },
+      {
+        "name": "Jowzjan",
+        "cities": [
+          "Sheberghan",
+          "Aqcha",
+          "Khamyab"
+        ]
+      },
+      {
+        "name": "Kabul",
+        "cities": [
+          "Kabul",
+          "Deh Sabz",
+          "Kalakan"
+        ]
+      },
+      {
+        "name": "Kandahar",
+        "cities": [
+          "Kandahar",
+          "Spin Boldak",
+          "Arghandab"
+        ]
+      },
+      {
+        "name": "Kapisa",
+        "cities": [
+          "Mahmud-i-Raqi",
+          "Hesa Awal Kohistan"
+        ]
+      },
+      {
+        "name": "Khost",
+        "cities": [
+          "Khost",
+          "Spera",
+          "Tani"
+        ]
+      },
+      {
+        "name": "Kunar",
+        "cities": [
+          "Asadabad",
+          "Asmar",
+          "Chapa Dara"
+        ]
+      },
+      {
+        "name": "Kunduz",
+        "cities": [
+          "Kunduz",
+          "Ali Abad",
+          "Khan Abad"
+        ]
+      },
+      {
+        "name": "Laghman",
+        "cities": [
+          "Mihtarlam",
+          "Alingar",
+          "Dawlat Shah"
+        ]
+      },
+      {
+        "name": "Logar",
+        "cities": [
+          "Puli Alam",
+          "Baraki Barak",
+          "Kharwar"
+        ]
+      },
+      {
+        "name": "Nangarhar",
+        "cities": [
+          "Jalalabad",
+          "Behsud",
+          "Surkh Rod"
+        ]
+      },
+      {
+        "name": "Nimruz",
+        "cities": [
+          "Zaranj",
+          "Chakhansur",
+          "Kang"
+        ]
+      },
+      {
+        "name": "Nuristan",
+        "cities": [
+          "Parun",
+          "Kamdesh",
+          "Wama"
+        ]
+      },
+      {
+        "name": "Paktia",
+        "cities": [
+          "Gardez",
+          "Zadran",
+          "Ahmad Aba"
+        ]
+      },
+      {
+        "name": "Paktika",
+        "cities": [
+          "Sharan",
+          "Urgun",
+          "Sar Hawza"
+        ]
+      },
+      {
+        "name": "Panjshir",
+        "cities": [
+          "Bazarak",
+          "Rukha",
+          "Anaba"
+        ]
+      },
+      {
+        "name": "Parwan",
+        "cities": [
+          "Charikar",
+          "Jabalussaraj",
+          "Shinwari"
+        ]
+      },
+      {
+        "name": "Samangan",
+        "cities": [
+          "Aybak",
+          "Dara-i-Suf",
+          "Ruyi Du Ab"
+        ]
+      },
+      {
+        "name": "Sar-e Pol",
+        "cities": [
+          "Sar-e Pol",
+          "Balkhab",
+          "Gosfandi"
+        ]
+      },
+      {
+        "name": "Takhar",
+        "cities": [
+          "Taloqan",
+          "Baharak",
+          "Dashti Qala"
+        ]
+      },
+      {
+        "name": "Urozgan",
+        "cities": [
+          "Tarinkot",
+          "Chora",
+          "Deh Rawud"
+        ]
+      },
+      {
+        "name": "Wardak",
+        "cities": [
+          "Maidan Shar",
+          "Jalrez",
+          "Saydabad"
+        ]
+      },
+      {
+        "name": "Zabul",
+        "cities": [
+          "Qalat",
+          "Shahjoy",
+          "Shamulzayi"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Albania",
+    "currencyCode": "ALL",
+    "currencyName": "Albanian Lek",
+    "states": [
+      {
+        "name": "Berat",
+        "cities": [
+          "Berat",
+          "Kucove",
+          "Polican",
+          "Ura Vajgurore"
+        ]
+      },
+      {
+        "name": "Dibër",
+        "cities": [
+          "Peshkopi",
+          "Bulqizë",
+          "Klos",
+          "Mat"
+        ]
+      },
+      {
+        "name": "Durrës",
+        "cities": [
+          "Durrës",
+          "Shijak",
+          "Sukth",
+          "Manëz"
+        ]
+      },
+      {
+        "name": "Elbasan",
+        "cities": [
+          "Elbasan",
+          "Gramsh",
+          "Librazhd",
+          "Peqin"
+        ]
+      },
+      {
+        "name": "Fier",
+        "cities": [
+          "Fier",
+          "Lushnjë",
+          "Mallakastër",
+          "Patos"
+        ]
+      },
+      {
+        "name": "Gjirokastër",
+        "cities": [
+          "Gjirokastër",
+          "Përmet",
+          "Tepelenë",
+          "Memaliaj"
+        ]
+      },
+      {
+        "name": "Korçë",
+        "cities": [
+          "Korçë",
+          "Pogradec",
+          "Devoll",
+          "Kolonjë"
+        ]
+      },
+      {
+        "name": "Kukës",
+        "cities": [
+          "Kukës",
+          "Has",
+          "Tropojë",
+          "Krumë"
+        ]
+      },
+      {
+        "name": "Lezhë",
+        "cities": [
+          "Lezhë",
+          "Laç",
+          "Mirditë",
+          "Rrëshen"
+        ]
+      },
+      {
+        "name": "Shkodër",
+        "cities": [
+          "Shkodër",
+          "Malësi e Madhe",
+          "Pukë",
+          "Vau i Dejës"
+        ]
+      },
+      {
+        "name": "Tirana",
+        "cities": [
+          "Tirana",
+          "Kamëz",
+          "Vora",
+          "Kavajë"
+        ]
+      },
+      {
+        "name": "Vlorë",
+        "cities": [
+          "Vlorë",
+          "Sarandë",
+          "Himarë",
+          "Delvinë"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Algeria",
+    "currencyCode": "DZD",
+    "currencyName": "Algerian Dinar",
+    "states": [
+      {
+        "name": "Adrar",
+        "cities": [
+          "Adrar",
+          "Aoulef",
+          "Aougrout",
+          "Timimoun"
+        ]
+      },
+      {
+        "name": "Chlef",
+        "cities": [
+          "Chlef",
+          "Ténès",
+          "Beni Haoua",
+          "Oued Fodda"
+        ]
+      },
+      {
+        "name": "Laghouat",
+        "cities": [
+          "Laghouat",
+          "Aflou",
+          "Ksar El Hirane",
+          "Gueltat Sidi Saad"
+        ]
+      },
+      {
+        "name": "Oum El Bouaghi",
+        "cities": [
+          "Oum El Bouaghi",
+          "Aïn Beïda",
+          "Ksar Sbahi",
+          "Aïn Babouche"
+        ]
+      },
+      {
+        "name": "Batna",
+        "cities": [
+          "Batna",
+          "Barika",
+          "Merouana",
+          "Tazoult"
+        ]
+      },
+      {
+        "name": "Béjaïa",
+        "cities": [
+          "Béjaïa",
+          "Akbou",
+          "Seddouk",
+          "Kherrata"
+        ]
+      },
+      {
+        "name": "Biskra",
+        "cities": [
+          "Biskra",
+          "Ourlal",
+          "Sidi Okba",
+          "Djemorah"
+        ]
+      },
+      {
+        "name": "Béchar",
+        "cities": [
+          "Béchar",
+          "Abadla",
+          "Beni Ounif",
+          "Kenadsa"
+        ]
+      },
+      {
+        "name": "Blida",
+        "cities": [
+          "Blida",
+          "Boufarik",
+          "Bouïnane",
+          "Ouled Yaich"
+        ]
+      },
+      {
+        "name": "Bouira",
+        "cities": [
+          "Bouira",
+          "Sour El Ghozlane",
+          "Lakhdaria",
+          "Haizer"
+        ]
+      },
+      {
+        "name": "Tamanrasset",
+        "cities": [
+          "Tamanrasset",
+          "In Guezzam",
+          "In Salah",
+          "Tin Zaouatine"
+        ]
+      },
+      {
+        "name": "Tébessa",
+        "cities": [
+          "Tébessa",
+          "Bir el-Ater",
+          "Cheria",
+          "Morsott"
+        ]
+      },
+      {
+        "name": "Tlemcen",
+        "cities": [
+          "Tlemcen",
+          "Hennaya",
+          "Remchi",
+          "Sabra"
+        ]
+      },
+      {
+        "name": "Tiaret",
+        "cities": [
+          "Tiaret",
+          "Mahdia",
+          "Sougueur",
+          "Ksar Chellala"
+        ]
+      },
+      {
+        "name": "Tizi Ouzou",
+        "cities": [
+          "Tizi Ouzou",
+          "Azazga",
+          "Aïn El Hammam",
+          "Draâ Ben Khedda"
+        ]
+      },
+      {
+        "name": "Algiers",
+        "cities": [
+          "Algiers",
+          "Dar El Beïda",
+          "Rouïba",
+          "Draria"
+        ]
+      },
+      {
+        "name": "Djelfa",
+        "cities": [
+          "Djelfa",
+          "Aïn Oussera",
+          "Hassi Bahbah",
+          "Messaad"
+        ]
+      },
+      {
+        "name": "Jijel",
+        "cities": [
+          "Jijel",
+          "Taher",
+          "El Aouana",
+          "Chekfa"
+        ]
+      },
+      {
+        "name": "Sétif",
+        "cities": [
+          "Sétif",
+          "El Eulma",
+          "Aïn Oulmene",
+          "Bougaâ"
+        ]
+      },
+      {
+        "name": "Saïda",
+        "cities": [
+          "Saïda",
+          "El Hessasna",
+          "Youb",
+          "Sidi Boubekeur"
+        ]
+      },
+      {
+        "name": "Skikda",
+        "cities": [
+          "Skikda",
+          "Azzaba",
+          "El Harrouch",
+          "Tamalous"
+        ]
+      },
+      {
+        "name": "Sidi Bel Abbès",
+        "cities": [
+          "Sidi Bel Abbès",
+          "Tessala",
+          "Sfisef",
+          "Telagh"
+        ]
+      },
+      {
+        "name": "Annaba",
+        "cities": [
+          "Annaba",
+          "El Bouni",
+          "Seraïdi",
+          "Treat"
+        ]
+      },
+      {
+        "name": "Guelma",
+        "cities": [
+          "Guelma",
+          "Héliopolis",
+          "Aïn Makhlouf",
+          "Boumahra Ahmed"
+        ]
+      },
+      {
+        "name": "Constantine",
+        "cities": [
+          "Constantine",
+          "El Khroub",
+          "Aïn Abid",
+          "Zighoud Youcef"
+        ]
+      },
+      {
+        "name": "Médéa",
+        "cities": [
+          "Médéa",
+          "Berrouaghia",
+          "Ksar El Boukhari",
+          "Chelghoum Laïd"
+        ]
+      },
+      {
+        "name": "Mostaganem",
+        "cities": [
+          "Mostaganem",
+          "Aïn Tedeles",
+          "Sidi Ali",
+          "Kheïredine"
+        ]
+      },
+      {
+        "name": "M'Sila",
+        "cities": [
+          "M'Sila",
+          "Bou Saâda",
+          "Sidi Aïssa",
+          "Maadid"
+        ]
+      },
+      {
+        "name": "Mascara",
+        "cities": [
+          "Mascara",
+          "Sig",
+          "Mohammedia",
+          "Tighennif"
+        ]
+      },
+      {
+        "name": "Ouargla",
+        "cities": [
+          "Ouargla",
+          "Hassi Messaoud",
+          "N'Goussa",
+          "Rouissat"
+        ]
+      },
+      {
+        "name": "Oran",
+        "cities": [
+          "Oran",
+          "Bir El Djir",
+          "Es Senia",
+          "Arzew"
+        ]
+      },
+      {
+        "name": "El Bayadh",
+        "cities": [
+          "El Bayadh",
+          "Rogassa",
+          "Brezina",
+          "Chellala"
+        ]
+      },
+      {
+        "name": "Illizi",
+        "cities": [
+          "Illizi",
+          "Djanet",
+          "In Amenas",
+          "Bordj Omar Driss"
+        ]
+      },
+      {
+        "name": "Bordj Bou Arréridj",
+        "cities": [
+          "Bordj Bou Arréridj",
+          "Ras El Oued",
+          "Bir Kasdali",
+          "El Main"
+        ]
+      },
+      {
+        "name": "Boumerdès",
+        "cities": [
+          "Boumerdès",
+          "Dellys",
+          "Thenia",
+          "Corso"
+        ]
+      },
+      {
+        "name": "El Tarf",
+        "cities": [
+          "El Tarf",
+          "Ben M'Hidi",
+          "Besbes",
+          "Bouhadjar"
+        ]
+      },
+      {
+        "name": "Tindouf",
+        "cities": [
+          "Tindouf",
+          "Oum El Assel"
+        ]
+      },
+      {
+        "name": "Tissemsilt",
+        "cities": [
+          "Tissemsilt",
+          "Theniet El Had",
+          "Lazharia",
+          "Khemisti"
+        ]
+      },
+      {
+        "name": "El Oued",
+        "cities": [
+          "El Oued",
+          "Robbah",
+          "Bayadha",
+          "Djamaa"
+        ]
+      },
+      {
+        "name": "Khenchela",
+        "cities": [
+          "Khenchela",
+          "Kais",
+          "Babar",
+          "Chechar"
+        ]
+      },
+      {
+        "name": "Souk Ahras",
+        "cities": [
+          "Souk Ahras",
+          "Sedrata",
+          "M'Daourouch",
+          "Ouled Driss"
+        ]
+      },
+      {
+        "name": "Tipaza",
+        "cities": [
+          "Tipaza",
+          "Cherchell",
+          "Hadjar",
+          "Douaouda"
+        ]
+      },
+      {
+        "name": "Mila",
+        "cities": [
+          "Mila",
+          "Ferdjioua",
+          "Chelghoum Laïd",
+          "Tadjenanet"
+        ]
+      },
+      {
+        "name": "Aïn Defla",
+        "cities": [
+          "Aïn Defla",
+          "Khemis Miliana",
+          "El Attaf",
+          "Bordj Emir Khaled"
+        ]
+      },
+      {
+        "name": "Naâma",
+        "cities": [
+          "Naâma",
+          "Mécheria",
+          "Aïn Sefra",
+          "Asla"
+        ]
+      },
+      {
+        "name": "Aïn Témouchent",
+        "cities": [
+          "Aïn Témouchent",
+          "Beni Saf",
+          "Hammam Bou Hadjar",
+          "El Malah"
+        ]
+      },
+      {
+        "name": "Ghardaïa",
+        "cities": [
+          "Ghardaïa",
+          "El Atteuf",
+          "Dayate Ben Dahoua",
+          "Berriane"
+        ]
+      },
+      {
+        "name": "Relizane",
+        "cities": [
+          "Relizane",
+          "Mendes",
+          "El Matmar",
+          "Zemmora"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Andorra",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {
+        "name": "Andorra la Vella",
+        "cities": [
+          "Andorra la Vella"
+        ]
+      },
+      {
+        "name": "Canillo",
+        "cities": [
+          "Canillo"
+        ]
+      },
+      {
+        "name": "Encamp",
+        "cities": [
+          "Encamp"
+        ]
+      },
+      {
+        "name": "Escaldes-Engordany",
+        "cities": [
+          "Escaldes-Engordany"
+        ]
+      },
+      {
+        "name": "La Massana",
+        "cities": [
+          "La Massana"
+        ]
+      },
+      {
+        "name": "Ordino",
+        "cities": [
+          "Ordino"
+        ]
+      },
+      {
+        "name": "Sant Julià de Lòria",
+        "cities": [
+          "Sant Julià de Lòria"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Angola",
+    "currencyCode": "AOA",
+    "currencyName": "Angolan Kwanza",
+    "states": [
+      {
+        "name": "Bengo",
+        "cities": [
+          "Caxito",
+          "Ambriz",
+          "Dande",
+          "Nambuangongo"
+        ]
+      },
+      {
+        "name": "Benguela",
+        "cities": [
+          "Benguela",
+          "Lobito",
+          "Baía Farta",
+          "Bocoio"
+        ]
+      },
+      {
+        "name": "Bié",
+        "cities": [
+          "Kuito",
+          "Andulo",
+          "Camacupa",
+          "Cuemba"
+        ]
+      },
+      {
+        "name": "Cabinda",
+        "cities": [
+          "Cabinda",
+          "Cacongo",
+          "Buco-Zau",
+          "Landana"
+        ]
+      },
+      {
+        "name": "Cuando Cubango",
+        "cities": [
+          "Menongue",
+          "Cuito Cuanavale",
+          "Dirico",
+          "Mavinga"
+        ]
+      },
+      {
+        "name": "Cuanza Norte",
+        "cities": [
+          "N'dalatando",
+          "Golungo Alto",
+          "Ambaca",
+          "Banga"
+        ]
+      },
+      {
+        "name": "Cuanza Sul",
+        "cities": [
+          "Sumbe",
+          "Porto Amboim",
+          "Quibala",
+          "Seles"
+        ]
+      },
+      {
+        "name": "Cunene",
+        "cities": [
+          "Ondjiva",
+          "Namacunde",
+          "Cuanhama",
+          "Curoca"
+        ]
+      },
+      {
+        "name": "Huambo",
+        "cities": [
+          "Huambo",
+          "Caála",
+          "Longonjo",
+          "Ekunha"
+        ]
+      },
+      {
+        "name": "Huíla",
+        "cities": [
+          "Lubango",
+          "Cacula",
+          "Caluquembe",
+          "Chibia"
+        ]
+      },
+      {
+        "name": "Luanda",
+        "cities": [
+          "Luanda",
+          "Cacuaco",
+          "Viana",
+          "Belas"
+        ]
+      },
+      {
+        "name": "Lunda Norte",
+        "cities": [
+          "Dundo",
+          "Cambulo",
+          "Capenda Camulemba",
+          "Caungula"
+        ]
+      },
+      {
+        "name": "Lunda Sul",
+        "cities": [
+          "Saurimo",
+          "Cacolo",
+          "Dala",
+          "Muconda"
+        ]
+      },
+      {
+        "name": "Malanje",
+        "cities": [
+          "Malanje",
+          "Cacuso",
+          "Calandula",
+          "Cangandala"
+        ]
+      },
+      {
+        "name": "Moxico",
+        "cities": [
+          "Luena",
+          "Luchazes",
+          "Cameia",
+          "Léua"
+        ]
+      },
+      {
+        "name": "Namibe",
+        "cities": [
+          "Moçâmedes",
+          "Tômbua",
+          "Virei",
+          "Camucuio"
+        ]
+      },
+      {
+        "name": "Uíge",
+        "cities": [
+          "Uíge",
+          "Mbanza Congo",
+          "Bembe",
+          "Buengas"
+        ]
+      },
+      {
+        "name": "Zaire",
+        "cities": [
+          "Mbanza Congo",
+          "Soyo",
+          "N'zeto",
+          "Tomboco"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Antigua and Barbuda",
+    "currencyCode": "XCD",
+    "currencyName": "East Caribbean Dollar",
+    "states": [
+      {
+        "name": "Barbuda",
+        "cities": [
+          "Codrington"
+        ]
+      },
+      {
+        "name": "Redonda",
+        "cities": []
+      },
+      {
+        "name": "Saint George",
+        "cities": [
+          "Parham"
+        ]
+      },
+      {
+        "name": "Saint John",
+        "cities": [
+          "St. John's"
+        ]
+      },
+      {
+        "name": "Saint Mary",
+        "cities": [
+          "Bolans"
+        ]
+      },
+      {
+        "name": "Saint Paul",
+        "cities": [
+          "Falmouth"
+        ]
+      },
+      {
+        "name": "Saint Peter",
+        "cities": [
+          "Parham"
+        ]
+      },
+      {
+        "name": "Saint Philip",
+        "cities": [
+          "Carlisle"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Argentina",
+    "currencyCode": "ARS",
+    "currencyName": "Argentine Peso",
+    "states": [
+      {
+        "name": "Buenos Aires",
+        "cities": [
+          "La Plata",
+          "Mar del Plata",
+          "Bahía Blanca",
+          "Quilmes",
+          "Merlo",
+          "Lanús"
+        ]
+      },
+      {
+        "name": "Catamarca",
+        "cities": [
+          "San Fernando del Valle de Catamarca",
+          "Andalgalá",
+          "Belén",
+          "Fiambalá"
+        ]
+      },
+      {
+        "name": "Chaco",
+        "cities": [
+          "Resistencia",
+          "Presidencia Roque Sáenz Peña",
+          "Charata",
+          "Villa Ángela"
+        ]
+      },
+      {
+        "name": "Chubut",
+        "cities": [
+          "Rawson",
+          "Comodoro Rivadavia",
+          "Trelew",
+          "Puerto Madryn",
+          "Esquel"
+        ]
+      },
+      {
+        "name": "Córdoba",
+        "cities": [
+          "Córdoba",
+          "Río Cuarto",
+          "Villa María",
+          "San Francisco",
+          "Alta Gracia"
+        ]
+      },
+      {
+        "name": "Corrientes",
+        "cities": [
+          "Corrientes",
+          "Goya",
+          "Mercedes",
+          "Curuzú Cuatiá",
+          "Bella Vista"
+        ]
+      },
+      {
+        "name": "Entre Ríos",
+        "cities": [
+          "Paraná",
+          "Concordia",
+          "Gualeguaychú",
+          "Concepción del Uruguay",
+          "Gualeguay"
+        ]
+      },
+      {
+        "name": "Formosa",
+        "cities": [
+          "Formosa",
+          "Clorinda",
+          "Pirané",
+          "El Colorado",
+          "Laguna Naick Neck"
+        ]
+      },
+      {
+        "name": "Jujuy",
+        "cities": [
+          "San Salvador de Jujuy",
+          "Palpalá",
+          "Libertador General San Martín",
+          "Perico",
+          "El Carmen"
+        ]
+      },
+      {
+        "name": "La Pampa",
+        "cities": [
+          "Santa Rosa",
+          "General Pico",
+          "Toay",
+          "Realicó",
+          "Eduardo Castex"
+        ]
+      },
+      {
+        "name": "La Rioja",
+        "cities": [
+          "La Rioja",
+          "Chilecito",
+          "Aimogasta",
+          "Chamical",
+          "Chepes"
+        ]
+      },
+      {
+        "name": "Mendoza",
+        "cities": [
+          "Mendoza",
+          "San Rafael",
+          "Godoy Cruz",
+          "Guaymallén",
+          "Maipú"
+        ]
+      },
+      {
+        "name": "Misiones",
+        "cities": [
+          "Posadas",
+          "Oberá",
+          "Eldorado",
+          "San Vicente",
+          "Puerto Iguazú"
+        ]
+      },
+      {
+        "name": "Neuquén",
+        "cities": [
+          "Neuquén",
+          "Cutral-Có",
+          "Plottier",
+          "Zapala",
+          "San Martín de los Andes"
+        ]
+      },
+      {
+        "name": "Río Negro",
+        "cities": [
+          "Viedma",
+          "San Carlos de Bariloche",
+          "General Roca",
+          "Cipolletti",
+          "Allen"
+        ]
+      },
+      {
+        "name": "Salta",
+        "cities": [
+          "Salta",
+          "San Ramón de la Nueva Orán",
+          "Tartagal",
+          "Cafayate",
+          "Metán"
+        ]
+      },
+      {
+        "name": "San Juan",
+        "cities": [
+          "San Juan",
+          "Rivadavia",
+          "Santa Lucía",
+          "Pocito",
+          "Caucete"
+        ]
+      },
+      {
+        "name": "San Luis",
+        "cities": [
+          "San Luis",
+          "Villa Mercedes",
+          "Juana Koslay",
+          "Justo Daract",
+          "La Toma"
+        ]
+      },
+      {
+        "name": "Santa Cruz",
+        "cities": [
+          "Río Gallegos",
+          "Caleta Olivia",
+          "Puerto Deseado",
+          "Pico Truncado",
+          "El Calafate"
+        ]
+      },
+      {
+        "name": "Santa Fe",
+        "cities": [
+          "Santa Fe",
+          "Rosario",
+          "Rafaela",
+          "Venado Tuerto",
+          "Reconquista"
+        ]
+      },
+      {
+        "name": "Santiago del Estero",
+        "cities": [
+          "Santiago del Estero",
+          "La Banda",
+          "Frías",
+          "Añatuya",
+          "Termas de Río Hondo"
+        ]
+      },
+      {
+        "name": "Tierra del Fuego",
+        "cities": [
+          "Ushuaia",
+          "Río Grande",
+          "Tolhuin"
+        ]
+      },
+      {
+        "name": "Tucumán",
+        "cities": [
+          "San Miguel de Tucumán",
+          "Yerba Buena",
+          "Concepción",
+          "Aguilares",
+          "Monteros"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Armenia",
+    "currencyCode": "AMD",
+    "currencyName": "Armenian Dram",
+    "states": [
+      {
+        "name": "Aragatsotn",
+        "cities": [
+          "Ashtarak",
+          "Aparan",
+          "Talin",
+          "Oshakan"
+        ]
+      },
+      {
+        "name": "Ararat",
+        "cities": [
+          "Artashat",
+          "Ararat",
+          "Masis",
+          "Vedi"
+        ]
+      },
+      {
+        "name": "Armavir",
+        "cities": [
+          "Armavir",
+          "Vagharshapat",
+          "Metsamor",
+          "Echmiadzin"
+        ]
+      },
+      {
+        "name": "Gegharkunik",
+        "cities": [
+          "Gavar",
+          "Sevan",
+          "Martuni",
+          "Vardenis"
+        ]
+      },
+      {
+        "name": "Kotayk",
+        "cities": [
+          "Hrazdan",
+          "Abovyan",
+          "Charentsavan",
+          "Nor Hachn"
+        ]
+      },
+      {
+        "name": "Lori",
+        "cities": [
+          "Vanadzor",
+          "Spitak",
+          "Alaverdi",
+          "Stepanavan"
+        ]
+      },
+      {
+        "name": "Shirak",
+        "cities": [
+          "Gyumri",
+          "Artik",
+          "Maralik",
+          "Akhuryan"
+        ]
+      },
+      {
+        "name": "Syunik",
+        "cities": [
+          "Kapan",
+          "Goris",
+          "Sisian",
+          "Meghri"
+        ]
+      },
+      {
+        "name": "Tavush",
+        "cities": [
+          "Ijevan",
+          "Dilijan",
+          "Berd",
+          "Noyemberyan"
+        ]
+      },
+      {
+        "name": "Vayots Dzor",
+        "cities": [
+          "Yeghegnadzor",
+          "Vayk",
+          "Jermuk",
+          "Yeghegis"
+        ]
+      },
+      {
+        "name": "Yerevan",
+        "cities": [
+          "Yerevan",
+          "Erebuni",
+          "Kanaker-Zeytun",
+          "Malatia-Sebastia"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Australia",
+    "currencyCode": "AUD",
+    "currencyName": "Australian Dollar",
+    "states": [
+      {
+        "name": "Australian Capital Territory",
+        "cities": [
+          "Canberra",
+          "Belconnen",
+          "Gungahlin",
+          "Tuggeranong"
+        ]
+      },
+      {
+        "name": "New South Wales",
+        "cities": [
+          "Sydney",
+          "Newcastle",
+          "Wollongong",
+          "Central Coast",
+          "Maitland"
+        ]
+      },
+      {
+        "name": "Northern Territory",
+        "cities": [
+          "Darwin",
+          "Palmerston",
+          "Alice Springs",
+          "Katherine",
+          "Nhulunbuy"
+        ]
+      },
+      {
+        "name": "Queensland",
+        "cities": [
+          "Brisbane",
+          "Gold Coast",
+          "Sunshine Coast",
+          "Townsville",
+          "Cairns"
+        ]
+      },
+      {
+        "name": "South Australia",
+        "cities": [
+          "Adelaide",
+          "Mount Gambier",
+          "Whyalla",
+          "Murray Bridge",
+          "Port Augusta"
+        ]
+      },
+      {
+        "name": "Tasmania",
+        "cities": [
+          "Hobart",
+          "Launceston",
+          "Devonport",
+          "Burnie",
+          "Ulverstone"
+        ]
+      },
+      {
+        "name": "Victoria",
+        "cities": [
+          "Melbourne",
+          "Geelong",
+          "Ballarat",
+          "Bendigo",
+          "Melton"
+        ]
+      },
+      {
+        "name": "Western Australia",
+        "cities": [
+          "Perth",
+          "Mandurah",
+          "Bunbury",
+          "Geraldton",
+          "Albany"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Austria",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {
+        "name": "Burgenland",
+        "cities": [
+          "Eisenstadt",
+          "Rust",
+          "Mattersburg",
+          "Oberpullendorf",
+          "Neusiedl am See"
+        ]
+      },
+      {
+        "name": "Carinthia",
+        "cities": [
+          "Klagenfurt",
+          "Villach",
+          "Wolfsberg",
+          "Spittal an der Drau",
+          "Feldkirchen"
+        ]
+      },
+      {
+        "name": "Lower Austria",
+        "cities": [
+          "Sankt Pölten",
+          "Wiener Neustadt",
+          "Krems",
+          "Baden",
+          "Amstetten"
+        ]
+      },
+      {
+        "name": "Salzburg",
+        "cities": [
+          "Salzburg",
+          "Hallein",
+          "Saalfelden",
+          "Bischofshofen",
+          "Zell am See"
+        ]
+      },
+      {
+        "name": "Styria",
+        "cities": [
+          "Graz",
+          "Leoben",
+          "Kapfenberg",
+          "Bruck an der Mur",
+          "Knittelfeld"
+        ]
+      },
+      {
+        "name": "Tyrol",
+        "cities": [
+          "Innsbruck",
+          "Kufstein",
+          "Telfs",
+          "Schwaz",
+          "Hall in Tirol"
+        ]
+      },
+      {
+        "name": "Upper Austria",
+        "cities": [
+          "Linz",
+          "Wels",
+          "Steyr",
+          "Leonding",
+          "Traun"
+        ]
+      },
+      {
+        "name": "Vienna",
+        "cities": [
+          "Vienna",
+          "Donaustadt",
+          "Favoriten",
+          "Floridsdorf",
+          "Hietzing"
+        ]
+      },
+      {
+        "name": "Vorarlberg",
+        "cities": [
+          "Bregenz",
+          "Dornbirn",
+          "Feldkirch",
+          "Lustenau",
+          "Hohenems"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Azerbaijan",
+    "currencyCode": "AZN",
+    "currencyName": "Azerbaijani Manat",
+    "states": [
+      {
+        "name": "Absheron",
+        "cities": [
+          "Khirdalan",
+          "Sumqayit",
+          "Baku",
+          "Mardakan",
+          "Buzovna"
+        ]
+      },
+      {
+        "name": "Aghjabadi",
+        "cities": [
+          "Aghjabadi",
+          "Hindarx",
+          "Avşar",
+          "Kürdkəndi"
+        ]
+      },
+      {
+        "name": "Agdam",
+        "cities": [
+          "Agdam",
+          "Abdally",
+          "Xıdırlı",
+          "Quzanlı"
+        ]
+      },
+      {
+        "name": "Agdash",
+        "cities": [
+          "Agdash",
+          "Ləki",
+          "Pirəyir",
+          "Yuxarı Ləki"
+        ]
+      },
+      {
+        "name": "Agstafa",
+        "cities": [
+          "Agstafa",
+          "Vurğun",
+          "Qazax",
+          "Saloğlu"
+        ]
+      },
+      {
+        "name": "Agsu",
+        "cities": [
+          "Agsu",
+          "Kələnov",
+          "Bico",
+          "Qaraməmmədli"
+        ]
+      },
+      {
+        "name": "Astara",
+        "cities": [
+          "Astara",
+          "Kizhaba",
+          "Şıxarxı",
+          "Sipiyəpart"
+        ]
+      },
+      {
+        "name": "Baku",
+        "cities": [
+          "Baku",
+          "Surakhany",
+          "Khatai",
+          "Nasimi",
+          "Sabail"
+        ]
+      },
+      {
+        "name": "Balakan",
+        "cities": [
+          "Balakan",
+          "Qabaqçöl",
+          "Katex",
+          "Mahamalar"
+        ]
+      },
+      {
+        "name": "Barda",
+        "cities": [
+          "Barda",
+          "Dəymədağlı",
+          "Şirvanlı",
+          "Yeni Daşkənd"
+        ]
+      },
+      {
+        "name": "Beylagan",
+        "cities": [
+          "Beylagan",
+          "Örənqala",
+          "Milabad",
+          "Canbar"
+        ]
+      },
+      {
+        "name": "Bilasuvar",
+        "cities": [
+          "Bilasuvar",
+          "Yuxarı Aran",
+          "Ağalıkənd",
+          "Kürkəndi"
+        ]
+      },
+      {
+        "name": "Jabrayil",
+        "cities": [
+          "Jabrayil",
+          "Soltankənd",
+          "Çaxırlı",
+          "Maşanlı"
+        ]
+      },
+      {
+        "name": "Jalilabad",
+        "cities": [
+          "Jalilabad",
+          "Prishibinskoye",
+          "Yardımlı",
+          "Bəşirli"
+        ]
+      },
+      {
+        "name": "Dashkasan",
+        "cities": [
+          "Dashkasan",
+          "Daşkəsən",
+          "Yuxarı Daşkəsən",
+          "Alunitdağ"
+        ]
+      },
+      {
+        "name": "Fuzuli",
+        "cities": [
+          "Fuzuli",
+          "Horadiz",
+          "Qarğabazar",
+          "Aşağı Veysəlli"
+        ]
+      },
+      {
+        "name": "Ganja",
+        "cities": [
+          "Ganja",
+          "Nizami",
+          "Kəpəz",
+          "Xanlar"
+        ]
+      },
+      {
+        "name": "Gədəbəy",
+        "cities": [
+          "Gədəbəy",
+          "Yeni İzmir",
+          "Samanlıq",
+          "Düzgün"
+        ]
+      },
+      {
+        "name": "Goranboy",
+        "cities": [
+          "Goranboy",
+          "Naftalan",
+          "Aran",
+          "Qızılhacılı"
+        ]
+      },
+      {
+        "name": "Goychay",
+        "cities": [
+          "Goychay",
+          "Qaraməryəm",
+          "Ləki",
+          "Böyük Mərcanlı"
+        ]
+      },
+      {
+        "name": "Goygol",
+        "cities": [
+          "Goygol",
+          "Xanlar",
+          "Kəpəz",
+          "Aşıqlı"
+        ]
+      },
+      {
+        "name": "Hajigabul",
+        "cities": [
+          "Hajigabul",
+          "Qaraçuq",
+          "Mehdili",
+          "Kürdəmir"
+        ]
+      },
+      {
+        "name": "Imishli",
+        "cities": [
+          "Imishli",
+          "Bəhrəmtəpə",
+          "Mirili",
+          "Qaradonlu"
+        ]
+      },
+      {
+        "name": "Ismailli",
+        "cities": [
+          "Ismailli",
+          "Basqal",
+          "Lahıc",
+          "Mərdəkan"
+        ]
+      },
+      {
+        "name": "Kalbajar",
+        "cities": [
+          "Kalbajar",
+          "İstisu",
+          "Zəylik",
+          "Daşbulaq"
+        ]
+      },
+      {
+        "name": "Kurdamir",
+        "cities": [
+          "Kurdamir",
+          "Ərəbocağı",
+          "Köhnəqala",
+          "Yeddioymaq"
+        ]
+      },
+      {
+        "name": "Lachin",
+        "cities": [
+          "Lachin",
+          "Qarıqışlaq",
+          "Sus",
+          "Minkənd"
+        ]
+      },
+      {
+        "name": "Lankaran",
+        "cities": [
+          "Lankaran",
+          "Lerik",
+          "Astara",
+          "Masallı"
+        ]
+      },
+      {
+        "name": "Lerik",
+        "cities": [
+          "Lerik",
+          "Lankaran",
+          "Veri",
+          "Qosmalyan"
+        ]
+      },
+      {
+        "name": "Masally",
+        "cities": [
+          "Masally",
+          "Boradigah",
+          "Xıllı",
+          "Şərəfə"
+        ]
+      },
+      {
+        "name": "Mingachevir",
+        "cities": [
+          "Mingachevir"
+        ]
+      },
+      {
+        "name": "Nakhchivan",
+        "cities": [
+          "Nakhchivan",
+          "Babək",
+          "Culfa",
+          "Ordubad"
+        ]
+      },
+      {
+        "name": "Neftchala",
+        "cities": [
+          "Neftchala",
+          "Xıllı",
+          "Bankə",
+          "Qarağan"
+        ]
+      },
+      {
+        "name": "Oghuz",
+        "cities": [
+          "Oghuz",
+          "Mıxlıqovaq",
+          "Qarabağlar",
+          "Padar"
+        ]
+      },
+      {
+        "name": "Qabala",
+        "cities": [
+          "Qabala",
+          "Vandam",
+          "Nij",
+          "Bum"
+        ]
+      },
+      {
+        "name": "Qakh",
+        "cities": [
+          "Qakh",
+          "İlisu",
+          "Qaxingiloy",
+          "Ləkit"
+        ]
+      },
+      {
+        "name": "Qazakh",
+        "cities": [
+          "Qazakh",
+          "Ağstafa",
+          "Qarapapaq",
+          "Xanlıqlar"
+        ]
+      },
+      {
+        "name": "Quba",
+        "cities": [
+          "Quba",
+          "Qırmızı Qəsəbə",
+          "Xınalıq",
+          "Qonaqkənd"
+        ]
+      },
+      {
+        "name": "Qubadli",
+        "cities": [
+          "Qubadli",
+          "Muğanlı",
+          "Xanlıq",
+          "Yusifbəyli"
+        ]
+      },
+      {
+        "name": "Qusar",
+        "cities": [
+          "Qusar",
+          "Samur",
+          "Südüt",
+          "Xudat"
+        ]
+      },
+      {
+        "name": "Saatly",
+        "cities": [
+          "Saatly",
+          "Əliabad",
+          "Fətəlikənd",
+          "Sarıxanlı"
+        ]
+      },
+      {
+        "name": "Sabirabad",
+        "cities": [
+          "Sabirabad",
+          "Qaraqaşlı",
+          "Məmişlər",
+          "Səttarlı"
+        ]
+      },
+      {
+        "name": "Shaki",
+        "cities": [
+          "Shaki",
+          "Kiş",
+          "Baş Küngüt",
+          "Oraban"
+        ]
+      },
+      {
+        "name": "Salyan",
+        "cities": [
+          "Salyan",
+          "Qaraçala",
+          "Xıdırlı",
+          "Novxanı"
+        ]
+      },
+      {
+        "name": "Shamakhi",
+        "cities": [
+          "Shamakhi",
+          "Meysəri",
+          "Qobustan",
+          "Mərəzə"
+        ]
+      },
+      {
+        "name": "Shamkir",
+        "cities": [
+          "Shamkir",
+          "Çinarlı",
+          "Dəllər",
+          "Qapanlı"
+        ]
+      },
+      {
+        "name": "Samukh",
+        "cities": [
+          "Samukh",
+          "Nəbiağalı",
+          "Qarabağlı",
+          "Salahlı"
+        ]
+      },
+      {
+        "name": "Siazan",
+        "cities": [
+          "Siazan",
+          "Yenikənd",
+          "Giləzi",
+          "Zəyzid"
+        ]
+      },
+      {
+        "name": "Sumqayit",
+        "cities": [
+          "Sumqayit",
+          "Corat",
+          "Hacı Zeynalabdin",
+          "Jorat"
+        ]
+      },
+      {
+        "name": "Shusha",
+        "cities": [
+          "Shusha",
+          "Daşaltı",
+          "Kərkicahan",
+          "Qaybalı"
+        ]
+      },
+      {
+        "name": "Tartar",
+        "cities": [
+          "Tartar",
+          "Səhlabad",
+          "Ağdərə",
+          "Qapanlı"
+        ]
+      },
+      {
+        "name": "Tovuz",
+        "cities": [
+          "Tovuz",
+          "Qovlar",
+          "Yanıqlı",
+          "Ağbaş"
+        ]
+      },
+      {
+        "name": "Ujar",
+        "cities": [
+          "Ujar",
+          "Qazyan",
+          "Müsüslü",
+          "Kəbirli"
+        ]
+      },
+      {
+        "name": "Khachmaz",
+        "cities": [
+          "Khachmaz",
+          "Xudat",
+          "Qaraçı",
+          "Samurçay"
+        ]
+      },
+      {
+        "name": "Khizi",
+        "cities": [
+          "Khizi",
+          "Altıağac",
+          "Şuraabad",
+          "Ceyranbatan"
+        ]
+      },
+      {
+        "name": "Khojaly",
+        "cities": [
+          "Khojaly",
+          "Dağdağan",
+          "Qarabulaq",
+          "Ağbulaq"
+        ]
+      },
+      {
+        "name": "Khojavend",
+        "cities": [
+          "Khojavend",
+          "Hadrut",
+          "Qarğabazar",
+          "Edişə"
+        ]
+      },
+      {
+        "name": "Yardymli",
+        "cities": [
+          "Yardymli",
+          "Astara",
+          "Orand",
+          "Şəfəqli"
+        ]
+      },
+      {
+        "name": "Yevlakh",
+        "cities": [
+          "Yevlakh",
+          "Mingəçevir",
+          "Xaldan",
+          "Qaramanlı"
+        ]
+      },
+      {
+        "name": "Zangilan",
+        "cities": [
+          "Zangilan",
+          "Mincivan",
+          "Əlibəyli",
+          "Ağbənd"
+        ]
+      },
+      {
+        "name": "Zaqatala",
+        "cities": [
+          "Zaqatala",
+          "Muxax",
+          "Qandax",
+          "Qax"
+        ]
+      },
+      {
+        "name": "Zardab",
+        "cities": [
+          "Zardab",
+          "Bəyimli",
+          "Qaravəlli",
+          "Yuxarı Qarxun"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bahamas",
+    "currencyCode": "BSD",
+    "currencyName": "Bahamian Dollar",
+    "states": [
+      {
+        "name": "Acklins",
+        "cities": [
+          "Snug Corner",
+          "Spring Point",
+          "Mason's Bay"
+        ]
+      },
+      {
+        "name": "Berry Islands",
+        "cities": [
+          "Chub Cay",
+          "Great Harbour Cay",
+          "Little Whale Cay"
+        ]
+      },
+      {
+        "name": "Bimini",
+        "cities": [
+          "Alice Town",
+          "Bailey Town",
+          "Paradise Point"
+        ]
+      },
+      {
+        "name": "Black Point",
+        "cities": [
+          "Black Point",
+          "Staniel Cay"
+        ]
+      },
+      {
+        "name": "Cat Island",
+        "cities": [
+          "Arthur's Town",
+          "The Bight",
+          "Orange Creek"
+        ]
+      },
+      {
+        "name": "Central Abaco",
+        "cities": [
+          "Marsh Harbour",
+          "Cherokee Sound",
+          "Dundas Town"
+        ]
+      },
+      {
+        "name": "Central Andros",
+        "cities": [
+          "Fresh Creek",
+          "Staniard Creek",
+          "The Bluff"
+        ]
+      },
+      {
+        "name": "Central Eleuthera",
+        "cities": [
+          "Governor's Harbour",
+          "James Cistern",
+          "Gregory Town"
+        ]
+      },
+      {
+        "name": "Crooked Island",
+        "cities": [
+          "Colonel Hill",
+          "Landrail Point",
+          "French Wells"
+        ]
+      },
+      {
+        "name": "East Grand Bahama",
+        "cities": [
+          "High Rock",
+          "McLean's Town",
+          "Pelican Point"
+        ]
+      },
+      {
+        "name": "Exuma",
+        "cities": [
+          "George Town",
+          "Rolleville",
+          "Mount Thompson"
+        ]
+      },
+      {
+        "name": "Freeport",
+        "cities": [
+          "Freeport",
+          "Lucaya",
+          "Pinder's Point"
+        ]
+      },
+      {
+        "name": "Grand Cay",
+        "cities": [
+          "Bullocks Harbour",
+          "Water Cay"
+        ]
+      },
+      {
+        "name": "Harbour Island",
+        "cities": [
+          "Dunmore Town"
+        ]
+      },
+      {
+        "name": "Hope Town",
+        "cities": [
+          "Hope Town",
+          "White Sound",
+          "Man-O-War Cay"
+        ]
+      },
+      {
+        "name": "Inagua",
+        "cities": [
+          "Matthew Town",
+          "The Salt Pond"
+        ]
+      },
+      {
+        "name": "Long Island",
+        "cities": [
+          "Clarence Town",
+          "Deadman's Cay",
+          "Salt Pond"
+        ]
+      },
+      {
+        "name": "Mangrove Cay",
+        "cities": [
+          "Moxey Town",
+          "The Ferry",
+          "Lisbon Creek"
+        ]
+      },
+      {
+        "name": "Mayaguana",
+        "cities": [
+          "Abraham's Bay",
+          "Pirate's Well",
+          "Betsy Bay"
+        ]
+      },
+      {
+        "name": "Moore's Island",
+        "cities": [
+          "Hard Bargain",
+          "The Bight"
+        ]
+      },
+      {
+        "name": "North Abaco",
+        "cities": [
+          "Cooper's Town",
+          "Crown Haven",
+          "Fox Town"
+        ]
+      },
+      {
+        "name": "North Andros",
+        "cities": [
+          "Nicholl's Town",
+          "Mastic Point",
+          "Red Bays"
+        ]
+      },
+      {
+        "name": "North Eleuthera",
+        "cities": [
+          "The Current",
+          "Lower Bogue",
+          "Upper Bogue"
+        ]
+      },
+      {
+        "name": "Ragged Island",
+        "cities": [
+          "Duncan Town"
+        ]
+      },
+      {
+        "name": "Rum Cay",
+        "cities": [
+          "Port Nelson"
+        ]
+      },
+      {
+        "name": "San Salvador",
+        "cities": [
+          "Cockburn Town",
+          "United Estates",
+          "Sugar Loaf"
+        ]
+      },
+      {
+        "name": "South Abaco",
+        "cities": [
+          "Sandy Point",
+          "Crossing Rocks",
+          "Cherokee Sound"
+        ]
+      },
+      {
+        "name": "South Andros",
+        "cities": [
+          "Kemps Bay",
+          "Little Creek",
+          "The Bluff"
+        ]
+      },
+      {
+        "name": "South Eleuthera",
+        "cities": [
+          "Rock Sound",
+          "Green Castle",
+          "Wemyss Bight"
+        ]
+      },
+      {
+        "name": "Spanish Wells",
+        "cities": [
+          "Spanish Wells"
+        ]
+      },
+      {
+        "name": "West Grand Bahama",
+        "cities": [
+          "Eight Mile Rock",
+          "Holmes Rock",
+          "Pinder's Point"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bahrain",
+    "currencyCode": "BHD",
+    "currencyName": "Bahraini Dinar",
+    "states": [
+      {
+        "name": "Capital Governorate",
+        "cities": [
+          "Manama",
+          "Juffair",
+          "Adliya",
+          "Gudaibiya"
+        ]
+      },
+      {
+        "name": "Central Governorate",
+        "cities": [
+          "Isa Town",
+          "Sitra",
+          "Al Budayyi",
+          "Jidhafs"
+        ]
+      },
+      {
+        "name": "Muharraq Governorate",
+        "cities": [
+          "Muharraq",
+          "Arad",
+          "Hidd",
+          "Busayteen"
+        ]
+      },
+      {
+        "name": "Northern Governorate",
+        "cities": [
+          "Al Seef",
+          "Hamad Town",
+          "Jid Ali",
+          "Karrana"
+        ]
+      },
+      {
+        "name": "Southern Governorate",
+        "cities": [
+          "Riffa",
+          "Awali",
+          "Zallaq",
+          "Sanad"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bangladesh",
+    "currencyCode": "BDT",
+    "currencyName": "Bangladeshi Taka",
+    "states": [
+      {
+        "name": "Barisal Division",
+        "cities": [
+          "Barisal",
+          "Patuakhali",
+          "Pirojpur",
+          "Bhola",
+          "Jhalokati",
+          "Barguna"
+        ]
+      },
+      {
+        "name": "Chittagong Division",
+        "cities": [
+          "Chittagong",
+          "Comilla",
+          "Cox's Bazar",
+          "Feni",
+          "Brahmanbaria",
+          "Noakhali"
+        ]
+      },
+      {
+        "name": "Dhaka Division",
+        "cities": [
+          "Dhaka",
+          "Gazipur",
+          "Narayanganj",
+          "Tangail",
+          "Faridpur",
+          "Kishoreganj"
+        ]
+      },
+      {
+        "name": "Khulna Division",
+        "cities": [
+          "Khulna",
+          "Jessore",
+          "Satkhira",
+          "Bagerhat",
+          "Chuadanga",
+          "Jhenaidah"
+        ]
+      },
+      {
+        "name": "Mymensingh Division",
+        "cities": [
+          "Mymensingh",
+          "Jamalpur",
+          "Netrokona",
+          "Sherpur"
+        ]
+      },
+      {
+        "name": "Rajshahi Division",
+        "cities": [
+          "Rajshahi",
+          "Bogra",
+          "Pabna",
+          "Sirajganj",
+          "Naogaon",
+          "Natore"
+        ]
+      },
+      {
+        "name": "Rangpur Division",
+        "cities": [
+          "Rangpur",
+          "Dinajpur",
+          "Gaibandha",
+          "Kurigram",
+          "Lalmonirhat",
+          "Nilphamari"
+        ]
+      },
+      {
+        "name": "Sylhet Division",
+        "cities": [
+          "Sylhet",
+          "Habiganj",
+          "Moulvibazar",
+          "Sunamganj"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Barbados",
+    "currencyCode": "BBD",
+    "currencyName": "Barbadian Dollar",
+    "states": [
+      {
+        "name": "Christ Church",
+        "cities": [
+          "Oistins",
+          "Silver Sands",
+          "Worthing",
+          "Maxwell"
+        ]
+      },
+      {
+        "name": "Saint Andrew",
+        "cities": [
+          "Belleplaine",
+          "Greenland",
+          "Hillaby",
+          "Turner's Hall"
+        ]
+      },
+      {
+        "name": "Saint George",
+        "cities": [
+          "The Glebe",
+          "Harperley",
+          "Lamberts",
+          "Sargeant's Village"
+        ]
+      },
+      {
+        "name": "Saint James",
+        "cities": [
+          "Holetown",
+          "Fitts Village",
+          "Paynes Bay",
+          "Porters"
+        ]
+      },
+      {
+        "name": "Saint John",
+        "cities": [
+          "Four Roads",
+          "Gall Hill",
+          "Indian Ground",
+          "Wakefield"
+        ]
+      },
+      {
+        "name": "Saint Joseph",
+        "cities": [
+          "Bathsheba",
+          "Congo Road",
+          "Husbands",
+          "Mullins"
+        ]
+      },
+      {
+        "name": "Saint Lucy",
+        "cities": [
+          "Archers Bay",
+          "Half Moon Fort",
+          "North Point",
+          "Spring Hall"
+        ]
+      },
+      {
+        "name": "Saint Michael",
+        "cities": [
+          "Bridgetown",
+          "The City",
+          "Fontabelle",
+          "Hastings"
+        ]
+      },
+      {
+        "name": "Saint Peter",
+        "cities": [
+          "Speightstown",
+          "Heywoods",
+          "Six Cross Roads",
+          "The Whim"
+        ]
+      },
+      {
+        "name": "Saint Philip",
+        "cities": [
+          "Crane",
+          "Six Cross Roads",
+          "Sam Lord's Castle",
+          "Sunbury"
+        ]
+      },
+      {
+        "name": "Saint Thomas",
+        "cities": [
+          "Welchman Hall",
+          "Airy Hill",
+          "Cane Garden",
+          "Union Hall"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Belarus",
+    "currencyCode": "BYN",
+    "currencyName": "Belarusian Ruble",
+    "states": [
+      {
+        "name": "Brest Region",
+        "cities": [
+          "Brest",
+          "Baranovichi",
+          "Pinsk",
+          "Kobrin",
+          "Luninets",
+          "Ivatsevichy"
+        ]
+      },
+      {
+        "name": "Gomel Region",
+        "cities": [
+          "Gomel",
+          "Mazyr",
+          "Zhlobin",
+          "Svetlahorsk",
+          "Rechytsa",
+          "Kalinkavichy"
+        ]
+      },
+      {
+        "name": "Grodno Region",
+        "cities": [
+          "Grodno",
+          "Lida",
+          "Slonim",
+          "Vawkavysk",
+          "Smorgon",
+          "Navahrudak"
+        ]
+      },
+      {
+        "name": "Mogilev Region",
+        "cities": [
+          "Mogilev",
+          "Babruysk",
+          "Horki",
+          "Asipovichy",
+          "Krychaw",
+          "Bykhaw"
+        ]
+      },
+      {
+        "name": "Minsk Region",
+        "cities": [
+          "Minsk",
+          "Barysaw",
+          "Salihorsk",
+          "Maladzyechna",
+          "Zhodzina",
+          "Slutsk"
+        ]
+      },
+      {
+        "name": "Vitebsk Region",
+        "cities": [
+          "Vitebsk",
+          "Orsha",
+          "Navapolatsk",
+          "Polatsk",
+          "Pastavy",
+          "Hlybokaye"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Belgium",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {
+        "name": "Brussels-Capital Region",
+        "cities": [
+          "Brussels",
+          "Schaerbeek",
+          "Anderlecht",
+          "Molenbeek-Saint-Jean"
+        ]
+      },
+      {
+        "name": "Flanders",
+        "cities": [
+          "Antwerp",
+          "Ghent",
+          "Bruges",
+          "Leuven",
+          "Mechelen",
+          "Hasselt"
+        ]
+      },
+      {
+        "name": "Wallonia",
+        "cities": [
+          "Liège",
+          "Charleroi",
+          "Namur",
+          "Mons",
+          "Tournai",
+          "Arlon"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Belize",
+    "currencyCode": "BZD",
+    "currencyName": "Belize Dollar",
+    "states": [
+      {
+        "name": "Belize District",
+        "cities": [
+          "Belize City",
+          "Ladyville",
+          "Hattieville",
+          "San Pedro"
+        ]
+      },
+      {
+        "name": "Cayo District",
+        "cities": [
+          "San Ignacio",
+          "Belmopan",
+          "Benque Viejo del Carmen",
+          "Santa Elena"
+        ]
+      },
+      {
+        "name": "Corozal District",
+        "cities": [
+          "Corozal Town",
+          "Orange Walk",
+          "San Narciso",
+          "Patchacan"
+        ]
+      },
+      {
+        "name": "Orange Walk District",
+        "cities": [
+          "Orange Walk Town",
+          "San Estevan",
+          "Guadalupe",
+          "San Pablo"
+        ]
+      },
+      {
+        "name": "Stann Creek District",
+        "cities": [
+          "Dangriga",
+          "Placencia",
+          "Hopkins",
+          "Mullins River"
+        ]
+      },
+      {
+        "name": "Toledo District",
+        "cities": [
+          "Punta Gorda",
+          "Big Falls",
+          "San Antonio",
+          "Pueblo Viejo"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Benin",
+    "currencyCode": "XOF",
+    "currencyName": "West African CFA Franc",
+    "states": [
+      {
+        "name": "Alibori",
+        "cities": [
+          "Kandi",
+          "Malanville",
+          "Gogounou",
+          "Banikoara",
+          "Segbana"
+        ]
+      },
+      {
+        "name": "Atakora",
+        "cities": [
+          "Natitingou",
+          "Tanguieta",
+          "Kérou",
+          "Kouandé",
+          "Materi"
+        ]
+      },
+      {
+        "name": "Atlantique",
+        "cities": [
+          "Allada",
+          "Ouidah",
+          "Abomey-Calavi",
+          "Kpomasse",
+          "Toffo"
+        ]
+      },
+      {
+        "name": "Borgou",
+        "cities": [
+          "Parakou",
+          "Nikki",
+          "Bembèrèkè",
+          "Kalalé",
+          "Pèrèrè"
+        ]
+      },
+      {
+        "name": "Collines",
+        "cities": [
+          "Dassa-Zoumé",
+          "Savè",
+          "Glazoué",
+          "Bantè",
+          "Ouèssè"
+        ]
+      },
+      {
+        "name": "Donga",
+        "cities": [
+          "Djougou",
+          "Bassila",
+          "Copargo",
+          "Ouaké"
+        ]
+      },
+      {
+        "name": "Kouffo",
+        "cities": [
+          "Dogbo-Tota",
+          "Aplahoué",
+          "Djakotomey",
+          "Klouékanmè",
+          "Toviklin"
+        ]
+      },
+      {
+        "name": "Littoral",
+        "cities": [
+          "Cotonou"
+        ]
+      },
+      {
+        "name": "Mono",
+        "cities": [
+          "Lokossa",
+          "Comè",
+          "Athiémè",
+          "Grand-Popo",
+          "Houéyogbé"
+        ]
+      },
+      {
+        "name": "Ouémé",
+        "cities": [
+          "Porto-Novo",
+          "Adjohon",
+          "Aguégués",
+          "Akpro-Missérété",
+          "Avrankou"
+        ]
+      },
+      {
+        "name": "Plateau",
+        "cities": [
+          "Sakété",
+          "Kétou",
+          "Pobè",
+          "Adja-Ouèrè",
+          "Ifangni"
+        ]
+      },
+      {
+        "name": "Zou",
+        "cities": [
+          "Abomey",
+          "Bohicon",
+          "Zagnanado",
+          "Za-Kpota",
+          "Cové",
+          "Ouinhi"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bhutan",
+    "currencyCode": "BTN",
+    "currencyName": "Bhutanese Ngultrum",
+    "states": [
+      {
+        "name": "Bumthang",
+        "cities": [
+          "Jakar",
+          "Chumey",
+          "Tang",
+          "Ura"
+        ]
+      },
+      {
+        "name": "Chhukha",
+        "cities": [
+          "Phuentsholing",
+          "Chhukha",
+          "Darla",
+          "Gedu",
+          "Bongo"
+        ]
+      },
+      {
+        "name": "Dagana",
+        "cities": [
+          "Dagana",
+          "Lhamoy Zingkha",
+          "Tseza",
+          "Kana",
+          "Goshi"
+        ]
+      },
+      {
+        "name": "Gasa",
+        "cities": [
+          "Gasa",
+          "Laya",
+          "Lunana",
+          "Koina"
+        ]
+      },
+      {
+        "name": "Haa",
+        "cities": [
+          "Ha",
+          "Sombaykha",
+          "Katsho",
+          "Gakiling",
+          "Sangbay"
+        ]
+      },
+      {
+        "name": "Lhuntse",
+        "cities": [
+          "Lhuntse",
+          "Khoma",
+          "Metsho",
+          "Gangzur",
+          "Jarey"
+        ]
+      },
+      {
+        "name": "Mongar",
+        "cities": [
+          "Mongar",
+          "Ngatshang",
+          "Kurizampa",
+          "Saling",
+          "Jurmey"
+        ]
+      },
+      {
+        "name": "Paro",
+        "cities": [
+          "Paro",
+          "Dopshari",
+          "Shaba",
+          "Hungrel",
+          "Doteng"
+        ]
+      },
+      {
+        "name": "Pemagatshel",
+        "cities": [
+          "Pemagatshel",
+          "Chhimung",
+          "Yurung",
+          "Khar",
+          "Norbugang"
+        ]
+      },
+      {
+        "name": "Punakha",
+        "cities": [
+          "Punakha",
+          "Lobeysa",
+          "Chhubu",
+          "Talo",
+          "Sopsokha"
+        ]
+      },
+      {
+        "name": "Samdrup Jongkhar",
+        "cities": [
+          "Samdrup Jongkhar",
+          "Phuntshothang",
+          "Orong",
+          "Dewathang",
+          "Langchenphu"
+        ]
+      },
+      {
+        "name": "Samtse",
+        "cities": [
+          "Samtse",
+          "Tendu",
+          "Bara",
+          "Chargharey",
+          "Dophuchen"
+        ]
+      },
+      {
+        "name": "Sarpang",
+        "cities": [
+          "Sarpang",
+          "Gelephu",
+          "Shompangkha",
+          "Jigmechhoeling",
+          "Taklai"
+        ]
+      },
+      {
+        "name": "Thimphu",
+        "cities": [
+          "Thimphu",
+          "Lingzhi",
+          "Naro",
+          "Kawang",
+          "Genekha"
+        ]
+      },
+      {
+        "name": "Trashigang",
+        "cities": [
+          "Trashigang",
+          "Radi",
+          "Kanglung",
+          "Phongmey",
+          "Samkhar"
+        ]
+      },
+      {
+        "name": "Trashiyangtse",
+        "cities": [
+          "Trashiyangtse",
+          "Bumdeling",
+          "Khamdang",
+          "Ramjar",
+          "Tomzhangtshen"
+        ]
+      },
+      {
+        "name": "Trongsa",
+        "cities": [
+          "Trongsa",
+          "Dragteng",
+          "Nubi",
+          "Langthel",
+          "Tangsibji"
+        ]
+      },
+      {
+        "name": "Tsirang",
+        "cities": [
+          "Damphu",
+          "Patshaling",
+          "Semjong",
+          "Tsholingkhar",
+          "Kilkhorthang"
+        ]
+      },
+      {
+        "name": "Wangdue Phodrang",
+        "cities": [
+          "Wangdue Phodrang",
+          "Ruepisa",
+          "Sephu",
+          "Daga",
+          "Gangteng"
+        ]
+      },
+      {
+        "name": "Zhemgang",
+        "cities": [
+          "Zhemgang",
+          "Panbang",
+          "Nangkor",
+          "Shingkhar",
+          "Trong"
+        ]
+      }
+    ]
+  },
+  {
+    "country": "Bolivia",
+    "currencyCode": "BOB",
+    "currencyName": "Bolivian Boliviano",
+    "states": [
+      {
+        "name": "Beni",
+        "cities": [
+          "Trinidad",
+          "Riberalta",
+          "Guayaramerín",
+          "San Borja",
+          "Santa Ana del Yacuma"
+        ]
+      },
+      {
+        "name": "Chuquisaca",
+        "cities": [
+          "Sucre",
+          "Monteagudo",
+          "Camargo",
+          "Villa Serrano",
+          "Padilla"
+        ]
+      },
+      {
+        "name": "Cochabamba",
+        "cities": [
+          "Cochabamba",
+          "Quillacollo",
+          "Sacaba",
+          "Tiquipaya",
+          "Colcapirhua"
+        ]
+      },
+      {
+        "name": "La Paz",
+        "cities": [
+          "La Paz",
+          "El Alto",
+          "Viacha",
+          "Caranavi",
+          "Achacachi"
+        ]
+      },
+      {
+        "name": "Oruro",
+        "cities": [
+          "Oruro",
+          "Huanuni",
+          "Challapata",
+          "Caracollo",
+          "Poopó"
+        ]
+      },
+      {
+        "name": "Pando",
+        "cities": [
+          "Cobija",
+          "Porvenir",
+          "Bella Flor",
+          "Filadelfia",
+          "Santos Mercado"
+        ]
+      },
+      {
+        "name": "Potosí",
+        "cities": [
+          "Potosí",
+          "Villazón",
+          "Tupiza",
+          "Uyuni",
+          "Colquechaca"
+        ]
+      },
+      {
+        "name": "Santa Cruz",
+        "cities": [
+          "Santa Cruz de la Sierra",
+          "Montero",
+          "Warnes",
+          "La Guardia",
+          "Cotoca"
+        ]
+      },
+      {
+        "name": "Tarija",
+        "cities": [
+          "Tarija",
+          "Yacuiba",
+          "Bermejo",
+          "Villamontes",
+          "Caraparí"
+        ]
+      }
+    ]
+  }
+]

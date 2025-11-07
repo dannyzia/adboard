@@ -1,0 +1,465 @@
+[
+  {
+    "country": "Uzbekistan",
+    "currencyCode": "UZS",
+    "currencyName": "Uzbekistani Som",
+    "states": [
+      {
+        "name": "Andijan Region",
+        "cities": ["Andijan", "Asaka", "Khanabad", "Shakhrikhan", "Karassy", "Paxtaabad", "Kurgontepa"]
+      },
+      {
+        "name": "Bukhara Region",
+        "cities": ["Bukhara", "Kagan", "Gazli", "Alat", "Galaosiye", "Romitan", "Shafirkan", "Vobkent"]
+      },
+      {
+        "name": "Fergana Region",
+        "cities": ["Fergana", "Margilan", "Kokand", "Quvasoy", "Rishton", "Beshariq", "Dangara", "Yaypan"]
+      },
+      {
+        "name": "Jizzakh Region",
+        "cities": ["Jizzakh", "Gagarin", "Dashtabad", "Pakhtakor", "Marjankul", "Zarbdor", "Zomin", "Gallyaaral"]
+      },
+      {
+        "name": "Karakalpakstan",
+        "cities": ["Nukus", "Khujayli", "Beruniy", "Takhtakupyr", "Turtkul", "Chimboy", "Kungrad", "Moynaq", "Taxtakopir"]
+      },
+      {
+        "name": "Kashkadarya Region",
+        "cities": ["Qarshi", "Shahrisabz", "Kasan", "Kitob", "Muborak", "Chiroqchi", "Guzor", "Yakkabag", "Koson", "Nishon"]
+      },
+      {
+        "name": "Khorezm Region",
+        "cities": ["Urgench", "Khiva", "Boghot", "Gurlan", "Shovot", "Xonqa", "Hazorasp", "Qoshkopir", "Yangibozor"]
+      },
+      {
+        "name": "Namangan Region",
+        "cities": ["Namangan", "Kosonsoy", "Uchqurghon", "Chust", "Haqqulobod", "Pop", "Turaqurgon", "Yangiqorgon"]
+      },
+      {
+        "name": "Navoiy Region",
+        "cities": ["Navoiy", "Zarafshan", "Uchquduq", "Qiziltepa", "Nurota", "Tomdi", "Karmana"]
+      },
+      {
+        "name": "Samarkand Region",
+        "cities": ["Samarkand", "Kattakurgan", "Urgut", "Oqtosh", "Bulungur", "Jomboy", "Payariq", "Pastdargom", "Narpay", "Chelak"]
+      },
+      {
+        "name": "Sirdaryo Region",
+        "cities": ["Guliston", "Yangiyer", "Sirdaryo", "Baxt", "Shirin", "Saykhun", "Hovos", "Qahramon"]
+      },
+      {
+        "name": "Surxondaryo Region",
+        "cities": ["Termiz", "Denov", "Boysun", "Sherobod", "Sariosiyo", "Uzun", "Jarqorgon", "Qumqorgon", "Muzrabot"]
+      },
+      {
+        "name": "Tashkent City",
+        "cities": ["Tashkent", "Olmaliq", "Angren", "Bekabad", "Chirchiq", "Yangiyol", "Ohangaron", "Parkent", "Gazalkent", "Kibray", "Salar", "Tuytepa"]
+      },
+      {
+        "name": "Tashkent Region",
+        "cities": ["Nurafshon", "Chinoz", "Keles", "Zangiata", "Buka", "Ortachol", "Piskent", "Quyichirchiq", "Tashkent", "Yangiobod", "Yugnoriy"]
+      }
+    ]
+  },
+  {
+    "country": "Vanuatu",
+    "currencyCode": "VUV",
+    "currencyName": "Vanuatu Vatu",
+    "states": [
+      {
+        "name": "Malampa",
+        "cities": ["Lakatoro", "Norsup", "Malua Bay"]
+      },
+      {
+        "name": "Penama",
+        "cities": ["Saratamata", "Longana", "Lolowai"]
+      },
+      {
+        "name": "Sanma",
+        "cities": ["Luganville", "Turtle Bay", "Port Olry", "Fanafo"]
+      },
+      {
+        "name": "Shefa",
+        "cities": ["Port Vila", "Eton", "Havannah", "Ifira", "Emua"]
+      },
+      {
+        "name": "Tafea",
+        "cities": ["Isangel", "Lénakel", "White Sands", "Anelghowhat"]
+      },
+      {
+        "name": "Torba",
+        "cities": ["Sola", "Mota Lava", "Ureparapara"]
+      }
+    ]
+  },
+  {
+    "country": "Vatican City",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {
+        "name": "Vatican City",
+        "cities": ["Vatican City"]
+      }
+    ]
+  },
+  {
+    "country": "Venezuela",
+    "currencyCode": "VES",
+    "currencyName": "Venezuelan Bolívar",
+    "states": [
+      {
+        "name": "Amazonas",
+        "cities": ["Puerto Ayacucho", "Maroa", "San Carlos de Río Negro", "San Fernando de Atabapo", "La Esmeralda"]
+      },
+      {
+        "name": "Anzoátegui",
+        "cities": ["Barcelona", "Puerto La Cruz", "El Tigre", "Anaco", "Cantaura", "Lecherías", "Guanta", "Aragua de Barcelona"]
+      },
+      {
+        "name": "Apure",
+        "cities": ["San Fernando de Apure", "Guasdualito", "Biruaca", "Achaguas", "El Amparo", "La Victoria"]
+      },
+      {
+        "name": "Aragua",
+        "cities": ["Maracay", "Turmero", "El Limón", "La Victoria", "Palo Negro", "Cagua", "Villa de Cura", "Santa Cruz", "San Mateo"]
+      },
+      {
+        "name": "Barinas",
+        "cities": ["Barinas", "Barinitas", "Altamira", "Sabaneta", "Ciudad Bolivia", "Santa Bárbara", "Socopó"]
+      },
+      {
+        "name": "Bolívar",
+        "cities": ["Ciudad Guayana", "Ciudad Bolívar", "Upata", "El Callao", "Guasipati", "Tumeremo", "Santa Elena de Uairén", "Caicara del Orinoco"]
+      },
+      {
+        "name": "Carabobo",
+        "cities": ["Valencia", "Puerto Cabello", "Guacara", "Naguanagua", "Los Guayos", "Mariara", "San Diego", "Tocuyito", "Bejuma", "Morón"]
+      },
+      {
+        "name": "Cojedes",
+        "cities": ["San Carlos", "Tinaquillo", "El Baúl", "Tinaco", "El Pao", "Libertad", "Macapo"]
+      },
+      {
+        "name": "Delta Amacuro",
+        "cities": ["Tucupita", "Pedernales", "Curiapo", "Sacupana", "San José de Amacuro"]
+      },
+      {
+        "name": "Falcón",
+        "cities": ["Coro", "Punto Fijo", "La Vela de Coro", "Pueblo Nuevo", "Dabajuro", "Churuguara", "Mirimire", "Santa Cruz de Los Taques"]
+      },
+      {
+        "name": "Guárico",
+        "cities": ["San Juan de los Morros", "Calabozo", "Valle de la Pascua", "Altagracia de Orituco", "Zaraza", "Camaguán", "El Socorro", "Tucupido"]
+      },
+      {
+        "name": "Lara",
+        "cities": ["Barquisimeto", "Carora", "El Tocuyo", "Quíbor", "Cabudare", "Duaca", "Sanare", "Siquisique", "Sarare"]
+      },
+      {
+        "name": "Mérida",
+        "cities": ["Mérida", "Ejido", "El Vigía", "Tovar", "Lagunillas", "Bailadores", "Santa Cruz de Mora", "Zea"]
+      },
+      {
+        "name": "Miranda",
+        "cities": ["Los Teques", "Petare", "Baruta", "Guatire", "Guarenas", "Santa Teresa del Tuy", "Ocumare del Tuy", "Charallave", "Cúa", "Río Chico", "Higuerote", "San Antonio de Los Altos"]
+      },
+      {
+        "name": "Monagas",
+        "cities": ["Maturín", "Punta de Mata", "Caripe", "Caripito", "Aguasay", "Caicara", "Quiriquire", "Barrancas", "San Antonio de Capayacuar"]
+      },
+      {
+        "name": "Nueva Esparta",
+        "cities": ["La Asunción", "Porlamar", "Pampatar", "Juan Griego", "El Valle", "San Juan Bautista", "El Coche", "Boca del Río"]
+      },
+      {
+        "name": "Portuguesa",
+        "cities": ["Guanare", "Acarigua", "Araure", "Villa Bruzual", "Píritu", "Ospino", "Guanarito", "Biscucuy", "Agua Blanca"]
+      },
+      {
+        "name": "Sucre",
+        "cities": ["Cumaná", "Carúpano", "Güiria", "Araya", "Casanay", "Río Caribe", "San Antonio del Golfo", "Yaguaraparo", "Irapa", "Cumanacoa"]
+      },
+      {
+        "name": "Táchira",
+        "cities": ["San Cristóbal", "Rubio", "Táriba", "La Fría", "Colón", "Palmira", "Capacho", "Abejales", "Queniquea", "Santa Ana del Táchira"]
+      },
+      {
+        "name": "Trujillo",
+        "cities": ["Trujillo", "Valera", "Boconó", "La Quebrada", "Pampán", "Carache", "Betijoque", "Carvajal", "Sabana de Mendoza", "El Dividive"]
+      },
+      {
+        "name": "Vargas",
+        "cities": ["La Guaira", "Catia La Mar", "Maiquetía", "Caraballeda", "Naiguatá", "Macuto", "Carayaca"]
+      },
+      {
+        "name": "Yaracuy",
+        "cities": ["San Felipe", "Yaritagua", "Chivacoa", "Nirgua", "Cocorote", "Urachiche", "Albarico", "Farriar", "Guama"]
+      },
+      {
+        "name": "Zulia",
+        "cities": ["Maracaibo", "Cabimas", "Ciudad Ojeda", "Santa Bárbara del Zulia", "Machiques", "La Concepción", "San Carlos del Zulia", "Lagunillas", "Villa del Rosario", "Concepción", "Mene Grande", "Casigua", "El Venado", "Bachaquero", "Los Puertos de Altagracia"]
+      },
+      {
+        "name": "Distrito Capital",
+        "cities": ["Caracas", "El Valle", "Coche", "La Pastora", "San Agustín", "San Bernardino", "San José", "San Juan", "San Pedro", "Santa Rosalía", "Santa Teresa", "Catedral", "23 de Enero", "Altagracia", "Antímano", "Candelaria", "Caricuao", "Chacao", "Chacaito", "El Recreo", "La Candelaria", "La Vega", "Leoncio Martínez", "Macarao", "Petare", "San Martín", "Sucre"]
+      }
+    ]
+  },
+  {
+    "country": "Vietnam",
+    "currencyCode": "VND",
+    "currencyName": "Vietnamese Đồng",
+    "states": [
+      {
+        "name": "An Giang",
+        "cities": ["Long Xuyên", "Châu Đốc", "Tân Châu", "An Phú", "Thoại Sơn", "Tri Tôn", "Tịnh Biên", "Chợ Mới"]
+      },
+      {
+        "name": "Bà Rịa–Vũng Tàu",
+        "cities": ["Vũng Tàu", "Bà Rịa", "Phú Mỹ", "Châu Đức", "Xuyên Mộc", "Long Điền", "Đất Đỏ", "Côn Đảo"]
+      },
+      {
+        "name": "Bắc Giang",
+        "cities": ["Bắc Giang", "Việt Yên", "Yên Dũng", "Lạng Giang", "Lục Nam", "Sơn Động", "Yên Thế", "Tân Yên", "Hiệp Hòa"]
+      },
+      {
+        "name": "Bắc Kạn",
+        "cities": ["Bắc Kạn", "Chợ Mới", "Ba Bể", "Bạch Thông", "Chợ Đồn", "Na Rì", "Ngân Sơn", "Pác Nặm"]
+      },
+      {
+        "name": "Bạc Liêu",
+        "cities": ["Bạc Liêu", "Giá Rai", "Hồng Dân", "Vĩnh Lợi", "Phước Long", "Đông Hải", "Hòa Bình"]
+      },
+      {
+        "name": "Bắc Ninh",
+        "cities": ["Bắc Ninh", "Từ Sơn", "Tiên Du", "Thuận Thành", "Gia Bình", "Lương Tài", "Quế Võ", "Yên Phong"]
+      },
+      {
+        "name": "Bến Tre",
+        "cities": ["Bến Tre", "Châu Thành", "Chợ Lách", "Mỏ Cày Bắc", "Mỏ Cày Nam", "Giồng Trôm", "Ba Tri", "Thạnh Phú", "Bình Đại"]
+      },
+      {
+        "name": "Bình Định",
+        "cities": ["Quy Nhơn", "An Nhơn", "Hoài Nhơn", "Phù Cát", "Phù Mỹ", "Vân Canh", "Tây Sơn", "Vĩnh Thạnh", "An Lão", "Hoài Ân", "Tuy Phước"]
+      },
+      {
+        "name": "Bình Dương",
+        "cities": ["Thủ Dầu Một", "Dĩ An", "Thuận An", "Bến Cát", "Tân Uyên", "Bàu Bàng", "Dầu Tiếng", "Phú Giáo"]
+      },
+      {
+        "name": "Bình Phước",
+        "cities": ["Đồng Xoài", "Bình Long", "Phước Long", "Chơn Thành", "Đồng Phú", "Bù Đăng", "Lộc Ninh", "Hớn Quản", "Bù Đốp", "Bù Gia Mập"]
+      },
+      {
+        "name": "Bình Thuận",
+        "cities": ["Phan Thiết", "La Gi", "Tuy Phong", "Bắc Bình", "Hàm Thuận Bắc", "Hàm Thuận Nam", "Hàm Tân", "Đức Linh", "Tánh Linh", "Phú Quý"]
+      },
+      {
+        "name": "Cà Mau",
+        "cities": ["Cà Mau", "Đầm Dơi", "Cái Nước", "U Minh", "Thới Bình", "Trần Văn Thời", "Ngọc Hiển", "Năm Căn", "Phú Tân"]
+      },
+      {
+        "name": "Cần Thơ",
+        "cities": ["Cần Thơ", "Ninh Kiều", "Bình Thủy", "Cái Răng", "Ô Môn", "Thốt Nốt", "Vĩnh Thạnh", "Cờ Đỏ", "Phong Điền", "Thới Lai"]
+      },
+      {
+        "name": "Cao Bằng",
+        "cities": ["Cao Bằng", "Bảo Lạc", "Thông Nông", "Hà Quảng", "Trà Lĩnh", "Trùng Khánh", "Nguyên Bình", "Hạ Lang", "Quảng Uyên", "Phục Hòa", "Hòa An", "Bảo Lâm", "Thạch An"]
+      },
+      {
+        "name": "Đà Nẵng",
+        "cities": ["Đà Nẵng", "Hải Châu", "Thanh Khê", "Sơn Trà", "Ngũ Hành Sơn", "Liên Chiểu", "Cẩm Lệ", "Hòa Vang", "Hoàng Sa"]
+      },
+      {
+        "name": "Đắk Lắk",
+        "cities": ["Buôn Ma Thuột", "Buôn Hồ", "Ea Kar", "M'Đrắk", "Krông Búk", "Krông Năng", "Krông Ana", "Lắk", "Cư M'gar", "Ea H'leo", "Krông Pắc", "Krông Bông", "Cư Kuin", "Ea Súp"]
+      },
+      {
+        "name": "Đắk Nông",
+        "cities": ["Gia Nghĩa", "Đắk Mil", "Krông Nô", "Đắk Song", "Đắk R'Lấp", "Đắk Glong", "Cư Jút", "Tuy Đức"]
+      },
+      {
+        "name": "Điện Biên",
+        "cities": ["Điện Biên Phủ", "Mường Lay", "Mường Nhé", "Mường Chà", "Tủa Chùa", "Tuần Giáo", "Điện Biên", "Điện Biên Đông", "Mường Ảng", "Nậm Pồ"]
+      },
+      {
+        "name": "Đồng Nai",
+        "cities": ["Biên Hòa", "Long Khánh", "Nhơn Trạch", "Trảng Bom", "Vĩnh Cửu", "Thống Nhất", "Long Thành", "Xuân Lộc", "Cẩm Mỹ", "Định Quán", "Tân Phú"]
+      },
+      {
+        "name": "Đồng Tháp",
+        "cities": ["Cao Lãnh", "Sa Đéc", "Hồng Ngự", "Tam Nông", "Thanh Bình", "Tháp Mười", "Lấp Vò", "Lai Vung", "Châu Thành", "Tân Hồng"]
+      },
+      {
+        "name": "Gia Lai",
+        "cities": ["Pleiku", "An Khê", "Ayun Pa", "Chư Păh", "Chư Sê", "Đắk Đoa", "Chư Prông", "Chư Pưh", "Đức Cơ", "Ia Grai", "Kbang", "Kông Chro", "Krông Pa", "Mang Yang", "Phú Thiện", "Ia Pa"]
+      },
+      {
+        "name": "Hà Giang",
+        "cities": ["Hà Giang", "Đồng Văn", "Mèo Vạc", "Yên Minh", "Quản Bạ", "Vị Xuyên", "Bắc Mê", "Hoàng Su Phì", "Xín Mần", "Bắc Quang", "Quang Bình"]
+      },
+      {
+        "name": "Hà Nam",
+        "cities": ["Phủ Lý", "Duy Tiên", "Kim Bảng", "Thanh Liêm", "Bình Lục", "Lý Nhân"]
+      },
+      {
+        "name": "Hà Nội",
+        "cities": ["Hà Nội", "Ba Đình", "Hoàn Kiếm", "Tây Hồ", "Long Biên", "Cầu Giấy", "Đống Đa", "Hai Bà Trưng", "Hoàng Mai", "Thanh Xuân", "Sóc Sơn", "Đông Anh", "Gia Lâm", "Nam Từ Liêm", "Bắc Từ Liêm", "Hà Đông", "Sơn Tây", "Ba Vì", "Phúc Thọ", "Thạch Thất", "Quốc Oai", "Chương Mỹ", "Đan Phượng", "Hoài Đức", "Thanh Oai", "Mỹ Đức", "Ứng Hòa", "Thường Tín", "Phú Xuyên", "Mê Linh"]
+      },
+      {
+        "name": "Hà Tĩnh",
+        "cities": ["Hà Tĩnh", "Hồng Lĩnh", "Thạch Hà", "Cẩm Xuyên", "Kỳ Anh", "Nghi Xuân", "Can Lộc", "Hương Sơn", "Đức Thọ", "Vũ Quang", "Lộc Hà"]
+      },
+      {
+        "name": "Hải Dương",
+        "cities": ["Hải Dương", "Chí Linh", "Kinh Môn", "Nam Sách", "Kim Thành", "Thanh Hà", "Cẩm Giàng", "Bình Giang", "Gia Lộc", "Tứ Kỳ", "Ninh Giang", "Thanh Miện"]
+      },
+      {
+        "name": "Hải Phòng",
+        "cities": ["Hải Phòng", "Hồng Bàng", "Ngô Quyền", "Lê Chân", "Kiến An", "Hải An", "Đồ Sơn", "Dương Kinh", "Thủy Nguyên", "An Dương", "An Lão", "Kiến Thụy", "Tiên Lãng", "Vĩnh Bảo", "Cát Hải", "Bạch Long Vĩ"]
+      },
+      {
+        "name": "Hậu Giang",
+        "cities": ["Vị Thanh", "Ngã Bảy", "Châu Thành", "Châu Thành A", "Phụng Hiệp", "Vị Thủy", "Long Mỹ"]
+      },
+      {
+        "name": "Hòa Bình",
+        "cities": ["Hòa Bình", "Mai Châu", "Đà Bắc", "Tân Lạc", "Cao Phong", "Kim Bôi", "Lương Sơn", "Lạc Sơn", "Yên Thủy", "Lạc Thủy", "Kỳ Sơn"]
+      },
+      {
+        "name": "Hưng Yên",
+        "cities": ["Hưng Yên", "Mỹ Hào", "Ân Thi", "Khoái Châu", "Kim Động", "Tiên Lữ", "Phù Cừ", "Văn Lâm", "Văn Giang", "Yên Mỹ"]
+      },
+      {
+        "name": "Khánh Hòa",
+        "cities": ["Nha Trang", "Cam Ranh", "Ninh Hòa", "Vạn Ninh", "Diên Khánh", "Khánh Vĩnh", "Khánh Sơn", "Trường Sa"]
+      },
+      {
+        "name": "Kiên Giang",
+        "cities": ["Rạch Giá", "Hà Tiên", "Phú Quốc", "Kiên Lương", "Hòn Đất", "Tân Hiệp", "Châu Thành", "Giồng Riềng", "Gò Quao", "An Biên", "An Minh", "Vĩnh Thuận", "U Minh Thượng", "Kiên Hải"]
+      },
+      {
+        "name": "Kon Tum",
+        "cities": ["Kon Tum", "Đắk Glei", "Ngọc Hồi", "Đắk Tô", "Kon Plông", "Kon Rẫy", "Đắk Hà", "Sa Thầy", "Tu Mơ Rông", "Ia H'Drai"]
+      },
+      {
+        "name": "Lai Châu",
+        "cities": ["Lai Châu", "Phong Thổ", "Sìn Hồ", "Mường Tè", "Than Uyên", "Tân Uyên", "Nậm Nhùn"]
+      },
+      {
+        "name": "Lâm Đồng",
+        "cities": ["Đà Lạt", "Bảo Lộc", "Đức Trọng", "Di Linh", "Bảo Lâm", "Đạ Huoai", "Đạ Tẻh", "Cát Tiên", "Lạc Dương", "Đam Rông", "Lâm Hà"]
+      },
+      {
+        "name": "Lạng Sơn",
+        "cities": ["Lạng Sơn", "Tràng Định", "Bình Gia", "Văn Lãng", "Cao Lộc", "Văn Quan", "Bắc Sơn", "Hữu Lũng", "Chi Lăng", "Lộc Bình", "Đình Lập"]
+      },
+      {
+        "name": "Lào Cai",
+        "cities": ["Lào Cai", "Bát Xát", "Mường Khương", "Si Ma Cai", "Bắc Hà", "Bảo Thắng", "Bảo Yên", "Sa Pa", "Văn Bàn"]
+      },
+      {
+        "name": "Long An",
+        "cities": ["Tân An", "Kiến Tường", "Bến Lức", "Cần Giuộc", "Cần Đước", "Đức Hòa", "Đức Huệ", "Châu Thành", "Thủ Thừa", "Tân Trụ", "Tân Hưng", "Vĩnh Hưng", "Mộc Hóa", "Thạnh Hóa"]
+      },
+      {
+        "name": "Nam Định",
+        "cities": ["Nam Định", "Mỹ Lộc", "Vụ Bản", "Ý Yên", "Nghĩa Hưng", "Nam Trực", "Trực Ninh", "Xuân Trường", "Giao Thủy", "Hải Hậu"]
+      },
+      {
+        "name": "Nghệ An",
+        "cities": ["Vinh", "Cửa Lò", "Thái Hoà", "Quỳnh Lưu", "Diễn Châu", "Nghi Lộc", "Nam Đàn", "Hưng Nguyên", "Thanh Chương", "Anh Sơn", "Con Cuông", "Tân Kỳ", "Yên Thành", "Đô Lương", "Quỳ Hợp", "Quế Phong", "Kỳ Sơn", "Tương Dương", "Nghĩa Đàn"]
+      },
+      {
+        "name": "Ninh Bình",
+        "cities": ["Ninh Bình", "Tam Điệp", "Nho Quan", "Gia Viễn", "Hoa Lư", "Yên Khánh", "Kim Sơn", "Yên Mô"]
+      },
+      {
+        "name": "Ninh Thuận",
+        "cities": ["Phan Rang–Tháp Chàm", "Bác Ái", "Ninh Sơn", "Ninh Hải", "Thuận Bắc", "Thuận Nam"]
+      },
+      {
+        "name": "Phú Thọ",
+        "cities": ["Việt Trì", "Phú Thọ", "Đoan Hùng", "Hạ Hoà", "Thanh Ba", "Phù Ninh", "Yên Lập", "Cẩm Khê", "Tam Nông", "Lâm Thao", "Thanh Sơn", "Thanh Thuỷ", "Tân Sơn"]
+      },
+      {
+        "name": "Phú Yên",
+        "cities": ["Tuy Hoà", "Sông Cầu", "Đông Hòa", "Tuy An", "Sơn Hòa", "Sông Hinh", "Tây Hoà", "Phú Hoà", "Đồng Xuân"]
+      },
+      {
+        "name": "Quảng Bình",
+        "cities": ["Đồng Hới", "Ba Đồn", "Quảng Trạch", "Bố Trạch", "Quảng Ninh", "Lệ Thủy", "Minh Hóa", "Tuyên Hóa"]
+      },
+      {
+        "name": "Quảng Nam",
+        "cities": ["Tam Kỳ", "Hội An", "Bắc Trà My", "Nam Trà My", "Núi Thành", "Phú Ninh", "Nông Sơn", "Tiên Phước", "Hiệp Đức", "Thăng Bình", "Quế Sơn", "Duy Xuyên", "Điện Bàn", "Đại Lộc", "Tây Giang", "Đông Giang", "Nam Giang", "Phước Sơn"]
+      },
+      {
+        "name": "Quảng Ngãi",
+        "cities": ["Quảng Ngãi", "Bình Sơn", "Trà Bồng", "Sơn Tịnh", "Tư Nghĩa", "Sơn Hà", "Sơn Tây", "Minh Long", "Nghĩa Hành", "Mộ Đức", "Đức Phổ", "Ba Tơ", "Lý Sơn"]
+      },
+      {
+        "name": "Quảng Ninh",
+        "cities": ["Hạ Long", "Cẩm Phả", "Uông Bí", "Móng Cái", "Quảng Yên", "Đông Triều", "Hoành Bồ", "Tiên Yên", "Bình Liêu", "Đầm Hà", "Hải Hà", "Ba Chẽ", "Vân Đồn", "Cô Tô"]
+      },
+      {
+        "name": "Quảng Trị",
+        "cities": ["Đông Hà", "Quảng Trị", "Vĩnh Linh", "Gio Linh", "Cam Lộ", "Triệu Phong", "Hải Lăng", "Hướng Hóa", "Đa Krông", "Cồn Cỏ"]
+      },
+      {
+        "name": "Sóc Trăng",
+        "cities": ["Sóc Trăng", "Vĩnh Châu", "Ngã Năm", "Thạnh Trị", "Mỹ Tú", "Mỹ Xuyên", "Kế Sách", "Long Phú", "Cù Lao Dung", "Châu Thành"]
+      },
+      {
+        "name": "Sơn La",
+        "cities": ["Sơn La", "Quỳnh Nhai", "Mường La", "Thuận Châu", "Phù Yên", "Bắc Yên", "Mai Sơn", "Yên Châu", "Mộc Châu", "Sông Mã", "Sốp Cộp", "Vân Hồ"]
+      },
+      {
+        "name": "Tây Ninh",
+        "cities": ["Tây Ninh", "Hòa Thành", "Gò Dầu", "Bến Cầu", "Trảng Bàng", "Dương Minh Châu", "Châu Thành", "Tân Biên", "Tân Châu"]
+      },
+      {
+        "name": "Thái Bình",
+        "cities": ["Thái Bình", "Quỳnh Phụ", "Hưng Hà", "Đông Hưng", "Thái Thụy", "Tiền Hải", "Kiến Xương", "Vũ Thư"]
+      },
+      {
+        "name": "Thái Nguyên",
+        "cities": ["Thái Nguyên", "Sông Công", "Phổ Yên", "Đồng Hỷ", "Võ Nhai", "Đại Từ", "Định Hóa", "Phú Lương", "Phú Bình"]
+      },
+      {
+        "name": "Thanh Hóa",
+        "cities": ["Thanh Hóa", "Sầm Sơn", "Bỉm Sơn", "Nghi Sơn", "Quan Hóa", "Bá Thước", "Quan Sơn", "Mường Lát", "Thạch Thành", "Cẩm Thủy", "Ngọc Lặc", "Thường Xuân", "Như Xuân", "Như Thanh", "Vĩnh Lộc", "Hà Trung", "Nga Sơn", "Hậu Lộc", "Thiệu Hóa", "Triệu Sơn", "Hoằng Hóa", "Đông Sơn", "Quảng Xương", "Tĩnh Gia", "Yên Định", "Nông Cống"]
+      },
+      {
+        "name": "Thừa Thiên-Huế",
+        "cities": ["Huế", "Hương Thủy", "Hương Trà", "Phong Điền", "Quảng Điền", "Phú Vang", "Phú Lộc", "A Lưới", "Nam Đông"]
+      },
+      {
+        "name": "Tiền Giang",
+        "cities": ["Mỹ Tho", "Gò Công", "Cai Lậy", "Tân Phước", "Cái Bè", "Châu Thành", "Chợ Gạo", "Gò Công Tây", "Gò Công Đông"]
+      },
+      {
+        "name": "Trà Vinh",
+        "cities": ["Trà Vinh", "Duyên Hải", "Càng Long", "Cầu Kè", "Tiểu Cần", "Châu Thành", "Cầu Ngang", "Trà Cú"]
+      },
+      {
+        "name": "Tuyên Quang",
+        "cities": ["Tuyên Quang", "Na Hang", "Chiêm Hóa", "Hàm Yên", "Yên Sơn", "Sơn Dương", "Lâm Bình"]
+      },
+      {
+        "name": "Vĩnh Long",
+        "cities": ["Vĩnh Long", "Long Hồ", "Mang Thít", "Vũng Liêm", "Tam Bình", "Bình Minh", "Trà Ôn", "Bình Tân"]
+      },
+      {
+        "name": "Vĩnh Phúc",
+        "cities": ["Vĩnh Yên", "Phúc Yên", "Lập Thạch", "Sông Lô", "Bình Xuyên", "Yên Lạc", "Vĩnh Tường", "Tam Dương", "Tam Đảo"]
+      },
+      {
+        "name": "Yên Bái",
+        "cities": ["Yên Bái", "Nghĩa Lộ", "Lục Yên", "Văn Yên", "Mù Căng Chải", "Trấn Yên", "Trạm Tấu", "Văn Chấn", "Yên Bình"]
+      }
+    ]
+  }
+]

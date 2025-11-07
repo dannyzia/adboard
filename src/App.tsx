@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { AdProvider } from './context/AdContext';
 import { AdminAuthProvider } from './context/AdminAuthContext';
+import { ToastProvider } from './components/ui/ToastContext';
 import { HomePage } from './pages/HomePage';
 import { AdDetailPage } from './pages/AdDetailPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 import { LoginPage } from './pages/LoginPage';
 import { PricingPage } from './pages/PricingPage';
 import { CheckoutPage } from './pages/CheckoutPage';
@@ -12,6 +14,7 @@ import { PostAdPage } from './pages/PostAdPage';
 import { AdminLoginPage } from './pages/AdminLoginPage';
 import { AdminDashboardPage } from './pages/AdminDashboardPage';
 import { AdminAdsPage } from './pages/AdminAdsPage';
+import { AdminBlogsPage } from './pages/AdminBlogsPage';
 import { AdminUsersPage } from './pages/AdminUsersPage';
 import { AdminReportsPage } from './pages/AdminReportsPage';
 import { AdminArchivePage } from './pages/AdminArchivePage';
@@ -26,11 +29,13 @@ function App() {
     <AuthProvider>
       <AdProvider>
         <AdminAuthProvider>
-          <BrowserRouter>
-            <Routes>
+          <ToastProvider>
+            <BrowserRouter>
+              <Routes>
               {/* Public Routes */}
               <Route path="/" element={<HomePage />} />
-              <Route path="/ad/:id" element={<AdDetailPage />} />
+              <Route path="/ad/:slug" element={<AdDetailPage />} />
+              <Route path="/blog/:slug" element={<BlogDetailPage />} />
               <Route path="/login" element={<LoginPage />} />
               <Route path="/auth/callback" element={<AuthCallbackPage />} />
               <Route path="/pricing" element={<PricingPage />} />
@@ -57,6 +62,14 @@ function App() {
                 element={
                   <ProtectedAdminRoute>
                     <AdminAdsPage />
+                  </ProtectedAdminRoute>
+                }
+              />
+              <Route
+                path="/admin/blogs"
+                element={
+                  <ProtectedAdminRoute>
+                    <AdminBlogsPage />
                   </ProtectedAdminRoute>
                 }
               />
@@ -108,8 +121,9 @@ function App() {
                   </ProtectedAdminRoute>
                 }
               />
-            </Routes>
-          </BrowserRouter>
+              </Routes>
+            </BrowserRouter>
+          </ToastProvider>
         </AdminAuthProvider>
       </AdProvider>
     </AuthProvider>

@@ -111,7 +111,7 @@ const adSchema = new mongoose.Schema({
   // Status
   status: {
     type: String,
-    enum: ['active', 'pending', 'sold', 'expired', 'archived', 'flagged'],
+    enum: ['active', 'pending', 'sold', 'expired', 'archived', 'flagged', 'rejected'],
     default: 'active'
   },
   
@@ -153,12 +153,15 @@ const adSchema = new mongoose.Schema({
       default: Date.now
     }
   }],
+  // Rejection reason (if admin rejected the ad)
+  rejectReason: String,
   
   // SEO
   slug: {
     type: String,
     unique: true
   },
+
   
   // Archive Info (when status = 'archived')
   archivedAt: Date,
@@ -184,17 +187,12 @@ adSchema.index({ category: 1, status: 1 });
 adSchema.index({ 'location.country': 1, 'location.state': 1, 'location.city': 1 });
 adSchema.index({ user: 1 });
 adSchema.index({ expiresAt: 1 });
+// Ensure slug is indexed and unique (sparse to allow existing docs without slug)
+adSchema.index({ slug: 1 }, { unique: true, sparse: true });
 
-// Generate slug before saving
-adSchema.pre('save', function(next) {
-  if (this.isModified('title')) {
-    this.slug = this.title
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/(^-|-$)/g, '') + '-' + Date.now();
-  }
-  next();
-});
+// NOTE: slug generation is handled at the route level via a dedicated utility
+// and a unique sparse index ensures uniqueness. We intentionally do not
+// generate timestamp-based slugs here so created slugs remain SEO-friendly.
 
 // Increment view count
 adSchema.methods.incrementViews = async function() {

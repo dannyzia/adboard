@@ -5,6 +5,8 @@ import { useAuth } from '../hooks/useAuth';
 import { adService } from '../services/ad.service';
 import { bidService } from '../services/bid.service';
 import type { Ad } from '../types/ad.types';
+import { useToast } from '../components/ui/ToastContext';
+import { ConfirmDialog } from '../components/ui/ConfirmDialog';
 
 export const UserDashboardPage: React.FC = () => {
   const navigate = useNavigate();
@@ -16,6 +18,13 @@ export const UserDashboardPage: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<'my-ads' | 'favorites' | 'settings' | 'my-bids' | 'my-auctions'>('my-ads');
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [confirmConfig, setConfirmConfig] = useState<{
+    isOpen: boolean;
+    title?: string;
+    message?: string;
+    onConfirm?: () => void;
+  }>({ isOpen: false });
+  const toast = useToast();
   const [passwordData, setPasswordData] = useState({
     currentPassword: '',
     newPassword: '',
@@ -47,18 +56,9 @@ export const UserDashboardPage: React.FC = () => {
     try {
       setLoading(true);
       
-      // Load user's ads - get from backend filtered by user
-      const response = await adService.getAds(1, 100);
-      console.log('All ads:', response.ads);
-      console.log('Current user ID:', user?._id);
-      
-      // Filter ads by userId (handle both string comparison and object comparison)
-      const userAds = response.ads.filter(ad => {
-        const adUserId = ad.user?._id || ad.userId;
-        return adUserId === user?._id;
-      });
-      
-      console.log('Filtered user ads:', userAds);
+      // Load user's ads using dedicated endpoint (returns all statuses for the owner)
+      const userAds = await adService.getMyAds();
+      console.log('User ads:', userAds);
       setMyAds(userAds);
 
       // Load auctions posted by the user
@@ -73,10 +73,13 @@ export const UserDashboardPage: React.FC = () => {
         console.error('Error loading bids:', err);
       }
 
-      // Load favorite ads
-      if (user?.favorites && user.favorites.length > 0) {
-        const favorites = response.ads.filter(ad => user.favorites.includes(ad._id));
-        setFavoriteAds(favorites);
+      // Load favorite ads using dedicated endpoint
+      try {
+        const favorites = await adService.getFavorites();
+        setFavoriteAds(favorites || []);
+      } catch (err) {
+        console.error('Error loading favorites:', err);
+        setFavoriteAds([]);
       }
     } catch (error) {
       console.error('Error loading user data:', error);
@@ -86,15 +89,23 @@ export const UserDashboardPage: React.FC = () => {
   };
 
   const handleDeleteAd = async (adId: string) => {
-    if (!window.confirm('Are you sure you want to delete this ad?')) return;
-    
-    try {
-      await adService.deleteAd(adId);
-      setMyAds(prev => prev.filter(ad => ad._id !== adId));
-    } catch (error) {
-      console.error('Error deleting ad:', error);
-      alert('Failed to delete ad');
-    }
+    setConfirmConfig({
+      isOpen: true,
+      title: 'Delete Ad',
+      message: 'Are you sure you want to delete this ad? This action cannot be undone.',
+      onConfirm: async () => {
+        try {
+          await adService.deleteAd(adId);
+          setMyAds(prev => prev.filter(ad => ad._id !== adId));
+          toast.showToast('Ad deleted', 'success');
+        } catch (error) {
+          console.error('Error deleting ad:', error);
+          toast.showToast('Failed to delete ad', 'error');
+        } finally {
+          setConfirmConfig({ isOpen: false });
+        }
+      }
+    });
   };
 
   const handleEditAd = (adId: string) => {
@@ -102,17 +113,23 @@ export const UserDashboardPage: React.FC = () => {
   };
 
   const handleRenewAd = async (_adId: string) => {
-    if (!window.confirm('Renew this ad for 30 more days?')) return;
-    
-    try {
-      // TODO: Implement actual renew API call
-      alert('Ad renewed successfully for 30 days!');
-      // Reload ads
-      await loadUserData();
-    } catch (error) {
-      console.error('Error renewing ad:', error);
-      alert('Failed to renew ad');
-    }
+    setConfirmConfig({
+      isOpen: true,
+      title: 'Renew Ad',
+      message: 'Renew this ad for 30 more days?',
+      onConfirm: async () => {
+        try {
+          // TODO: Implement actual renew API call
+          toast.showToast('Ad renewed successfully for 30 days!', 'success');
+          await loadUserData();
+        } catch (error) {
+          console.error('Error renewing ad:', error);
+          toast.showToast('Failed to renew ad', 'error');
+        } finally {
+          setConfirmConfig({ isOpen: false });
+        }
+      }
+    });
   };
 
   const getExpiryCountdown = (expiryDate: string): string => {
@@ -152,32 +169,32 @@ export const UserDashboardPage: React.FC = () => {
 
     try {
       // TODO: Implement actual password change API call
-      alert('Password changed successfully!');
+      toast.showToast('Password changed successfully!', 'success');
       setPasswordData({ currentPassword: '', newPassword: '', confirmPassword: '' });
     } catch (error) {
       console.error('Error changing password:', error);
-      alert('Failed to change password');
+      toast.showToast('Failed to change password', 'error');
     }
   };
 
   const handleSaveNotifications = async () => {
     try {
       // TODO: Implement actual save notifications API call
-      alert('Notification settings saved!');
+      toast.showToast('Notification settings saved!', 'success');
     } catch (error) {
       console.error('Error saving notifications:', error);
-      alert('Failed to save notification settings');
+      toast.showToast('Failed to save notification settings', 'error');
     }
   };
 
   const handleDeleteAccount = async () => {
     try {
       // TODO: Implement actual delete account API call
-      alert('Your account has been deleted');
+      toast.showToast('Your account has been deleted', 'success');
       navigate('/');
     } catch (error) {
       console.error('Error deleting account:', error);
-      alert('Failed to delete account');
+      toast.showToast('Failed to delete account', 'error');
     } finally {
       setShowDeleteModal(false);
     }
@@ -202,15 +219,65 @@ export const UserDashboardPage: React.FC = () => {
         return 'bg-red-100 text-red-800';
       case 'draft':
         return 'bg-gray-100 text-gray-800';
+      case 'pending':
+        return 'bg-yellow-100 text-yellow-800';
+      case 'rejected':
+        return 'bg-red-100 text-red-800';
       default:
         return 'bg-blue-100 text-blue-800';
     }
+  };
+
+  const getStatusLabel = (status: string) => {
+    switch (status) {
+      case 'active':
+        return 'Active';
+      case 'expired':
+        return 'Expired';
+      case 'draft':
+        return 'Draft';
+      case 'pending':
+        return 'Pending Review';
+      case 'rejected':
+        return 'Rejected';
+      default:
+        return status || 'Unknown';
+    }
+  };
+
+  const handleResubmit = async (adId: string) => {
+    setConfirmConfig({
+      isOpen: true,
+      title: 'Resubmit Ad',
+      message: 'Resubmit this ad for review?',
+      onConfirm: async () => {
+        try {
+          await adService.updateAd(adId, { status: 'pending' });
+          toast.showToast('Ad resubmitted for review', 'success');
+          await loadUserData();
+        } catch (err) {
+          console.error('Error resubmitting ad:', err);
+          toast.showToast('Failed to resubmit ad', 'error');
+        } finally {
+          setConfirmConfig({ isOpen: false });
+        }
+      }
+    });
   };
 
   if (!user) return null;
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <ConfirmDialog
+        isOpen={confirmConfig.isOpen}
+        title={confirmConfig.title}
+        message={confirmConfig.message}
+        onConfirm={() => confirmConfig.onConfirm && confirmConfig.onConfirm()}
+        onCancel={() => setConfirmConfig({ isOpen: false })}
+        confirmText="Yes"
+        cancelText="Cancel"
+      />
       <Navbar />
       
       <div className="max-w-7xl mx-auto px-4 py-8">
@@ -377,15 +444,34 @@ export const UserDashboardPage: React.FC = () => {
                                   <p className="text-sm text-gray-600">{ad.category} • {ad.location.city}, {ad.location.state}</p>
                                 </div>
                                 <span className={`px-3 py-1 rounded-full text-xs font-medium ${getStatusColor(ad.status)}`}>
-                                  {ad.status}
+                                  {getStatusLabel(ad.status)}
                                 </span>
                               </div>
                               <p className="text-gray-700 mb-3 line-clamp-2">{ad.description?.substring(0, 150)}</p>
                               <div className="flex items-center justify-between">
                                 <div className="flex flex-col gap-1">
-                                  <div className="text-sm text-gray-600">
-                                    <span className="font-medium">{ad.views}</span> views • Posted {formatDate(ad.createdAt)}
-                                  </div>
+                                    <div className="text-sm text-gray-600">
+                                      <span className="font-medium">{ad.views}</span> views • Posted {formatDate(ad.createdAt)}
+                                    </div>
+                                    {(ad.status as any) === 'rejected' && (
+                                      <div className="mt-3 p-3 bg-red-50 border border-red-100 rounded">
+                                        <div className="text-sm text-red-700 font-medium">Rejected: {(ad as any).rejectReason || 'No reason provided.'}</div>
+                                        <div className="mt-3 flex gap-2">
+                                          <button
+                                            onClick={() => handleEditAd(ad._id)}
+                                            className="px-3 py-1 text-sm bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg transition"
+                                          >
+                                            Edit & Resubmit
+                                          </button>
+                                          <button
+                                            onClick={() => handleResubmit(ad._id)}
+                                            className="px-3 py-1 text-sm bg-yellow-500 text-white hover:bg-yellow-600 rounded-lg transition"
+                                          >
+                                            Resubmit
+                                          </button>
+                                        </div>
+                                      </div>
+                                    )}
                                   {ad.expiryDate && (
                                     <div className={`text-sm font-medium ${getExpiryColor(ad.expiryDate)}`}>
                                       {getExpiryCountdown(ad.expiryDate)}
@@ -394,7 +480,7 @@ export const UserDashboardPage: React.FC = () => {
                                 </div>
                                 <div className="flex gap-2">
                                   <button
-                                    onClick={() => navigate(`/ad/${ad._id}`)}
+                                    onClick={() => navigate(`/ad/${ad.slug || ad._id}`)}
                                     className="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded-lg transition"
                                   >
                                     View
@@ -441,7 +527,7 @@ export const UserDashboardPage: React.FC = () => {
                     ) : (
                       favoriteAds.map((ad) => (
                         <div key={ad._id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition cursor-pointer"
-                          onClick={() => navigate(`/ad/${ad._id}`)}
+                          onClick={() => navigate(`/ad/${ad.slug || ad._id}`)}
                         >
                           <div className="flex gap-4">
                             <img
@@ -512,7 +598,7 @@ export const UserDashboardPage: React.FC = () => {
                             </div>
                             <div className="text-right">
                               <button
-                                onClick={() => navigate(`/ad/${ad._id}`)}
+                                onClick={() => navigate(`/ad/${ad.slug || ad._id}`)}
                                 className="px-3 py-1 text-sm text-blue-600 hover:bg-blue-50 rounded-lg transition"
                               >
                                 View

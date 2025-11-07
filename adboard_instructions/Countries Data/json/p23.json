@@ -1,0 +1,313 @@
+[
+  {
+    "country": "San Marino",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {
+        "name": "Acquaviva",
+        "cities": ["Acquaviva"]
+      },
+      {
+        "name": "Borgo Maggiore",
+        "cities": ["Borgo Maggiore", "Valdragone"]
+      },
+      {
+        "name": "Chiesanuova",
+        "cities": ["Chiesanuova"]
+      },
+      {
+        "name": "Domagnano",
+        "cities": ["Domagnano"]
+      },
+      {
+        "name": "Faetano",
+        "cities": ["Faetano"]
+      },
+      {
+        "name": "Fiorentino",
+        "cities": ["Fiorentino"]
+      },
+      {
+        "name": "Montegiardino",
+        "cities": ["Montegiardino"]
+      },
+      {
+        "name": "San Marino",
+        "cities": ["San Marino", "Murata"]
+      },
+      {
+        "name": "Serravalle",
+        "cities": ["Serravalle", "Dogana", "Falciano"]
+      }
+    ]
+  },
+  {
+    "country": "São Tomé and Príncipe",
+    "currencyCode": "STN",
+    "currencyName": "São Tomé and Príncipe Dobra",
+    "states": [
+      {
+        "name": "Príncipe",
+        "cities": ["Santo António", "Sundý"]
+      },
+      {
+        "name": "São Tomé",
+        "cities": ["São Tomé", "Trindade", "Guadalupe", "Santana", "Neves", "Santa Cruz", "Angolares", "Ribeira Afonso"]
+      },
+      {
+        "name": "Água Grande",
+        "cities": ["São Tomé"]
+      },
+      {
+        "name": "Cantagalo",
+        "cities": ["Santana", "Ribeira Afonso"]
+      },
+      {
+        "name": "Caué",
+        "cities": ["São João dos Angolares", "Ponta Baleia", "Iô Grande"]
+      },
+      {
+        "name": "Lembá",
+        "cities": ["Neves", "Santa Catarina"]
+      },
+      {
+        "name": "Lobata",
+        "cities": ["Guadalupe", "Almas", "Conde"]
+      },
+      {
+        "name": "Mé-Zóchi",
+        "cities": ["Trindade", "Madalena", "Bela Vista", "Micoló"]
+      }
+    ]
+  },
+  {
+    "country": "Saudi Arabia",
+    "currencyCode": "SAR",
+    "currencyName": "Saudi Riyal",
+    "states": [
+      {
+        "name": "Al Bahah",
+        "cities": ["Al Bahah", "Baljurashi", "Al Mandaq", "Al Aqiq", "Qilwah"]
+      },
+      {
+        "name": "Al Jawf",
+        "cities": ["Sakakah", "Qurayyat", "Dumat al-Jandal", "Al Isawiyah"]
+      },
+      {
+        "name": "Al Madinah",
+        "cities": ["Medina", "Yanbu", "Badr", "Khaybar", "Al Ula", "Mahd adh Dhahab"]
+      },
+      {
+        "name": "Al-Qassim",
+        "cities": ["Buraidah", "Unaizah", "Ar Rass", "Al Bukayriyah", "Al Badayea", "Al Mithnab", "Riyadh al Khabra"]
+      },
+      {
+        "name": "Asir",
+        "cities": ["Abha", "Khamis Mushait", "Bisha", "Najran", "Sarat Abidah", "Ahad Rafidah", "Muhayil", "Tathlith"]
+      },
+      {
+        "name": "Eastern Province",
+        "cities": ["Dammam", "Al Khobar", "Dhahran", "Hofuf", "Al Hasa", "Jubail", "Qatif", "Ras Tanura", "Abqaiq", "Khafji"]
+      },
+      {
+        "name": "Ha'il",
+        "cities": ["Ha'il", "Baqa", "Al Ghazalah", "As Sulaimaniyah"]
+      },
+      {
+        "name": "Jazan",
+        "cities": ["Jazan", "Sabya", "Abu Arish", "Samtah", "Al Harth", "Al Dayer", "Beesh", "Farasan"]
+      },
+      {
+        "name": "Makkah",
+        "cities": ["Mecca", "Jeddah", "Ta'if", "Al Lith", "Rabigh", "Al Jumum", "Al Kamil", "Khulays"]
+      },
+      {
+        "name": "Najran",
+        "cities": ["Najran", "Sharurah", "Habuna", "Badr al Janub", "Yadamah", "Thar"]
+      },
+      {
+        "name": "Northern Borders",
+        "cities": ["Arar", "Rafha", "Turayf", "Al Uwayqilah"]
+      },
+      {
+        "name": "Riyadh",
+        "cities": ["Riyadh", "Diriyah", "Al Kharj", "Al Majma'ah", "Dhurma", "Hotat Bani Tamim", "Howtat Sudair", "Afif", "As Sulayyil", "Wadi ad-Dawasir", "Al Aflaj", "Al Duwadimi", "Al Ghat", "Al Zulfi", "Shagra", "Thadiq"]
+      },
+      {
+        "name": "Tabuk",
+        "cities": ["Tabuk", "Al Wajh", "Duba", "Haql", "Umluj", "Tayma", "Al Bada"]
+      }
+    ]
+  },
+  {
+    "country": "Senegal",
+    "currencyCode": "XOF",
+    "currencyName": "West African CFA Franc",
+    "states": [
+      {
+        "name": "Dakar",
+        "cities": ["Dakar", "Pikine", "Guediawaye", "Rufisque"]
+      },
+      {
+        "name": "Diourbel",
+        "cities": ["Diourbel", "Bambey", "Mbacké", "Touba"]
+      },
+      {
+        "name": "Fatick",
+        "cities": ["Fatick", "Foundiougne", "Gossas"]
+      },
+      {
+        "name": "Kaffrine",
+        "cities": ["Kaffrine", "Birkelane", "Koungheul", "Malem Hodar"]
+      },
+      {
+        "name": "Kaolack",
+        "cities": ["Kaolack", "Guinguinéo", "Nioro du Rip"]
+      },
+      {
+        "name": "Kédougou",
+        "cities": ["Kédougou", "Salémata", "Saraya"]
+      },
+      {
+        "name": "Kolda",
+        "cities": ["Kolda", "Médina Yoro Foulah", "Vélingara"]
+      },
+      {
+        "name": "Louga",
+        "cities": ["Louga", "Kébémer", "Linguère"]
+      },
+      {
+        "name": "Matam",
+        "cities": ["Matam", "Kanel", "Ranérou"]
+      },
+      {
+        "name": "Saint-Louis",
+        "cities": ["Saint-Louis", "Dagana", "Podor", "Richard-Toll"]
+      },
+      {
+        "name": "Sédhiou",
+        "cities": ["Sédhiou", "Bounkiling", "Goudomp"]
+      },
+      {
+        "name": "Tambacounda",
+        "cities": ["Tambacounda", "Bakel", "Koumpentoum", "Goudiry"]
+      },
+      {
+        "name": "Thiès",
+        "cities": ["Thiès", "M'bour", "Tivaouane"]
+      },
+      {
+        "name": "Ziguinchor",
+        "cities": ["Ziguinchor", "Bignona", "Oussouye"]
+      }
+    ]
+  },
+  {
+    "country": "Serbia",
+    "currencyCode": "RSD",
+    "currencyName": "Serbian Dinar",
+    "states": [
+      {
+        "name": "Belgrade",
+        "cities": ["Belgrade", "Zemun", "New Belgrade", "Čukarica", "Rakovica", "Savski Venac", "Stari Grad", "Voždovac", "Vračar", "Zvezdara", "Barajevo", "Grocka", "Lazarevac", "Mladenovac", "Obrenovac", "Palilula", "Sopot", "Surčin"]
+      },
+      {
+        "name": "Bor District",
+        "cities": ["Bor", "Majdanpek", "Negotin", "Kladovo"]
+      },
+      {
+        "name": "Braničevo District",
+        "cities": ["Požarevac", "Kostolac", "Veliko Gradište", "Golubac", "Malo Crniće", "Žabari", "Petrovac", "Kučevo"]
+      },
+      {
+        "name": "Jablanica District",
+        "cities": ["Leskovac", "Vlasotince", "Lebane", "Bojnik", "Medveđa", "Crna Trava"]
+      },
+      {
+        "name": "Kolubara District",
+        "cities": ["Valjevo", "Lajkovac", "Osečina", "Ub", "Mionica"]
+      },
+      {
+        "name": "Mačva District",
+        "cities": ["Šabac", "Loznica", "Krupanj", "Ljubovija", "Vladimirci", "Koceljeva", "Mali Zvornik", "Bogatić"]
+      },
+      {
+        "name": "Moravica District",
+        "cities": ["Čačak", "Gornji Milanovac", "Lučani", "Ivanjica"]
+      },
+      {
+        "name": "Nišava District",
+        "cities": ["Niš", "Aleksinac", "Svrljig", "Doljevac", "Merošina", "Ražanj", "Gadžin Han"]
+      },
+      {
+        "name": "Pčinja District",
+        "cities": ["Vranje", "Bujanovac", "Preševo", "Trgovište", "Vladičin Han", "Surdulica", "Bosilegrad"]
+      },
+      {
+        "name": "Pirot District",
+        "cities": ["Pirot", "Bela Palanka", "Dimitrovgrad", "Babušnica"]
+      },
+      {
+        "name": "Podunavlje District",
+        "cities": ["Smederevo", "Smederevska Palanka", "Velika Plana"]
+      },
+      {
+        "name": "Pomoravlje District",
+        "cities": ["Jagodina", "Ćuprija", "Paraćin", "Svilajnac", "Despotovac", "Rekovac"]
+      },
+      {
+        "name": "Rasina District",
+        "cities": ["Kruševac", "Trstenik", "Ćićevac", "Aleksandrovac", "Varvarin", "Brus"]
+      },
+      {
+        "name": "Raška District",
+        "cities": ["Kraljevo", "Vrnjačka Banja", "Raška", "Novi Pazar", "Tutin"]
+      },
+      {
+        "name": "Šumadija District",
+        "cities": ["Kragujevac", "Aranđelovac", "Batočina", "Knić", "Lapovo", "Rača"]
+      },
+      {
+        "name": "Toplica District",
+        "cities": ["Prokuplje", "Blace", "Žitorađa", "Kuršumlija"]
+      },
+      {
+        "name": "Zaječar District",
+        "cities": ["Zaječar", "Knjaževac", "Sokobanja", "Boljevac"]
+      },
+      {
+        "name": "Zlatibor District",
+        "cities": ["Užice", "Požega", "Čajetina", "Arilje", "Nova Varoš", "Prijepolje", "Sjenica", "Bajina Bašta", "Kosjerić"]
+      },
+      {
+        "name": "West Bačka District",
+        "cities": ["Sombor", "Apatin", "Kula", "Odžaci"]
+      },
+      {
+        "name": "North Bačka District",
+        "cities": ["Subotica", "Bačka Topola", "Mali Iđoš"]
+      },
+      {
+        "name": "South Bačka District",
+        "cities": ["Novi Sad", "Vrbas", "Bečej", "Bačka Palanka", "Temerin", "Žabalj", "Srbobran", "Bački Petrovac", "Beočin", "Sremski Karlovci"]
+      },
+      {
+        "name": "North Banat District",
+        "cities": ["Kikinda", "Senta", "Ada", "Kanjiža", "Novi Kneževac", "Čoka"]
+      },
+      {
+        "name": "Central Banat District",
+        "cities": ["Zrenjanin", "Nova Crnja", "Novi Bečej", "Žitište", "Sečanj"]
+      },
+      {
+        "name": "South Banat District",
+        "cities": ["Pančevo", "Vršac", "Kovačica", "Bela Crkva", "Alibunar", "Opovo", "Plandište"]
+      },
+      {
+        "name": "Srem District",
+        "cities": ["Sremska Mitrovica", "Inđija", "Stara Pazova", "Šid", "Ruma", "Irig"]
+      }
+    ]
+  }
+]

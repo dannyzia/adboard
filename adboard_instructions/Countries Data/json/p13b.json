@@ -1,0 +1,17 @@
+[
+  {
+    "country": "Moldova", 
+    "currencyCode": "MDL",
+    "currencyName": "Moldovan Leu",
+    "states": [
+      {"name": "Ialoveni District", "cities": ["Ialoveni", "Bardar", "Cărbuna", "Cigârleni", "Costești", "Gangura", "Horești", "Mileștii Mici", "Nimoreni", "Pojăreni", "Răzeni", "Sociteni", "Suruceni", "Ulmu", "Văratic", "Zîmbreni"]},
+      {"name": "Leova District", "cities": ["Leova", "Băiuș", "Beștemac", "Bălăbănești", "Bălășești", "Cneazevca", "Covurlui", "Cupcui", "Filipeni", "Orac", "Sărata-Răzeși", "Sărata Nouă", "Sărăteni", "Sîrma", "Tigheci", "Tochile-Răducani", "Tomai", "Vozneseni"]},
+      {"name": "Nisporeni District", "cities": ["Nisporeni", "Bălănești", "Bălțăți", "Bălțata", "Bărboieni", "Călimănești", "Cărinești", "Cărpineni", "Cîrnești", "Ciutești", "Cornești", "Curătura", "Drojdieni", "Dumbrăvița", "Făgădău", "Frasin", "Găureni", "Grozești", "Iurceni", "Luminița", "Mihailovca", "Ocnița", "Păpăuți", "Pîrlița", "Seliște", "Șișcani", "Văleni", "Verejeni", "Zberoaia"]},
+      {"name": "Ocnița District", "cities": ["Ocnița", "Berezlogi", "Bîrlădeni", "Bîrnova", "Calarașovca", "Călărașeuca", "Căpriana", "Chilișoaia", "Codru", "Coresti", "Cornești", "Cuhureștii de Jos", "Cuhureștii de Sus", "Cupcini", "Ghiduleni", "Glinjeni", "Grinauti", "Groznița", "Hădărăuți", "Hîrtop", "Lencăuți", "Lipnic", "Maiac", "Mereșeuca", "Mihăileni", "Naslavcea", "Pănășești", "Răcăria", "Răspopeni", "Recea", "Rîngaci", "Sauca", "Șestaci", "Șoldănești", "Șoltoaia", "Tănătari", "Târnauca", "Tețcani", "Trebisăuți", "Valea"]},
+      {"name": "Orhei District", "cities": ["Orhei", "Berezlogi", "Biești", "Bolohan", "Brănești", "Breanova", "Bucovăț", "Camenca", "Chiperceni", "Ciocîlteni", "Cișmea", "Clișova", "Cobîlea", "Cogîlniceni", "Cojușna", "Crihana", "Donici", "Ghetlova", "Hîjdieni", "Hîrbovăț", "Ivancea", "Jora de Mijloc", "Jora de Sus", "Lopatna", "Lucești", "Mitoc", "Neculăieuca", "Noroceni", "Peresecina", "Piatra", "Pocșești", "Podgoreni", "Pohorniceni", "Pohrebeni", "Răciula"]},
+      {"name": "Rezina District", "cities": ["Rezina", "Buciușca", "Chirileni", "Cinișeuți", "Cogîlniceni", "Cuizăuca", "Echimăuți", "Ghiduleni", "Gordinești", "Horodiște", "Ignăței", "Lalova", "Lipceni", "Măhala", "Mincenii de Jos", "Mincenii de Sus", "Nistreni", "Otac", "Peciște", "Pereni", "Piscărești", "Pociumbeni", "Pociumbăuți"]},
+      {"name": "Rîșcani District", "cities": ["Rîșcani", "Aluniș", "Bălășești", "Boroseni", "Braniște", "Corlăteni", "Duruitoarea", "Gălășeni", "Grinăuți", "Hiliuți", "Hîrtop", "Mălăiești", "Mihăileni", "Petrușeni", "Pîrjolteni", "Răcăria", "Recea", "Sîngerei", "Șaptebani", "Știubeieni", "Tăura", "Văratic", "Zăicani"]},
+      {"name": "Sîngerei District", "cities": ["Sîngerei", "Alexăndreni", "Bălășești", "Bilicenii Noi", "Bilicenii Vechi", "Biruința", "Bobletici", "Brejeni", "Chirileni", "Copăceni", "Coșcodeni", "Cotiujenii Mici", "Cubolta", "Dobrogea", "Dumbrăvița", "Grigorăuca", "Heciul Nou", "Mihailovca", "Mîndreștii Noi", "Pepeni", "Prepelița", "Rădoaia", "Răzălăi", "Romanovca", "Sîngereii Noi", "Țambula", "Vrănești"]}
+    ]
+  }
+]

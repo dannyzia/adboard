@@ -16,7 +16,6 @@ Developer notes:
 - After changes, run the TypeScript check:
 
 ```powershell
-cd 'c:\Users\callz\OneDrive\Documents\My Projects\Websites\adboard'
 npx tsc --noEmit
 ```
 

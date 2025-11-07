@@ -46,6 +46,7 @@ let locationCache: {
   countries: string[];
   states: Record<string, string[]>;
   cities: Record<string, string[]>;
+  countryMeta: Record<string, { slug?: string; currencyCode?: string }>;
   lastFetched: number;
 } | null = null;
 
@@ -62,14 +63,24 @@ export const getCountries = async (): Promise<string[]> => {
   }
 
   try {
-    const countries = await locationService.getCountries();
+    const countriesPayload: any[] = await locationService.getCountries();
+    // locationService now returns array of objects { name, slug, currencyCode }
+    const names = countriesPayload.map(c => c.name).filter(Boolean);
+    const meta: Record<string, { slug?: string; currencyCode?: string }> = {};
+    countriesPayload.forEach(c => {
+      if (c && c.name) {
+        meta[c.name] = { slug: c.slug, currencyCode: c.currencyCode };
+      }
+    });
+
     locationCache = {
-      countries,
+      countries: names,
       states: locationCache?.states || {},
       cities: locationCache?.cities || {},
+      countryMeta: meta,
       lastFetched: now,
     };
-    return countries;
+    return names;
   } catch (error) {
     console.error('Failed to fetch countries:', error);
     return COUNTRIES; // Return empty array as fallback
@@ -82,7 +93,8 @@ export const getCountries = async (): Promise<string[]> => {
 export const getStates = async (country: string): Promise<string[]> => {
   const now = Date.now();
 
-  if (locationCache && (now - locationCache.lastFetched) < CACHE_DURATION) {
+  // If we have cached states for this country and cache is fresh, return them.
+  if (locationCache && (now - locationCache.lastFetched) < CACHE_DURATION && locationCache.states[country]) {
     return locationCache.states[country] || [];
   }
 
@@ -95,6 +107,7 @@ export const getStates = async (country: string): Promise<string[]> => {
         countries: [],
         states: { [country]: states },
         cities: {},
+        countryMeta: {},
         lastFetched: now,
       };
     }
@@ -111,7 +124,8 @@ export const getStates = async (country: string): Promise<string[]> => {
 export const getCities = async (state: string): Promise<string[]> => {
   const now = Date.now();
 
-  if (locationCache && (now - locationCache.lastFetched) < CACHE_DURATION) {
+  // If we have cached cities for this state and cache is fresh, return them.
+  if (locationCache && (now - locationCache.lastFetched) < CACHE_DURATION && locationCache.cities[state]) {
     return locationCache.cities[state] || [];
   }
 
@@ -124,6 +138,7 @@ export const getCities = async (state: string): Promise<string[]> => {
         countries: [],
         states: {},
         cities: { [state]: cities },
+        countryMeta: {},
         lastFetched: now,
       };
     }
@@ -139,6 +154,14 @@ export const getCities = async (state: string): Promise<string[]> => {
  */
 export const clearLocationCache = (): void => {
   locationCache = null;
+};
+
+/**
+ * Get currency code for a country (if available from backend payload)
+ */
+export const getCurrencyForCountry = (country: string): string | undefined => {
+  if (!locationCache) return undefined;
+  return locationCache.countryMeta?.[country]?.currencyCode;
 };
 
 export const CURRENCIES = [
@@ -194,7 +217,7 @@ export const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5MB
 
 export const ROUTES = {
   HOME: '/',
-  AD_DETAIL: '/ad/:id',
+  AD_DETAIL: '/ad/:slug',
   POST_AD: '/post-ad',
   DASHBOARD: '/dashboard',
   LOGIN: '/login',

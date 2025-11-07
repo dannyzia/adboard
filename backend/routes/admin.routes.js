@@ -153,8 +153,41 @@ router.put('/users/:id/reactivate', async (req, res) => {
 
 router.get('/ads', async (req, res) => {
   try {
-    const ads = await Ad.find().sort('-createdAt').populate('user', 'name email');
-    res.json({ success: true, ads });
+    // Support optional filters (status, category, country, state, city) and pagination
+    const {
+      page = 1,
+      limit = 50,
+      status,
+      category,
+      country,
+      state,
+      city,
+      search,
+      sort = '-createdAt'
+    } = req.query;
+
+    const filter = {};
+    if (status && status !== 'all') filter.status = status;
+    if (category && category !== 'all') filter.category = category;
+    if (country && country !== 'All Countries') filter['location.country'] = country;
+    if (state && state !== 'All States') filter['location.state'] = state;
+    if (city && city !== 'All Cities') filter['location.city'] = city;
+    if (search) {
+      filter.$or = [
+        { title: { $regex: search, $options: 'i' } },
+        { description: { $regex: search, $options: 'i' } }
+      ];
+    }
+
+    const skip = (parseInt(page) - 1) * parseInt(limit);
+    const ads = await Ad.find(filter)
+      .populate('user', 'name email')
+      .sort(sort)
+      .limit(parseInt(limit))
+      .skip(skip);
+
+    const total = await Ad.countDocuments(filter);
+    res.json({ success: true, ads, pagination: { total, page: parseInt(page), pages: Math.ceil(total / parseInt(limit)), limit: parseInt(limit) } });
   } catch (error) {
     res.status(500).json({ success: false, message: 'Error fetching ads' });
   }

@@ -67,3 +67,21 @@ export function formatDate(dateString: string): string {
     day: 'numeric',
   });
 }
+
+/**
+ * Format date and time for display (includes hours, minutes, seconds)
+ */
+export function formatDateTime(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false,
+    timeZone: 'UTC',
+    timeZoneName: 'short',
+  });
+}

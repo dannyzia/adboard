@@ -5,11 +5,13 @@ import { bidService } from '../services/bid.service';
 import { useAuth } from '../hooks/useAuth';
 import { Ad } from '../types';
 import { LoadingSpinner } from '../components/layout/LoadingSpinner';
-import { formatTimeAgo, formatDate } from '../utils/helpers';
+import { formatTimeAgo, formatDate, formatDateTime } from '../utils/helpers';
 import { CATEGORY_COLORS, CURRENCIES } from '../utils/constants';
+import { useToast } from '../components/ui/ToastContext';
+import { InputDialog } from '../components/ui/InputDialog';
 
 export const AdDetailPage: React.FC = () => {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const [ad, setAd] = useState<Ad | null>(null);
   const [similarAds, setSimilarAds] = useState<Ad[]>([]);
@@ -24,6 +26,9 @@ export const AdDetailPage: React.FC = () => {
   const [placingBid, setPlacingBid] = useState(false);
   const [bidError, setBidError] = useState<string | null>(null);
   const [bidSuccess, setBidSuccess] = useState<string | null>(null);
+  const toast = useToast();
+  const [reportOpen, setReportOpen] = useState(false);
+  const [reportAdId, setReportAdId] = useState<string | null>(null);
 
   // Helper to get image URL (handle both string and object formats)
   const getImageUrl = (image: string | { url: string; publicId?: string; order?: number } | undefined): string => {
@@ -34,16 +39,17 @@ export const AdDetailPage: React.FC = () => {
 
   useEffect(() => {
     const fetchAd = async () => {
-      if (!id) return;
+      if (!slug) return;
       
-      try {
-        setLoading(true);
-  const fetchedAd = await adService.getAdById(id);
+  try {
+    setLoading(true);
+  const fetchedAd = await adService.getAdById(slug || '');
   setAd(fetchedAd);
         
         // Fetch similar ads (only if location exists)
         if (fetchedAd.location) {
-          const similar = await adService.getSimilarAds(id, fetchedAd.category, fetchedAd.location);
+          // Use the actual ad _id for exclude when fetching similar ads
+          const similar = await adService.getSimilarAds(fetchedAd._id, fetchedAd.category, fetchedAd.location);
           setSimilarAds(similar);
         }
 
@@ -64,7 +70,7 @@ export const AdDetailPage: React.FC = () => {
     };
 
     fetchAd();
-  }, [id]);
+  }, [slug]);
 
   const handleShare = (platform?: string) => {
     const url = window.location.href;
@@ -341,7 +347,42 @@ export const AdDetailPage: React.FC = () => {
                   </svg>
                   Share
                 </button>
+                
+                <button
+                  onClick={() => {
+                    if (!user) {
+                      toast.showToast('Please login to report this ad', 'info');
+                      return;
+                    }
+                    setReportAdId(ad._id);
+                    setReportOpen(true);
+                  }}
+                  className="flex items-center justify-center w-full border border-red-300 text-red-600 py-3 rounded-lg hover:bg-red-50 transition font-semibold"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                  </svg>
+                  Report Ad
+                </button>
               </div>
+              <InputDialog
+                isOpen={reportOpen}
+                title="Report Ad"
+                placeholder="Describe why you're reporting this ad"
+                onCancel={() => { setReportOpen(false); setReportAdId(null); }}
+                onSubmit={async (reason) => {
+                  if (!reportAdId) return;
+                  try {
+                    await adService.reportAd(reportAdId, reason);
+                    toast.showToast('Ad reported. Our team will review it.', 'success');
+                  } catch (err: any) {
+                    toast.showToast(err?.response?.data?.message || 'Failed to report ad', 'error');
+                  } finally {
+                    setReportOpen(false);
+                    setReportAdId(null);
+                  }
+                }}
+              />
 
               <div className="mt-6 pt-6 border-t">
                 <div className="text-sm text-gray-600 space-y-2">
@@ -351,7 +392,7 @@ export const AdDetailPage: React.FC = () => {
                   </div>
                   <div className="flex justify-between">
                     <span>Posted:</span>
-                    <span className="font-semibold text-gray-800">{formatDate(ad.createdAt)}</span>
+                    <span className="font-semibold text-gray-800">{formatDateTime(ad.createdAt)}{ad.user?.name ? ` by ${ad.user.name}` : ''}</span>
                   </div>
                   <div className="flex justify-between">
                     <span>Views:</span>
@@ -455,7 +496,7 @@ export const AdDetailPage: React.FC = () => {
                   {similarAds.slice(0, 3).map((similarAd) => (
                     <div
                       key={similarAd._id}
-                      onClick={() => navigate(`/ad/${similarAd._id}`)}
+                      onClick={() => navigate(`/ad/${similarAd.slug || similarAd._id}`)}
                       className="flex space-x-3 cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition"
                     >
                       <img

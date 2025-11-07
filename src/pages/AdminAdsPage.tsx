@@ -3,6 +3,8 @@ import { AdminLayout } from '../components/layout/AdminLayout';
 import { adminService } from '../services/admin.service';
 import { archiveService } from '../services/archive.service';
 import { Ad } from '../types';
+import { useToast } from '../components/ui/ToastContext';
+import { ConfirmDialog } from '../components/ui/ConfirmDialog';
 import { LoadingSpinner } from '../components/layout/LoadingSpinner';
 import { useNavigate } from 'react-router-dom';
 
@@ -13,6 +15,8 @@ export const AdminAdsPage: React.FC = () => {
   const [statusFilter, setStatusFilter] = useState('all');
   const [categoryFilter, setCategoryFilter] = useState('all');
   const navigate = useNavigate();
+  const toast = useToast();
+  const [confirmConfig, setConfirmConfig] = useState<{ isOpen: boolean; title?: string; message?: string; onConfirm?: () => void }>({ isOpen: false });
 
   useEffect(() => {
     loadAds();
@@ -53,51 +57,63 @@ export const AdminAdsPage: React.FC = () => {
   };
 
   const handleArchive = async (adId: string) => {
-    if (confirm('Are you sure you want to archive this ad?')) {
-      try {
-        await archiveService.archiveAd(adId, 'Admin action');
-        loadAds();
-      } catch (error) {
-        alert('Failed to archive ad');
+    setConfirmConfig({
+      isOpen: true,
+      title: 'Archive Ad',
+      message: 'Are you sure you want to archive this ad?',
+      onConfirm: async () => {
+        try {
+          await archiveService.archiveAd(adId, 'Admin action');
+          loadAds();
+          toast.showToast('Ad archived', 'success');
+        } catch (error) {
+          toast.showToast('Failed to archive ad', 'error');
+        } finally {
+          setConfirmConfig({ isOpen: false });
+        }
       }
-    }
+    });
   };
 
   const handleDelete = async (adId: string) => {
-    // GitHub-style confirmation: user must type the ad ID
-    const userInput = prompt(
-      `⚠️ DANGER ZONE ⚠️\n\n` +
-      `This will permanently delete this ad.\n` +
-      `This action CANNOT be undone.\n\n` +
-      `To confirm, please type the ad ID:\n${adId}`
-    );
-    
-    if (userInput === adId) {
-      try {
-        await adminService.deleteAd(adId, 'Admin action');
-        alert('✅ Ad deleted successfully');
-        loadAds();
-      } catch (error) {
-        alert('❌ Failed to delete ad');
+    // Use a confirm modal for deletion; require typing the ID is more involved — keep simple confirm here
+    setConfirmConfig({
+      isOpen: true,
+      title: 'Delete Ad',
+      message: 'This will permanently delete this ad. This action CANNOT be undone. Proceed? (Admin)',
+      onConfirm: async () => {
+        try {
+          await adminService.deleteAd(adId, 'Admin action');
+          toast.showToast('Ad deleted', 'success');
+          loadAds();
+        } catch (error) {
+          toast.showToast('Failed to delete ad', 'error');
+        } finally {
+          setConfirmConfig({ isOpen: false });
+        }
       }
-    } else if (userInput !== null) {
-      // User typed something but it didn't match
-      alert('⚠️ Deletion cancelled: ID did not match');
-    }
-    // If userInput is null, user clicked Cancel - do nothing
+    });
   };
 
   const handleBulkArchive = async () => {
     if (selectedAds.size === 0) return;
-    if (confirm(`Archive ${selectedAds.size} selected ads?`)) {
-      try {
-        await archiveService.bulkArchive(Array.from(selectedAds), 'Bulk admin action');
-        setSelectedAds(new Set());
-        loadAds();
-      } catch (error) {
-        alert('Failed to archive ads');
+    setConfirmConfig({
+      isOpen: true,
+      title: 'Archive Ads',
+      message: `Archive ${selectedAds.size} selected ads?`,
+      onConfirm: async () => {
+        try {
+          await archiveService.bulkArchive(Array.from(selectedAds), 'Bulk admin action');
+          setSelectedAds(new Set());
+          loadAds();
+          toast.showToast('Archived selected ads', 'success');
+        } catch (error) {
+          toast.showToast('Failed to archive ads', 'error');
+        } finally {
+          setConfirmConfig({ isOpen: false });
+        }
       }
-    }
+    });
   };
 
   return (
@@ -119,6 +135,8 @@ export const AdminAdsPage: React.FC = () => {
               >
                 <option value="all">All Status</option>
                 <option value="active">Active</option>
+                <option value="pending">Pending Review</option>
+                <option value="rejected">Rejected</option>
                 <option value="expired">Expired</option>
                 <option value="archived">Archived</option>
                 <option value="deleted">Deleted</option>
@@ -165,6 +183,15 @@ export const AdminAdsPage: React.FC = () => {
             <div className="p-12 text-center text-gray-500">No ads found</div>
           ) : (
             <div className="overflow-x-auto">
+              <ConfirmDialog
+                isOpen={confirmConfig.isOpen}
+                title={confirmConfig.title}
+                message={confirmConfig.message}
+                onConfirm={() => confirmConfig.onConfirm && confirmConfig.onConfirm()}
+                onCancel={() => setConfirmConfig({ isOpen: false })}
+                confirmText="Yes"
+                cancelText="Cancel"
+              />
               <table className="w-full">
                 <thead className="bg-gray-50 border-b border-gray-200">
                   <tr>
@@ -182,8 +209,8 @@ export const AdminAdsPage: React.FC = () => {
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Location</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Views</th>
-                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Created</th>
                     <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions</th>
+                    <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Created</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -212,17 +239,48 @@ export const AdminAdsPage: React.FC = () => {
                         </span>
                       </td>
                       <td className="px-4 py-3 text-sm text-gray-600">{ad.views}</td>
-                      <td className="px-4 py-3 text-sm text-gray-600">
-                        {new Date(ad.createdAt).toLocaleDateString()}
-                      </td>
                       <td className="px-4 py-3 text-sm space-x-2">
                         <button
-                          onClick={() => navigate(`/ad/${ad._id}`)}
+                          onClick={() => navigate(`/ad/${ad.slug || ad._id}`)}
                           className="text-blue-600 hover:text-blue-800"
                         >
                           View
                         </button>
-                        {ad.status !== 'archived' && (
+                        {ad.status === 'pending' && (
+                          <>
+                            <button
+                              onClick={async () => {
+                                try {
+                                  await adminService.approveAd(ad._id);
+                                  loadAds();
+                                } catch (error) {
+                                  toast.showToast('Failed to approve ad', 'error');
+                                }
+                              }}
+                              className="text-green-600 hover:text-green-800"
+                            >
+                              Approve
+                            </button>
+                            <button
+                              onClick={async () => {
+                                // Ask for a reason using browser prompt for now (could be replaced with a modal)
+                                const reason = prompt('Rejection reason:');
+                                if (!reason) return;
+                                try {
+                                  await adminService.rejectAd(ad._id, reason);
+                                  loadAds();
+                                  toast.showToast('Ad rejected', 'success');
+                                } catch (error) {
+                                  toast.showToast('Failed to reject ad', 'error');
+                                }
+                              }}
+                              className="text-red-600 hover:text-red-800"
+                            >
+                              Reject
+                            </button>
+                          </>
+                        )}
+                        {ad.status !== 'archived' && ad.status !== 'pending' && (
                           <button
                             onClick={() => handleArchive(ad._id)}
                             className="text-orange-600 hover:text-orange-800"
@@ -236,6 +294,9 @@ export const AdminAdsPage: React.FC = () => {
                         >
                           Delete
                         </button>
+                      </td>
+                      <td className="px-4 py-3 text-sm text-gray-600">
+                        {new Date(ad.createdAt).toLocaleDateString()}
                       </td>
                     </tr>
                   ))}

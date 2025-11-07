@@ -1,0 +1,417 @@
+[
+  {
+    "country": "Panama",
+    "currencyCode": "PAB, USD",
+    "currencyName": "Panamanian Balboa, US Dollar",
+    "states": [
+      {
+        "name": "Bocas del Toro",
+        "cities": ["Bocas del Toro", "Changuinola", "Almirante", "Isla Colón", "Bastimentos"]
+      },
+      {
+        "name": "Chiriquí",
+        "cities": ["David", "Puerto Armuelles", "Volcán", "Boquete", "Gualaca", "Cerro Punta", "Horconcitos"]
+      },
+      {
+        "name": "Coclé",
+        "cities": ["Penonomé", "Aguadulce", "Natá", "La Pintada", "Antón", "Olá"]
+      },
+      {
+        "name": "Colón",
+        "cities": ["Colón", "Portobelo", "Santa Isabel", "Palmas Bellas", "Cativá"]
+      },
+      {
+        "name": "Darién",
+        "cities": ["La Palma", "Yaviza", "El Real de Santa María", "Metetí", "Chepigana"]
+      },
+      {
+        "name": "Herrera",
+        "cities": ["Chitré", "Las Minas", "Los Pozos", "Ocú", "Parita", "Pesé"]
+      },
+      {
+        "name": "Los Santos",
+        "cities": ["Las Tablas", "Guararé", "Tonosí", "Macaracas", "Pedasí", "Pocrí"]
+      },
+      {
+        "name": "Panamá",
+        "cities": ["Panama City", "San Miguelito", "Tocumen", "Arraiján", "La Chorrera", "Chilibre", "Chepo", "Capira"]
+      },
+      {
+        "name": "Panamá Oeste",
+        "cities": ["La Chorrera", "Arraiján", "Capira", "Chame", "San Carlos"]
+      },
+      {
+        "name": "Veraguas",
+        "cities": ["Santiago", "Atalaya", "Calobre", "Las Palmas", "Montijo", "Río de Jesús", "Soná"]
+      },
+      {
+        "name": "Emberá-Wounaan",
+        "cities": ["Unión Chocó", "Cémaco", "Sambú"]
+      },
+      {
+        "name": "Guna Yala",
+        "cities": ["El Porvenir", "Playón Chico", "Tubualá", "Ustupo", "Achutupo"]
+      },
+      {
+        "name": "Ngäbe-Buglé",
+        "cities": ["Llano Tugrí", "Jädaberi", "Müna", "Kankintú", "Bisira", "Nole Düima"]
+      }
+    ]
+  },
+  {
+    "country": "Papua New Guinea",
+    "currencyCode": "PGK",
+    "currencyName": "Papua New Guinean Kina",
+    "states": [
+      {
+        "name": "Central",
+        "cities": ["Port Moresby", "Konedobu", "Koki", "Laloki", "Rigo", "Abau"]
+      },
+      {
+        "name": "Chimbu",
+        "cities": ["Kundiawa", "Gembogl", "Kerowagi", "Chuave", "Salt Nomane", "Sinasina"]
+      },
+      {
+        "name": "East New Britain",
+        "cities": ["Kokopo", "Rabaul", "Kerevat", "Duke of York Islands", "Pomio"]
+      },
+      {
+        "name": "East Sepik",
+        "cities": ["Wewak", "Angoram", "Maprik", "Wosera", "Ambunti", "Tumu"]
+      },
+      {
+        "name": "Eastern Highlands",
+        "cities": ["Goroka", "Kainantu", "Henganofi", "Lufa", "Okapa", "Unggai-Bena"]
+      },
+      {
+        "name": "Enga",
+        "cities": ["Wabag", "Wapenamanda", "Laiagam", "Kandep", "Kompiam", "Porgera"]
+      },
+      {
+        "name": "Gulf",
+        "cities": ["Kerema", "Kikori", "Malalaua", "Ihu", "Baimuru"]
+      },
+      {
+        "name": "Hela",
+        "cities": ["Tari", "Komo", "Margarima", "Koroba", "Kopiago"]
+      },
+      {
+        "name": "Jiwaka",
+        "cities": ["Banz", "Kurumul", "Minj", "Kundiawa", "Nondugl"]
+      },
+      {
+        "name": "Madang",
+        "cities": ["Madang", "Bogia", "Usino", "Rai Coast", "Middle Ramu"]
+      },
+      {
+        "name": "Manus",
+        "cities": ["Lorengau", "Manus Island", "Los Negros Island", "Baluan Island"]
+      },
+      {
+        "name": "Milne Bay",
+        "cities": ["Alotau", "Esa'ala", "Losuia", "Samarai", "Misima", "Woodlark Island"]
+      },
+      {
+        "name": "Morobe",
+        "cities": ["Lae", "Bulolo", "Finschhafen", "Wau", "Menyamya", "Nawae", "Tewae-Siassi"]
+      },
+      {
+        "name": "New Ireland",
+        "cities": ["Kavieng", "Namatanai", "Lihir Island", "New Hanover Island"]
+      },
+      {
+        "name": "Oro",
+        "cities": ["Popondetta", "Kokoda", "Ioma", "Sohe", "Tufi"]
+      },
+      {
+        "name": "Autonomous Region of Bougainville",
+        "cities": ["Buka", "Arawa", "Buin", "Kieta", "Panguna", "Tinputz"]
+      },
+      {
+        "name": "Southern Highlands",
+        "cities": ["Mendi", "Nipa", "Kutubu", "Kagua", "Erave", "Ialibu"]
+      },
+      {
+        "name": "West New Britain",
+        "cities": ["Kimbe", "Bialla", "Hoskins", "Kandrian", "Gloucester"]
+      },
+      {
+        "name": "West Sepik",
+        "cities": ["Vanimo", "Aitape", "Nuku", "Telefomin", "Green River", "Ambuti"]
+      },
+      {
+        "name": "Western",
+        "cities": ["Daru", "Balimo", "Kiunga", "Lake Murray", "Morehead", "Ningerum"]
+      },
+      {
+        "name": "Western Highlands",
+        "cities": ["Mount Hagen", "Tambul", "Baiyer", "Mul", "Kotna"]
+      }
+    ]
+  },
+  {
+    "country": "Paraguay",
+    "currencyCode": "PYG",
+    "currencyName": "Paraguayan Guaraní",
+    "states": [
+      {
+        "name": "Alto Paraguay",
+        "cities": ["Fuerte Olimpo", "Mayor Pablo Lagerenza", "Carmelo Peralta", "Bahía Negra"]
+      },
+      {
+        "name": "Alto Paraná",
+        "cities": ["Ciudad del Este", "Presidente Franco", "Hernandarias", "Itakyry", "Juan León Mallorquín", "Yguazú"]
+      },
+      {
+        "name": "Amambay",
+        "cities": ["Pedro Juan Caballero", "Bella Vista Norte", "Capitán Bado", "Zanja Pytâ"]
+      },
+      {
+        "name": "Asunción",
+        "cities": ["Asunción"]
+      },
+      {
+        "name": "Boquerón",
+        "cities": ["Filadelfia", "Loma Plata", "Mariscal Estigarribia", "Teniente Irala Fernández"]
+      },
+      {
+        "name": "Caaguazú",
+        "cities": ["Coronel Oviedo", "Caaguazú", "Cnel. Bogado", "Dr. Juan Manuel Frutos", "Repatriación", "Carayaó"]
+      },
+      {
+        "name": "Caazapá",
+        "cities": ["Caazapá", "Abaí", "Buena Vista", "Dr. Moisés S. Bertoni", "San Juan Nepomuceno", "Yuty"]
+      },
+      {
+        "name": "Canindeyú",
+        "cities": ["Salto del Guairá", "Katueté", "La Paloma", "Curuguaty", "Ypejhú", "Ygatimi"]
+      },
+      {
+        "name": "Central",
+        "cities": ["Areguá", "Capiatá", "Fernando de la Mora", "Guarambaré", "Itá", "Itauguá", "Lambaré", "Limpio", "Luque", "Mariano Roque Alonso", "Ñemby", "Nueva Italia", "San Antonio", "San Lorenzo", "Villa Elisa", "Villeta", "Ypacaraí", "Ypané"]
+      },
+      {
+        "name": "Concepción",
+        "cities": ["Concepción", "Belén", "Horqueta", "Loreto", "San Carlos", "San Lázaro", "Vallemí", "Yby Yaú"]
+      },
+      {
+        "name": "Cordillera",
+        "cities": ["Caacupé", "Altos", "Arroyos y Esteros", "Atyrá", "Caraguatay", "Emboscada", "Eusebio Ayala", "Isla Pucú", "Itacurubí de la Cordillera", "Juan de Mena", "Loma Grande", "Mbocayaty del Yhaguy", "Nueva Colombia", "Piribebuy", "Primero de Marzo", "San Bernardino", "Santa Elena", "Tobatí", "Valenzuela"]
+      },
+      {
+        "name": "Guairá",
+        "cities": ["Villarrica", "Borja", "Capitán Mauricio José Troche", "Coronel Martínez", "Dr. Bottrell", "Félix Pérez Cardozo", "Garay", "General Eugenio Alejandrino Garay", "Independencia", "Itapé", "Iturbe", "José Fassardi", "Mbocayaty del Guairá", "Natalicio Talavera", "Ñumi", "Paso Yobái", "San Salvador", "Yataity"]
+      },
+      {
+        "name": "Itapúa",
+        "cities": ["Encarnación", "Bella Vista", "Cambyretá", "Capitán Meza", "Capitán Miranda", "Carlos Antonio López", "Carmen del Paraná", "Coronel Bogado", "Edelira", "Fram", "General Artigas", "General Delgado", "Hohenau", "Jesús", "José Leandro Oviedo", "La Paz", "Leandro N. Alem", "Mayor Otaño", "Natalio", "Nueva Alborada", "Obligado", "Pirapó", "San Cosme y Damián", "San Pedro del Paraná", "San Rafael del Paraná", "Tomás Romero Pereira", "Trinidad", "Yatytay"]
+      },
+      {
+        "name": "Misiones",
+        "cities": ["San Juan Bautista", "Ayolas", "San Ignacio", "San Miguel", "San Patricio", "Santa María", "Santa Rosa", "Santiago", "Villa Florida", "Yabebyry"]
+      },
+      {
+        "name": "Ñeembucú",
+        "cities": ["Pilar", "Alberdi", "Cerrito", "Desmochados", "General José Eduvigis Díaz", "Guazú Cuá", "Humaitá", "Isla Umbú", "Laureles", "Mayor José de Jesús Martínez", "Paso de Patria", "San Juan de Ñeembucú", "Tacuaras", "Villa Franca", "Villa Oliva", "Villalbín"]
+      },
+      {
+        "name": "Paraguarí",
+        "cities": ["Paraguarí", "Acahay", "Caapucú", "Carapeguá", "Escobar", "General Bernardino Caballero", "La Colmena", "Mbuyapey", "Pirayú", "Quiindy", "Quyquyhó", "San Roque González de Santa Cruz", "Sapucai", "Tebicuary-mí", "Yaguarón", "Ybycuí", "Ybytymí"]
+      },
+      {
+        "name": "Presidente Hayes",
+        "cities": ["Villa Hayes", "Benjamín Aceval", "José Falcón", "Nanawa", "Puerto Pinasco", "Teniente Esteban Martínez", "Villa del Rosario"]
+      },
+      {
+        "name": "San Pedro",
+        "cities": ["San Pedro de Ycuamandiyú", "25 de Diciembre", "Antequera", "Capiibary", "Choré", "General Elizardo Aquino", "General Francisco Isidoro Resquín", "Guayauí", "Itacurubí del Rosario", "Lima", "Nueva Germania", "San Estanislao", "San Pablo", "Santa Rosa del Aguaray", "Tacuatí", "Unión", "Villa del Rosario", "Yataity del Norte", "Yrybucuá"]
+      }
+    ]
+  },
+  {
+    "country": "Peru",
+    "currencyCode": "PEN",
+    "currencyName": "Peruvian Sol",
+    "states": [
+      {
+        "name": "Amazonas",
+        "cities": ["Chachapoyas", "Bagua Grande", "Jumbilla", "Moyobamba", "Rioja", "Utcubamba"]
+      },
+      {
+        "name": "Ancash",
+        "cities": ["Huaraz", "Chimbote", "Casma", "Huarmey", "Caraz", "Carhuaz", "Yungay"]
+      },
+      {
+        "name": "Apurímac",
+        "cities": ["Abancay", "Andahuaylas", "Chalhuanca", "Cotabambas", "Chincheros", "Grau"]
+      },
+      {
+        "name": "Arequipa",
+        "cities": ["Arequipa", "Camaná", "Mollendo", "Chivay", "Majes", "Mejía"]
+      },
+      {
+        "name": "Ayacucho",
+        "cities": ["Ayacucho", "Huanta", "San Miguel", "Cangallo", "Vilcashuamán", "Puquio"]
+      },
+      {
+        "name": "Cajamarca",
+        "cities": ["Cajamarca", "Jaén", "Chota", "Cutervo", "Bambamarca", "Celendín", "San Ignacio"]
+      },
+      {
+        "name": "Callao",
+        "cities": ["Callao", "Bellavista", "Carmen de la Legua", "La Perla", "La Punta", "Ventanilla"]
+      },
+      {
+        "name": "Cusco",
+        "cities": ["Cusco", "Sicuani", "Quillabamba", "Calca", "Urubamba", "Anta", "Espinar"]
+      },
+      {
+        "name": "Huancavelica",
+        "cities": ["Huancavelica", "Pampas", "Lircay", "Castrovirreyna", "Angaraes", "Tayacaja"]
+      },
+      {
+        "name": "Huánuco",
+        "cities": ["Huánuco", "Tingo María", "Panao", "Ambo", "La Unión", "Huacaybamba"]
+      },
+      {
+        "name": "Ica",
+        "cities": ["Ica", "Chincha Alta", "Pisco", "Nazca", "Palpa", "Subtanjalla"]
+      },
+      {
+        "name": "Junín",
+        "cities": ["Huancayo", "Jauja", "Tarma", "La Oroya", "Satipo", "Chanchamayo", "Concepción"]
+      },
+      {
+        "name": "La Libertad",
+        "cities": ["Trujillo", "Chepén", "Pacasmayo", "Guadalupe", "Cascas", "Santiago de Chuco", "Otuzco"]
+      },
+      {
+        "name": "Lambayeque",
+        "cities": ["Chiclayo", "Lambayeque", "Ferreñafe", "Mochumí", "Pimentel", "Túcume"]
+      },
+      {
+        "name": "Lima",
+        "cities": ["Lima", "Huacho", "Huaral", "Cañete", "Barranca", "Chancay", "Chosica"]
+      },
+      {
+        "name": "Loreto",
+        "cities": ["Iquitos", "Yurimaguas", "Requena", "Nauta", "Contamana", "Ramón Castilla"]
+      },
+      {
+        "name": "Madre de Dios",
+        "cities": ["Puerto Maldonado", "Iberia", "Laberinto", "Las Piedras", "Tambopata"]
+      },
+      {
+        "name": "Moquegua",
+        "cities": ["Moquegua", "Ilo", "Omate", "Pocata", "Cuchumbaya", "Samegua"]
+      },
+      {
+        "name": "Pasco",
+        "cities": ["Cerro de Pasco", "Oxapampa", "Villa Rica", "Yanahuanca", "Chacayán", "Paucartambo"]
+      },
+      {
+        "name": "Piura",
+        "cities": ["Piura", "Sullana", "Paita", "Talara", "Catacaos", "Chulucanas", "Sechura"]
+      },
+      {
+        "name": "Puno",
+        "cities": ["Puno", "Juliaca", "Ilave", "Azángaro", "Ayaviri", "Huancané", "Lampa"]
+      },
+      {
+        "name": "San Martín",
+        "cities": ["Moyobamba", "Tarapoto", "Juanjuí", "Rioja", "Lamas", "Bellavista", "Picota"]
+      },
+      {
+        "name": "Tacna",
+        "cities": ["Tacna", "Candarave", "Locumba", "Pocollay", "Sama", "Tarata"]
+      },
+      {
+        "name": "Tumbes",
+        "cities": ["Tumbes", "Zorritos", "Zarumilla", "Pampas de Hospital", "San Jacinto"]
+      },
+      {
+        "name": "Ucayali",
+        "cities": ["Pucallpa", "Atalaya", "Padre Abad", "Campoverde", "Iparia", "Masisea"]
+      }
+    ]
+  },
+  {
+    "country": "Philippines",
+    "currencyCode": "PHP",
+    "currencyName": "Philippine Peso",
+    "states": [
+      {
+        "name": "Abra",
+        "cities": ["Bangued", "Dolores", "La Paz", "Lagangilang", "Lagayan", "Langiden", "San Juan", "Tayum"]
+      },
+      {
+        "name": "Agusan del Norte",
+        "cities": ["Butuan", "Cabadbaran", "Carmen", "Jabonga", "Kitcharao", "Las Nieves", "Magallanes", "Nasipit", "Remedios T. Romualdez", "Santiago", "Tubay"]
+      },
+      {
+        "name": "Agusan del Sur",
+        "cities": ["Prosperidad", "Bayugan", "Bunawan", "Esperanza", "La Paz", "Loreto", "Rosario", "San Francisco", "Santa Josefa", "Sibagat", "Talacogon", "Trento", "Veruela"]
+      },
+      {
+        "name": "Aklan",
+        "cities": ["Kalibo", "Altavas", "Balete", "Banga", "Batan", "Buruanga", "Ibajay", "Lezo", "Libacao", "Madalag", "Makato", "Malay", "Malinao", "Nabas", "New Washington", "Numancia", "Tangalan"]
+      },
+      {
+        "name": "Albay",
+        "cities": ["Legazpi", "Ligao", "Tabaco", "Daraga", "Camalig", "Guinobatan", "Pio Duran", "Oas", "Polangui", "Rapu-Rapu", "Santo Domingo", "Malilipot", "Bacacay", "Tiwi", "Jovellar", "Manito"]
+      },
+      {
+        "name": "Antique",
+        "cities": ["San Jose de Buenavista", "Anini-y", "Barbaza", "Belison", "Bugasong", "Caluya", "Culasi", "Hamtic", "Laua-an", "Libertad", "Pandan", "Patnongon", "San Remigio", "Sebaste", "Sibalom", "Tibiao", "Tobias Fornier", "Valderrama"]
+      },
+      {
+        "name": "Apayao",
+        "cities": ["Kabugao", "Calanasan", "Conner", "Flora", "Luna", "Pudtol", "Santa Marcela"]
+      },
+      {
+        "name": "Aurora",
+        "cities": ["Baler", "Casiguran", "Dilasag", "Dinalungan", "Dingalan", "Dipaculao", "Maria Aurora", "San Luis"]
+      },
+      {
+        "name": "Basilan",
+        "cities": ["Isabela", "Lamitan", "Akbar", "Al-Barka", "Hadji Mohammad Ajul", "Hadji Muhtamad", "Lantawan", "Maluso", "Sumisip", "Tabuan-Lasa", "Tipo-Tipo", "Tuburan", "Ungkaya Pukan"]
+      },
+      {
+        "name": "Bataan",
+        "cities": ["Balanga", "Abucay", "Bagac", "Dinalupihan", "Hermosa", "Limay", "Mariveles", "Morong", "Orani", "Orion", "Pilar", "Samal"]
+      },
+      {
+        "name": "Batanes",
+        "cities": ["Basco", "Itbayat", "Ivana", "Mahatao", "Sabtang", "Uyugan"]
+      },
+      {
+        "name": "Batangas",
+        "cities": ["Batangas City", "Lipa", "Tanauan", "Bauan", "Calaca", "Calatagan", "Cuenca", "Ibaan", "Laurel", "Lemery", "Lian", "Lobo", "Mabini", "Malvar", "Nasugbu", "Padre Garcia", "Rosario", "San Jose", "San Juan", "San Luis", "San Nicolas", "San Pascual", "Santa Teresita", "Santo Tomas", "Taal", "Talisay", "Taysan", "Tingloy", "Tuy"]
+      },
+      {
+        "name": "Benguet",
+        "cities": ["La Trinidad", "Baguio", "Atok", "Bakun", "Bokod", "Buguias", "Itogon", "Kabayan", "Kapangan", "Kibungan", "Mankayan", "Sablan", "Tuba", "Tublay"]
+      },
+      {
+        "name": "Biliran",
+        "cities": ["Naval", "Almeria", "Biliran", "Cabucgayan", "Caibiran", "Culaba", "Kawayan", "Maripipi"]
+      },
+      {
+        "name": "Bohol",
+        "cities": ["Tagbilaran", "Alburquerque", "Alicia", "Anda", "Antequera", "Baclayon", "Balilihan", "Batuan", "Bien Unido", "Bilar", "Buenavista", "Calape", "Candijay", "Carmen", "Catigbian", "Clarin", "Corella", "Cortes", "Dagohoy", "Danao", "Dauis", "Dimiao", "Duero", "Garcia Hernandez", "Guindulman", "Inabanga", "Jagna", "Lila", "Loay", "Loboc", "Loon", "Mabini", "Maribojoc", "Panglao", "Pilar", "Pres. Carlos P. Garcia", "Sagbayan", "San Isidro", "San Miguel", "Sevilla", "Sierra Bullones", "Sikatuna", "Talibon", "Trinidad", "Tubigon", "Ubay", "Valencia"]
+      },
+      {
+        "name": "Bukidnon",
+        "cities": ["Malaybalay", "Valencia", "Baungon", "Cabanglasan", "Damulog", "Dangcagan", "Don Carlos", "Impasugong", "Kadingilan", "Kalilangan", "Kibawe", "Kitaotao", "Lantapan", "Libona", "Malitbog", "Manolo Fortich", "Maramag", "Pangantucan", "Quezon", "San Fernando", "Sumilao", "Talakag"]
+      },
+      {
+        "name": "Bulacan",
+        "cities": ["Malolos", "Meycauayan", "San Jose del Monte", "Baliuag", "Bocaue", "Bulakan", "Bustos", "Calumpit", "Guiguinto", "Hagonoy", "Marilao", "Norzagaray", "Obando", "Pandi", "Paombong", "Plaridel", "Pulilan", "San Ildefonso", "San Miguel", "San Rafael", "Santa Maria", "Angat", "Balagtas", "Doña Remedios Trinidad"]
+      },
+      {
+        "name": "Cagayan",
+        "cities": ["Tuguegarao", "Abulug", "Alcala", "Allacapan", "Amulung", "Aparri", "Baggao", "Ballesteros", "Buguey", "Calayan", "Camalaniugan", "Claveria", "Enrile", "Gattaran", "Gonzaga", "Iguig", "Lal-Lo", "Lasam", "Pamplona", "Peñablanca", "Piat", "Rizal", "Sanchez-Mira", "Santa Ana", "Santa Praxedes", "Santa Teresita", "Santo Niño", "Solana", "Tuao"]
+      }
+    ]
+  }
+]

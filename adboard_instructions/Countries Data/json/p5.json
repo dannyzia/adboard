@@ -1,0 +1,162 @@
+[
+  {
+    "country": "Fiji",
+    "currencyCode": "FJD",
+    "currencyName": "Fijian Dollar",
+    "states": [
+      {"name": "Ba Province", "cities": ["Ba", "Lautoka", "Tavua", "Vatukoula", "Nailaga", "Yalalevu", "Koronubu", "Nadroga", "Rarawai", "Toge"]},
+      {"name": "Bua Province", "cities": ["Nabouwalu", "Bua", "Dama", "Kubulau", "Nawailevu", "Tavea", "Wainunu"]},
+      {"name": "Cakaudrove Province", "cities": ["Savusavu", "Nabouwalu", "Tunuloa", "Vunisea", "Koro", "Natewa", "Qamea", "Taveuni", "Wainikeli", "Wainigadru"]},
+      {"name": "Kadavu Province", "cities": ["Vunisea", "Daviqele", "Nalovo", "Nukuvou", "Tavuki", "Yalobi", "Nabouwalu", "Nacomoto"]},
+      {"name": "Lau Province", "cities": ["Tubou", "Lakeba", "Vanuabalavu", "Cicia", "Fulaga", "Kabara", "Moala", "Namuka", "Ono-i-Lau", "Vatoa"]},
+      {"name": "Lomaiviti Province", "cities": ["Levuka", "Bureta", "Gau", "Koro", "Makogai", "Moturiki", "Nairai", "Ovalau", "Wakaya"]},
+      {"name": "Macuata Province", "cities": ["Labasa", "Nabouwalu", "Udu", "Dreketi", "Macuata", "Mali", "Naduri", "Nadogo", "Seaquaqa", "Vunivau"]},
+      {"name": "Nadroga-Navosa Province", "cities": ["Sigatoka", "Cuvu", "Korolevu", "Korotogo", "Lawaqa", "Nadroga", "Navosa", "Tavua", "Vatukarasa", "Yadua"]},
+      {"name": "Naitasiri Province", "cities": ["Nausori", "Nadarivatu", "Naitasiri", "Navuso", "Vunidawa", "Waidina", "Wainibuka", "Wainivesi", "Waivou", "Walu"]},
+      {"name": "Namosi Province", "cities": ["Namosi", "Nadrau", "Navua", "Veivatuloa", "Wainikoroiluva", "Wainimala", "Wainawa", "Waidina"]},
+      {"name": "Ra Province", "cities": ["Rakiraki", "Nakorotubu", "Nalawa", "Saivou", "Tau", "Vatukacevaceva", "Vatulele", "Nadogo", "Naviti"]},
+      {"name": "Rewa Province", "cities": ["Suva", "Lami", "Nausori", "Nakasi", "Nasinu", "Navua", "Vunidawa", "Wainibokasi", "Waila", "Nacovi"]},
+      {"name": "Serua Province", "cities": ["Serua", "Deuba", "Navua", "Pacific Harbour", "Sanima", "Togoru", "Wainadoi", "Wainiyabia", "Yalavu"]},
+      {"name": "Tailevu Province", "cities": ["Nausori", "Korosovo", "Nakelo", "Naselai", "Navuturiki", "Nawaisomo", "Nuku", "Vunidawa", "Waidina", "Wainibeka"]}
+    ]
+  },
+  {
+    "country": "Finland",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {"name": "Åland Islands", "cities": ["Mariehamn", "Jomala", "Finström", "Saltvik", "Sund", "Vårdö", "Föglö", "Kumlinge", "Brändö", "Sottunga"]},
+      {"name": "Central Finland", "cities": ["Jyväskylä", "Äänekoski", "Hankasalmi", "Joutsa", "Kannonkoski", "Karstula", "Keuruu", "Kinnula", "Kivijärvi", "Konnevesi", "Kuhmoinen", "Laukaa", "Luhanka", "Multia", "Muurame", "Petäjävesi", "Pihtipudas", "Saarijärvi", "Toivakka", "Uurainen", "Viitasaari"]},
+      {"name": "Central Ostrobothnia", "cities": ["Kokkola", "Halsua", "Kannus", "Kaustinen", "Lestijärvi", "Perho", "Toholampi", "Veteli"]},
+      {"name": "Kainuu", "cities": ["Kajaani", "Hyrynsalmi", "Kuhmo", "Paltamo", "Puolanka", "Ristijärvi", "Sotkamo", "Suomussalmi", "Vaala"]},
+      {"name": "Kymenlaakso", "cities": ["Kotka", "Hamina", "Kouvola", "Miehikkälä", "Pyhtää", "Virolahti"]},
+      {"name": "Lapland", "cities": ["Rovaniemi", "Enontekiö", "Inari", "Kemi", "Kemijärvi", "Kittilä", "Kolari", "Muonio", "Pelkosenniemi", "Pello", "Posio", "Ranua", "Salla", "Savukoski", "Simo", "Sodankylä", "Tervola", "Tornio", "Utsjoki", "Ylitornio"]},
+      {"name": "North Karelia", "cities": ["Joensuu", "Ilomantsi", "Juuka", "Kitee", "Kontiolahti", "Outokumpu", "Lieksa", "Nurmes", "Polvijärvi", "Rääkkylä", "Tohmajärvi"]},
+      {"name": "North Ostrobothnia", "cities": ["Oulu", "Haapajärvi", "Haapavesi", "Hailuoto", "Ii", "Kempele", "Kärsämäki", "Liminka", "Lumijoki", "Merijärvi", "Muhos", "Nivala", "Oulainen", "Pudasjärvi", "Pyhäjoki", "Pyhäjärvi", "Pyhäntä", "Raahe", "Reisjärvi", "Sievi", "Siikajoki", "Siikalatva", "Taivalkoski", "Tyrnävä", "Utajärvi", "Ylivieska"]},
+      {"name": "Northern Savonia", "cities": ["Kuopio", "Iisalmi", "Juankoski", "Kaavi", "Keitele", "Kiuruvesi", "Lapinlahti", "Leppävirta", "Pielavesi", "Rautalampi", "Rautavaara", "Siilinjärvi", "Sonkajärvi", "Suonenjoki", "Tervo", "Tuusniemi", "Varkaus", "Vesanto"]},
+      {"name": "Ostrobothnia", "cities": ["Vaasa", "Isokyrö", "Kaskinen", "Korsholm", "Korsnäs", "Kristiinankaupunki", "Kronoby", "Laihia", "Larsmo", "Malax", "Närpes", "Nykarleby", "Oravais", "Pedersöre", "Vörå"]},
+      {"name": "Päijänne Tavastia", "cities": ["Lahti", "Asikkala", "Hartola", "Heinola", "Hollola", "Iitti", "Kärkölä", "Orimattila", "Padasjoki", "Sysmä"]},
+      {"name": "Pirkanmaa", "cities": ["Tampere", "Akaa", "Hämeenkyrö", "Ikaalinen", "Juupajoki", "Kangasala", "Kihniö", "Lempäälä", "Mänttä-Vilppula", "Nokia", "Orivesi", "Pälkäne", "Parkano", "Pirkkala", "Punkalaidun", "Ruovesi", "Sastamala", "Urjala", "Valkeakoski", "Vesilahti", "Virrat", "Ylöjärvi"]},
+      {"name": "Satakunta", "cities": ["Pori", "Eura", "Eurajoki", "Harjavalta", "Huittinen", "Jämijärvi", "Kankaanpää", "Karvia", "Kokemäki", "Merikarvia", "Nakkila", "Pomarkku", "Rauma", "Siikainen", "Säkylä", "Ulvila"]},
+      {"name": "South Karelia", "cities": ["Lappeenranta", "Imatra", "Lemi", "Luumäki", "Parikkala", "Rautjärvi", "Ruokolahti", "Savitaipale", "Taipalsaari"]},
+      {"name": "South Ostrobothnia", "cities": ["Seinäjoki", "Alajärvi", "Alavus", "Evijärvi", "Ilmajoki", "Isojoki", "Karijoki", "Kauhajoki", "Kauhava", "Kuortane", "Kurikka", "Lappajärvi", "Lapua", "Multia", "Nurmo", "Peräseinäjoki", "Soini", "Teuva", "Vimpeli", "Ähtäri"]},
+      {"name": "Southern Savonia", "cities": ["Mikkeli", "Hirvensalmi", "Joroinen", "Juva", "Kangasniemi", "Mäntyharju", "Pertunmaa", "Pieksämäki", "Puumala", "Rantasalmi", "Savonlinna", "Sulkava"]},
+      {"name": "Southwest Finland", "cities": ["Turku", "Aura", "Kaarina", "Koski Tl", "Kustavi", "Laitila", "Lieto", "Loimaa", "Marttila", "Masku", "Mynämäki", "Naantali", "Nousiainen", "Oripää", "Paimio", "Parainen", "Pyhäranta", "Pöytyä", "Raisio", "Rusko", "Sauvo", "Somero", "Taivassalo", "Tarvasjoki", "Uusikaupunki", "Vehmaa"]},
+      {"name": "Uusimaa", "cities": ["Helsinki", "Espoo", "Vantaa", "Hyvinkää", "Järvenpää", "Karkkila", "Kauniainen", "Kerava", "Kirkkonummi", "Lohja", "Mäntsälä", "Nurmijärvi", "Pornainen", "Porvoo", "Sipoo", "Siuntio", "Tuusula", "Vihti"]}
+    ]
+  },
+  {
+    "country": "France",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {"name": "Auvergne-Rhône-Alpes", "cities": ["Lyon", "Saint-Étienne", "Grenoble", "Clermont-Ferrand", "Villeurbanne", "Annecy", "Chambéry", "Valence", "Roanne", "Bourgoin-Jallieu", "Vienne", "Montélimar", "Annemasse", "Oyonnax", "Moulins", "Le Puy-en-Velay", "Aurillac", "Romans-sur-Isère", "Thonon-les-Bains", "Saint-Chamond"]},
+      {"name": "Bourgogne-Franche-Comté", "cities": ["Dijon", "Besançon", "Belfort", "Chalon-sur-Saône", "Nevers", "Auxerre", "Mâcon", "Montbéliard", "Le Creusot", "Sens", "Vesoul", "Beaune", "Autun", "Pontarlier", "Lons-le-Saunier", "Louhans", "Avallon", "Arc-lès-Gray", "Joigny"]},
+      {"name": "Brittany", "cities": ["Rennes", "Brest", "Quimper", "Lorient", "Vannes", "Saint-Malo", "Saint-Brieuc", "Lanester", "Fougères", "Concarneau", "Lannion", "Ploërmel", "Vitré", "Morlaix", "Douarnenez", "Cesson-Sévigné", "Bruz", "Hennebont", "Guingamp", "Pontivy"]},
+      {"name": "Centre-Val de Loire", "cities": ["Tours", "Orléans", "Bourges", "Blois", "Châteauroux", "Chartres", "Joué-lès-Tours", "Romorantin-Lanthenay", "Vierzon", "Fleury-les-Aubrais", "Olivet", "Saint-Jean-de-Braye", "Gien", "Montargis", "Pithiviers", "Salbris", "Sully-sur-Loire", "Vendôme", "Amboise"]},
+      {"name": "Corsica", "cities": ["Ajaccio", "Bastia", "Porto-Vecchio", "Corte", "Calvi", "L'Île-Rousse", "Bonifacio", "Propriano", "Sartène", "Aléria", "Ghisonaccia", "Prunelli-di-Fiumorbo", "San-Nicolao", "Biguglia", "Borgo", "Lucciana"]},
+      {"name": "Grand Est", "cities": ["Strasbourg", "Reims", "Metz", "Mulhouse", "Nancy", "Colmar", "Troyes", "Charleville-Mézières", "Châlons-en-Champagne", "Thionville", "Haguenau", "Épinal", "Schiltigheim", "Vandœuvre-lès-Nancy", "Illkirch-Graffenstaden", "Saint-Dizier", "Forbach", "Montigny-lès-Metz", "Sarreguemines", "Saint-Louis"]},
+      {"name": "Hauts-de-France", "cities": ["Lille", "Amiens", "Roubaix", "Tourcoing", "Dunkerque", "Calais", "Villeneuve-d'Ascq", "Saint-Quentin", "Beauvais", "Valenciennes", "Wattrelos", "Maubeuge", "Laon", "Compiègne", "Lens", "Liévin", "Arras", "Béthune", "Creil", "Soissons"]},
+      {"name": "Île-de-France", "cities": ["Paris", "Boulogne-Billancourt", "Saint-Denis", "Argenteuil", "Montreuil", "Nanterre", "Vitry-sur-Seine", "Créteil", "Aubervilliers", "Aulnay-sous-Bois", "Colombes", "Courbevoie", "Rueil-Malmaison", "Champigny-sur-Marne", "Saint-Maur-des-Fossés", "Drancy", "Issy-les-Moulineaux", "Levallois-Perret", "Noisy-le-Grand", "Antony"]},
+      {"name": "Normandy", "cities": ["Rouen", "Le Havre", "Caen", "Cherbourg-en-Cotentin", "Évreux", "Dieppe", "Saint-Étienne-du-Rouvray", "Sotteville-lès-Rouen", "Alençon", "Vernon", "Lisieux", "Louviers", "Flers", "Argentan", "Bernay", "Val-de-Reuil", "Yvetot", "Fécamp", "Granville", "Deauville"]},
+      {"name": "Nouvelle-Aquitaine", "cities": ["Bordeaux", "Limoges", "Poitiers", "Pau", "La Rochelle", "Agen", "Bayonne", "Brive-la-Gaillarde", "Angoulême", "Bergerac", "Mont-de-Marsan", "Niort", "Périgueux", "Saintes", "Talence", "Villenave-d'Ornon", "Mérignac", "Pessac", "Bègles", "Cestas"]},
+      {"name": "Occitanie", "cities": ["Toulouse", "Montpellier", "Nîmes", "Perpignan", "Béziers", "Montauban", "Narbonne", "Albi", "Carcassonne", "Sète", "Castres", "Tarbes", "Lunel", "Agde", "Rodez", "Millau", "Auch", "Cahors", "Foix", "Mende"]},
+      {"name": "Pays de la Loire", "cities": ["Nantes", "Angers", "Le Mans", "Saint-Nazaire", "La Roche-sur-Yon", "Cholet", "Laval", "Saint-Herblain", "Rezé", "Saumur", "Sainte-Luce-sur-Loire", "Orvault", "Vertou", "Couëron", "Bouguenais", "Carquefou", "Château-Gontier", "Châteaubriant", "Fontenay-le-Comte", "Les Sables-d'Olonne"]},
+      {"name": "Provence-Alpes-Côte d'Azur", "cities": ["Marseille", "Nice", "Toulon", "Aix-en-Provence", "Avignon", "Antibes", "Cannes", "La Seyne-sur-Mer", "Hyères", "Arles", "Fréjus", "Grasse", "Martigues", "Aubagne", "Istres", "Le Cannet", "Cagnes-sur-Mer", "Saint-Laurent-du-Var", "Draguignan", "Carpentras"]}
+    ]
+  },
+  {
+    "country": "Gabon",
+    "currencyCode": "XAF",
+    "currencyName": "Central African CFA Franc",
+    "states": [
+      {"name": "Estuaire Province", "cities": ["Libreville", "Ntoum", "Cocobeach", "Kango", "Owendo", "Akanda", "Angondjé", "Alenkiri", "Glass", "Mbel", "Ndzomoe"]},
+      {"name": "Haut-Ogooué Province", "cities": ["Franceville", "Moanda", "Okondja", "Lékoni", "Lékoko", "Bongoville", "Mounana", "Mbigou", "Ndendé", "Lebamba"]},
+      {"name": "Moyen-Ogooué Province", "cities": ["Lambaréné", "Ndjo lé", "Oyam", "Malinga", "Ndjolé", "Alombié", "Ayem", "Bifoun", "Cocobeach", "Mboumi"]},
+      {"name": "Ngounié Province", "cities": ["Mouila", "Ndendé", "Lebamba", "Mbigou", "Fougamou", "Mimongo", "Mouila", "Mounana", "Ndjolé", "Omboué"]},
+      {"name": "Nyanga Province", "cities": ["Tchibanga", "Mayumba", "Moabi", "Mabanda", "Mouguidi", "Ndindi", "Bongo", "Divenié", "Moulengui", "Mouyondzi"]},
+      {"name": "Ogooué-Ivindo Province", "cities": ["Makokou", "Booué", "Zadié", "Mékambo", "Ivindo", "Lopé", "Malinga", "Mvadi", "Ndjolé", "Okondja"]},
+      {"name": "Ogooué-Lolo Province", "cities": ["Koulamoutou", "Lastoursville", "Pana", "Mboumi", "Lébamba", "Mbigou", "Mimongo", "Mounana", "Ndendé", "Okondja"]},
+      {"name": "Ogooué-Maritime Province", "cities": ["Port-Gentil", "Gamba", "Omboué", "Cap Lopez", "Iguela", "Lambaréné", "Ndjolé", "Sette Cama", "Tchibanga", "Mayumba"]},
+      {"name": "Woleu-Ntem Province", "cities": ["Oyem", "Bitam", "Mitzic", "Medouneu", "Minvoul", "Ovan", "Afan", "Mekambo", "Nkolmefou", "Ntem"]}
+    ]
+  },
+  {
+    "country": "Gambia",
+    "currencyCode": "GMD",
+    "currencyName": "Gambian Dalasi",
+    "states": [
+      {"name": "Banjul", "cities": ["Banjul", "Bakau", "Serekunda", "Brikama", "Bakau", "Kanifing", "Banjulinding", "Abuko", "Tallinding", "Lamin"]},
+      {"name": "Central River Division", "cities": ["Janjanbureh", "Bansang", "Kaur", "Kuntaur", "Niamina", "Niani", "Nianija", "Sami", "Fulladu West"]},
+      {"name": "Lower River Division", "cities": ["Mansa Konko", "Brifu", "Jarra", "Kiang", "Kuntaur", "Lower Niumi", "Upper Niumi"]},
+      {"name": "North Bank Division", "cities": ["Kerewan", "Barra", "Essau", "Farafenni", "Illiasa", "Jokadu", "Lower Baddibu", "Central Baddibu", "Upper Baddibu"]},
+      {"name": "Upper River Division", "cities": ["Basse Santa Su", "Bakadagy", "Fulladu East", "Kantora", "Sandu", "Wuli"]},
+      {"name": "West Coast Division", "cities": ["Brikama", "Foni Brefet", "Foni Bondali", "Foni Bintang", "Foni Kansala", "Foni Jarrol", "Kombo Central", "Kombo East", "Kombo North", "Kombo South"]}
+    ]
+  },
+  {
+    "country": "Georgia",
+    "currencyCode": "GEL",
+    "currencyName": "Georgian Lari",
+    "states": [
+      {"name": "Abkhazia", "cities": ["Sokhumi", "Gagra", "Gali", "Gudauta", "Ochamchire", "Tkvarcheli", "Bichvinta", "Gulripshi", "Leselidze", "Miusera"]},
+      {"name": "Adjara", "cities": ["Batumi", "Kobuleti", "Khelvachauri", "Shuakhevi", "Keda", "Khulo", "Makhinjauri", "Chakvi", "Gonio", "Sarpi"]},
+      {"name": "Guria", "cities": ["Ozurgeti", "Lanchkhuti", "Chokhatauri", "Naruja", "Ureki", "Bakhmaro", "Gurjaani", "Kveda Nasakirali", "Shekvetili", "Supsa"]},
+      {"name": "Imereti", "cities": ["Kutaisi", "Samtredia", "Zestafoni", "Baghdati", "Vani", "Khoni", "Tskaltubo", "Chiatura", "Sachkhere", "Tkibuli"]},
+      {"name": "Kakheti", "cities": ["Telavi", "Akhmeta", "Gurjaani", "Kvareli", "Dedoplistskaro", "Lagodekhi", "Sagarejo", "Sighnaghi", "Tsnori", "Bodbe"]},
+      {"name": "Kvemo Kartli", "cities": ["Rustavi", "Bolnisi", "Gardabani", "Dmanisi", "Tetritskaro", "Marneuli", "Tsalka", "Bediani", "Kazreti", "Manglisi"]},
+      {"name": "Mtskheta-Mtianeti", "cities": ["Mtskheta", "Dusheti", "Kazbegi", "Tianeti", "Akhalkalaki", "Gudauri", "Jvari", "Pasanauri", "Sno", "Stepantsminda"]},
+      {"name": "Racha-Lechkhumi and Kvemo Svaneti", "cities": ["Ambrolauri", "Oni", "Lentekhi", "Tsageri", "Kharistvala", "Nikortsminda", "Ushguli", "Mestia", "Becho", "Khevi"]},
+      {"name": "Samegrelo-Zemo Svaneti", "cities": ["Zugdidi", "Poti", "Senaki", "Abasha", "Martvili", "Chkhorotsku", "Khobi", "Tsalenjikha", "Jvari", "Mestia"]},
+      {"name": "Samtskhe-Javakheti", "cities": ["Akhaltsikhe", "Akhalkalaki", "Borjomi", "Ninotsminda", "Vale", "Adigeni", "Aspindza", "Bakuriani", "Tsalka", "Goderdzi"]},
+      {"name": "Shida Kartli", "cities": ["Gori", "Kareli", "Khashuri", "Kaspi", "Java", "Surami", "Akhalgori", "Kurta", "Tskhinvali", "Eredvi"]},
+      {"name": "Tbilisi", "cities": ["Tbilisi", "Saburtalo", "Vake", "Isani", "Samgori", "Krtsanisi", "Didube", "Nadzaladevi", "Gldani", "Mtatsminda"]}
+    ]
+  },
+  {
+    "country": "Germany",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {"name": "Baden-Württemberg", "cities": ["Stuttgart", "Mannheim", "Karlsruhe", "Freiburg im Breisgau", "Heidelberg", "Heilbronn", "Ulm", "Pforzheim", "Reutlingen", "Esslingen", "Tübingen", "Ludwigsburg", "Konstanz", "Villingen-Schwenningen", "Aalen", "Sindelfingen", "Schwäbisch Gmünd", "Friedrichshafen", "Offenburg", "Göppingen"]},
+      {"name": "Bavaria", "cities": ["Munich", "Nuremberg", "Augsburg", "Regensburg", "Würzburg", "Ingolstadt", "Fürth", "Erlangen", "Bayreuth", "Bamberg", "Aschaffenburg", "Landshut", "Kempten", "Rosenheim", "Schweinfurt", "Passau", "Hof", "Freising", "Straubing", "Dachau"]},
+      {"name": "Berlin", "cities": ["Berlin", "Charlottenburg-Wilmersdorf", "Friedrichshain-Kreuzberg", "Lichtenberg", "Marzahn-Hellersdorf", "Mitte", "Neukölln", "Pankow", "Reinickendorf", "Spandau", "Steglitz-Zehlendorf", "Tempelhof-Schöneberg", "Treptow-Köpenick"]},
+      {"name": "Brandenburg", "cities": ["Potsdam", "Cottbus", "Brandenburg an der Havel", "Frankfurt (Oder)", "Oranienburg", "Falkensee", "Eberswalde", "Bernau bei Berlin", "Königs Wusterhausen", "Fürstenwalde", "Neuruppin", "Schwedt", "Eisenhüttenstadt", "Ludwigsfelde", "Rathenow", "Werder", "Teltow", "Senftenberg", "Lauchhammer"]},
+      {"name": "Bremen", "cities": ["Bremen", "Bremerhaven", "Burglesum", "Hemelingen", "Horn-Lehe", "Neustadt", "Oberneuland", "Osterholz", "Schwachhausen", "Vegesack"]},
+      {"name": "Hamburg", "cities": ["Hamburg", "Altona", "Bergedorf", "Eimsbüttel", "Harburg", "Hamburg-Mitte", "Hamburg-Nord", "Wandsbek", "Billstedt", "Barmbek", "Eppendorf", "Hamm", "Hoheluft", "Lurup", "Niendorf", "Ottensen", "Rahlstedt", "St. Pauli", "Winterhude"]},
+      {"name": "Hesse", "cities": ["Frankfurt am Main", "Wiesbaden", "Kassel", "Darmstadt", "Offenbach am Main", "Hanau", "Marburg", "Gießen", "Fulda", "Rüsselsheim", "Bad Homburg", "Wetzlar", "Oberursel", "Rodgau", "Bensheim", "Hofheim", "Mörfelden-Walldorf", "Langen", "Neu-Isenburg", "Bad Vilbel"]},
+      {"name": "Lower Saxony", "cities": ["Hanover", "Braunschweig", "Osnabrück", "Oldenburg", "Wolfsburg", "Göttingen", "Hildesheim", "Salzgitter", "Wilhelmshaven", "Delmenhorst", "Lüneburg", "Celle", "Garbsen", "Hameln", "Lingen", "Nordhorn", "Langenhagen", "Emden", "Stade", "Bückeburg"]},
+      {"name": "Mecklenburg-Vorpommern", "cities": ["Rostock", "Schwerin", "Neubrandenburg", "Stralsund", "Greifswald", "Wismar", "Güstrow", "Waren", "Neustrelitz", "Bergen auf Rügen", "Bad Doberan", "Hagenow", "Parchim", "Ribnitz-Damgarten", "Wolgast", "Ludwigslust", "Malchin", "Sassnitz", "Anklam", "Teterow"]},
+      {"name": "North Rhine-Westphalia", "cities": ["Cologne", "Düsseldorf", "Dortmund", "Essen", "Duisburg", "Bochum", "Wuppertal", "Bielefeld", "Bonn", "Münster", "Mönchengladbach", "Gelsenkirchen", "Aachen", "Krefeld", "Oberhausen", "Hagen", "Hamm", "Mülheim an der Ruhr", "Leverkusen", "Solingen", "Herne", "Neuss", "Paderborn", "Recklinghausen", "Bottrop", "Remscheid", "Siegen", "Moers", "Bergisch Gladbach", "Witten"]},
+      {"name": "Rhineland-Palatinate", "cities": ["Mainz", "Ludwigshafen", "Koblenz", "Trier", "Kaiserslautern", "Worms", "Neuwied", "Speyer", "Frankenthal", "Bad Kreuznach", "Landau", "Pirmasens", "Zweibrücken", "Andernach", "Idar-Oberstein", "Bingen", "Ingelheim", "Germersheim", "Bad Dürkheim", "Mutterstadt"]},
+      {"name": "Saarland", "cities": ["Saarbrücken", "Neunkirchen", "Homburg", "Völklingen", "Sankt Ingbert", "Saarlouis", "Merzig", "Sankt Wendel", "Blieskastel", "Dillingen", "Lebach", "Püttlingen", "Wadern", "Bexbach", "Losheim", "Quierschied", "Riegelsberg", "Sulzbach", "Überherrn"]},
+      {"name": "Saxony", "cities": ["Dresden", "Leipzig", "Chemnitz", "Zwickau", "Plauen", "Görlitz", "Freiberg", "Bautzen", "Pirna", "Hoyerswerda", "Radebeul", "Riesa", "Grimma", "Meißen", "Delitzsch", "Limbach-Oberfrohna", "Markkleeberg", "Torgau", "Wurzen", "Annaberg-Buchholz"]},
+      {"name": "Saxony-Anhalt", "cities": ["Magdeburg", "Halle (Saale)", "Dessau-Roßlau", "Lutherstadt Wittenberg", "Weißenfels", "Halberstadt", "Stendal", "Bitterfeld-Wolfen", "Merseburg", "Wernigerode", "Naumburg", "Bernburg", "Schönebeck", "Zeitz", "Aschersleben", "Sangerhausen", "Köthen", "Quedlinburg", "Staßfurt", "Eisleben"]},
+      {"name": "Schleswig-Holstein", "cities": ["Kiel", "Lübeck", "Flensburg", "Neumünster", "Norderstedt", "Elmshorn", "Pinneberg", "Itzehoe", "Wedel", "Ahrensburg", "Geesthacht", "Rendsburg", "Henstedt-Ulzburg", "Reinbek", "Bad Oldesloe", "Schleswig", "Eckernförde", "Husum", "Kaltenkirchen", "Quickborn"]},
+      {"name": "Thuringia", "cities": ["Erfurt", "Jena", "Gera", "Weimar", "Gotha", "Eisenach", "Nordhausen", "Suhl", "Altenburg", "Mühlhausen", "Saalfeld", "Ilmenau", "Arnstadt", "Bad Langensalza", "Sonneberg", "Rudolstadt", "Apolda", "Greiz", "Sondershausen", "Eisfeld"]}
+    ]
+  },
+  {
+    "country": "Ghana",
+    "currencyCode": "GHS",
+    "currencyName": "Ghanaian Cedi",
+    "states": [
+      {"name": "Ahafo Region", "cities": ["Goaso", "Hwidiem", "Kenyasi", "Acherensua", "Duayaw Nkwanta", "Bechem", "Dormaa Ahenkro", "Sunyani", "Berekum", "Nkrankwanta"]},
+      {"name": "Ashanti Region", "cities": ["Kumasi", "Obuasi", "Ejisu", "Konongo", "Agogo", "Bekwai", "Mampong", "Odotobri", "Effiduase", "New Edubiase", "Juaso", "Nyinahin", "Afigya-Kwabre", "Atwima", "Bosome Freho", "Adansi", "Amansie", "Asante Akim", "Ejura", "Sekyere"]},
+      {"name": "Bono Region", "cities": ["Sunyani", "Berekum", "Dormaa Ahenkro", "Wenchi", "Japekrom", "Nkoranza", "Atebubu", "Kintampo", "Techiman", "Sampa"]},
+      {"name": "Bono East Region", "cities": ["Techiman", "Kintampo", "Atebubu", "Nkoranza", "Prang", "Yeji", "Kwame Danso", "Jema", "Busunya", "Kajaji"]},
+      {"name": "Central Region", "cities": ["Cape Coast", "Elmina", "Saltpond", "Winneba", "Swedru", "Kasoa", "Dunkwa-on-Offin", "Mankessim", "Apam", "Anomabu", "Breman Asikuma", "Twifo Praso", "Assin Fosu", "Hemang", "Abura", "Komenda", "Moree", "Nyakrom", "Senya Beraku"]},
+      {"name": "Eastern Region", "cities": ["Koforidua", "Nkawkaw", "Mpraeso", "Akosombo", "Aburi", "Nsawam", "Suhum", "Akim Oda", "Asamankese", "Kibi", "Begoro", "Donkorkrom", "Akwatia", "Apedwa", "Asesewa", "Akwapim", "Kade", "Larteh", "Mampong", "New Abirem"]},
+      {"name": "Greater Accra Region", "cities": ["Accra", "Tema", "Ashaiman", "Madina", "Dansoman", "Teshie", "Nungua", "Labadi", "Osu", "East Legon", "West Legon", "Achimota", "Lapaz", "Kasoa", "Weija", "Dodowa", "Prampram", "Ada", "Kpone", "Tema New Town"]},
+      {"name": "North East Region", "cities": ["Nalerigu", "Walewale", "Gambaga", "Bunkpurugu", "Chereponi", "Yagaba", "Langbensi", "Zabzugu", "Saboba", "Wulugu"]},
+      {"name": "Northern Region", "cities": ["Tamale", "Yendi", "Savelugu", "Bimbilla", "Damongo", "Salaga", "Bole", "Sawla", "Walewale", "Gushegu", "Karaga", "Kpandai", "Nanton", "Saboba", "Tatale", "Tolon", "Zabzugu", "Wulensi", "Kpalbe"]},
+      {"name": "Oti Region", "cities": ["Dambai", "Jasikan", "Kadjebi", "Kpassa", "Nkwanta", "Biakoye", "Krachi", "Chinderi", "Ahamansu", "Brewaniase"]},
+      {"name": "Savannah Region", "cities": ["Damongo", "Bole", "Sawla", "Daboya", "Salaga", "Larabanga", "Mankarigu", "Tuna", "Kpalbe", "Yapei"]},
+      {"name": "Upper East Region", "cities": ["Bolgatanga", "Bawku", "Navrongo", "Zebilla", "Paga", "Bongo", "Sandema", "Tongo", "Fumbisi", "Wiaga", "Kandiga", "Nangodi", "Sakote", "Binaba", "Zuarungu", "Manga", "Winkogo", "Kulungugu", "Garu", "Tempane"]},
+      {"name": "Upper West Region", "cities": ["Wa", "Tumu", "Jirapa", "Lawra", "Nadowli", "Hamile", "Funsi", "Wechiau", "Gwollu", "Lambussie", "Babile", "Daffiama", "Nandom", "Sissala", "Kaleo", "Bussie", "Dorimon", "Zini", "Jeffisi", "Babile"]},
+      {"name": "Volta Region", "cities": ["Ho", "Hohoe", "Keta", "Kpando", "Aflao", "Anloga", "Akatsi", "Kpetoe", "Sogakope", "Kadjebi", "Jasikan", "Denu", "Adidome", "Ave", "Dzodze", "Kpeve", "Have", "Abor", "Dabala", "Tefle"]},
+      {"name": "Western Region", "cities": ["Sekondi-Takoradi", "Tarkwa", "Axim", "Prestea", "Bogoso", "Elubo", "Half Assini", "Asankragua", "Mpohor", "Shama", "Daboase", "Aboaso", "Adiawoso", "Agona", "Akwidaa", "Beposo", "Essiama", "Funko", "Juabeso", "Nsuaem"]},
+      {"name": "Western North Region", "cities": ["Sefwi Wiawso", "Bibiani", "Enchi", "Asawinso", "Juaboso", "Awaso", "Sefwi Bekwai", "Akontombra", "Adabokrom", "Bodi"]}
+    ]
+  }
+]

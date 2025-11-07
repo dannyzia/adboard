@@ -1,0 +1,337 @@
+[
+  {
+    "country": "Spain",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {
+        "name": "Andalusia",
+        "cities": ["Seville", "Malaga", "Cordoba", "Granada", "Jerez", "Almeria", "Huelva", "Cadiz", "Marbella", "Jaen"]
+      },
+      {
+        "name": "Aragon",
+        "cities": ["Zaragoza", "Huesca", "Teruel", "Calatayud", "Utebo", "Ejea de los Caballeros"]
+      },
+      {
+        "name": "Asturias",
+        "cities": ["Oviedo", "Gijon", "Aviles", "Siero", "Langreo", "Mieres"]
+      },
+      {
+        "name": "Balearic Islands",
+        "cities": ["Palma", "Ibiza", "Manacor", "Llucmajor", "Mahon", "Ciutadella", "Inca"]
+      },
+      {
+        "name": "Basque Country",
+        "cities": ["Bilbao", "Vitoria-Gasteiz", "San Sebastian", "Barakaldo", "Getxo", "Portugalete", "Irun"]
+      },
+      {
+        "name": "Canary Islands",
+        "cities": ["Las Palmas", "Santa Cruz", "San Cristobal", "La Laguna", "Telde", "Arona", "Santa Lucia", "Adeje", "Puerto del Rosario"]
+      },
+      {
+        "name": "Cantabria",
+        "cities": ["Santander", "Torrelavega", "Castro-Urdiales", "Camargo", "Piélagos", "El Astillero"]
+      },
+      {
+        "name": "Castile and León",
+        "cities": ["Valladolid", "Burgos", "Salamanca", "León", "Palencia", "Ponferrada", "Zamora", "Avila", "Segovia", "Soria", "Aranda de Duero", "Medina del Campo"]
+      },
+      {
+        "name": "Castilla-La Mancha",
+        "cities": ["Toledo", "Albacete", "Guadalajara", "Talavera", "Ciudad Real", "Cuenca", "Puertollano", "Tomelloso", "Azur", "Alcázar de San Juan"]
+      },
+      {
+        "name": "Catalonia",
+        "cities": ["Barcelona", "L'Hospitalet", "Badalona", "Sabadell", "Tarragona", "Lleida", "Mataró", "Santa Coloma", "Reus", "Girona", "Cornellà", "Sant Cugat", "Manresa", "Rubí", "Vilanova", "Viladecans", "El Prat", "Granollers", "Castelldefels"]
+      },
+      {
+        "name": "Extremadura",
+        "cities": ["Badajoz", "Cáceres", "Mérida", "Plasencia", "Don Benito", "Almendralejo", "Villanueva", "Navalmoral", "Zafra", "Montijo"]
+      },
+      {
+        "name": "Galicia",
+        "cities": ["A Coruña", "Vigo", "Ourense", "Lugo", "Santiago", "Pontevedra", "Ferrol", "Vilagarcía", "Narón", "Oleiros"]
+      },
+      {
+        "name": "La Rioja",
+        "cities": ["Logroño", "Calahorra", "Arnedo", "Haro", "Alfaro", "Nájera", "Santo Domingo"]
+      },
+      {
+        "name": "Madrid",
+        "cities": ["Madrid", "Móstoles", "Alcalá", "Fuenlabrada", "Leganés", "Getafe", "Alcorcón", "Torrejón", "Parla", "Alcobendas", "Las Rozas", "San Sebastián", "Coslada", "Pozuelo", "Rivas-Vaciamadrid", "Valdemoro", "Collado", "Aranjuez", "Boadilla", "Majadahonda", "Arroyomolinos"]
+      },
+      {
+        "name": "Murcia",
+        "cities": ["Murcia", "Cartagena", "Lorca", "Molina", "Alcantarilla", "Cieza", "Yecla", "Totana", "Caravaca", "San Javier"]
+      },
+      {
+        "name": "Navarre",
+        "cities": ["Pamplona", "Tudela", "Barañáin", "Burlada", "Estella", "Tafalla", "Villava", "Ansoáin", "Zizur"]
+      },
+      {
+        "name": "Valencian Community",
+        "cities": ["Valencia", "Alicante", "Elche", "Castellón", "Torrevieja", "Orihuela", "Benidorm", "Alcoy", "Elda", "San Vicente", "Paterna", "Gandia", "Sagunto", "Alzira", "La Vall", "Xàtiva", "Dénia", "Vila-real", "Cullera", "Burjassot"]
+      }
+    ]
+  },
+  {
+    "country": "Sri Lanka",
+    "currencyCode": "LKR",
+    "currencyName": "Sri Lankan Rupee",
+    "states": [
+      {
+        "name": "Central Province",
+        "cities": ["Kandy", "Matale", "Nuwara Eliya", "Gampola", "Dambulla", "Gampaha", "Nawalapitiya", "Hatton"]
+      },
+      {
+        "name": "Eastern Province",
+        "cities": ["Trincomalee", "Batticaloa", "Kalmunai", "Ampara", "Eravur", "Valaichchenai", "Akkaraipattu"]
+      },
+      {
+        "name": "North Central Province",
+        "cities": ["Anuradhapura", "Polonnaruwa", "Medawachchiya", "Habarana", "Kekirawa", "Galewela"]
+      },
+      {
+        "name": "Northern Province",
+        "cities": ["Jaffna", "Vavuniya", "Kilinochchi", "Mannar", "Point Pedro", "Chavakachcheri", "Mullaitivu"]
+      },
+      {
+        "name": "North Western Province",
+        "cities": ["Kurunegala", "Puttalam", "Chilaw", "Kuliyapitiya", "Narammala", "Wariyapola", "Nikaweratiya"]
+      },
+      {
+        "name": "Sabaragamuwa Province",
+        "cities": ["Ratnapura", "Kegalle", "Balangoda", "Embilipitiya", "Aranayaka", "Kuruwita", "Mawanella"]
+      },
+      {
+        "name": "Southern Province",
+        "cities": ["Galle", "Matara", "Hambantota", "Weligama", "Ambalangoda", "Tangalle", "Beliatta", "Tissamaharama"]
+      },
+      {
+        "name": "Uva Province",
+        "cities": ["Badulla", "Monaragala", "Bandarawela", "Welimada", "Haputale", "Mahiyanganaya", "Bibile"]
+      },
+      {
+        "name": "Western Province",
+        "cities": ["Colombo", "Dehiwala-Mount Lavinia", "Moratuwa", "Sri Jayawardenepura Kotte", "Negombo", "Kotte", "Battaramulla", "Kolonnawa", "Wattala", "Maharagama", "Kotikawatta", "Kesbewa", "Ratmalana", "Hendala", "Mulleriyawa", "Homagama", "Kaduwela", "Peliyagoda", "Mahabage", "Kelaniya", "Panadura", "Gampaha", "Ragama", "Kandana"]
+      }
+    ]
+  },
+  {
+    "country": "Sudan",
+    "currencyCode": "SDG",
+    "currencyName": "Sudanese Pound",
+    "states": [
+      {
+        "name": "Khartoum",
+        "cities": ["Khartoum", "Omdurman", "Khartoum North", "Sharq an-Nil", "Ombadda", "Karary", "Jabra", "Al-Halfaya"]
+      },
+      {
+        "name": "North Kordofan",
+        "cities": ["El Obeid", "En Nahud", "Um Rawaba", "Bara", "Sodari", "Abu Zabad", "Al-Rahad"]
+      },
+      {
+        "name": "South Kordofan",
+        "cities": ["Kadugli", "Dilling", "Talodi", "Abu Jibeha", "Heglig", "Lagawa"]
+      },
+      {
+        "name": "West Kordofan",
+        "cities": ["Al-Fulah", "Ghubeish", "Kailak", "Abu Matariq", "Babanousa", "Muglad"]
+      },
+      {
+        "name": "Northern State",
+        "cities": ["Dongola", "Merowe", "Karima", "Abri", "Delgo", "Wadi Halfa", "Kerma"]
+      },
+      {
+        "name": "Kassala",
+        "cities": ["Kassala", "Khashm El Girba", "Aroma", "Wad al-Hileiu", "Telkuk", "Hamashkorieb"]
+      },
+      {
+        "name": "Al Qadarif",
+        "cities": ["Gedaref", "Al Faw", "Al Mafaza", "Basunda", "Doka", "Galabat", "Shuwak"]
+      },
+      {
+        "name": "Blue Nile",
+        "cities": ["Ad-Damazin", "Kurmuk", "Al-Roseires", "Tadamon", "Baw", "Geisan"]
+      },
+      {
+        "name": "Sennar",
+        "cities": ["Sennar", "Singa", "Sinja", "Abu Hujar", "Dinder", "Maiurno"]
+      },
+      {
+        "name": "White Nile",
+        "cities": ["Kosti", "Rabak", "Ad-Duwaim", "Al Jabalain", "Tandalti", "Al Gutaina"]
+      },
+      {
+        "name": "River Nile",
+        "cities": ["Ad-Damar", "Shendi", "Berber", "Atbara", "Abu Hamed", "Al-Matammah"]
+      },
+      {
+        "name": "Red Sea",
+        "cities": ["Port Sudan", "Suakin", "Hala'ib", "Tokar", "Sinkat", "Gabait", "Ageeg"]
+      },
+      {
+        "name": "Al Jazirah",
+        "cities": ["Wad Madani", "Al Hasahisa", "Al Managil", "Al Kamlin", "Um Al Gura", "East Al Gash"]
+      },
+      {
+        "name": "Central Darfur",
+        "cities": ["Zalingei", "Azum", "Wadi Salih", "Mukjar", "Nertiti", "Bindisi"]
+      },
+      {
+        "name": "East Darfur",
+        "cities": ["Ed Daein", "Abu Karinka", "Adila", "Yassin", "Abu Matariq", "Shearia"]
+      },
+      {
+        "name": "North Darfur",
+        "cities": ["El Fasher", "Kutum", "Kabkabiya", "Tawila", "Melit", "Um Kadada", "Al-Koma", "Saraf Omra"]
+      },
+      {
+        "name": "South Darfur",
+        "cities": ["Nyala", "Kas", "Shearia", "Tulus", "Buram", "Gereida", "Mershing", "Rehed Al-Birdi", "Al-Daein"]
+      },
+      {
+        "name": "West Darfur",
+        "cities": ["Geneina", "Zalingei", "Habila", "Foro Baranga", "Beida", "Kulbus", "Jebel Moon"]
+      }
+    ]
+  },
+  {
+    "country": "Suriname",
+    "currencyCode": "SRD",
+    "currencyName": "Surinamese Dollar",
+    "states": [
+      {
+        "name": "Brokopondo",
+        "cities": ["Brokopondo", "Brownsweg", "Klaaskreek", "Kwakoegron"]
+      },
+      {
+        "name": "Commewijne",
+        "cities": ["Nieuw Amsterdam", "Alkmaar", "Tamanredjo", "Mariënburg"]
+      },
+      {
+        "name": "Coronie",
+        "cities": ["Totness", "Jenny", "Burnside", "Corneliskondre"]
+      },
+      {
+        "name": "Marowijne",
+        "cities": ["Albina", "Moengo", "Wanhatti", "Galibi"]
+      },
+      {
+        "name": "Nickerie",
+        "cities": ["Nieuw Nickerie", "Wageningen", "Oostelijke Polders", "Groot Henar"]
+      },
+      {
+        "name": "Para",
+        "cities": ["Onverwacht", "Zanderij", "Sabana", "Boskamp", "Overtoom"]
+      },
+      {
+        "name": "Paramaribo",
+        "cities": ["Paramaribo", "Rainville", "Munder", "Pontbuiten", "Centrum", "Beekhuizen", "Welgelegen", "Tammenga", "Flora", "Latour", "Livorno", "Weg naar Zee"]
+      },
+      {
+        "name": "Saramacca",
+        "cities": ["Groningen", "Batavia", "Kampong Baroe", "Uitkijk", "Jarikaba"]
+      },
+      {
+        "name": "Sipaliwini",
+        "cities": ["Apetina", "Benzdorp", "Botopasi", "Djumu", "Kajana", "Kamp 52", "Kwamalasamutu", "Pelelu Tepu", "Snesiekondre"]
+      },
+      {
+        "name": "Wanica",
+        "cities": ["Lelydorp", "Koewarasan", "Saramaccapolder", "Domburg", "Houttuin", "De Nieuwe Grond"]
+      }
+    ]
+  },
+  {
+    "country": "Sweden",
+    "currencyCode": "SEK",
+    "currencyName": "Swedish Krona",
+    "states": [
+      {
+        "name": "Blekinge",
+        "cities": ["Karlskrona", "Karlshamn", "Ronneby", "Sölvesborg", "Olofström"]
+      },
+      {
+        "name": "Dalarna",
+        "cities": ["Falun", "Borlänge", "Ludvika", "Avesta", "Mora", "Hedemora", "Leksand", "Rättvik"]
+      },
+      {
+        "name": "Gävleborg",
+        "cities": ["Gävle", "Sandviken", "Hudiksvall", "Bollnäs", "Söderhamn", "Hofors"]
+      },
+      {
+        "name": "Gotland",
+        "cities": ["Visby", "Hemse", "Klintehamn", "Slite", "Vibble"]
+      },
+      {
+        "name": "Halland",
+        "cities": ["Halmstad", "Varberg", "Falkenberg", "Kungsbacka", "Laholm", "Oskarström"]
+      },
+      {
+        "name": "Jämtland",
+        "cities": ["Östersund", "Strömsund", "Krokom", "Sveg", "Åre", "Bräcke"]
+      },
+      {
+        "name": "Jönköping",
+        "cities": ["Jönköping", "Värnamo", "Nässjö", "Tranås", "Vetlanda", "Gislaved", "Habo", "Mullsjö"]
+      },
+      {
+        "name": "Kalmar",
+        "cities": ["Kalmar", "Västervik", "Oskarshamn", "Nybro", "Vimmerby", "Högsby", "Mönsterås", "Torsås"]
+      },
+      {
+        "name": "Kronoberg",
+        "cities": ["Växjö", "Ljungby", "Alvesta", "Älmhult", "Tingsryd", "Uppvidinge", "Lessebo"]
+      },
+      {
+        "name": "Norrbotten",
+        "cities": ["Luleå", "Piteå", "Kiruna", "Boden", "Kalix", "Haparanda", "Älvsbyn", "Gällivare"]
+      },
+      {
+        "name": "Örebro",
+        "cities": ["Örebro", "Karlskoga", "Kumla", "Lindesberg", "Nora", "Hallsberg", "Degerfors"]
+      },
+      {
+        "name": "Östergötland",
+        "cities": ["Linköping", "Norrköping", "Motala", "Finspång", "Mjölby", "Åtvidaberg", "Söderköping", "Valdemarsvik"]
+      },
+      {
+        "name": "Skåne",
+        "cities": ["Malmö", "Helsingborg", "Lund", "Kristianstad", "Landskrona", "Trelleborg", "Ystad", "Ängelholm", "Hässleholm", "Eslöv", "Båstad", "Kävlinge", "Skanör", "Svedala", "Tomelilla", "Bjuv", "Hörby", "Höör", "Osby", "Perstorp", "Simrishamn", "Sjöbo", "Skurup", "Vellinge"]
+      },
+      {
+        "name": "Södermanland",
+        "cities": ["Nyköping", "Eskilstuna", "Katrineholm", "Strängnäs", "Oxelösund", "Torshälla", "Flen", "Gnesta", "Trosa"]
+      },
+      {
+        "name": "Stockholm",
+        "cities": ["Stockholm", "Södertälje", "Upplands Väsby", "Lidingö", "Sollentuna", "Täby", "Vallentuna", "Åkersberga", "Ekerö", "Huddinge", "Järfälla", "Botkyrka", "Salem", "Haninge", "Tyresö", "Upplands-Bro", "Österåker", "Värmdö", "Nacka", "Sundbyberg", "Danderyd", "Solna"]
+      },
+      {
+        "name": "Uppsala",
+        "cities": ["Uppsala", "Enköping", "Bålsta", "Sigtuna", "Knivsta", "Tierp", "Älvkarleby"]
+      },
+      {
+        "name": "Värmland",
+        "cities": ["Karlstad", "Kristinehamn", "Arvika", "Säffle", "Filipstad", "Hagfors", "Grums", "Munkfors"]
+      },
+      {
+        "name": "Västerbotten",
+        "cities": ["Umeå", "Skellefteå", "Lycksele", "Holmsund", "Vännäs", "Nordmaling", "Bjurholm", "Vindeln", "Robertsfors", "Norsjö", "Malå", "Sorsele", "Storuman", "Åsele"]
+      },
+      {
+        "name": "Västernorrland",
+        "cities": ["Sundsvall", "Härnösand", "Örnsköldsvik", "Sollefteå", "Kramfors", "Timrå", "Ånge"]
+      },
+      {
+        "name": "Västmanland",
+        "cities": ["Västerås", "Sala", "Köping", "Fagersta", "Arboga", "Hallstahammar", "Kungsör", "Norberg", "Surahammar"]
+      },
+      {
+        "name": "Västra Götaland",
+        "cities": ["Gothenburg", "Borås", "Trollhättan", "Skövde", "Uddevalla", "Lidköping", "Alingsås", "Mölndal", "Kungälv", "Lerum", "Vänersborg", "Partille", "Mariestad", "Kinna", "Stenungsund", "Kungsbacka", "Hjo", "Tibro", "Töreboda", "Svenljunga", "Mark", "Herrljunga", "Essunga", "Falköping", "Grästorp", "Gullspång", "Härryda", "Karlsborg", "Lysekil", "Munkedal", "Orust", "Strömstad", "Tanum", "Tjörn", "Ulricehamn", "Vårgårda", "Åmål", "Öckerö"]
+      }
+    ]
+  }
+]

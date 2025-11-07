@@ -31,3 +31,29 @@
     aspect-ratio: 1 / 1;
   }
 }
+
+/* Quill Editor Custom Styles */
+.quill-wrapper .ql-toolbar:not(:first-child) {
+  display: none !important;
+}
+
+.ql-container {
+  min-height: 400px;
+  font-size: 16px;
+}
+
+.ql-editor {
+  min-height: 400px;
+  padding: 20px;
+}
+
+/* Style the toolbar */
+.ql-toolbar {
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb !important;
+}
+
+/* Add margin after the editor form field */
+.ql-container + p {
+  margin-top: 60px !important;
+}

@@ -34,7 +34,7 @@ export const HamburgerMenu: React.FC = () => {
     <div className="relative" ref={menuRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="p-2 hover:bg-gray-100 rounded-lg transition"
+        className="p-2 hover:bg-gray-100 md:hover:bg-gray-100 rounded-lg transition"
         aria-label="Menu"
       >
         <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -43,7 +43,7 @@ export const HamburgerMenu: React.FC = () => {
       </button>
 
       {isOpen && (
-        <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
+        <div className="absolute right-0 bottom-full mb-2 md:bottom-auto md:top-full md:mt-2 md:mb-0 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-2 z-50">
           {isAuthenticated ? (
             <>
               <button

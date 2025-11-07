@@ -16,6 +16,7 @@ export interface AdImage {
 export interface Ad {
   _id: string;
   title: string;
+  slug?: string;
   description: string;
   category: CategoryType;
   price?: number;
@@ -37,10 +38,11 @@ export interface Ad {
   };
   views: number;
   isFeatured: boolean;
-  status: 'active' | 'expired' | 'draft' | 'archived' | 'deleted';
+  status: 'active' | 'expired' | 'draft' | 'archived' | 'deleted' | 'pending' | 'rejected';
   createdAt: string;
   updatedAt: string;
   expiresAt: string;
+  rejectReason?: string;
   expiryDate?: string; // Expiration date (30 days from creation)
   // Archive fields
   archivedAt?: string;
@@ -102,4 +104,6 @@ export interface CreateAdData {
   contactEmail?: string;
   contactPhone?: string;
   customDuration?: number; // Optional: user-selected ad duration in days
+  status?: 'active' | 'expired' | 'draft' | 'archived' | 'deleted' | 'pending' | 'rejected';
+  rejectReason?: string;
 }

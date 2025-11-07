@@ -1,0 +1,574 @@
+[
+  {
+    "country": "Tunisia",
+    "currencyCode": "TND",
+    "currencyName": "Tunisian Dinar",
+    "states": [
+      {
+        "name": "Ariana",
+        "cities": ["Ariana", "Kalâat el-Andalous", "Raoued", "Sidi Thabet", "La Soukra", "Ettadhamen"]
+      },
+      {
+        "name": "Béja",
+        "cities": ["Béja", "Medjez el-Bab", "Nefza", "Teboursouk", "Testour", "Amdoun"]
+      },
+      {
+        "name": "Ben Arous",
+        "cities": ["Ben Arous", "El Mourouj", "Hammam Lif", "Hammam Chott", "Bou Mhel el-Bassatine", "Rades", "Mégrine", "Mohamedia", "Mornag", "Fouchana"]
+      },
+      {
+        "name": "Bizerte",
+        "cities": ["Bizerte", "Mateur", "Menzel Bourguiba", "Sejnane", "Tinja", "Ghar el-Melh", "Ras Jebel", "Menzel Jemil", "Menzel Abderrahmane", "El Alia"]
+      },
+      {
+        "name": "Gabès",
+        "cities": ["Gabès", "Métouia", "Ghannouch", "El Hamma", "Matmata", "Mareth", "Zarat", "Nouvelle Matmata"]
+      },
+      {
+        "name": "Gafsa",
+        "cities": ["Gafsa", "El Ksar", "Métlaoui", "Moularès", "Redeyef", "Sidi Aïch", "Sned"]
+      },
+      {
+        "name": "Jendouba",
+        "cities": ["Jendouba", "Bou Salem", "Tabarka", "Aïn Draham", "Fernana", "Ghardimaou", "Oued Melliz"]
+      },
+      {
+        "name": "Kairouan",
+        "cities": ["Kairouan", "Hajeb El Ayoun", "Nasrallah", "Menstruc", "Oueslatia", "Sbikha", "Chebika", "El Alâa", "Haffouz", "Bou Hajla"]
+      },
+      {
+        "name": "Kasserine",
+        "cities": ["Kasserine", "Sbeitla", "Fériana", "Thala", "Haïdra", "Jedelienne", "Foussana", "Hassi El Ferid", "Thelepte", "Ezzouhour"]
+      },
+      {
+        "name": "Kebili",
+        "cities": ["Kebili", "Douz", "Souk Lahad", "Faouar"]
+      },
+      {
+        "name": "Kef",
+        "cities": ["Le Kef", "Dahmani", "Jérissa", "El Ksour", "Sers", "Tajerouine", "Kalâat Khasba", "Nebeur", "Sakiet Sidi Youssef"]
+      },
+      {
+        "name": "Mahdia",
+        "cities": ["Mahdia", "Bou Merdes", "Ouled Chamekh", "Chebba", "Hbira", "Souassi", "Ksour Essef", "El Jem", "Rejiche", "Sidi Alouane", "Chorbane", "Melloulèche"]
+      },
+      {
+        "name": "Manouba",
+        "cities": ["Manouba", "Den Den", "Douar Hicher", "Oued Ellil", "Mornaguia", "Borj El Amri", "Djedeida", "Tebourba"]
+      },
+      {
+        "name": "Medenine",
+        "cities": ["Medenine", "Ben Gardane", "Zarzis", "Djerba - Houmt Souk", "Ajim", "Midoun", "Beni Khedache", "Sidi Makhlouf"]
+      },
+      {
+        "name": "Monastir",
+        "cities": ["Monastir", "Moknine", "Ksar Hellal", "Bembla", "Ouerdanine", "Sahline", "Sayada", "Téboulba", "Bekalta", "Lamta", "Zéramdine"]
+      },
+      {
+        "name": "Nabeul",
+        "cities": ["Nabeul", "Hammamet", "Kélibia", "Menzel Temime", "Beni Khalled", "Dar Chaabane", "El Haouaria", "Grombalia", "Korba", "Menzel Bouzelfa", "Soliman", "Takelsa", "Bou Argoub", "Hammam Ghezèze"]
+      },
+      {
+        "name": "Sfax",
+        "cities": ["Sfax", "Sakiet Ezzit", "Sakiet Eddaïer", "Gremda", "Agareb", "Jebiniana", "Kerkennah", "Mahrès", "Skhira", "Bir Ali Ben Khalifa", "El Hencha"]
+      },
+      {
+        "name": "Sidi Bouzid",
+        "cities": ["Sidi Bouzid", "Bir El Hafey", "Jilma", "Meknassy", "Menzel Bouzaiane", "Mezzouna", "Ouled Haffouz", "Regueb", "Sidi Ali Ben Aoun"]
+      },
+      {
+        "name": "Siliana",
+        "cities": ["Siliana", "Bou Arada", "El Krib", "Gaâfour", "Kesra", "Makthar", "Rohia", "Sidi Bou Rouis"]
+      },
+      {
+        "name": "Sousse",
+        "cities": ["Sousse", "Hammam Sousse", "Kalaa Kebira", "Kalaa Seghira", "Kondar", "Akouda", "Enfidha", "Bouficha", "Hergla", "Sidi Bou Ali", "Sidi El Hani", "Zaouiet Sousse", "Msaken"]
+      },
+      {
+        "name": "Tataouine",
+        "cities": ["Tataouine", "Bir Lahmar", "Dehiba", "Ghomrassen", "Remada", "Smar"]
+      },
+      {
+        "name": "Tozeur",
+        "cities": ["Tozeur", "Degache", "Hazoua", "Nefta", "Tamerza"]
+      },
+      {
+        "name": "Tunis",
+        "cities": ["Tunis", "Le Bardo", "Le Kram", "La Goulette", "Carthage", "Sidi Bou Said", "La Marsa"]
+      },
+      {
+        "name": "Zaghouan",
+        "cities": ["Zaghouan", "Bir Mcherga", "El Fahs", "Nadhour", "Zriba", "Saouaf"]
+      }
+    ]
+  },
+  {
+    "country": "Turkmenistan",
+    "currencyCode": "TMT",
+    "currencyName": "Turkmenistani Manat",
+    "states": [
+      {
+        "name": "Ahal",
+        "cities": ["Anau", "Baharly", "Gökdepe", "Kaka", "Sarahs", "Tejen", "Abadan"]
+      },
+      {
+        "name": "Ashgabat",
+        "cities": ["Ashgabat"]
+      },
+      {
+        "name": "Balkan",
+        "cities": ["Balkanabat", "Bereket", "Gumdag", "Hazar", "Serdar", "Türkmenbaşy", "Garabogaz", "Jebel", "Magtymguly", "Etrek"]
+      },
+      {
+        "name": "Daşoguz",
+        "cities": ["Daşoguz", "Boldumsaz", "Görogly", "Gubadag", "Köneürgench", "Saparmyrat Nyýazow", "Akdepe", "Ruhubelent", "Tagta", "Yylanly"]
+      },
+      {
+        "name": "Lebap",
+        "cities": ["Türkmenabat", "Atamyrat", "Bayramaly", "Dänew", "Farap", "Gazojak", "Gowurdak", "Halaç", "Hojambaz", "Karabekewül", "Kerki", "Murgap", "Sakarchäge", "Seýdi", "Çarşangy"]
+      },
+      {
+        "name": "Mary",
+        "cities": ["Mary", "Baýramaly", "Murgap", "Sakarchäge", "Tagtabazar", "Türkmengala", "Vekilbazar", "Ýolöten", "Çinarly", "Garagum", "Oguzhan"]
+      }
+    ]
+  },
+  {
+    "country": "Tuvalu",
+    "currencyCode": "AUD",
+    "currencyName": "Australian Dollar",
+    "states": [
+      {
+        "name": "Funafuti",
+        "cities": ["Funafuti", "Fongafale", "Vaiaku"]
+      },
+      {
+        "name": "Nanumanga",
+        "cities": ["Tonga", "Tokelau"]
+      },
+      {
+        "name": "Nanumea",
+        "cities": ["Nanumea", "Lolua"]
+      },
+      {
+        "name": "Niutao",
+        "cities": ["Kulia", "Niutao"]
+      },
+      {
+        "name": "Nui",
+        "cities": ["Tanrake", "Fenua Tapu"]
+      },
+      {
+        "name": "Nukufetau",
+        "cities": ["Savave", "Motomua"]
+      },
+      {
+        "name": "Nukulaelae",
+        "cities": ["Fangaua"]
+      },
+      {
+        "name": "Vaitupu",
+        "cities": ["Asau"]
+      }
+    ]
+  },
+  {
+    "country": "Uganda",
+    "currencyCode": "UGX",
+    "currencyName": "Ugandan Shilling",
+    "states": [
+      {
+        "name": "Abim",
+        "cities": ["Abim", "Alerek", "Awach", "Kiru", "Lotuke", "Morulem", "Nyakwae"]
+      },
+      {
+        "name": "Adjumani",
+        "cities": ["Adjumani", "Ciforo", "Dzaipi", "Elema", "Forogu", "Itirikwa", "Kiri", "Pakele", "Ukusijoni"]
+      },
+      {
+        "name": "Amolatar",
+        "cities": ["Amolatar", "Aputi", "Namasale", "Apunyo", "Arwot", "Muntu", "Ngarama"]
+      },
+      {
+        "name": "Amuria",
+        "cities": ["Amuria", "Asamuk", "Kuju", "Morungatuny", "Orungo", "Wera"]
+      },
+      {
+        "name": "Amuru",
+        "cities": ["Amuru", "Atiak", "Laroo", "Layibi", "Pabo", "Paler", "Pawel", "Lamila"]
+      },
+      {
+        "name": "Apac",
+        "cities": ["Apac", "Aduku", "Akokoro", "Cegere", "Chegere", "Ibuje", "Nambieso"]
+      },
+      {
+        "name": "Arua",
+        "cities": ["Arua", "Adumi", "Ajia", "Logiri", "Manibe", "Mvara", "Oli", "Onduparaka", "Pajulu", "Rhino Camp", "Rigbo", "Uleppi", "Vurra"]
+      },
+      {
+        "name": "Budaka",
+        "cities": ["Budaka", "Kaberima", "Kaderuna", "Kakoro", "Kamonkoli", "Kamonkoli", "Lyama", "Naboa", "Nansanga"]
+      },
+      {
+        "name": "Bududa",
+        "cities": ["Bududa", "Bubiita", "Bukalasi", "Bushika", "Bumasifwa", "Bumayoka", "Bushiyi", "Buwali", "Nabweya"]
+      },
+      {
+        "name": "Bugiri",
+        "cities": ["Bugiri", "Butesa", "Buwunga", "Igombe", "Kasokwe", "Kiyunga", "Muterere", "Nankoma"]
+      },
+      {
+        "name": "Buhweju",
+        "cities": ["Buhweju", "Bihanga", "Bisenyi", "Kabegaramire", "Kakindo", "Kasule", "Kyehumbi", "Nyakishana", "Rugaaga"]
+      },
+      {
+        "name": "Buikwe",
+        "cities": ["Buikwe", "Kawolo", "Lugazi", "Najja", "Najjembe", "Nkokonjeru", "Nyenga", "Ssi", "Wanyange"]
+      },
+      {
+        "name": "Bukedea",
+        "cities": ["Bukedea", "Kaberima", "Kakure", "Kamutur", "Kochi", "Kongunga", "Malera", "Molo", "Bukedea Town"]
+      },
+      {
+        "name": "Bukomansimbi",
+        "cities": ["Bukomansimbi", "Bigasa", "Butenga", "Kibinge", "Kitanda", "Lwamaggwa"]
+      },
+      {
+        "name": "Bukwo",
+        "cities": ["Bukwo", "Binyiny", "Kabei", "Kapkwata", "Riwo", "Sekerr", "Suam", "Tulel"]
+      },
+      {
+        "name": "Bulisa",
+        "cities": ["Bulisa", "Buliisa", "Kigwera", "Ngwedo", "Kihukya"]
+      },
+      {
+        "name": "Bundibugyo",
+        "cities": ["Bundibugyo", "Bubandi", "Buhundu", "Harugali", "Kasitu", "Kirumya", "Nduguto", "Semuliki"]
+      },
+      {
+        "name": "Bushenyi",
+        "cities": ["Bushenyi", "Bitooma", "Kakanju", "Kyeizooba", "Nyabubare", "Ruhumuro", "Sheema"]
+      },
+      {
+        "name": "Busia",
+        "cities": ["Busia", "Buteba", "Buwumba", "Lunyo", "Majanji", "Masaba", "Masafu", "Mella", "Sikuda"]
+      },
+      {
+        "name": "Butaleja",
+        "cities": ["Butaleja", "Budumba", "Kachonga", "Mazimasa", "Nabweyo", "Nawanjofu", "Nawanyago"]
+      },
+      {
+        "name": "Buvuma",
+        "cities": ["Buvuma", "Buga", "Bugaya", "Bukyamira", "Busamuzi", "Lwaba", "Lwadzi"]
+      },
+      {
+        "name": "Buyende",
+        "cities": ["Buyende", "Bugaya", "Bulyansungwe", "Kabulasoke", "Kagulu", "Kidera", "Nkondo"]
+      },
+      {
+        "name": "Dokolo",
+        "cities": ["Dokolo", "Adok", "Agwata", "Dokolo", "Kangai", "Kwera", "Okwalongwen"]
+      },
+      {
+        "name": "Gulu",
+        "cities": ["Gulu", "Awach", "Bobi", "Laroo", "Odek", "Omel", "Palaro", "Patiko", "Paicho", "Unyama"]
+      },
+      {
+        "name": "Hoima",
+        "cities": ["Hoima", "Buhanika", "Buseruka", "Kigorobya", "Kiziranfumbi", "Kyabigambire", "Mparo"]
+      },
+      {
+        "name": "Ibanda",
+        "cities": ["Ibanda", "Bisheshe", "Endiinzi", "Kicuzi", "Kikyenkye", "Nyamarebe", "Rwengwe", "Rwenshama"]
+      },
+      {
+        "name": "Iganga",
+        "cities": ["Iganga", "Bukanga", "Bulanga", "Nakaloke", "Nakigo", "Nawandala", "Nawansakwe"]
+      },
+      {
+        "name": "Isingiro",
+        "cities": ["Isingiro", "Birere", "Endiinzi", "Kabaare", "Kashare", "Kikagate", "Rugaaga"]
+      },
+      {
+        "name": "Jinja",
+        "cities": ["Jinja", "Budondo", "Busede", "Butagaya", "Buwenge", "Kakira", "Mafubira", "Wakisi"]
+      },
+      {
+        "name": "Kaabong",
+        "cities": ["Kaabong", "Karenga", "Kathile", "Lobalangit", "Lodiko", "Lolelia", "Sidok"]
+      },
+      {
+        "name": "Kabale",
+        "cities": ["Kabale", "Bubaare", "Hamurwa", "Kamuganguzi", "Kitumba", "Maziba", "Rubaya"]
+      },
+      {
+        "name": "Kabarole",
+        "cities": ["Fort Portal", "Bukuuku", "Bundibugyo", "Busoro", "Harugali", "Kabonero", "Kichwamba", "Kijura"]
+      },
+      {
+        "name": "Kaberamaido",
+        "cities": ["Kaberamaido", "Anyara", "Aperikira", "Kaberamaido", "Kabulubulu", "Kamonkoli", "Ongongoja"]
+      },
+      {
+        "name": "Kalangala",
+        "cities": ["Kalangala", "Buga", "Bumangi", "Mugoye", "Nkose", "Ssese"]
+      },
+      {
+        "name": "Kaliro",
+        "cities": ["Kaliro", "Bukamba", "Bukoyo", "Nawandala", "Nawampiti"]
+      },
+      {
+        "name": "Kampala",
+        "cities": ["Kampala", "Kawempe", "Lubaga", "Makindye", "Nakawa", "Central"]
+      },
+      {
+        "name": "Kamuli",
+        "cities": ["Kamuli", "Balawoli", "Bugulumbya", "Butansi", "Nabwigulu", "Namwendwa", "Wankole"]
+      },
+      {
+        "name": "Kamwenge",
+        "cities": ["Kamwenge", "Bwizi", "Kahunge", "Kanara", "Kicheche", "Nkoma", "Rugendabara"]
+      },
+      {
+        "name": "Kanungu",
+        "cities": ["Kanungu", "Kambuga", "Kihihi", "Kirima", "Nyamirama", "Rugyeyo"]
+      },
+      {
+        "name": "Kapchorwa",
+        "cities": ["Kapchorwa", "Binyiny", "Bukwa", "Chema", "Kaptererwo", "Kaserem", "Sipi", "Tegeres"]
+      },
+      {
+        "name": "Kasese",
+        "cities": ["Kasese", "Bwera", "Kilembe", "Kyarumba", "Lake Katwe", "Munkunyu", "Nyakatonzi"]
+      },
+      {
+        "name": "Katakwi",
+        "cities": ["Katakwi", "Angodingod", "Kapujan", "Magoro", "Mukongoro", "Ngariam", "Toroma"]
+      },
+      {
+        "name": "Kayunga",
+        "cities": ["Kayunga", "Bbaale", "Galiraya", "Kangulumira", "Nazigo", "Wabinyonyi"]
+      },
+      {
+        "name": "Kibaale",
+        "cities": ["Kibaale", "Bwanswa", "Kagadi", "Mabaale", "Muhorro", "Ndaiga", "Rwimi"]
+      },
+      {
+        "name": "Kiboga",
+        "cities": ["Kiboga", "Dwaniro", "Kapeke", "Kiboga", "Lwamata", "Muwanga"]
+      },
+      {
+        "name": "Kiryandongo",
+        "cities": ["Kiryandongo", "Bweyale", "Kigumba", "Masindi Port", "Mujunju"]
+      },
+      {
+        "name": "Kisoro",
+        "cities": ["Kisoro", "Bunagana", "Muramba", "Murora", "Nyarusiza"]
+      },
+      {
+        "name": "Kitgum",
+        "cities": ["Kitgum", "Kiteny", "Labongo", "Lagoro", "Lokung", "Omiya Anyima", "Pager"]
+      },
+      {
+        "name": "Koboko",
+        "cities": ["Koboko", "Dranya", "Kuluba", "Ludara", "Midia"]
+      },
+      {
+        "name": "Kotido",
+        "cities": ["Kotido", "Kacheri", "Kotido", "Nakaperimoru", "Panyangara", "Rengen"]
+      },
+      {
+        "name": "Kumi",
+        "cities": ["Kumi", "Atutur", "Kanyum", "Mukongoro", "Nyero", "Ongino"]
+      },
+      {
+        "name": "Kyenjojo",
+        "cities": ["Kyenjojo", "Butiiti", "Kihuura", "Kyarusozi", "Mabaale", "Nyantungo"]
+      },
+      {
+        "name": "Lira",
+        "cities": ["Lira", "Agweng", "Barr", "Ogur", "Ojwina", "Railways"]
+      },
+      {
+        "name": "Luuka",
+        "cities": ["Luuka", "Bukanga", "Bumanya", "Irongo", "Nawampiti"]
+      },
+      {
+        "name": "Luwero",
+        "cities": ["Luwero", "Bamunanika", "Kalagala", "Katikamu", "Kikyusa", "Wobulenzi", "Zirobwe"]
+      },
+      {
+        "name": "Lwengo",
+        "cities": ["Lwengo", "Kisekka", "Kkingo", "Lwengo", "Malongo", "Ndagwe"]
+      },
+      {
+        "name": "Lyantonde",
+        "cities": ["Lyantonde", "Kaliro", "Kashagama", "Lyantonde", "Mpumudde"]
+      },
+      {
+        "name": "Manafwa",
+        "cities": ["Manafwa", "Bubutu", "Bumbo", "Bupoto", "Busukuya", "Butiru", "Namabya", "Sisuni"]
+      },
+      {
+        "name": "Maracha",
+        "cities": ["Maracha", "Kijomoro", "Kuluba", "Lodonga", "Oleba", "Yivu"]
+      },
+      {
+        "name": "Masaka",
+        "cities": ["Masaka", "Buwunga", "Kyanamukaaka", "Lwera", "Nkoni", "Nyendo", "Ssenyange"]
+      },
+      {
+        "name": "Masindi",
+        "cities": ["Masindi", "Bwijanga", "Kigumba", "Kimengo", "Kiruli", "Pakanyi"]
+      },
+      {
+        "name": "Mayuge",
+        "cities": ["Mayuge", "Baitambogwe", "Bunya", "Kigandalo", "Malongo", "Wairasa"]
+      },
+      {
+        "name": "Mbale",
+        "cities": ["Mbale", "Bungokho", "Busiu", "Buteza", "Nkoma", "Wanale"]
+      },
+      {
+        "name": "Mbarara",
+        "cities": ["Mbarara", "Bwizibwera", "Kakoba", "Kashari", "Nyamitanga", "Rubaya", "Rwanyamahembe"]
+      },
+      {
+        "name": "Mitooma",
+        "cities": ["Mitooma", "Bugarama", "Kashare", "Rugyeyo", "Rwanyamahembe"]
+      },
+      {
+        "name": "Mityana",
+        "cities": ["Mityana", "Banda", "Busunju", "Kikandwa", "Maanyi", "Mityana", "Naalyamagonja"]
+      },
+      {
+        "name": "Moroto",
+        "cities": ["Moroto", "Kotido", "Lokopo", "Nadunget", "Rupa", "Tapac"]
+      },
+      {
+        "name": "Moyo",
+        "cities": ["Moyo", "Afoji", "Dufile", "Laropi", "Moyo", "Obongi"]
+      },
+      {
+        "name": "Mpigi",
+        "cities": ["Mpigi", "Buwama", "Kabulasoke", "Kammengo", "Muduma", "Nkozi"]
+      },
+      {
+        "name": "Mubende",
+        "cities": ["Mubende", "Bagezza", "Kassanda", "Kitenga", "Madudu", "Mubende", "Myanzi"]
+      },
+      {
+        "name": "Mukono",
+        "cities": ["Mukono", "Goma", "Kasawo", "Kimenyedde", "Kojja", "Nakifuma", "Nama", "Ntenjeru", "Seeta"]
+      },
+      {
+        "name": "Nakapiripirit",
+        "cities": ["Nakapiripirit", "Lorengedwat", "Namalu", "Nakapiripirit", "Nawi"]
+      },
+      {
+        "name": "Nakaseke",
+        "cities": ["Nakaseke", "Kapeka", "Kinyogoga", "Kito", "Nakaseke", "Ngoma", "Semuto"]
+      },
+      {
+        "name": "Nakasongola",
+        "cities": ["Nakasongola", "Kakooge", "Kalongo", "Lwampanga", "Nakitoma", "Nakasongola", "Wabinyonyi"]
+      },
+      {
+        "name": "Namayingo",
+        "cities": ["Namayingo", "Banda", "Bukana", "Lolwe", "Majanji", "Sigulu"]
+      },
+      {
+        "name": "Namutumba",
+        "cities": ["Namutumba", "Ikulwe", "Kibale", "Magada", "Namutumba", "Nawankonge"]
+      },
+      {
+        "name": "Napak",
+        "cities": ["Napak", "Iriiri", "Lorengedwat", "Lotome", "Matany", "Napak"]
+      },
+      {
+        "name": "Nebbi",
+        "cities": ["Nebbi", "Akango", "Erussi", "Kucwiny", "Nebbi", "Panyimur", "Panyango"]
+      },
+      {
+        "name": "Ntoroko",
+        "cities": ["Ntoroko", "Kanara", "Karugutu", "Kibuuku", "Rwebisengo"]
+      },
+      {
+        "name": "Ntungamo",
+        "cities": ["Ntungamo", "Kakoba", "Kazo", "Kihihi", "Nyabuhikye", "Rubaare", "Rwentobo"]
+      },
+      {
+        "name": "Nwoya",
+        "cities": ["Nwoya", "Alero", "Anaka", "Koch Goma", "Lungulu", "Purongo"]
+      },
+      {
+        "name": "Otuke",
+        "cities": ["Otuke", "Adwari", "Ogwete", "Olilim", "Ongoro", "Otuke"]
+      },
+      {
+        "name": "Oyam",
+        "cities": ["Oyam", "Aboke", "Alebtong", "Iceme", "Loro", "Minakulu"]
+      },
+      {
+        "name": "Pader",
+        "cities": ["Pader", "Acholibur", "Atanga", "Lapul", "Lira Palwo", "Pader", "Puranga"]
+      },
+      {
+        "name": "Pallisa",
+        "cities": ["Pallisa", "Agule", "Butebo", "Kadama", "Kibale", "Pallisa", "Putiputi"]
+      },
+      {
+        "name": "Rakai",
+        "cities": ["Rakai", "Byakabanda", "Kakuuto", "Kalisizo", "Kasaali", "Kirumba", "Lwamaggwa"]
+      },
+      {
+        "name": "Rubirizi",
+        "cities": ["Rubirizi", "Bwambara", "Katerera", "Kitagwenda"]
+      },
+      {
+        "name": "Rukiga",
+        "cities": ["Rukiga", "Kamwezi", "Mparo", "Nyakambu", "Rwamucucu"]
+      },
+      {
+        "name": "Rukungiri",
+        "cities": ["Rukungiri", "Buyanja", "Bwambara", "Kihihi", "Nyakagyeme", "Ruhinda"]
+      },
+      {
+        "name": "Sembabule",
+        "cities": ["Sembabule", "Lwega", "Mateete", "Ntuusi", "Sembabule"]
+      },
+      {
+        "name": "Serere",
+        "cities": ["Serere", "Kateta", "Kyere", "Olio", "Pingire"]
+      },
+      {
+        "name": "Sheema",
+        "cities": ["Sheema", "Kagango", "Kigarama", "Kitagata", "Mashojwa", "Rwanjogyera"]
+      },
+      {
+        "name": "Sironko",
+        "cities": ["Sironko", "Budadiri", "Bugitimwa", "Bumasifwa", "Bumayoka", "Bumasheti", "Bukyabo", "Masaba", "Masira", "Nalugugu"]
+      },
+      {
+        "name": "Soroti",
+        "cities": ["Soroti", "Arapai", "Asuret", "Kamuda", "Katine", "Soroti", "Tubur"]
+      },
+      {
+        "name": "Tororo",
+        "cities": ["Tororo", "Kwapa", "Molo", "Mukuju", "Nagongera", "Petta", "Sokolo", "Tororo"]
+      },
+      {
+        "name": "Wakiso",
+        "cities": ["Wakiso", "Entebbe", "Kajjansi", "Kasanje", "Katikamu", "Kira", "Mende", "Nansana", "Nsangi", "Ssentema"]
+      },
+      {
+        "name": "Yumbe",
+        "cities": ["Yumbe", "Ariwa", "Kululu", "Kei", "Kuluba", "Lodonga", "Yumbe"]
+      },
+      {
+        "name": "Zombo",
+        "cities": ["Zombo", "Abanga", "Atyak", "Jangokoro", "Kango", "Paidha", "Zeu"]
+      }
+    ]
+  }
+]

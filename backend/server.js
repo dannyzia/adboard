@@ -6,7 +6,36 @@ const compression = require('compression');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 const passport = require('passport');
-require('dotenv').config();
+// Load backend-specific environment variables from backend/.env explicitly
+// and FORCE them to override any system-wide environment variables so the
+// project-local values always take precedence when running from the repo.
+const path = require('path');
+const fs = require('fs');
+const dotenv = require('dotenv');
+const envPath = path.resolve(__dirname, '.env');
+// Only load and override with the project-local `.env` in non-production
+// environments. In production we expect the host (Render/Vercel) to provide
+// environment variables and we DON'T want a committed .env to override them.
+if (process.env.NODE_ENV !== 'production') {
+  if (fs.existsSync(envPath)) {
+    try {
+      const parsed = dotenv.parse(fs.readFileSync(envPath));
+      // Override process.env values with those from backend/.env for dev
+      Object.keys(parsed).forEach((k) => {
+        process.env[k] = parsed[k];
+      });
+      dotenv.config({ path: envPath });
+    } catch (err) {
+      console.warn('⚠️ Failed to parse backend/.env — falling back to default dotenv behavior', err.message);
+      dotenv.config({ path: envPath });
+    }
+  } else {
+    dotenv.config({ path: envPath });
+  }
+} else {
+  // Production: do not read or override process.env from local files.
+  // Providers (Render, Vercel) should inject environment variables.
+}
 
 const app = express();
 
@@ -30,10 +59,16 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // CORS Configuration
+// In development allow any localhost port so Vite can pick a different port (5173 may be in use)
+let corsOrigin = process.env.FRONTEND_URL || 'http://localhost:5173';
+if (process.env.NODE_ENV === 'development') {
+  // allow http://localhost and any port on localhost during development
+  corsOrigin = /http:\/\/localhost(:\d+)?/;
+}
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: corsOrigin,
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 
@@ -47,7 +82,18 @@ const limiter = rateLimit({
   max: parseInt(process.env.RATE_LIMIT_MAX_REQUESTS) || 100,
   message: 'Too many requests from this IP, please try again later.'
 });
-app.use('/api/', limiter);
+
+// In development, allow localhost/loopback traffic to bypass the rate limiter to avoid
+// interfering with local debugging and hot-reload behavior. In production the limiter
+// will still apply.
+app.use((req, res, next) => {
+  const ip = req.ip || req.connection?.remoteAddress || '';
+  const isLocalhost = ip === '127.0.0.1' || ip === '::1' || req.hostname === 'localhost';
+  if (process.env.NODE_ENV === 'development' && isLocalhost) {
+    return next();
+  }
+  return limiter(req, res, next);
+});
 
 // ============================================
 // ROUTES
@@ -63,8 +109,6 @@ app.get('/health', (req, res) => {
   });
 });
 // Serve dynamic form config
-const path = require('path');
-const fs = require('fs');
 app.get('/api/form-config', (req, res) => {
   const configPath = path.join(__dirname, 'config', 'form-config.json');
   fs.readFile(configPath, 'utf8', (err, data) => {
@@ -93,6 +137,8 @@ app.use('/api/locations', require('./routes/location.routes'));
 app.use('/api/currencies', require('./routes/currency.routes'));
 // Bids / Auctions
 app.use('/api/bids', require('./routes/bid.routes'));
+// Blogs
+app.use('/api/blogs', require('./routes/blog.routes'));
 
 // NOTE: auction sweep job is started after DB connection in startServer()
 
@@ -140,6 +186,25 @@ const connectDB = async () => {
     console.log(`📊 Database: ${conn.connection.name}`);
   } catch (error) {
     console.error('❌ MongoDB Connection Error:', error.message);
+
+    // In development, attempt a safe fallback to an in-memory MongoDB server
+    // so the backend can still start for local testing / debugging.
+    if (process.env.NODE_ENV === 'development') {
+      try {
+        console.warn('⚠️ Attempting to start an in-memory MongoDB server as a fallback (development only).');
+        const { MongoMemoryServer } = require('mongodb-memory-server');
+        _mongodInstance = await MongoMemoryServer.create();
+        const fallbackUri = _mongodInstance.getUri();
+        const conn = await mongoose.connect(fallbackUri);
+        console.log(`✅ Connected to in-memory MongoDB: ${conn.connection.host}`);
+        return;
+      } catch (memErr) {
+        console.error('❌ In-memory MongoDB fallback failed:', memErr && memErr.message ? memErr.message : memErr);
+      }
+    }
+
+    // If not in development or fallback failed, exit with failure so the
+    // problem is visible in production environments.
     process.exit(1);
   }
 };

@@ -41,7 +41,7 @@ export const AdCard: React.FC<AdCardProps> = ({ ad, onClick }) => {
   }, [showMenu]);
 
   const handleShare = async () => {
-    const adUrl = `${window.location.origin}/ad/${ad._id}`;
+    const adUrl = `${window.location.origin}/ad/${ad.slug || ad._id}`;
     if (navigator.share) {
       try {
         await navigator.share({
@@ -73,39 +73,39 @@ export const AdCard: React.FC<AdCardProps> = ({ ad, onClick }) => {
   return (
     <div className="relative">
       <div
-        className="ad-card bg-white rounded shadow-sm overflow-hidden relative cursor-pointer hover:shadow-md transition-all hover:-translate-y-0.5"
-        onClick={() => onClick(ad._id)}
+        className="ad-card bg-white rounded-lg shadow-md overflow-hidden relative cursor-pointer hover:shadow-xl transition-all hover:-translate-y-1 group"
+    onClick={() => onClick(ad.slug || ad._id)}
       >
         {/* Image Container - 1:1 Aspect Ratio */}
         <div className="relative aspect-square">
           <img
             src={getImageUrl(ad.images[0])}
             alt={ad.title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
           />
           
           {/* Category Badge */}
-          <span className={`absolute top-1 left-1 ${categoryColor} text-white text-xs px-1.5 py-0.5 rounded text-[10px]`}>
+          <span className={`absolute top-2 left-2 ${categoryColor} text-white text-xs px-2 py-1 rounded-md font-medium shadow-sm`}>
             {ad.category}
           </span>
 
           {/* Featured Badge */}
           {ad.isFeatured && (
-            <span className="absolute top-1 left-16 bg-yellow-500 text-white text-xs px-1.5 py-0.5 rounded text-[10px] font-semibold">
-              ★
+            <span className="absolute top-2 right-2 bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs px-2 py-1 rounded-md font-bold shadow-sm">
+              ⭐ Featured
             </span>
           )}
 
           {/* 3-Dot Menu Button */}
           <button
-            className="absolute top-1 right-1 bg-white/95 rounded-full p-1 hover:bg-white shadow-sm"
+            className="absolute bottom-2 right-2 bg-white/95 hover:bg-white rounded-full p-2 shadow-md hover:shadow-lg transition opacity-0 group-hover:opacity-100"
             onClick={(e) => {
               e.stopPropagation();
               setShowMenu(!showMenu);
             }}
           >
-            <svg className="w-3.5 h-3.5 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
               <circle cx="12" cy="5" r="2"></circle>
               <circle cx="12" cy="12" r="2"></circle>
               <circle cx="12" cy="19" r="2"></circle>
@@ -114,21 +114,27 @@ export const AdCard: React.FC<AdCardProps> = ({ ad, onClick }) => {
         </div>
 
         {/* Card Content */}
-        <div className="p-2">
-          <h4 className="font-semibold text-xs text-gray-800 mb-1 line-clamp-2">
+        <div className="p-3">
+          <h4 className="font-bold text-sm text-gray-900 mb-2 line-clamp-2 min-h-[2.5rem]">
             {ad.title}
           </h4>
-          <div className="flex items-center justify-between text-[9px] text-gray-500">
-            <span className="truncate">{ad.location.city}</span>
+          {ad.price !== undefined && ad.price > 0 && (
+            <div className="mb-2 font-bold text-teal-600 text-lg">
+              {CURRENCIES.find(c => c.code === (ad.currency || 'USD'))?.symbol || '$'}{ad.price.toLocaleString()}
+            </div>
+          )}
+          <div className="flex items-center justify-between text-xs text-gray-500">
+            <span className="flex items-center gap-1 truncate">
+              <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              {ad.location.city}
+            </span>
             <span className="whitespace-nowrap">
               {formatTimeAgo(ad.createdAt)}
             </span>
           </div>
-          {ad.price !== undefined && ad.price > 0 && (
-            <div className="mt-1 font-bold text-blue-600 text-[10px]">
-              {CURRENCIES.find(c => c.code === (ad.currency || 'USD'))?.symbol || '$'}{ad.price.toLocaleString()} {ad.currency || 'USD'}
-            </div>
-          )}
         </div>
       </div>
 

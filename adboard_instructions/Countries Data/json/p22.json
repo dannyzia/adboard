@@ -1,0 +1,177 @@
+[
+  {
+    "country": "Rwanda",
+    "currencyCode": "RWF",
+    "currencyName": "Rwandan Franc",
+    "states": [
+      {
+        "name": "Kigali City",
+        "cities": ["Kigali", "Nyarugenge", "Kicukiro", "Gasabo"]
+      },
+      {
+        "name": "Eastern Province",
+        "cities": ["Rwamagana", "Nyagatare", "Kayonza", "Kirehe", "Ngoma", "Gatsibo", "Bugesera"]
+      },
+      {
+        "name": "Northern Province",
+        "cities": ["Musanze", "Rulindo", "Gicumbi", "Burera", "Gakenke"]
+      },
+      {
+        "name": "Western Province",
+        "cities": ["Rubavu", "Karongi", "Rutsiro", "Nyabihu", "Ngororero", "Rusizi"]
+      },
+      {
+        "name": "Southern Province",
+        "cities": ["Huye", "Muhanga", "Kamonyi", "Muhanga", "Ruhango", "Nyamagabe", "Nyanza", "Gisagara"]
+      }
+    ]
+  },
+  {
+    "country": "Saint Kitts and Nevis",
+    "currencyCode": "XCD",
+    "currencyName": "East Caribbean Dollar",
+    "states": [
+      {
+        "name": "Saint Kitts",
+        "cities": ["Basseterre", "Sandy Point Town", "Old Road Town", "Dieppe Bay Town", "Sadlers", "Cayon", "Monkey Hill", "St. Paul's"]
+      },
+      {
+        "name": "Nevis",
+        "cities": ["Charlestown", "Gingerland", "Newcastle", "Cotton Ground", "Butlers", "Market Shop", "Fountain"]
+      }
+    ]
+  },
+  {
+    "country": "Saint Lucia",
+    "currencyCode": "XCD",
+    "currencyName": "East Caribbean Dollar",
+    "states": [
+      {
+        "name": "Anse la Raye",
+        "cities": ["Anse la Raye", "Canaries"]
+      },
+      {
+        "name": "Castries",
+        "cities": ["Castries", "Gros Islet", "Bisee"]
+      },
+      {
+        "name": "Choiseul",
+        "cities": ["Choiseul", "Laborie", "Mongouge"]
+      },
+      {
+        "name": "Dauphin",
+        "cities": ["Dauphin"]
+      },
+      {
+        "name": "Dennery",
+        "cities": ["Dennery", "La Caye"]
+      },
+      {
+        "name": "Gros Islet",
+        "cities": ["Gros Islet", "Rodney Bay", "Cap Estate"]
+      },
+      {
+        "name": "Laborie",
+        "cities": ["Laborie", "Balembouche", "Piaye"]
+      },
+      {
+        "name": "Micoud",
+        "cities": ["Micoud", "Mon Repos", "Desruisseaux"]
+      },
+      {
+        "name": "Praslin",
+        "cities": ["Praslin", "Reunion"]
+      },
+      {
+        "name": "Soufrière",
+        "cities": ["Soufrière", "Malgretoute", "Fond St Jacques"]
+      },
+      {
+        "name": "Vieux Fort",
+        "cities": ["Vieux Fort", "Augier", "Black Bay"]
+      }
+    ]
+  },
+  {
+    "country": "Saint Vincent and the Grenadines",
+    "currencyCode": "XCD",
+    "currencyName": "East Caribbean Dollar",
+    "states": [
+      {
+        "name": "Charlotte",
+        "cities": ["Georgetown", "Byera Village", "North Union", "Orange Hill"]
+      },
+      {
+        "name": "Grenadines",
+        "cities": ["Port Elizabeth", "Dovers", "Lovell Village", "Hamilton"]
+      },
+      {
+        "name": "Saint Andrew",
+        "cities": ["Layou", "Barrouallie", "Wallilabou", "Coulls Hill"]
+      },
+      {
+        "name": "Saint David",
+        "cities": ["Chateaubelair", "Fitz Hughes", "Rose Bank", "Troumaka"]
+      },
+      {
+        "name": "Saint George",
+        "cities": ["Kingstown", "Arnos Vale", "Campden Park", "Questelles"]
+      },
+      {
+        "name": "Saint Patrick",
+        "cities": ["Barrouallie", "Mount Pleasant", "Colonarie", "Richland Park"]
+      }
+    ]
+  },
+  {
+    "country": "Samoa",
+    "currencyCode": "WST",
+    "currencyName": "Samoan Tala",
+    "states": [
+      {
+        "name": "A'ana",
+        "cities": ["Leulumoega", "Nofoali'i", "Fasito'o Uta", "Satapuala"]
+      },
+      {
+        "name": "Aiga-i-le-Tai",
+        "cities": ["Mulifanua", "Mano", "Falelatai"]
+      },
+      {
+        "name": "Atua",
+        "cities": ["Lufilufi", "Solosolo", "Falefa", "Lotofaga", "Saoluafata"]
+      },
+      {
+        "name": "Fa'asaleleaga",
+        "cities": ["Safotulafai", "Sapapali'i", "Faga", "Vaiafai"]
+      },
+      {
+        "name": "Gaga'emauga",
+        "cities": ["Sala'ilua", "Samalae'ulu", "Patamea"]
+      },
+      {
+        "name": "Gaga'ifomauga",
+        "cities": ["Aopo", "Safotu", "Letui", "Sasina"]
+      },
+      {
+        "name": "Palauli",
+        "cities": ["Vailoa", "Pitonuu", "Satuiatua", "Gataivai"]
+      },
+      {
+        "name": "Satupa'itea",
+        "cities": ["Satupa'itea", "Pitonuu", "Gautavai"]
+      },
+      {
+        "name": "Tuamasaga",
+        "cities": ["Apia", "Afega", "Malie", "Vaimauga", "Faleasi'u", "Vaitele"]
+      },
+      {
+        "name": "Va'a-o-Fonoti",
+        "cities": ["Samamea", "Uafato", "Falelima"]
+      },
+      {
+        "name": "Vaisigano",
+        "cities": ["Asau", "Vaisala", "Neiafu", "Tufutafoe"]
+      }
+    ]
+  }
+]

@@ -1,0 +1,244 @@
+[
+  {
+    "country": "Comoros",
+    "currencyCode": "KMF",
+    "currencyName": "Comorian Franc",
+    "states": [
+      {"name": "Anjouan", "cities": ["Mutsamudu", "Domoni", "Sima", "Koni-Djodjo", "Mremani", "Moya", "Mramani", "Pomoni", "Ouani", "Adda-Douéni"]},
+      {"name": "Grande Comore", "cities": ["Moroni", "Mitsamiouli", "Foumbouni", "Itsandra", "N'Tsaoueni", "M'Beni", "Mvouni", "N'Dzahani", "Hahaya", "Iconi", "Mbachile", "Moidja", "Ouroveni", "Vanambouani"]},
+      {"name": "Mohéli", "cities": ["Fomboni", "Nioumachoua", "Miringoni", "Itsamia", "Kangani", "Mtakoudja", "Ouanani", "Ziroudani"]}
+    ]
+  },
+  {
+    "country": "Congo",
+    "currencyCode": "XAF",
+    "currencyName": "Central African CFA Franc",
+    "states": [
+      {"name": "Bouenza", "cities": ["Madingou", "Nkayi", "Loudima", "Mfouati", "Kayes", "Boko", "Mindouli", "Kingoué"]},
+      {"name": "Brazzaville", "cities": ["Brazzaville", "Makélékélé", "Bacongo", "Poto-Poto", "Moungali", "Ouenzé", "Talangaï", "Mfilou", "Djiri", "Madibou"]},
+      {"name": "Cuvette", "cities": ["Owando", "Etoumbi", "Mboko", "Okoyo", "Tongo", "Bétou", "Makoua", "Kelle"]},
+      {"name": "Cuvette-Ouest", "cities": ["Ewo", "Kelle", "Mbama", "Mbandza", "Mbomo", "Okoyo"]},
+      {"name": "Kouilou", "cities": ["Loango", "Hinda", "Kakamoeka", "Mvouti", "Nzambi", "Tchicanou", "Godzilla", "Loudima"]},
+      {"name": "Lékoumou", "cities": ["Sibiti", "Komono", "Zanaga", "Bambama", "Mayéyé", "Ngabé"]},
+      {"name": "Likouala", "cities": ["Impfondo", "Bétou", "Dongou", "Enyellé", "Liranga", "Bomassa"]},
+      {"name": "Niari", "cities": ["Dolisie", "Mossendjo", "Banda", "Kibangou", "Kimongo", "Louvakou", "Mayoko", "Moutamba"]},
+      {"name": "Plateaux", "cities": ["Djambala", "Gamboma", "Lekana", "Abala", "Allembé", "Mpouya", "Ngo", "Ollombo"]},
+      {"name": "Pointe-Noire", "cities": ["Pointe-Noire", "Loandjili", "Tié-Tié", "Mvoumvou", "Ngoyo", "Tchimbamba"]},
+      {"name": "Pool", "cities": ["Kinkala", "Mindouli", "Goma Tse-Tse", "Igné", "Kimba", "Kinkembo", "Loumo", "Mayama", "Mbanza Nounga", "Vindza"]},
+      {"name": "Sangha", "cities": ["Ouésso", "Sembé", "Souanké", "Mokéko", "Pikounda", "Ngbala"]}
+    ]
+  },
+  {
+    "country": "Costa Rica",
+    "currencyCode": "CRC",
+    "currencyName": "Costa Rican Colón",
+    "states": [
+      {"name": "Alajuela", "cities": ["Alajuela", "San Ramón", "Grecia", "San Mateo", "Atenas", "Naranjo", "Palmares", "Poás", "Orotina", "Río Cuarto", "Zarcero", "Sarchí", "Upala", "Los Chiles", "Guatuso"]},
+      {"name": "Cartago", "cities": ["Cartago", "Paraíso", "La Unión", "Turrialba", "Jiménez", "El Guarco", "Alvarado", "Oreamuno"]},
+      {"name": "Guanacaste", "cities": ["Liberia", "Nicoya", "Santa Cruz", "Bagaces", "Carrillo", "Cañas", "Abangares", "Tilarán", "Nandayure", "La Cruz", "Hojancha"]},
+      {"name": "Heredia", "cities": ["Heredia", "Barva", "Santo Domingo", "Santa Bárbara", "San Rafael", "San Isidro", "Belén", "Flores", "San Pablo", "Sarapiquí"]},
+      {"name": "Limón", "cities": ["Limón", "Pococí", "Siquirres", "Talamanca", "Matina", "Guácimo"]},
+      {"name": "Puntarenas", "cities": ["Puntarenas", "Esparza", "Buenos Aires", "Montes de Oro", "Osa", "Quepos", "Golfito", "Coto Brus", "Parrita", "Corredores", "Garabito"]},
+      {"name": "San José", "cities": ["San José", "Escazú", "Desamparados", "Puriscal", "Tarrazú", "Aserrí", "Mora", "Goicoechea", "Santa Ana", "Alajuelita", "Vázquez de Coronado", "Acosta", "Tibás", "Moravia", "Montes de Oca", "Turrubares", "Dota", "Curridabat", "Pérez Zeledón", "León Cortés Castro"]}
+    ]
+  },
+  {
+    "country": "Croatia",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {"name": "Bjelovar-Bilogora County", "cities": ["Bjelovar", "Čazma", "Garešnica", "Grubišno Polje", "Daruvar"]},
+      {"name": "Brod-Posavina County", "cities": ["Slavonski Brod", "Nova Gradiška", "Oriovac", "Slavonski Šamac", "Bukovlje"]},
+      {"name": "Dubrovnik-Neretva County", "cities": ["Dubrovnik", "Metković", "Korčula", "Opuzen", "Ploče", "Ston", "Trpanj", "Vela Luka"]},
+      {"name": "Istria County", "cities": ["Pula", "Poreč", "Rovinj", "Umag", "Labin", "Buzet", "Buje", "Novigrad", "Vodnjan"]},
+      {"name": "Karlovac County", "cities": ["Karlovac", "Ogulin", "Duga Resa", "Ozalj", "Slunj", "Vojnić"]},
+      {"name": "Koprivnica-Križevci County", "cities": ["Koprivnica", "Križevci", "Đurđevac", "Kalinovac", "Molve", "Novigrad Podravski"]},
+      {"name": "Krapina-Zagorje County", "cities": ["Krapina", "Zabok", "Pregrada", "Donja Stubica", "Oroslavje", "Marija Bistrica"]},
+      {"name": "Lika-Senj County", "cities": ["Gospić", "Otočac", "Senj", "Novalja", "Korenica", "Brinje"]},
+      {"name": "Međimurje County", "cities": ["Čakovec", "Prelog", "Mursko Središće", "Štrigova", "Nedelišće"]},
+      {"name": "Osijek-Baranja County", "cities": ["Osijek", "Đakovo", "Našice", "Valpovo", "Belišće", "Donji Miholjac", "Beli Manastir"]},
+      {"name": "Požega-Slavonia County", "cities": ["Požega", "Pleternica", "Kutjevo", "Lipik", "Pakrac"]},
+      {"name": "Primorje-Gorski Kotar County", "cities": ["Rijeka", "Opatija", "Crikvenica", "Krk", "Mali Lošinj", "Rab", "Bakar", "Kastav", "Novi Vinodolski", "Delnice"]},
+      {"name": "Šibenik-Knin County", "cities": ["Šibenik", "Knin", "Drniš", "Vodice", "Skradin", "Rogoznica"]},
+      {"name": "Sisak-Moslavina County", "cities": ["Sisak", "Kutina", "Petrinja", "Glina", "Hrvatska Kostajnica", "Novska", "Popovača"]},
+      {"name": "Split-Dalmatia County", "cities": ["Split", "Kaštela", "Solin", "Omiš", "Makarska", "Trogir", "Sinj", "Imotski", "Vrgorac", "Hvar", "Vis"]},
+      {"name": "Varaždin County", "cities": ["Varaždin", "Ivanec", "Ludbreg", "Lepoglava", "Novi Marof", "Varaždinske Toplice"]},
+      {"name": "Virovitica-Podravina County", "cities": ["Virovitica", "Orahovica", "Slatina", "Suhopolje", "Pitomača"]},
+      {"name": "Vukovar-Syrmia County", "cities": ["Vukovar", "Vinkovci", "Županja", "Ilok", "Otok", "Andrijaševci", "Nijemci"]},
+      {"name": "Zadar County", "cities": ["Zadar", "Benkovac", "Biograd na Moru", "Nin", "Obrovac", "Pag"]},
+      {"name": "Zagreb County", "cities": ["Zagreb", "Velika Gorica", "Samobor", "Dugo Selo", "Zaprešić", "Sveti Ivan Zelina", "Jastrebarsko", "Sveta Nedelja", "Bistra"]},
+      {"name": "City of Zagreb", "cities": ["Zagreb", "Sesvete", "Novi Zagreb", "Trešnjevka", "Maksimir", "Podsljeme", "Stenjevec", "Trnje", "Podsused"]}
+    ]
+  },
+  {
+    "country": "Cuba",
+    "currencyCode": "CUP",
+    "currencyName": "Cuban Peso",
+    "states": [
+      {"name": "Artemisa", "cities": ["Artemisa", "San Antonio de los Baños", "Güira de Melena", "Alquízar", "Guanajay", "Mariel", "Bauta", "Caimito", "Bahía Honda"]},
+      {"name": "Camagüey", "cities": ["Camagüey", "Florida", "Vertientes", "Guáimaro", "Nuevitas", "Sibanicú", "Santa Cruz del Sur", "Jimaguayú", "Minas", "Esmeralda"]},
+      {"name": "Ciego de Ávila", "cities": ["Ciego de Ávila", "Morón", "Venezuela", "Baraguá", "Primero de Enero", "Ciro Redondo", "Majagua", "Florencia"]},
+      {"name": "Cienfuegos", "cities": ["Cienfuegos", "Palmira", "Cruces", "Rodas", "Aguada de Pasajeros", "Cumanayagua", "Lajas", "Abreus"]},
+      {"name": "Granma", "cities": ["Bayamo", "Manzanillo", "Jiguaní", "Yara", "Media Luna", "Niquero", "Pilón", "Bartolomé Masó", "Buey Arriba", "Guisa", "Río Cauto"]},
+      {"name": "Guantánamo", "cities": ["Guantánamo", "Baracoa", "Maisí", "Imías", "San Antonio del Sur", "Caimanera", "El Salvador", "Yateras", "Manuel Tames"]},
+      {"name": "Havana", "cities": ["Havana", "Playa", "Centro Habana", "Habana Vieja", "Regla", "Habana del Este", "Guanabacoa", "San Miguel del Padrón", "Diez de Octubre", "Cerro", "Marianao", "La Lisa", "Boyeros", "Arroyo Naranjo", "Cotorro"]},
+      {"name": "Holguín", "cities": ["Holguín", "Mayarí", "Moa", "Banes", "Gibara", "Rafael Freyre", "Antilla", "Báguanos", "Cacocum", "Calixto", "Cueto", "Frank País", "Urbano Noris"]},
+      {"name": "Isla de la Juventud", "cities": ["Nueva Gerona", "Santa Fe", "La Demajagua", "Columbia", "Mac Kinley", "Patria", "Villa Gaviota"]},
+      {"name": "Las Tunas", "cities": ["Las Tunas", "Puerto Padre", "Amancio", "Colombia", "Jesús Menéndez", "Jobabo", "Majibacoa", "Manatí"]},
+      {"name": "Matanzas", "cities": ["Matanzas", "Cárdenas", "Colón", "Jovellanos", "Pedro Betancourt", "Limonar", "Unión de Reyes", "Ciénaga de Zapata", "Jagüey Grande", "Calimete", "Los Arabos", "Martí", "Perico"]},
+      {"name": "Mayabeque", "cities": ["San José de las Lajas", "Güines", "Jaruco", "Santa Cruz del Norte", "Madruga", "Nueva Paz", "San Nicolás", "Quivicán", "Batabanó", "Bejucal", "Melena del Sur"]},
+      {"name": "Pinar del Río", "cities": ["Pinar del Río", "San Luis", "San Juan y Martínez", "Guane", "Mantua", "Viñales", "Consolación del Sur", "Los Palacios", "Minas de Matahambre", "La Palma", "Sandino"]},
+      {"name": "Sancti Spíritus", "cities": ["Sancti Spíritus", "Trinidad", "Cabaiguán", "Yaguajay", "Jatibonico", "Taguasco", "La Sierpe", "Fomento"]},
+      {"name": "Santiago de Cuba", "cities": ["Santiago de Cuba", "Contramaestre", "Palma Soriano", "San Luis", "Songo-La Maya", "Guamá", "El Cobre", "Mella", "Segundo Frente", "Tercer Frente"]},
+      {"name": "Villa Clara", "cities": ["Santa Clara", "Sagua la Grande", "Placetas", "Camajuaní", "Caibarién", "Remedios", "Manicaragua", "Cifuentes", "Ranchuelo", "Quemado de Güines", "Encrucijada", "Corralillo", "Santo Domingo"]}
+    ]
+  },
+  {
+    "country": "Cyprus",
+    "currencyCode": "EUR",
+    "currencyName": "Euro",
+    "states": [
+      {"name": "Famagusta District", "cities": ["Famagusta", "Paralimni", "Deryneia", "Ayia Napa", "Sotira", "Lefkoniko", "Avgorou", "Lysi", "Achna", "Frenaros"]},
+      {"name": "Kyrenia District", "cities": ["Kyrenia", "Lapithos", "Karavas", "Bellapais", "Alsancak", "Lapta", "Çatalköy", "Ozanköy"]},
+      {"name": "Larnaca District", "cities": ["Larnaca", "Aradippou", "Livadia", "Dromolaxia", "Kiti", "Pervolia", "Oroklini", "Athienou", "Meneou", "Voroklini"]},
+      {"name": "Limassol District", "cities": ["Limassol", "Polemidia", "Mesa Geitonia", "Agios Athanasios", "Germasogeia", "Ypsonas", "Kato Polemidia", "Erimi", "Paramytha", "Parekklisha"]},
+      {"name": "Nicosia District", "cities": ["Nicosia", "Strovolos", "Lakatamia", "Latsia", "Aglandjia", "Engomi", "Morphou", "Kythrea", "Dali", "Tseri", "Pera Chorio", "Akaki", "Astromeritis", "Psimolofou"]},
+      {"name": "Paphos District", "cities": ["Paphos", "Peyia", "Polis Chrysochous", "Yeroskipou", "Tala", "Emba", "Chlorakas", "Geroskipou", "Kathikas", "Akhelia"]}
+    ]
+  },
+  {
+    "country": "Czech Republic",
+    "currencyCode": "CZK",
+    "currencyName": "Czech Koruna",
+    "states": [
+      {"name": "Central Bohemian Region", "cities": ["Prague", "Kladno", "Mladá Boleslav", "Příbram", "Kolín", "Kutná Hora", "Mělník", "Beroun", "Nymburk", "Brandýs nad Labem-Stará Boleslav", "Benešov", "Rakovník", "Kralupy nad Vltavou", "Slaný", "Český Brod", "Lysá nad Labem", "Dobříš", "Hořovice", "Sedlčany", "Čáslav"]},
+      {"name": "Hradec Králové Region", "cities": ["Hradec Králové", "Pardubice", "Trutnov", "Náchod", "Jičín", "Dvůr Králové nad Labem", "Vrchlabí", "Jaroměř", "Nové Město nad Metují", "Rychnov nad Kněžnou", "Kostelec nad Orlicí", "Týniště nad Orlicí", "Broumov", "Česká Skalice", "Dobruška", "Hořice", "Hostinné", "Kopidlno", "Lázně Bělohrad", "Nechanice"]},
+      {"name": "Karlovy Vary Region", "cities": ["Karlovy Vary", "Cheb", "Sokolov", "Ostrov", "Mariánské Lázně", "Aš", "Kraslice", "Nejdek", "Horní Slavkov", "Františkovy Lázně", "Loket", "Habartov", "Chodov", "Rotava", "Toužim"]},
+      {"name": "Liberec Region", "cities": ["Liberec", "Jablonec nad Nisou", "Česká Lípa", "Turnov", "Nový Bor", "Semily", "Frýdlant", "Tanvald", "Železný Brod", "Hrádek nad Nisou", "Chrastava", "Raspenava", "Desná", "Smržovka", "Josefův Důl", "Hejnice", "Stráž nad Nisou"]},
+      {"name": "Moravian-Silesian Region", "cities": ["Ostrava", "Havířov", "Karviná", "Frýdek-Místek", "Opava", "Třinec", "Český Těšín", "Orlová", "Kopřivnice", "Bohumín", "Nový Jičín", "Krnov", "Bruntál", "Hlučín", "Studénka", "Frenštát pod Radhoštěm", "Bílovec", "Rýmařov", "Vítkov", "Petřvald"]},
+      {"name": "Olomouc Region", "cities": ["Olomouc", "Prostějov", "Přerov", "Šumperk", "Hranice", "Zábřeh", "Litovel", "Uničov", "Jeseník", "Konice", "Lipník nad Bečvou", "Mohelnice", "Staré Město", "Šternberk", "Velká Bystřice", "Bouzov", "Dub nad Moravou", "Náměšť na Hané", "Tovačov"]},
+      {"name": "Pardubice Region", "cities": ["Pardubice", "Chrudim", "Svitavy", "Ústí nad Orlicí", "Vysoké Mýto", "Česká Třebová", "Moravská Třebová", "Litomyšl", "Lanškroun", "Polička", "Holice", "Hlinsko", "Choceň", "Krásíkov", "Letohrad", "Skuteč", "Žamberk"]},
+      {"name": "Plzeň Region", "cities": ["Plzeň", "Klatovy", "Rokycany", "Tachov", "Domažlice", "Sušice", "Horažďovice", "Stříbro", "Nýřany", "Blovice", "Přeštice", "Kdyně", "Plánice", "Nepomuk", "Holýšov", "Bor", "Břasy", "Černošín", "Dobřany", "Horšovský Týn"]},
+      {"name": "Prague", "cities": ["Prague", "Prague 1", "Prague 2", "Prague 3", "Prague 4", "Prague 5", "Prague 6", "Prague 7", "Prague 8", "Prague 9", "Prague 10"]},
+      {"name": "South Bohemian Region", "cities": ["České Budějovice", "Tábor", "Písek", "Strakonice", "Jindřichův Hradec", "Český Krumlov", "Prachatice", "Milevsko", "Vimperk", "Kaplice", "Soběslav", "Sezimovo Ústí", "Vodňany", "Blatná", "Bechyně", "Dačice", "Hluboká nad Vltavou", "Husinec", "Kardašova Řečice", "Lhenice"]},
+      {"name": "South Moravian Region", "cities": ["Brno", "Znojmo", "Vyškov", "Blansko", "Břeclav", "Hodonín", "Kyjov", "Ivančice", "Rosice", "Šlapanice", "Tišnov", "Kuřim", "Boskovice", "Bučovice", "Hustopeče", "Klobouky u Brna", "Mikulov", "Pohořelice", "Slavkov u Brna", "Židlochovice"]},
+      {"name": "Ústí nad Labem Region", "cities": ["Ústí nad Labem", "Most", "Teplice", "Děčín", "Chomutov", "Litoměřice", "Jirkov", "Žatec", "Louny", "Litvínov", "Kadaň", "Bílina", "Varnsdorf", "Krupka", "Roudnice nad Labem", "Rumburk", "Štětí", "Dubí", "Trmice", "Moldava"]},
+      {"name": "Vysočina Region", "cities": ["Jihlava", "Třebíč", "Havlíčkův Brod", "Pelhřimov", "Žďár nad Sázavou", "Nové Město na Moravě", "Velké Meziříčí", "Humpolec", "Bystřice nad Pernštejnem", "Náměšť nad Oslavou", "Moravské Budějovice", "Pacov", "Světlá nad Sázavou", "Chotěboř", "Telč", "Počátky", "Kamenice nad Lipou", "Ledeč nad Sázavou"]},
+      {"name": "Zlín Region", "cities": ["Zlín", "Kroměříž", "Uherské Hradiště", "Vsetín", "Valašské Meziříčí", "Otrokovice", "Uherský Brod", "Rožnov pod Radhoštěm", "Holešov", "Bystřice pod Hostýnem", "Napajedla", "Slavičín", "Staré Město", "Valašské Klobouky", "Bojkovice", "Brumov-Bylnice", "Luhačovice", "Vizovice", "Záhorovice"]}
+    ]
+  },
+  {
+    "country": "Democratic Republic of the Congo",
+    "currencyCode": "CDF",
+    "currencyName": "Congolese Franc",
+    "states": [
+      {"name": "Bas-Uele", "cities": ["Buta", "Aketi", "Bondo", "Ango", "Bambesa", "Poko", "Titule", "Zobia"]},
+      {"name": "Équateur", "cities": ["Mbandaka", "Gemena", "Libenge", "Gbadolite", "Lukolela", "Bikoro", "Basankusu", "Boende", "Ingende", "Businga"]},
+      {"name": "Haut-Katanga", "cities": ["Lubumbashi", "Likasi", "Kipushi", "Kambove", "Kasumbalesa", "Sakania", "Pweto", "Moba", "Mitwaba", "Kakanda"]},
+      {"name": "Haut-Lomami", "cities": ["Kamina", "Bukama", "Kabongo", "Kaniama", "Malemba Nkulu", "Kamina", "Lwambo", "Mbulula", "Dilolo"]},
+      {"name": "Haut-Uele", "cities": ["Isiro", "Wamba", "Watsa", "Niangara", "Rungu", "Dungu", "Faradje", "Nyaleke", "Bafwasende"]},
+      {"name": "Ituri", "cities": ["Bunia", "Aru", "Mahagi", "Mambasa", "Irumu", "Djugu", "Mongbwalu", "Nyarambe", "Kpandroma"]},
+      {"name": "Kasaï", "cities": ["Tshikapa", "Ilebo", "Luebo", "Mweka", "Dekese", "Kamonia", "Luebo", "Mweka", "Demba"]},
+      {"name": "Kasaï Central", "cities": ["Kananga", "Tshikula", "Dibaya", "Dimbelenge", "Kazumba", "Luiza", "Mweka", "Ndjoko Punda"]},
+      {"name": "Kasaï Oriental", "cities": ["Mbuji-Mayi", "Mwene-Ditu", "Lubao", "Gandajika", "Kabinda", "Lusambo", "Tshilenge", "Miabi", "Katanda"]},
+      {"name": "Kinshasa", "cities": ["Kinshasa", "Kalamu", "Kasa-Vubu", "Makala", "Ngaliema", "Selembao", "Bandalungwa", "Barumbu", "Bumbu", "Gombe", "Kimbaseke", "Kinshasa", "Kintambo", "Kisenso", "Lemba", "Limete", "Lingwala", "Matete", "Mont Ngafula", "Ndjili", "Ngaba", "Ngiri-Ngiri", "Nsele"]},
+      {"name": "Kongo Central", "cities": ["Matadi", "Boma", "Muanda", "Tomboco", "Lukula", "Kasangulu", "Mbanza-Ngungu", "Songololo", "Kimpese", "Moanda"]},
+      {"name": "Kwango", "cities": ["Kenge", "Popokabaka", "Feshi", "Kahemba", "Kasongo-Lunda", "Kenge", "Masi-Manimba"]},
+      {"name": "Kwilu", "cities": ["Kikwit", "Bulungu", "Gungu", "Idiofa", "Masi-Manimba", "Bagata", "Mushie", "Kikwit", "Kenge"]},
+      {"name": "Lomami", "cities": ["Kabinda", "Mwene-Ditu", "Kamiji", "Lubao", "Luputa", "Ngandajika", "Tshilenge"]},
+      {"name": "Lualaba", "cities": ["Kolwezi", "Likasi", "Kambove", "Mutshatsha", "Dilolo", "Sandoa", "Kapanga", "Lubudi"]},
+      {"name": "Mai-Ndombe", "cities": ["Inongo", "Kiri", "Kutu", "Oshwe", "Bolobo", "Mushie", "Yumbi", "Ntondo"]},
+      {"name": "Maniema", "cities": ["Kindu", "Kasongo", "Kibombo", "Pangi", "Punia", "Samba", "Lubutu", "Alunguli"]},
+      {"name": "Mongala", "cities": ["Lisala", "Bumba", "Bongandanga", "Yakoma", "Businga", "Gemena"]},
+      {"name": "Nord-Kivu", "cities": ["Goma", "Beni", "Butembo", "Rutshuru", "Masisi", "Walikale", "Nyiragongo", "Kirotshe", "Kayna", "Kirumba"]},
+      {"name": "Nord-Ubangi", "cities": ["Gbadolite", "Bosobolo", "Mobayi-Mbongo", "Yakoma", "Businga", "Mongoba"]},
+      {"name": "Sankuru", "cities": ["Lodja", "Lomela", "Lubefu", "Lusambo", "Katako-Kombe", "Kole", "Lubao", "Tshumbe"]},
+      {"name": "Sud-Kivu", "cities": ["Bukavu", "Uvira", "Baraka", "Kamituga", "Kalehe", "Mwenga", "Shabunda", "Fizi", "Minova", "Idjwi"]},
+      {"name": "Sud-Ubangi", "cities": ["Gemena", "Libenge", "Budjala", "Bosobolo", "Zongo", "Businga", "Mongoba"]},
+      {"name": "Tanganyika", "cities": ["Kalemie", "Manono", "Moba", "Kongolo", "Kabalo", "Nyunzu", "Kansimba", "Mtoa"]},
+      {"name": "Tshopo", "cities": ["Kisangani", "Ubundu", "Bafwasende", "Banalia", "Isangi", "Opala", "Yahuma", "Yakusu"]},
+      {"name": "Tshuapa", "cities": ["Boende", "Befale", "Bokungu", "Djolu", "Ikela", "Monkoto", "Wema", "Basankusu"]}
+    ]
+  },
+  {
+    "country": "Denmark",
+    "currencyCode": "DKK",
+    "currencyName": "Danish Krone",
+    "states": [
+      {"name": "Capital Region of Denmark", "cities": ["Copenhagen", "Helsingør", "Hillerød", "Hørsholm", "Frederikssund", "Farum", "Birkerød", "Kongens Lyngby", "Gentofte", "Gladsaxe", "Rødovre", "Herlev", "Søborg", "Værløse", "Ballerup", "Ishøj", "Taastrup", "Hvidovre", "Brøndby", "Kastrup"]},
+      {"name": "Central Denmark Region", "cities": ["Aarhus", "Silkeborg", "Randers", "Horsens", "Viborg", "Holstebro", "Skanderborg", "Herning", "Ikast", "Grenaa", "Odder", "Skive", "Hadsten", "Hammel", "Brædstrup", "Galten", "Ry", "Brabrand", "Tilst", "Lystrup"]},
+      {"name": "North Denmark Region", "cities": ["Aalborg", "Hjørring", "Frederikshavn", "Thisted", "Brønderslev", "Hobro", "Nykøbing Mors", "Sæby", "Støvring", "Nibe", "Aars", "Farsø", "Løgstør", "Skagen", "Hirtshals", "Sindal", "Pandrup", "Vodskov", "Dronninglund", "Brovst"]},
+      {"name": "Region of Southern Denmark", "cities": ["Odense", "Esbjerg", "Kolding", "Vejle", "Svendborg", "Nyborg", "Middelfart", "Fredericia", "Haderslev", "Sønderborg", "Aabenraa", "Assens", "Faaborg", "Mariager", "Ringe", "Varde", "Grindsted", "Billund", "Gedser", "Augustenborg"]},
+      {"name": "Region Zealand", "cities": ["Roskilde", "Næstved", "Køge", "Slagelse", "Holbæk", "Kalundborg", "Ringsted", "Vordingborg", "Haslev", "Hvalsø", "Lejre", "Skælskør", "Store Heddinge", "Nykøbing Falster", "Stege", "Præstø", "Fakse", "Rønnede", "Borup", "Dianalund"]}
+    ]
+  },
+  {
+    "country": "Djibouti",
+    "currencyCode": "DJF",
+    "currencyName": "Djiboutian Franc",
+    "states": [
+      {"name": "Ali Sabieh Region", "cities": ["Ali Sabieh", "Dikhil", "As Eyla", "Guelile", "Holhol", "Ali Adde"]},
+      {"name": "Arta Region", "cities": ["Arta", "We'a", "Dorra", "Randa"]},
+      {"name": "Dikhil Region", "cities": ["Dikhil", "Yoboki", "As Eyla", "Goda", "Mouloud"]},
+      {"name": "Djibouti Region", "cities": ["Djibouti City", "Balbala", "Boulaos", "Rocade", "PK12", "Ambouli"]},
+      {"name": "Obock Region", "cities": ["Obock", "Khor Angar", "Alaili Dadda", "Moulhoule", "Dasbiyo"]},
+      {"name": "Tadjourah Region", "cities": ["Tadjourah", "Randa", "Dorra", "Moulhoule", "Balho"]}
+    ]
+  },
+  {
+    "country": "Dominica",
+    "currencyCode": "XCD",
+    "currencyName": "East Caribbean Dollar",
+    "states": [
+      {"name": "Saint Andrew Parish", "cities": ["Marigot", "Wesley", "Woodford Hill", "Calibishie", "Hampstead", "Bense", "Anse du Mé", "Vieille Case"]},
+      {"name": "Saint David Parish", "cities": ["Rosalie", "Castle Bruce", "Petite Soufrière", "Grand Fond", "La Plaine", "Boetica", "Delices"]},
+      {"name": "Saint George Parish", "cities": ["Roseau", "Canefield", "Stockfarm", "Newtown", "Pottersville", "Goodwill", "Wallhouse", "Elmshall"]},
+      {"name": "Saint John Parish", "cities": ["Portsmouth", "Dublanc", "Toucari", "Clifton", "Bioche", "Colihaut", "Cottage"]},
+      {"name": "Saint Joseph Parish", "cities": ["St. Joseph", "Salisbury", "Coulibistrie", "Morne Raquette", "Belles", "Penrice"]},
+      {"name": "Saint Luke Parish", "cities": ["Pointe Michel", "Picard", "Massacre"]},
+      {"name": "Saint Mark Parish", "cities": ["Soufrière", "Scotts Head"]},
+      {"name": "Saint Patrick Parish", "cities": ["Berekua", "Grand Bay", "Petite Savanne", "Tete Morne", "Stowe", "Dubuc"]},
+      {"name": "Saint Paul Parish", "cities": ["Mahaut", "Cochrane", "Jimmit", "Massacre", "Morne Daniel", "Check Hall"]},
+      {"name": "Saint Peter Parish", "cities": ["Colihaut", "Dublanc", "Bioche"]}
+    ]
+  },
+  {
+    "country": "Dominican Republic",
+    "currencyCode": "DOP",
+    "currencyName": "Dominican Peso",
+    "states": [
+      {"name": "Azua Province", "cities": ["Azua de Compostela", "Sabana Yegua", "Peralta", "Padre Las Casas", "Pueblo Viejo", "Las Charcas", "Las Yayas de Viajama", "Estebanía", "Guayabal", "Tábara Arriba"]},
+      {"name": "Baoruco Province", "cities": ["Neiba", "Galván", "Los Ríos", "Tamayo", "Villa Jaragua", "El Palmar", "Canoa"]},
+      {"name": "Barahona Province", "cities": ["Barahona", "Cabral", "Enriquillo", "Paraíso", "Polo", "Vicente Noble", "El Peñón", "Fundación", "La Ciénaga", "Las Salinas"]},
+      {"name": "Dajabón Province", "cities": ["Dajabón", "Loma de Cabrera", "Partido", "Restauración", "El Pino"]},
+      {"name": "Distrito Nacional", "cities": ["Santo Domingo", "Gazcue", "Ensanche Luperón", "Villa Francisca", "Ciudad Nueva", "Ensanche Capotillo", "Ensanche Espaillat", "Ensanche La Fe", "Ensanche Naco", "Ensanche Quisqueya", "Ensanche Simón Bolívar", "Los Jardines", "Mirador Norte", "Mirador Sur", "Piantini", "Bella Vista", "Naco", "Paraíso", "Julieta Morales"]},
+      {"name": "Duarte Province", "cities": ["San Francisco de Macorís", "Arenoso", "Castillo", "Pimentel", "Villa Riva", "Las Guáranas"]},
+      {"name": "El Seibo Province", "cities": ["Santa Cruz de El Seibo", "Miches", "Pedro Sánchez"]},
+      {"name": "Elías Piña Province", "cities": ["Comendador", "Bánica", "El Llano", "Hondo Valle", "Juan Santiago", "Pedro Santana"]},
+      {"name": "Espaillat Province", "cities": ["Moca", "Cayetano Germosén", "Gaspar Hernández", "Jamao al Norte"]},
+      {"name": "Hato Mayor Province", "cities": ["Hato Mayor del Rey", "Sabana de la Mar", "El Valle"]},
+      {"name": "Hermanas Mirabal Province", "cities": ["Salcedo", "Tenares", "Villa Tapia"]},
+      {"name": "Independencia Province", "cities": ["Jimaní", "Cristóbal", "Duvergé", "La Descubierta", "Mella", "Postrer Río"]},
+      {"name": "La Altagracia Province", "cities": ["Higüey", "San Rafael del Yuma", "Bávaro", "Punta Cana", "Verón", "Cabeza de Toro", "Cap Cana"]},
+      {"name": "La Romana Province", "cities": ["La Romana", "Guaymate", "Villa Hermosa"]},
+      {"name": "La Vega Province", "cities": ["Concepción de La Vega", "Constanza", "Jarabacoa", "Jima Abajo"]},
+      {"name": "María Trinidad Sánchez Province", "cities": ["Nagua", "Cabrera", "El Factor", "Río San Juan"]},
+      {"name": "Monseñor Nouel Province", "cities": ["Bonao", "Maimón", "Piedra Blanca"]},
+      {"name": "Monte Cristi Province", "cities": ["San Fernando de Monte Cristi", "Castañuela", "Guayubín", "Las Matas de Santa Cruz", "Pepillo Salcedo", "Villa Vásquez"]},
+      {"name": "Monte Plata Province", "cities": ["Monte Plata", "Bayaguana", "Peralvillo", "Sabana Grande de Boyá", "Yamasá"]},
+      {"name": "Pedernales Province", "cities": ["Pedernales", "Oviedo"]},
+      {"name": "Peravia Province", "cities": ["Baní", "Nizao", "Matanzas", "Paya", "Sabana Buey"]},
+      {"name": "Puerto Plata Province", "cities": ["San Felipe de Puerto Plata", "Altamira", "Guananico", "Imbert", "Los Hidalgos", "Luperón", "Sosúa", "Villa Isabela", "Villa Montellano"]},
+      {"name": "Samaná Province", "cities": ["Santa Bárbara de Samaná", "Las Terrenas", "Sánchez"]},
+      {"name": "San Cristóbal Province", "cities": ["San Cristóbal", "Bajos de Haina", "Cambita Garabitos", "Los Cacaos", "Sabana Grande de Palenque", "San Gregorio de Nigua", "Villa Altagracia", "Yaguate"]},
+      {"name": "San José de Ocoa Province", "cities": ["San José de Ocoa", "Rancho Arriba", "Sabana Larga"]},
+      {"name": "San Juan Province", "cities": ["San Juan de la Maguana", "Bohechío", "El Cercado", "Juan de Herrera", "Las Matas de Farfán", "Vallejuelo"]},
+      {"name": "San Pedro de Macorís Province", "cities": ["San Pedro de Macorís", "Consuelo", "Guayacanes", "Quisqueya", "Ramón Santana"]},
+      {"name": "Sánchez Ramírez Province", "cities": ["Cotuí", "Cevicos", "Fantino", "La Mata"]},
+      {"name": "Santiago Province", "cities": ["Santiago de los Caballeros", "Baitoa", "Janico", "Licey al Medio", "Puñal", "Sabana Iglesia", "San José de las Matas", "Tamboril", "Villa González"]},
+      {"name": "Santiago Rodríguez Province", "cities": ["San Ignacio de Sabaneta", "Monción", "Villa Los Almácigos"]},
+      {"name": "Santo Domingo Province", "cities": ["Santo Domingo Este", "Santo Domingo Oeste", "Santo Domingo Norte", "Boca Chica", "Los Alcarrizos", "Pedro Brand", "San Antonio de Guerra"]},
+      {"name": "Valverde Province", "cities": ["Mao", "Esperanza", "Laguna Salada"]}
+    ]
+  }
+]

@@ -1,0 +1,53 @@
+[
+  {
+    "country": "Mozambique",
+    "currencyCode": "MZN",
+    "currencyName": "Mozambican Metical",
+    "states": [
+      {
+        "name": "Niassa",
+        "cities": ["Lichinga", "Cuamba", "Mandimba", "Marrupa", "Metangula", "Sanga"]
+      },
+      {
+        "name": "Cabo Delgado",
+        "cities": ["Pemba", "Mocímboa da Praia", "Montepuez", "Mueda", "Palma", "Macomia", "Quissanga", "Ibo"]
+      },
+      {
+        "name": "Nampula",
+        "cities": ["Nampula", "Angoche", "Moma", "Mossuril", "Nacala", "Ilha de Moçambique", "Ribáuè", "Malema", "Mecubúri"]
+      },
+      {
+        "name": "Zambezia",
+        "cities": ["Quelimane", "Gurúè", "Milange", "Mocuba", "Alto Molócuè", "Nicoadala", "Ile", "Maganja da Costa"]
+      },
+      {
+        "name": "Tete",
+        "cities": ["Tete", "Moatize", "Angónia", "Cahora-Bassa", "Changara", "Chifunde", "Macanga", "Marávia", "Magoé", "Zumbo"]
+      },
+      {
+        "name": "Manica",
+        "cities": ["Chimoio", "Gondola", "Manica", "Macate", "Machaze", "Sussundenga", "Báruè", "Tambara", "Vanduzi"]
+      },
+      {
+        "name": "Sofala",
+        "cities": ["Beira", "Dondo", "Nhamatanda", "Marromeu", "Caia", "Chemba", "Cheringoma", "Gorongosa", "Maringuè", "Machanga", "Buzi"]
+      },
+      {
+        "name": "Gaza",
+        "cities": ["Xai-Xai", "Chókwè", "Chibuto", "Macia", "Manjacaze", "Massingir", "Bilene", "Guijá", "Mabalane", "Mapai"]
+      },
+      {
+        "name": "Inhambane",
+        "cities": ["Inhambane", "Maxixe", "Panda", "Vilankulo", "Inharrime", "Inhassoro", "Jangamo", "Mabote", "Massinga", "Morrumbene", "Zavala"]
+      },
+      {
+        "name": "Maputo Province",
+        "cities": ["Matola", "Boane", "Magude", "Manhiça", "Marracuene", "Moamba", "Namaacha", "Ressano Garcia"]
+      },
+      {
+        "name": "Maputo City",
+        "cities": ["Maputo"]
+      }
+    ]
+  }
+]

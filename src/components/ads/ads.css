@@ -1,0 +1,81 @@
+/* container centers content and prevents full-screen stretching */
+.ads-container {
+  max-width: 1920px;          /* wider container so 12 cards can fit */
+  margin: 0 auto;
+  padding: 12px;
+}
+
+/* default (phones, tablets, laptops) */
+.ads-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+/* at larger screens, allow smaller min widths → more columns */
+@media (min-width: 1300px) {
+  .ads-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+}
+
+/* optional: if you want to guarantee 12 on huge screens */
+@media (min-width: 1600px) {
+  .ads-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+}
+
+/* keep existing ad-card styles scoped to the component, but provide small adjustments */
+.ad-card {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.06);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.85rem; /* make small text so compact cards still readable */
+}
+
+.ad-link {
+  color: inherit;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.ad-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+}
+.ad-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ad-body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.ad-title {
+  font-size: 0.95rem;
+  line-height: 1.2;
+  margin: 0;
+}
+.ad-meta {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* small utility to prevent images from stretching in our existing markup */
+.ad-card img { display: block; max-width: 100%; height: auto; }

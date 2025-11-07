@@ -10,8 +10,8 @@ interface AdGridProps {
 export const AdGrid: React.FC<AdGridProps> = ({ ads }) => {
   const navigate = useNavigate();
 
-  const handleAdClick = (id: string) => {
-    navigate(`/ad/${id}`);
+  const handleAdClick = (slugOrId: string) => {
+    navigate(`/ad/${slugOrId}`);
   };
 
   return (
