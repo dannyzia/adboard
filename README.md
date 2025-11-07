@@ -1,7 +1,7 @@
-# AdBoard - Classified Ads Platform
+# ListyNest - Classified Ads Platform
 Project README (original full documentation).
 
-# Adboard — runtime README
+# ListyNest — runtime README
 
 This repository has been trimmed for runtime use. Non-runtime documentation, guides, and build artifacts were moved to `adboard_instructions/removed_for_run/` to keep the project root small and focused on running the application.
 
@@ -22,7 +22,7 @@ npx tsc --noEmit
 For backend development (example): set your env vars and start the backend from the `backend/` folder.
 
 If you want me to also start a dev-server smoke test or restore the full `form-config.json`, tell me and I'll proceed.
-# AdBoard - Classified Ads Platform
+# ListyNest - Classified Ads Platform
 
 A modern, responsive classified ads platform built with React, TypeScript, and Tailwind CSS. Features infinite scroll, authentication, and a clean minimal UI.
 

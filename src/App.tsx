@@ -23,6 +23,7 @@ import { AdminSettingsPage } from './pages/AdminSettingsPage';
 import { AdminSubscriptionsPage } from './pages/AdminSubscriptionsPage';
 import { AuthCallbackPage } from './pages/AuthCallbackPage';
 import { ProtectedAdminRoute } from './components/ProtectedAdminRoute';
+import TermsContactPage from './pages/TermsContactPage';
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
               <Route path="/login" element={<LoginPage />} />
               <Route path="/auth/callback" element={<AuthCallbackPage />} />
               <Route path="/pricing" element={<PricingPage />} />
+              <Route path="/terms" element={<TermsContactPage />} />
               <Route path="/checkout/:tier" element={<CheckoutPage />} />
               
               {/* User Routes */}

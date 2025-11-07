@@ -100,6 +100,16 @@ export const HamburgerMenu: React.FC = () => {
           
           <div className="border-t border-gray-200 my-2"></div>
           
+          <button
+            onClick={() => handleNavigation('/terms')}
+            className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 flex items-center"
+          >
+            <svg className="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16h8M8 12h8M8 8h8M4 6h.01M4 12h.01M4 18h.01" />
+            </svg>
+            Terms & Contact
+          </button>
+          
           {/* Hidden for now - can re-enable later */}
           {false && (
             <>

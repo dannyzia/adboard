@@ -106,7 +106,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onFilterChange }) => {
             className="order-1 text-2xl font-bold text-white cursor-pointer whitespace-nowrap flex-shrink-0 drop-shadow-lg"
             onClick={() => navigate('/')}
           >
-            🏪 AdBoard
+            🏪 ListyNest
           </h1>
 
           {/* Search Box - Much Wider */}
