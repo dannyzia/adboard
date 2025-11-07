@@ -4,8 +4,6 @@ const termSectionIds = ['section-1','section-2','section-3','section-4','section
 
 export const TermsContactPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState('section-contact');
-  const [searchTerm, setSearchTerm] = useState('');
-  const originalHtml = useRef<Record<string,string>>({});
 
   // Contact form state
   const [contactName, setContactName] = useState('');
@@ -14,22 +12,8 @@ export const TermsContactPage: React.FC = () => {
   const [contactMessage, setContactMessage] = useState('');
   const [showSuccess, setShowSuccess] = useState(false);
 
-  useEffect(() => {
-    // capture original HTML of term sections for highlight resets
-    termSectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) originalHtml.current[id] = el.innerHTML;
-    });
-  }, []);
 
-  const clearHighlights = () => {
-    termSectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el && originalHtml.current[id]) el.innerHTML = originalHtml.current[id];
-    });
-  };
-
-  // Hide all terms sections initially; we'll navigate to ads on search submit
+  // Hide all terms sections initially (contact shown by default)
   useEffect(() => {
     termSectionIds.forEach(id => {
       const el = document.getElementById(id);
@@ -44,15 +28,7 @@ export const TermsContactPage: React.FC = () => {
     sections.forEach(s => s.classList.add('hidden'));
     const el = document.getElementById(id);
     if (el) el.classList.remove('hidden');
-    // manage search visibility
-    const searchEl = document.getElementById('search-section');
-    if (searchEl) {
-      if (id === 'section-contact') searchEl.classList.add('hidden');
-      else searchEl.classList.remove('hidden');
-    }
-    // clear search
-    setSearchTerm('');
-    clearHighlights();
+    // no search on this page; simply show/hide the selected section
   // clear any previous no-results state
   };
 
@@ -65,60 +41,7 @@ export const TermsContactPage: React.FC = () => {
     setTimeout(() => setShowSuccess(false), 5000);
   };
 
-  // Helper to safely escape a string for use in RegExp
-  const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-
-  // Perform an internal search over the terms sections, highlight matches
-  const handleSearchSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const query = searchTerm?.trim();
-    const noResultsEl = document.getElementById('no-results');
-    const searchTermSpan = document.getElementById('search-term');
-    if (!query) {
-      // if empty, clear highlights and reset visibility
-      clearHighlights();
-      termSectionIds.forEach(id => {
-        const el = document.getElementById(id);
-        if (el) el.classList.add('hidden');
-      });
-      if (noResultsEl) noResultsEl.classList.add('hidden');
-      if (searchTermSpan) searchTermSpan.textContent = '';
-      return;
-    }
-
-    clearHighlights();
-    const re = new RegExp(escapeRegExp(query), 'gi');
-    let found = false;
-
-    termSectionIds.forEach(id => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const original = originalHtml.current[id] || el.innerHTML;
-      const text = el.textContent || el.innerText || '';
-      if (text.toLowerCase().includes(query.toLowerCase())) {
-        // show and highlight
-        el.classList.remove('hidden');
-        // use original HTML then replace matching text with <mark>
-        try {
-          el.innerHTML = original.replace(re, (match) => `<mark class="bg-yellow-200">${match}</mark>`);
-        } catch (err) {
-          // fallback: simple innerHTML highlight (best-effort)
-          el.innerHTML = original;
-        }
-        found = true;
-      } else {
-        el.classList.add('hidden');
-      }
-    });
-
-    if (!found) {
-      if (noResultsEl) noResultsEl.classList.remove('hidden');
-      if (searchTermSpan) searchTermSpan.textContent = query;
-    } else {
-      if (noResultsEl) noResultsEl.classList.add('hidden');
-      if (searchTermSpan) searchTermSpan.textContent = '';
-    }
-  };
+  // No search functionality on this page; contact form and static terms only
 
   return (
     <div className="container mx-auto max-w-6xl p-4 md:p-8">
@@ -127,18 +50,7 @@ export const TermsContactPage: React.FC = () => {
         <p className="text-lg text-gray-600">Explore our Terms of Use or submit a query to our support team using the contact form below.</p>
       </header>
 
-      <div id="search-section" className="mb-6">
-        <form onSubmit={handleSearchSubmit}>
-          <input
-            id="searchInput"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            type="text"
-            placeholder="Search Ads (e.g., 'laptop', 'sofa')"
-            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-        </form>
-      </div>
+      {/* No search box on this page */}
 
       <div className="flex flex-col md:flex-row gap-6">
         <aside className="w-full md:w-1/4">
@@ -310,10 +222,7 @@ export const TermsContactPage: React.FC = () => {
               </ul>
             </div>
 
-            <div id="no-results" className="content-section text-center p-8 hidden">
-              <h3 className="text-xl font-semibold text-gray-700">No results found</h3>
-              <p className="text-gray-500">Your search for "<span id="search-term" className="font-medium"></span>" did not match any text in the terms.</p>
-            </div>
+            {/* end content */}
 
           </div>
         </main>
