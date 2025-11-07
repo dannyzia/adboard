@@ -59,18 +59,39 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 // CORS Configuration
-// In development allow any localhost port so Vite can pick a different port (5173 may be in use)
-let corsOrigin = process.env.FRONTEND_URL || 'http://localhost:5173';
+// Support a comma-separated list of allowed frontend origins via FRONTEND_URLS.
+// Example: FRONTEND_URLS="https://adboard-red.vercel.app,https://www.listynest.com"
+// For development, allow any localhost port so Vite can pick a different port (5173 may be in use)
+const rawFrontend = process.env.FRONTEND_URLS || process.env.FRONTEND_URL || 'http://localhost:5173';
+let allowedOrigins = [];
 if (process.env.NODE_ENV === 'development') {
   // allow http://localhost and any port on localhost during development
-  corsOrigin = /http:\/\/localhost(:\d+)?/;
+  allowedOrigins = [/http:\/\/localhost(:\d+)?/];
+} else {
+  // split comma separated list into exact origins
+  allowedOrigins = rawFrontend.split(',').map(s => s.trim()).filter(Boolean);
 }
+
 const corsOptions = {
-  origin: corsOrigin,
+  origin: function(origin, callback) {
+    // Allow non-browser tools (no Origin header)
+    if (!origin) return callback(null, true);
+
+    const allowed = allowedOrigins.some((o) => {
+      if (o instanceof RegExp) return o.test(origin);
+      return o === origin;
+    });
+
+    if (allowed) return callback(null, true);
+    return callback(new Error('CORS policy: Origin not allowed'));
+  },
   credentials: true,
   optionsSuccessStatus: 200,
 };
+
 app.use(cors(corsOptions));
+// Log allowed origins for debugging (helpful in production deployment logs)
+console.log('✅ CORS allowed origins:', allowedOrigins);
 
 // Body Parser
 app.use(express.json({ limit: '10mb' }));
