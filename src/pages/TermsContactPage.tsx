@@ -29,37 +29,13 @@ export const TermsContactPage: React.FC = () => {
     });
   };
 
-  const highlightText = (term: string) => {
-    clearHighlights();
-    if (!term.trim()) return 0;
-    const regex = new RegExp(`(${term})`, 'gi');
-    let matches = 0;
-    termSectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const html = originalHtml.current[id] || el.innerHTML;
-      const newHtml = html.replace(regex, (m) => { matches++; return `<mark class="highlight">${m}</mark>`; });
-      el.innerHTML = newHtml;
-    });
-    return matches;
-  };
-
+  // Hide all terms sections initially; we'll navigate to ads on search submit
   useEffect(() => {
-    if (!searchTerm) {
-      showSection('section-contact');
-      clearHighlights();
-      return;
-    }
-  highlightText(searchTerm.trim());
-    // show all term sections
     termSectionIds.forEach(id => {
       const el = document.getElementById(id);
-      if (el) el.classList.remove('hidden');
+      if (el) el.classList.add('hidden');
     });
-    const contactEl = document.getElementById('section-contact');
-    if (contactEl) contactEl.classList.add('hidden');
-  // nothing else to do here
-  }, [searchTerm]);
+  }, []);
 
   const showSection = (id: string) => {
     setActiveSection(id);
@@ -89,6 +65,61 @@ export const TermsContactPage: React.FC = () => {
     setTimeout(() => setShowSuccess(false), 5000);
   };
 
+  // Helper to safely escape a string for use in RegExp
+  const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  // Perform an internal search over the terms sections, highlight matches
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const query = searchTerm?.trim();
+    const noResultsEl = document.getElementById('no-results');
+    const searchTermSpan = document.getElementById('search-term');
+    if (!query) {
+      // if empty, clear highlights and reset visibility
+      clearHighlights();
+      termSectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.add('hidden');
+      });
+      if (noResultsEl) noResultsEl.classList.add('hidden');
+      if (searchTermSpan) searchTermSpan.textContent = '';
+      return;
+    }
+
+    clearHighlights();
+    const re = new RegExp(escapeRegExp(query), 'gi');
+    let found = false;
+
+    termSectionIds.forEach(id => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const original = originalHtml.current[id] || el.innerHTML;
+      const text = el.textContent || el.innerText || '';
+      if (text.toLowerCase().includes(query.toLowerCase())) {
+        // show and highlight
+        el.classList.remove('hidden');
+        // use original HTML then replace matching text with <mark>
+        try {
+          el.innerHTML = original.replace(re, (match) => `<mark class="bg-yellow-200">${match}</mark>`);
+        } catch (err) {
+          // fallback: simple innerHTML highlight (best-effort)
+          el.innerHTML = original;
+        }
+        found = true;
+      } else {
+        el.classList.add('hidden');
+      }
+    });
+
+    if (!found) {
+      if (noResultsEl) noResultsEl.classList.remove('hidden');
+      if (searchTermSpan) searchTermSpan.textContent = query;
+    } else {
+      if (noResultsEl) noResultsEl.classList.add('hidden');
+      if (searchTermSpan) searchTermSpan.textContent = '';
+    }
+  };
+
   return (
     <div className="container mx-auto max-w-6xl p-4 md:p-8">
       <header className="mb-6">
@@ -97,14 +128,16 @@ export const TermsContactPage: React.FC = () => {
       </header>
 
       <div id="search-section" className="mb-6">
-        <input
-          id="searchInput"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          type="text"
-          placeholder="Search Terms (e.g., 'spam', 'liability')"
-          className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
-        />
+        <form onSubmit={handleSearchSubmit}>
+          <input
+            id="searchInput"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            type="text"
+            placeholder="Search Ads (e.g., 'laptop', 'sofa')"
+            className="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </form>
       </div>
 
       <div className="flex flex-col md:flex-row gap-6">
