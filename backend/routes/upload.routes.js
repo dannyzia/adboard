@@ -70,6 +70,39 @@ router.post('/multiple', protect, upload.array('images', 5), async (req, res) =>
 });
 
 /**
+ * @route   POST /api/upload/images
+ * @desc    Upload multiple images (Flutter client endpoint - accepts 'files' field)
+ * @access  Private
+ */
+router.post('/images', protect, upload.array('files', 10), async (req, res) => {
+  try {
+    if (!req.files || req.files.length === 0) {
+      return res.status(400).json({
+        success: false,
+        message: 'No files uploaded',
+      });
+    }
+
+    const uploadedImages = req.files.map((file) => ({
+      url: file.path,
+      publicId: file.filename,
+    }));
+
+    res.status(201).json({
+      success: true,
+      data: uploadedImages,
+    });
+  } catch (error) {
+    console.error('Upload images error:', error);
+    res.status(500).json({
+      success: false,
+      message: 'Failed to upload images',
+      error: error.message,
+    });
+  }
+});
+
+/**
  * @route   DELETE /api/upload/:publicId
  * @desc    Delete an image from Cloudinary
  * @access  Private
