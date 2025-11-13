@@ -156,6 +156,7 @@ app.use('/api/admin', require('./routes/admin.routes'));
 app.use('/api/upload', require('./routes/upload.routes'));
 app.use('/api/locations', require('./routes/location.routes'));
 app.use('/api/currencies', require('./routes/currency.routes'));
+app.use('/api/v1/ads', require('./routes/import.routes'));
 // Bids / Auctions
 app.use('/api/bids', require('./routes/bid.routes'));
 // Blogs
