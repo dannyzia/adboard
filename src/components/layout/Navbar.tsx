@@ -159,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onFilterChange, transparent = fa
             onClick={() => navigate('/')}
           >
             <img
-              src="/adboard resources/Image/logo_bg_removed.webp"
+              src="/logo_bg_removed.webp"
               alt="ListyNest Logo"
               className="h-16 w-auto"
             />
