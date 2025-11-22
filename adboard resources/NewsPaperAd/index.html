@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prothom Alo Digital Ad Placement Manager - Comprehensive advertising solutions for Bangladesh's leading news platform">
+    <title>Prothom Alo Ad Placement Manager - Digital Media Kit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🌟 Prothom Alo Ad Placement Manager</h1>
+        <p>Complete Digital Advertising Solutions for Bangladesh's #1 News Platform</p>
+        <div style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.9;">
+            12.5M+ Monthly Users | 260M+ Page Views | 800M+ Ad Impressions
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="category-nav" role="navigation" aria-label="Ad category navigation">
+            <button class="nav-btn active" data-category="all" aria-pressed="true">
+                📊 All Ads
+            </button>
+            <button class="nav-btn" data-category="home" aria-pressed="false">
+                🏠 Home Page
+            </button>
+            <button class="nav-btn" data-category="article" aria-pressed="false">
+                📰 Article Page
+            </button>
+            <button class="nav-btn" data-category="rich-media" aria-pressed="false">
+                🎨 Rich Media
+            </button>
+            <button class="nav-btn" data-category="facebook" aria-pressed="false">
+                📘 Facebook
+            </button>
+            <button class="nav-btn" data-category="content" aria-pressed="false">
+                📝 Content Marketing
+            </button>
+        </nav>
+
+        <!-- Ad Grid -->
+        <div class="ad-grid" id="adGrid" role="main" aria-label="Ad placement listings">
+            <!-- Ads will be dynamically loaded here -->
+            <div class="loading">Loading ad placements</div>
+        </div>
+    </div>
+
+    <!-- Image Upload Modal -->
+    <div id="uploadModal" class="modal" role="dialog" aria-labelledby="modalTitle" aria-modal="true">
+        <div class="modal-content">
+            <span class="close" aria-label="Close modal">&times;</span>
+            <h3 id="modalTitle">📤 Upload Ad Creative</h3>
+            <div id="modalAdInfo" aria-live="polite"></div>
+            <form id="uploadForm" enctype="multipart/form-data">
+                <label for="adImage" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #2c3e50;">
+                    Select Creative Files:
+                </label>
+                <input 
+                    type="file" 
+                    id="adImage" 
+                    name="adImage"
+                    accept="image/*,.mp4,.html,.zip" 
+                    multiple
+                    aria-describedby="fileRequirements"
+                >
+                <div class="file-requirements" id="fileRequirements" role="status">
+                    <!-- File requirements will be populated by JavaScript -->
+                </div>
+                <div id="uploadPreview" aria-live="polite" aria-label="File preview area"></div>
+                <button type="submit" class="upload-btn">
+                    ✅ Upload Creative
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer Information -->
+    <footer style="background: white; margin-top: 3rem; padding: 2rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);">
+        <div style="max-width: 1400px; margin: 0 auto; text-align: center;">
+            <h3 style="color: #c62828; margin-bottom: 1rem;">📞 Contact Prothom Alo Digital</h3>
+            <p style="margin-bottom: 1rem; color: #555;">
+                <strong>Address:</strong> Pragati Insurance Bhaban (1st floor), 20-21, Karwan Bazar, Dhaka-1215, Bangladesh
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 1.5rem;">
+                <div style="flex: 1; min-width: 250px; text-align: left;">
+                    <h4 style="color: #c62828; margin-bottom: 0.5rem;">Direct Sales</h4>
+                    <p style="font-size: 0.9rem; color: #555; line-height: 1.8;">
+                        📧 <a href="mailto:adsales@prothomalo.com" style="color: #3498db; text-decoration: none;">adsales@prothomalo.com</a>
+                    </p>
+                </div>
+                <div style="flex: 1; min-width: 250px; text-align: left;">
+                    <h4 style="color: #c62828; margin-bottom: 0.5rem;">Programmatic Sales</h4>
+                    <p style="font-size: 0.9rem; color: #555; line-height: 1.8;">
+                        📧 <a href="mailto:adops@prothomalo.com" style="color: #3498db; text-decoration: none;">adops@prothomalo.com</a>
+                    </p>
+                </div>
+            </div>
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 2px solid #f0f0f0;">
+                <p style="color: #7f8c8d; font-size: 0.9rem;">
+                    <strong>⚠️ Ad Guidelines:</strong> Prothomalo.com does not allow ads containing alcohol, tobacco, drugs, sexually provocative material, 
+                    arms, violence, gambling promotions, abusive language, or offensive content.
+                </p>
+            </div>
+            <div style="margin-top: 1.5rem; color: #999; font-size: 0.85rem;">
+                © 2024 Prothom Alo Digital. All rights reserved. | Digital Media Kit v2.0 (August 2023)
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

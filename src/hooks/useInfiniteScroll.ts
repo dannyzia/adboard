@@ -45,24 +45,9 @@ export const useInfiniteScroll = ({
     };
 
     window.addEventListener('scroll', handleScroll);
-    
-    // Check if we need to load more content initially (page not full)
-    const checkInitialLoad = () => {
-      if (loading || !hasMore) return;
-      
-      const hasVerticalScrollbar = document.body.offsetHeight > window.innerHeight;
-      if (!hasVerticalScrollbar) {
-        // Page doesn't have enough content to scroll, load more
-        onLoadMore();
-      }
-    };
-
-    // Check after a short delay to ensure content is rendered
-    const timeoutId = setTimeout(checkInitialLoad, 100);
 
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      clearTimeout(timeoutId);
     };
   }, [loading, hasMore, onLoadMore, threshold]);
 

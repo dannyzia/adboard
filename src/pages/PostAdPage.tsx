@@ -60,6 +60,7 @@ export const PostAdPage: React.FC = () => {
     const [submitting, setSubmitting] = useState(false);
     const [editingAdId, setEditingAdId] = useState<string | null>(null);
     const [originalStatus, setOriginalStatus] = useState<string | null>(null);
+    const [linkErrors, setLinkErrors] = useState<{ link1?: string; link2?: string }>({});
 
     useEffect(() => {
         fetch('/api/currencies')
@@ -157,9 +158,89 @@ export const PostAdPage: React.FC = () => {
     // Helper: whether the selected category already declares a currency field (after ordering adjustments)
     const hasCurrencyField = orderedDynamicFields.some((f: any) => f.name === 'currency');
 
+    // Validate and auto-correct URL format
+    const validateAndCorrectUrl = (url: string): { isValid: boolean; correctedUrl: string; error?: string } => {
+        if (!url || url.trim() === '') {
+            return { isValid: true, correctedUrl: '' };
+        }
+
+        let corrected = url.trim();
+
+        // Auto-add https:// if missing protocol
+        if (!corrected.match(/^https?:\/\//i)) {
+            // Check if it starts with www. or looks like a domain
+            if (corrected.match(/^(www\.|[a-zA-Z0-9-]+\.[a-zA-Z]{2,})/)) {
+                corrected = 'https://' + corrected;
+            } else {
+                return { 
+                    isValid: false, 
+                    correctedUrl: corrected,
+                    error: 'Invalid URL format. Please enter a valid website URL (e.g., www.example.com or https://example.com)'
+                };
+            }
+        }
+
+        // Basic URL validation
+        try {
+            const urlObj = new URL(corrected);
+            if (!urlObj.protocol.match(/^https?:$/)) {
+                return { 
+                    isValid: false, 
+                    correctedUrl: corrected,
+                    error: 'URL must use http:// or https:// protocol'
+                };
+            }
+            return { isValid: true, correctedUrl: corrected };
+        } catch (e) {
+            return { 
+                isValid: false, 
+                correctedUrl: corrected,
+                error: 'Invalid URL format. Please enter a valid website URL (e.g., www.example.com or https://example.com)'
+            };
+        }
+    };
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (submitting) return;
+
+        // Validate and auto-correct external links
+        const errors: { link1?: string; link2?: string } = {};
+        let correctedLinks = { ...formData.links };
+        
+        if (formData.links.link1) {
+            const validation1 = validateAndCorrectUrl(formData.links.link1);
+            if (!validation1.isValid) {
+                errors.link1 = validation1.error;
+            } else {
+                correctedLinks.link1 = validation1.correctedUrl;
+            }
+        }
+        
+        if (formData.links.link2) {
+            const validation2 = validateAndCorrectUrl(formData.links.link2);
+            if (!validation2.isValid) {
+                errors.link2 = validation2.error;
+            } else {
+                correctedLinks.link2 = validation2.correctedUrl;
+            }
+        }
+
+        if (Object.keys(errors).length > 0) {
+            setLinkErrors(errors);
+            // Scroll to the links section
+            const linksSection = document.querySelector('[data-section="external-links"]');
+            if (linksSection) {
+                linksSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+        }
+
+        // Update formData with corrected links
+        if (correctedLinks.link1 !== formData.links.link1 || correctedLinks.link2 !== formData.links.link2) {
+            setFormData(prev => ({ ...prev, links: correctedLinks }));
+        }
+        setLinkErrors({});
 
         // Client-side validation for auctions
         if (formData.category === 'Auction') {
@@ -336,7 +417,7 @@ export const PostAdPage: React.FC = () => {
                             required
                         >
                             <option value="">Select category</option>
-                            {formConfig && formConfig.categories && formConfig.categories.map((cat: string) => (
+                            {formConfig && formConfig.categories && [...formConfig.categories].sort((a: string, b: string) => a.localeCompare(b)).map((cat: string) => (
                                 <option key={cat} value={cat}>{cat}</option>
                             ))}
                         </select>
@@ -405,7 +486,7 @@ export const PostAdPage: React.FC = () => {
                     </div>
 
                     {/* External Links (Optional) */}
-                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4">
+                    <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-4" data-section="external-links">
                         <div className="font-semibold text-gray-700 mb-1">External Links (Optional)</div>
                         <div className="text-sm text-gray-600 mb-3">Add external links related to your ad (websites, social media, product pages, etc.). You can enter URLs with or without https:// - we'll handle it automatically.</div>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -413,8 +494,12 @@ export const PostAdPage: React.FC = () => {
                                 <div key={i}>
                                     <label className="block mb-1 font-medium text-gray-600">Link {i}</label>
                                     <input
-                                        type="url"
-                                        className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
+                                        type="text"
+                                        className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 ${
+                                            linkErrors[`link${i}` as 'link1' | 'link2'] 
+                                                ? 'border-red-500 focus:ring-red-400' 
+                                                : 'border-gray-300 focus:ring-blue-400'
+                                        }`}
                                         placeholder={`www.example.com or https://example.com`}
                                         value={formData.links && (formData.links as any)[`link${i}`] ? (formData.links as any)[`link${i}`] : ''}
                                         onChange={e => {
@@ -422,8 +507,33 @@ export const PostAdPage: React.FC = () => {
                                                 ...formData,
                                                 links: { ...formData.links, [`link${i}`]: e.target.value },
                                             });
+                                            // Clear error when user starts typing
+                                            if (linkErrors[`link${i}` as 'link1' | 'link2']) {
+                                                setLinkErrors(prev => ({ ...prev, [`link${i}`]: undefined }));
+                                            }
+                                        }}
+                                        onBlur={e => {
+                                            // Auto-correct on blur
+                                            const value = e.target.value;
+                                            if (value) {
+                                                const validation = validateAndCorrectUrl(value);
+                                                if (validation.isValid && validation.correctedUrl !== value) {
+                                                    setFormData({
+                                                        ...formData,
+                                                        links: { ...formData.links, [`link${i}`]: validation.correctedUrl },
+                                                    });
+                                                }
+                                            }
                                         }}
                                     />
+                                    {linkErrors[`link${i}` as 'link1' | 'link2'] && (
+                                        <p className="text-red-600 text-sm mt-1 flex items-center">
+                                            <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                                            </svg>
+                                            {linkErrors[`link${i}` as 'link1' | 'link2']}
+                                        </p>
+                                    )}
                                 </div>
                             ))}
                         </div>
@@ -443,7 +553,7 @@ export const PostAdPage: React.FC = () => {
                                 required
                             >
                                 <option value="">Select country</option>
-                                {countries.map((country) => (
+                                {[...countries].sort((a, b) => a.localeCompare(b)).map((country) => (
                                     <option key={country} value={country}>{country}</option>
                                 ))}
                             </select>
@@ -460,7 +570,7 @@ export const PostAdPage: React.FC = () => {
                                 required
                             >
                                 <option value="">Select state</option>
-                                {states.map((state) => (
+                                {[...states].sort((a, b) => a.localeCompare(b)).map((state) => (
                                     <option key={state} value={state}>{state}</option>
                                 ))}
                             </select>
@@ -477,7 +587,7 @@ export const PostAdPage: React.FC = () => {
                                 required
                             >
                                 <option value="">Select city</option>
-                                {cities.map((city) => (
+                                {[...cities].sort((a, b) => a.localeCompare(b)).map((city) => (
                                     <option key={city} value={city}>{city}</option>
                                 ))}
                             </select>

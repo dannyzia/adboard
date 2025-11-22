@@ -14,7 +14,7 @@ router.get('/', async (req, res) => {
   try {
     const {
       page = 1,
-      limit = 48,
+      limit = 12,
       category,
       country,
       state,
@@ -25,6 +25,8 @@ router.get('/', async (req, res) => {
       sort = '-createdAt',
       status: statusFilter
     } = req.query;
+    
+    console.log('Fetching ads - page:', page, 'limit:', limit); // Debug log
     
     // Build filter query
     const filter = {};
@@ -253,6 +255,7 @@ router.post('/', protect, checkAdLimit, [
       contactEmail: contactEmail || req.user.email,
       contactPhone: contactPhone || req.user.phone,
       links: links || {},
+      details: req.body.details || {}, // Add category-specific details
       user: req.user._id,
       isFeatured: plan.features.isFeatured,
       expiresAt

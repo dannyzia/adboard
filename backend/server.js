@@ -161,6 +161,8 @@ app.use('/api/v1/ads', require('./routes/import.routes'));
 app.use('/api/bids', require('./routes/bid.routes'));
 // Blogs
 app.use('/api/blogs', require('./routes/blog.routes'));
+// Blog Automation
+app.use('/api/automation', require('./routes/automation.routes'));
 
 // NOTE: auction sweep job is started after DB connection in startServer()
 
@@ -240,6 +242,15 @@ const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   // Connect to Database
   await connectDB();
+  
+  // Initialize Blog Automation (cron jobs)
+  try {
+    const blogAutomation = require('./services/blogAutomation.service');
+    blogAutomation.initializeCronJobs();
+    console.log('🤖 Blog automation service initialized');
+  } catch (err) {
+    console.warn('⚠️  Blog automation not started:', err.message || err);
+  }
   
   // Start Express Server
   app.listen(PORT, () => {

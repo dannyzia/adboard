@@ -53,6 +53,8 @@ export interface Ad {
   deletionReason?: string;
   legalHold?: boolean;
   retentionUntil?: string;
+  // Category-specific details (from dynamic form fields)
+  details?: Record<string, any>;
   // Auction details (optional, present when category === 'Auction')
   auctionDetails?: {
     auctionEnd?: string;

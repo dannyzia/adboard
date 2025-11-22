@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { Navbar } from '../components/layout/Navbar';
 import { HeroSection } from '../components/HeroSection';
 import BlogLandingSection from '../components/BlogLandingSection';
@@ -8,6 +9,7 @@ import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
 // Ad type not required here directly
 
 export const HomePage: React.FC = () => {
+  const location = useLocation();
   const { ads, loading, hasMore, totalAds, fetchAds, loadMore, reset } = useAds();
   const [sortBy, setSortBy] = React.useState<string>('newest');
   const [viewMode, setViewMode] = React.useState<'grid' | 'list'>('grid');
@@ -17,6 +19,18 @@ export const HomePage: React.FC = () => {
     // reset and load first page
     reset();
     fetchAds(undefined, true);
+    // If there's a search query param, apply it
+    const params = new URLSearchParams(location.search);
+    const q = params.get('search');
+    if (q) {
+      reset();
+      fetchAds({ search: q }, true);
+      // scroll to ads section after a tick
+      setTimeout(() => {
+        const el = document.getElementById('browse-ads');
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 200);
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -31,6 +45,10 @@ export const HomePage: React.FC = () => {
   const handleHeroSearch = React.useCallback((query: string) => {
     reset();
     fetchAds({ search: query }, true);
+    setTimeout(() => {
+      const el = document.getElementById('browse-ads');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -38,6 +56,10 @@ export const HomePage: React.FC = () => {
   const handleCategorySelect = React.useCallback((category: string) => {
     reset();
     fetchAds({ category }, true);
+    setTimeout(() => {
+      const el = document.getElementById('browse-ads');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -50,7 +72,7 @@ export const HomePage: React.FC = () => {
   // Sort ads
   const sortedAds = React.useMemo(() => {
     const sorted = [...ads];
-    switch(sortBy) {
+    switch (sortBy) {
       case 'price-low':
         return sorted.sort((a, b) => (a.price || 0) - (b.price || 0));
       case 'price-high':
@@ -64,12 +86,12 @@ export const HomePage: React.FC = () => {
 
   return (
     <>
-      <Navbar onFilterChange={handleFilterChange} />
+      <Navbar onFilterChange={handleFilterChange} transparent={true} />
       <HeroSection onSearch={handleHeroSearch} onCategorySelect={handleCategorySelect} />
       <BlogLandingSection />
 
       {/* Ads Section */}
-      <div className="bg-gray-50 min-h-screen py-12">
+      <div id="browse-ads" className="bg-gray-50 min-h-screen py-12">
         <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header with Controls */}
           <div className="mb-8">
@@ -146,20 +168,23 @@ export const HomePage: React.FC = () => {
               2xl:grid-cols-8
               gap-6
             ` : 'flex flex-col gap-4'}>
-                  {sortedAds.map((ad, idx) => {
-                    const isLast = idx === sortedAds.length - 1;
-                    return (
-                      <div key={ad._id} ref={isLast ? lastElementRef : undefined}>
-                        <AdCard ad={ad} onClick={(slugOrId: string) => { window.location.href = `/ad/${slugOrId}`; }} />
-                      </div>
-                    );
-                  })}
+              {sortedAds.map((ad, idx) => {
+                const isLast = idx === sortedAds.length - 1;
+                return (
+                  <div key={ad._id} ref={isLast ? lastElementRef : undefined}>
+                    <AdCard ad={ad} onClick={(slugOrId: string) => { window.location.href = `/ad/${slugOrId}`; }} />
+                  </div>
+                );
+              })}
             </div>
           )}
 
           {/* Load More Button - backup for infinite scroll */}
           {!loading && hasMore && (
             <div className="mt-12 text-center">
+              <p className="text-gray-600 mb-4 text-lg font-medium">
+                ⬇️ Scroll to load more ads
+              </p>
               <button
                 onClick={() => loadMore()}
                 className="px-8 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-white font-bold rounded-lg transition shadow-md hover:shadow-lg transform hover:scale-105"

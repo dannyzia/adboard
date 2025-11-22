@@ -32,6 +32,7 @@ class EditorErrorBoundary extends React.Component<{
 import { uploadService } from '../services/upload.service';
 import { AdminLayout } from '../components/layout/AdminLayout';
 import { blogService } from '../services/blog.service';
+import { blogAutomationService, Topic, AutomationStatus } from '../services/blogAutomation.service';
 import { useNavigate } from 'react-router-dom';
 import { useToast } from '../components/ui/ToastContext';
 
@@ -41,6 +42,14 @@ export const AdminBlogsPage: React.FC = () => {
   const [showForm, setShowForm] = useState(false);
   const toast = useToast();
   const [isClient, setIsClient] = useState(false);
+  
+  // Automation state
+  const [activeTab, setActiveTab] = useState<'blogs' | 'automation'>('blogs');
+  const [automationStatus, setAutomationStatus] = useState<AutomationStatus | null>(null);
+  const [topics, setTopics] = useState<Topic[]>([]);
+  const [newTopics, setNewTopics] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('Tips');
+  const [loadingAutomation, setLoadingAutomation] = useState(false);
 
   const [formData, setFormData] = useState<any>({
     _id: undefined,
@@ -114,7 +123,11 @@ export const AdminBlogsPage: React.FC = () => {
     loadBlogs();
     // mark client so we only render ReactQuill on the client
     setIsClient(true);
-  }, []);
+    // Load automation data if on automation tab
+    if (activeTab === 'automation') {
+      loadAutomationData();
+    }
+  }, [activeTab]);
 
   const loadBlogs = async () => {
     try {
@@ -134,6 +147,87 @@ export const AdminBlogsPage: React.FC = () => {
       } catch (e) {
         // swallow
       }
+    }
+  };
+
+  const loadAutomationData = async () => {
+    try {
+      const [status, topicsList] = await Promise.all([
+        blogAutomationService.getStatus(),
+        blogAutomationService.getTopics()
+      ]);
+      setAutomationStatus(status);
+      setTopics(topicsList);
+    } catch (error: any) {
+      console.error('Failed to load automation data:', error);
+      // Don't show error toast on initial load, just log it
+      // User might not have any topics yet
+      if (error?.response?.status !== 401 && error?.response?.status !== 403) {
+        console.warn('Automation data load warning:', error?.response?.data?.message || error.message);
+      }
+    }
+  };
+
+  const handleLoadTopics = async () => {
+    if (!newTopics.trim()) {
+      toast.showToast('Please enter at least one topic', 'error');
+      return;
+    }
+
+    const topicsList = newTopics
+      .split('\n')
+      .map(t => t.trim())
+      .filter(t => t.length > 0);
+
+    if (topicsList.length === 0) {
+      toast.showToast('Please enter valid topics', 'error');
+      return;
+    }
+
+    setLoadingAutomation(true);
+    try {
+      const result = await blogAutomationService.loadTopics(topicsList, selectedCategory);
+      toast.showToast(`Loaded ${result.count} topics successfully!`, 'success');
+      setNewTopics('');
+      loadAutomationData();
+    } catch (error: any) {
+      const msg = error?.response?.data?.message || 'Failed to load topics';
+      toast.showToast(msg, 'error');
+    } finally {
+      setLoadingAutomation(false);
+    }
+  };
+
+  const handleGenerateNow = async () => {
+    setLoadingAutomation(true);
+    try {
+      const result = await blogAutomationService.generateNow();
+      toast.showToast('Blog generated successfully!', 'success');
+      loadAutomationData();
+      loadBlogs();
+    } catch (error: any) {
+      const msg = error?.response?.data?.message || 'Failed to generate blog';
+      toast.showToast(msg, 'error');
+    } finally {
+      setLoadingAutomation(false);
+    }
+  };
+
+  const handleClearTopics = async () => {
+    if (!confirm('Are you sure you want to clear all topics? This cannot be undone.')) {
+      return;
+    }
+
+    setLoadingAutomation(true);
+    try {
+      const result = await blogAutomationService.clearTopics();
+      toast.showToast(`Cleared ${result.deletedCount} topics`, 'success');
+      loadAutomationData();
+    } catch (error: any) {
+      const msg = error?.response?.data?.message || 'Failed to clear topics';
+      toast.showToast(msg, 'error');
+    } finally {
+      setLoadingAutomation(false);
     }
   };
 
@@ -170,16 +264,47 @@ export const AdminBlogsPage: React.FC = () => {
       <div className="space-y-6">
         <div className="flex items-center justify-between">
           <h1 className="text-3xl font-bold text-gray-800">Manage Blogs</h1>
-          <button
-            onClick={() => setShowForm(!showForm)}
-            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
-          >
-            {showForm ? 'Cancel' : '+ New Blog'}
-          </button>
+          {activeTab === 'blogs' && (
+            <button
+              onClick={() => setShowForm(!showForm)}
+              className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700"
+            >
+              {showForm ? 'Cancel' : '+ New Blog'}
+            </button>
+          )}
         </div>
 
-        {/* Create/Edit Form */}
-        {showForm && (
+        {/* Tabs */}
+        <div className="border-b border-gray-200">
+          <nav className="-mb-px flex space-x-8">
+            <button
+              onClick={() => setActiveTab('blogs')}
+              className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                activeTab === 'blogs'
+                  ? 'border-indigo-500 text-indigo-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              📝 Blog Posts
+            </button>
+            <button
+              onClick={() => setActiveTab('automation')}
+              className={`py-4 px-1 border-b-2 font-medium text-sm ${
+                activeTab === 'automation'
+                  ? 'border-indigo-500 text-indigo-600'
+                  : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+              }`}
+            >
+              🤖 Automation
+            </button>
+          </nav>
+        </div>
+
+        {/* Blog Posts Tab */}
+        {activeTab === 'blogs' && (
+          <>
+            {/* Create/Edit Form */}
+            {showForm && (
           <div className="bg-white rounded-lg shadow p-6">
             <h2 className="text-xl font-bold mb-4">Create New Blog</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
@@ -390,6 +515,190 @@ export const AdminBlogsPage: React.FC = () => {
             </tbody>
           </table>
         </div>
+          </>
+        )}
+
+        {/* Automation Tab */}
+        {activeTab === 'automation' && (
+          <div className="space-y-6">
+            {/* Status Cards */}
+            {automationStatus && (
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div className="bg-white rounded-lg shadow p-6">
+                  <h3 className="text-sm font-medium text-gray-500 mb-2">Topics Queue</h3>
+                  <div className="text-3xl font-bold text-gray-800">{automationStatus.topics.total}</div>
+                  <div className="mt-2 text-sm text-gray-600">
+                    <div>✅ Processed: {automationStatus.topics.processed}</div>
+                    <div>⏳ Remaining: {automationStatus.topics.remaining}</div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-lg shadow p-6">
+                  <h3 className="text-sm font-medium text-gray-500 mb-2">Generated Blogs</h3>
+                  <div className="text-3xl font-bold text-gray-800">{automationStatus.blogs.total}</div>
+                  <div className="mt-2 text-sm text-gray-600">
+                    <div>📰 Published: {automationStatus.blogs.published}</div>
+                    <div>📝 Drafts: {automationStatus.blogs.drafts}</div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-lg shadow p-6">
+                  <h3 className="text-sm font-medium text-gray-500 mb-2">Automation</h3>
+                  <div className="text-lg font-bold text-green-600 mb-2">
+                    {automationStatus.automation.isActive ? '✅ Active' : '❌ Inactive'}
+                  </div>
+                  <div className="mt-2 text-sm text-gray-600">
+                    <div className="font-medium">Schedule:</div>
+                    {automationStatus.automation.schedule.map((time, i) => (
+                      <div key={i}>⏰ {time}</div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* Add Topics Form */}
+            <div className="bg-white rounded-lg shadow p-6">
+              <h2 className="text-xl font-bold mb-4">📝 Add Topics to Queue</h2>
+              <p className="text-sm text-gray-600 mb-4">
+                Enter blog topics below (one per line). The AI will generate a complete blog post for each topic.
+              </p>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">
+                    Topics (one per line)
+                  </label>
+                  <textarea
+                    value={newTopics}
+                    onChange={(e) => setNewTopics(e.target.value)}
+                    className="w-full px-3 py-2 border-2 border-gray-300 rounded-lg font-mono text-sm focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+                    rows={10}
+                    placeholder={`How to Create Effective Online Classified Ads
+Top 10 Tips for Pricing Items Competitively
+The Ultimate Guide to Product Photography
+Building Trust in Online Transactions
+Understanding the Psychology of Online Buyers
+Best Practices for Writing Ad Descriptions
+How to Negotiate Successfully in Online Sales
+The Rise of Local Online Classifieds
+Social Media Strategies for Sellers
+Creating a Winning Sales Strategy`}
+                  />
+                  <p className="text-xs text-gray-500 mt-1">
+                    Enter one topic per line. AI will generate a full blog post for each topic.
+                  </p>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-2">Category</label>
+                  <select
+                    value={selectedCategory}
+                    onChange={(e) => setSelectedCategory(e.target.value)}
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg"
+                  >
+                    <option value="Tips">Tips</option>
+                    <option value="News">News</option>
+                    <option value="Guide">Guide</option>
+                    <option value="Update">Update</option>
+                    <option value="Announcement">Announcement</option>
+                  </select>
+                </div>
+
+                <div className="flex gap-4">
+                  <button
+                    onClick={handleLoadTopics}
+                    disabled={loadingAutomation || !newTopics.trim()}
+                    className="flex-1 py-3 bg-indigo-600 text-white font-bold rounded-lg hover:bg-indigo-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                  >
+                    {loadingAutomation ? 'Loading...' : '📥 Load Topics'}
+                  </button>
+                  <button
+                    onClick={handleGenerateNow}
+                    disabled={loadingAutomation}
+                    className="px-6 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                  >
+                    {loadingAutomation ? '⏳' : '🚀 Generate Now'}
+                  </button>
+                </div>
+
+                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                  <h4 className="font-medium text-blue-900 mb-2">💡 How it works:</h4>
+                  <ul className="text-sm text-blue-800 space-y-1">
+                    <li>• AI generates professional blog posts automatically</li>
+                    <li>• Scheduled: 2 blogs per day (9 AM & 3 PM)</li>
+                    <li>• Each blog is ~600 words with proper HTML formatting</li>
+                    <li>• Images fetched automatically from Pixabay</li>
+                    <li>• Cost: $0/month (100% free AI)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* Topics List */}
+            <div className="bg-white rounded-lg shadow overflow-hidden">
+              <div className="p-6 border-b border-gray-200 flex items-center justify-between">
+                <h2 className="text-xl font-bold text-gray-800">Topics Queue</h2>
+                {topics.length > 0 && (
+                  <button
+                    onClick={handleClearTopics}
+                    className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm"
+                  >
+                    🗑️ Clear All
+                  </button>
+                )}
+              </div>
+              {topics.length === 0 ? (
+                <div className="p-8 text-center text-gray-500">
+                  No topics in queue. Add some topics above to get started!
+                </div>
+              ) : (
+                <table className="w-full">
+                  <thead className="bg-gray-50 border-b">
+                    <tr>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Topic</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Category</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Status</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Created</th>
+                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Blog</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y">
+                    {topics.map((topic) => (
+                      <tr key={topic._id} className={topic.processed ? 'bg-gray-50' : ''}>
+                        <td className="px-4 py-3 text-sm font-medium text-gray-800">{topic.topic}</td>
+                        <td className="px-4 py-3 text-sm text-gray-600">{topic.category}</td>
+                        <td className="px-4 py-3">
+                          <span className={`px-2 py-1 text-xs rounded-full ${
+                            topic.processed
+                              ? 'bg-green-100 text-green-800'
+                              : 'bg-yellow-100 text-yellow-800'
+                          }`}>
+                            {topic.processed ? '✅ Processed' : '⏳ Pending'}
+                          </span>
+                        </td>
+                        <td className="px-4 py-3 text-sm text-gray-600">
+                          {new Date(topic.createdAt).toLocaleDateString()}
+                        </td>
+                        <td className="px-4 py-3 text-sm">
+                          {topic.blogId ? (
+                            <button
+                              onClick={() => navigate(`/blog/${topic.blogId.slug}`)}
+                              className="text-blue-600 hover:text-blue-800"
+                            >
+                              View Blog
+                            </button>
+                          ) : (
+                            <span className="text-gray-400">-</span>
+                          )}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          </div>
+        )}
       </div>
     </AdminLayout>
   );

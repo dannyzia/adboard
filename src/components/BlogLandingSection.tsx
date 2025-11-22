@@ -30,13 +30,10 @@ const BlogLandingSection: React.FC = () => {
 					<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 									<div className="flex gap-8 overflow-x-auto py-2">
 										{[0,1,2,3].map((i) => (
-											<div key={i} className="flex-shrink-0 w-72 bg-white rounded-lg shadow p-0">
-												<div className="h-48 bg-gray-200 rounded-t-lg animate-pulse" />
-									<div className="p-4">
-										<div className="h-3 bg-gray-200 rounded w-24 mb-2 animate-pulse" />
-										<div className="h-5 bg-gray-200 rounded w-full mb-2 animate-pulse" />
-										<div className="h-3 bg-gray-200 rounded w-3/4 animate-pulse" />
-									</div>
+											<div key={i} className="flex-shrink-0 w-72 bg-white rounded-lg shadow p-6">
+									<div className="h-3 bg-gray-200 rounded w-24 mb-2 animate-pulse" />
+									<div className="h-5 bg-gray-200 rounded w-full mb-2 animate-pulse" />
+									<div className="h-3 bg-gray-200 rounded w-3/4 animate-pulse" />
 								</div>
 							))}
 						</div>
@@ -101,17 +98,14 @@ const BlogLandingSection: React.FC = () => {
 								>
 									{blogs.map((b) => (
 										<div key={b._id} onClick={() => navigate(`/blog/${b.slug}`)} className="flex-shrink-0 w-80 snap-start bg-white rounded-xl shadow-md hover:shadow-xl cursor-pointer transition-all transform hover:scale-105">
-											<div className="h-48 overflow-hidden rounded-t-xl">
-												{b.image?.url ? <img src={b.image.url} alt={b.title} className="w-full h-full object-cover" /> : <div className="w-full h-full bg-gradient-to-br from-teal-400 to-cyan-400" />}
-											</div>
-								<div className="p-5">
-									<div className="flex items-center gap-2 text-xs text-teal-600 font-semibold mb-2">
+								<div className="p-6">
+									<div className="flex items-center gap-2 text-xs text-teal-600 font-semibold mb-3">
 										<span className="px-2 py-1 bg-teal-50 rounded">{b.category}</span>
 										<span className="text-gray-400">•</span>
 										<span className="text-gray-500">{formatDate(b.publishDate)}</span>
 									</div>
-									<h4 className="font-bold text-lg mb-2 line-clamp-2 text-gray-900">{b.title}</h4>
-									<p className="text-sm text-gray-600 line-clamp-2 mb-3">{b.excerpt}</p>
+									<h4 className="font-bold text-xl mb-3 line-clamp-2 text-gray-900">{b.title}</h4>
+									<p className="text-sm text-gray-600 line-clamp-3 mb-4">{b.excerpt}</p>
 									<div className="flex items-center justify-between text-xs text-gray-500">
 										<span className="flex items-center gap-1">
 											<svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

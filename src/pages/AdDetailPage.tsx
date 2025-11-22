@@ -256,7 +256,7 @@ export const AdDetailPage: React.FC = () => {
 
               {ad.links && (ad.links.link1 || ad.links.link2) && (
                 <div className="mt-6 pt-6 border-t">
-                  <h3 className="text-lg font-semibold text-gray-800 mb-3">Additional Resources</h3>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3">Links or Additional Resources</h3>
                   <div className="space-y-2">
                     {ad.links.link1 && (
                       <a
@@ -287,6 +287,93 @@ export const AdDetailPage: React.FC = () => {
                   </div>
                 </div>
               )}
+
+              {/* Additional Details from Form */}
+              {(() => {
+                // Collect all additional details - both from details object and top-level fields
+                const additionalDetails: Record<string, any> = {};
+                
+                // Add details object fields
+                if ((ad as any).details && typeof (ad as any).details === 'object') {
+                  Object.assign(additionalDetails, (ad as any).details);
+                }
+                
+                // Add common top-level fields that should be displayed
+                const topLevelFields = [
+                  'brandModel', 'condition', 'year', 'warranty', 'specifications',
+                  'color', 'storageCapacity', 'mileage', 'fuelType', 'transmission',
+                  'vin', 'engineSize', 'type', 'length', 'engineType', 'hullMaterial',
+                  'sleepingCapacity', 'amenities', 'propertyType', 'bedrooms', 'bathrooms',
+                  'squareFootage', 'lotSize', 'yearBuilt', 'garage', 'rentFrequency',
+                  'utilitiesIncluded', 'furnished', 'zoningType', 'leaseTerms',
+                  'checkInOutDates', 'maxGuests', 'jobType', 'salaryRange',
+                  'experienceRequired', 'remoteOnsite', 'applicationDeadline',
+                  'compensationType', 'serviceType', 'availability', 'experienceLevel',
+                  'certifications', 'size', 'material', 'gender', 'dimensions',
+                  'sportType', 'author', 'genre', 'isbn', 'edition', 'format',
+                  'petType', 'breed', 'age', 'vaccinated', 'cuisineType',
+                  'dietaryOptions', 'ingredients', 'expirationDate', 'venue',
+                  'duration', 'inclusions', 'discountPercentage', 'validityPeriod',
+                  'eventDate', 'ticketType', 'quantityAvailable', 'organizer',
+                  'capacity', 'deliveryOptions', 'paymentMethods', 'noticeType',
+                  'effectiveDate', 'contactPerson', 'safetyCertifications',
+                  'medium', 'instrumentType', 'accessoriesIncluded', 'quantity',
+                  'digitalFormat', 'fileSize', 'compatibility', 'licenseType',
+                  'version', 'lessonType', 'subject', 'level', 'mode',
+                  'repairType', 'pickupLocation', 'toolsRequired', 'reasonForGivingAway',
+                  'priceType'
+                ];
+                
+                topLevelFields.forEach(field => {
+                  if ((ad as any)[field] !== undefined && (ad as any)[field] !== null && (ad as any)[field] !== '') {
+                    additionalDetails[field] = (ad as any)[field];
+                  }
+                });
+                
+                const detailsCount = Object.keys(additionalDetails).length;
+                
+                return detailsCount > 0 ? (
+                  <div className="mt-6 pt-6 border-t">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-4">Additional Details</h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {Object.entries(additionalDetails)
+                        .filter(([key, value]) => value !== undefined && value !== null && value !== '')
+                        .map(([key, value]) => {
+                          // Format the key (convert camelCase to Title Case)
+                          const formattedKey = key
+                            .replace(/([A-Z])/g, ' $1')
+                            .replace(/^./, (str) => str.toUpperCase())
+                            .trim();
+                          
+                          // Format the value
+                          let formattedValue = String(value);
+                          
+                          // Handle special cases
+                          if (key === 'auctionEnd' && typeof value === 'string') {
+                            formattedValue = formatDateTime(value);
+                          } else if (key.toLowerCase().includes('date') && typeof value === 'string') {
+                            try {
+                              formattedValue = formatDate(value);
+                            } catch (e) {
+                              formattedValue = String(value);
+                            }
+                          } else if (typeof value === 'boolean') {
+                            formattedValue = value ? 'Yes' : 'No';
+                          } else if (Array.isArray(value)) {
+                            formattedValue = value.join(', ');
+                          }
+
+                          return (
+                            <div key={key} className="bg-gray-50 p-3 rounded-lg">
+                              <div className="text-sm text-gray-600 mb-1">{formattedKey}</div>
+                              <div className="font-semibold text-gray-800">{formattedValue}</div>
+                            </div>
+                          );
+                        })}
+                    </div>
+                  </div>
+                ) : null;
+              })()}
             </div>
 
             {/* Safety Tips */}

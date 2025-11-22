@@ -210,7 +210,7 @@ export const CURRENCIES = [
   { code: 'LKR', symbol: 'Rs', name: 'Sri Lankan Rupee' },
 ];
 
-export const ADS_PER_PAGE = 48;
+export const ADS_PER_PAGE = 12;
 
 export const MAX_IMAGES = 5;
 export const MAX_IMAGE_SIZE = 5 * 1024 * 1024; // 5MB

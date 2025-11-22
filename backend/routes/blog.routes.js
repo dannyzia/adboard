@@ -2,6 +2,8 @@ const express = require('express');
 const router = express.Router();
 const Blog = require('../models/Blog.model');
 const { protect, admin } = require('../middleware/auth.middleware');
+const { validateApiKey } = require('../middleware/apiKey.middleware');
+const User = require('../models/User.model');
 
 // @route   GET /api/blogs/featured
 // @desc    Get 4 featured blogs (previous, current, 2 upcoming)
@@ -65,15 +67,143 @@ router.get('/recent', async (req, res) => {
 // routes in declaration order.
 
 // @route   POST /api/blogs
-// @desc    Create blog (Admin only)
-// @access  Private/Admin
-router.post('/', protect, admin, async (req, res) => {
-  try {
-    const blog = await Blog.create({ ...req.body, author: req.user._id });
-    res.status(201).json({ success: true, blog });
-  } catch (error) {
-    console.error('Create blog error:', error);
-    res.status(500).json({ success: false, message: error.message });
+// @desc    Create blog via API (requires API key) or Admin panel (requires auth)
+// @access  Private/Admin OR API Key
+router.post('/', async (req, res, next) => {
+  // Check if request has API key authentication
+  const hasApiKey = req.headers['x-api-key'] || (req.headers.authorization && req.headers.authorization.startsWith('Bearer'));
+  
+  if (hasApiKey) {
+    // Use API key authentication for external integrations (e.g., n8n)
+    return validateApiKey(req, res, async () => {
+      try {
+        // Validate required fields
+        const { title, content } = req.body;
+        
+        if (!title) {
+          return res.status(400).json({
+            error: 'Title is required',
+            details: "The 'title' field was not provided in the request body."
+          });
+        }
+        
+        if (!content) {
+          return res.status(400).json({
+            error: 'Content is required',
+            details: "The 'content' field was not provided in the request body."
+          });
+        }
+
+        // Get or create default author for API-created posts
+        const authorId = process.env.BLOG_API_AUTHOR_ID;
+        if (!authorId) {
+          return res.status(500).json({
+            error: 'Server configuration error',
+            details: 'BLOG_API_AUTHOR_ID environment variable is not configured'
+          });
+        }
+
+        const author = await User.findById(authorId);
+        if (!author) {
+          return res.status(500).json({
+            error: 'Author not found',
+            details: 'The configured API author user does not exist'
+          });
+        }
+
+        // Prepare blog data
+        const blogData = {
+          title: req.body.title,
+          content: req.body.content,
+          author: author._id,
+          status: req.body.status || 'draft', // Default to draft for safety
+          category: req.body.category || 'Tips',
+          publishDate: req.body.status === 'published' ? new Date() : req.body.publishDate || new Date(),
+        };
+
+        // Generate excerpt if not provided (first 300 chars of content, stripped of HTML)
+        if (req.body.excerpt) {
+          blogData.excerpt = req.body.excerpt;
+        } else {
+          const strippedContent = req.body.content.replace(/<[^>]*>/g, '');
+          blogData.excerpt = strippedContent.substring(0, 297) + (strippedContent.length > 297 ? '...' : '');
+        }
+
+        // Handle custom slug or auto-generate
+        if (req.body.slug) {
+          // Check if slug already exists
+          const existingBlog = await Blog.findOne({ slug: req.body.slug });
+          if (existingBlog) {
+            return res.status(400).json({
+              error: 'Slug already exists',
+              details: `A blog post with the slug '${req.body.slug}' already exists. Please use a different slug.`
+            });
+          }
+          blogData.slug = req.body.slug;
+        } else {
+          // Auto-generate slug from title
+          blogData.slug = req.body.title
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/(^-|-$)/g, '') + '-' + Date.now();
+        }
+
+        // Handle tags if provided (stored in content metadata for now)
+        // Note: If you want to add tags field to schema, update Blog.model.js
+
+        // Create the blog post
+        const blog = await Blog.create(blogData);
+
+        // Populate author details for response
+        await blog.populate('author', 'name avatar');
+
+        // Build permalink
+        const baseUrl = process.env.FRONTEND_URL || 'https://www.listynest.com';
+        const permalink = `${baseUrl}/blog/${blog.slug}`;
+
+        return res.status(201).json({
+          message: 'Blog post created successfully',
+          id: blog._id,
+          permalink,
+          blog: {
+            id: blog._id,
+            title: blog.title,
+            slug: blog.slug,
+            status: blog.status,
+            category: blog.category,
+            publishDate: blog.publishDate,
+            createdAt: blog.createdAt
+          }
+        });
+      } catch (error) {
+        console.error('Create blog via API error:', error);
+        
+        if (error.name === 'ValidationError') {
+          return res.status(400).json({
+            error: 'Validation error',
+            details: error.message
+          });
+        }
+        
+        return res.status(500).json({
+          error: 'Internal server error',
+          details: 'An error occurred while creating the blog post'
+        });
+      }
+    });
+  } else {
+    // Use standard admin authentication for dashboard
+    return protect(req, res, () => {
+      return admin(req, res, async () => {
+        try {
+          const blog = await Blog.create({ ...req.body, author: req.user._id });
+          res.status(201).json({ success: true, blog });
+        } catch (error) {
+          console.error('Create blog error:', error);
+          res.status(500).json({ success: false, message: error.message });
+        }
+      });
+    });
   }
 });
 

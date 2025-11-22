@@ -2,8 +2,10 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import { AdProvider } from './context/AdContext';
 import { AdminAuthProvider } from './context/AdminAuthContext';
+import { HomepageProvider } from './context/HomepageContext';
 import { ToastProvider } from './components/ui/ToastContext';
-import { HomePage } from './pages/HomePage';
+import { HomePageWrapper } from './pages/HomePageWrapper';
+import { HomepageToggle } from './components/HomepageToggle';
 import { AdDetailPage } from './pages/AdDetailPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import { LoginPage } from './pages/LoginPage';
@@ -30,11 +32,13 @@ function App() {
     <AuthProvider>
       <AdProvider>
         <AdminAuthProvider>
-          <ToastProvider>
-            <BrowserRouter>
-              <Routes>
-              {/* Public Routes */}
-              <Route path="/" element={<HomePage />} />
+          <HomepageProvider>
+            <ToastProvider>
+              <BrowserRouter>
+                <HomepageToggle />
+                <Routes>
+                {/* Public Routes */}
+                <Route path="/" element={<HomePageWrapper />} />
               <Route path="/ad/:slug" element={<AdDetailPage />} />
               <Route path="/blog/:slug" element={<BlogDetailPage />} />
               <Route path="/login" element={<LoginPage />} />
@@ -123,9 +127,10 @@ function App() {
                   </ProtectedAdminRoute>
                 }
               />
-              </Routes>
-            </BrowserRouter>
-          </ToastProvider>
+                </Routes>
+              </BrowserRouter>
+            </ToastProvider>
+          </HomepageProvider>
         </AdminAuthProvider>
       </AdProvider>
     </AuthProvider>
