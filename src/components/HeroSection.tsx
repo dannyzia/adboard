@@ -80,9 +80,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
   }, [categories]);
 
   return (
-    <div ref={heroRef} className="relative text-white overflow-hidden h-screen md:min-h-screen">
+    <div ref={heroRef} className="relative text-white overflow-hidden h-[50vh] md:h-[60vh]">
       {/* Enhanced Categories popping up randomly across the entire hero section */}
-      <div className="absolute inset-0 z-30 pointer-events-none">
+      {/* COMMENTED OUT - Category Popups */}
+      {/* <div className="absolute inset-0 z-30 pointer-events-none">
         {visibleCategories.map((item) => (
             <button
               key={item.id}
@@ -103,11 +104,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
               </span>
             </button>
           ))}
-      </div>
+      </div> */
 
       {/* Responsive Background Images */}
-      <div className="absolute inset-0 z-0">
-        {/* Mobile: 9x16 (portrait) - shown only on mobile */}
+      {/* COMMENTED OUT - Background Images */}
+      {/* <div className="absolute inset-0 z-0">
         <img
           src="/9x16.webp"
           alt="Background"
@@ -117,7 +118,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
             objectFit: 'cover'
           }}
         />
-        {/* Tablet/Desktop: 16x9 (standard widescreen) - shown from md to 2xl */}
         <img
           src="/16x9.webp"
           alt="Background"
@@ -126,7 +126,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
             objectPosition: 'center center'
           }}
         />
-        {/* Ultrawide: 21x9 - shown on 2xl screens and larger (1536px+) */}
         <img
           src="/hero-21x9.png"
           alt="Background"
@@ -135,23 +134,26 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
             objectPosition: 'center center'
           }}
         />
-      </div>
+      </div> */}
+      
+      {/* Solid background color instead of images */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-700"></div>
 
       {/* Enhanced Decorative shapes */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse z-10"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl animate-pulse z-10" style={{ animationDelay: '2s' }}></div>
       <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-white/5 rounded-full blur-2xl animate-pulse z-10" style={{ animationDelay: '1s' }}></div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-16 md:pt-24 lg:pt-40 lg:pb-24 z-20">
-        <div className="text-center mb-12 mt-16 md:mt-0">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pt-16 lg:pt-20 lg:pb-12 z-20">
+        <div className="text-center mb-6 mt-12 md:mt-0">
 
           {/* Enhanced Headline */}
-          <h1 className="text-4xl lg:text-6xl font-bold mb-4 leading-tight text-yellow-400 whitespace-nowrap" style={{
+          <h1 className="text-3xl lg:text-5xl font-bold mb-3 leading-tight text-yellow-400 whitespace-nowrap" style={{
             textShadow: '0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15)'
           }}>
             Give your ads a permanent Nest
           </h1>
-          <h1 className="text-3xl lg:text-5xl font-bold text-yellow-400 max-w-6xl mx-auto mb-8 leading-relaxed" style={{
+          <h1 className="text-2xl lg:text-4xl font-bold text-yellow-400 max-w-6xl mx-auto mb-4 leading-relaxed" style={{
             textShadow: '0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15)'
           }}>
             Easy to{' '}
