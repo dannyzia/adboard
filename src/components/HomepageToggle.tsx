@@ -16,5 +16,9 @@ export const HomepageToggle: React.FC = () => {
     }
   };
 
+  // Suppress unused variable warnings
+  void handleClassicClick;
+  void handleEnhancedClick;
+
   return null;
 };

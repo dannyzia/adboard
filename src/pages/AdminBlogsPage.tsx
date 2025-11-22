@@ -201,7 +201,7 @@ export const AdminBlogsPage: React.FC = () => {
   const handleGenerateNow = async () => {
     setLoadingAutomation(true);
     try {
-      const result = await blogAutomationService.generateNow();
+      await blogAutomationService.generateNow();
       toast.showToast('Blog generated successfully!', 'success');
       loadAutomationData();
       loadBlogs();
@@ -682,7 +682,7 @@ Creating a Winning Sales Strategy`}
                         <td className="px-4 py-3 text-sm">
                           {topic.blogId ? (
                             <button
-                              onClick={() => navigate(`/blog/${topic.blogId.slug}`)}
+                              onClick={() => navigate(`/blog/${topic.blogId!.slug}`)}
                               className="text-blue-600 hover:text-blue-800"
                             >
                               View Blog
