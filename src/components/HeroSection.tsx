@@ -1,24 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useCategories } from '../hooks/useCategories';
 
 interface HeroSectionProps {
   onSearch?: (query: string) => void;
   onCategorySelect?: (category: string) => void;
 }
 
-export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) => {
-  const { categories } = useCategories();
-  const [visibleCategories, setVisibleCategories] = useState<Array<{ id: string; category: any; randomPosition: { top: string; left: string }; color: string }>>([]);
+export const HeroSection: React.FC<HeroSectionProps> = () => {
   const heroRef = useRef<HTMLDivElement>(null);
-  const intervalRef = useRef<number | null>(null);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const words = ['view', 'share', 'search', 'reply', 'revisit'];
 
-  const handleCategoryClick = (categoryValue: string) => {
-    if (onCategorySelect) {
-      onCategorySelect(categoryValue);
-    }
-  };
 
   // Word rotation effect
   useEffect(() => {
@@ -28,41 +19,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
 
     return () => clearInterval(wordInterval);
   }, []);
-
-  useEffect(() => {
-    if (categories.length === 0) return;
-
-    const randomColors = [
-      '#FF6B6B', '#4ECDC4', '#45B7D1', '#FFA07A', '#98D8C8',
-      '#F7DC6F', '#BB8FCE', '#85C1E2', '#F8B195', '#C06C84'
-    ];
-
-    const showNextCategory = () => {
-      const randomTop = Math.random() * 80 + 5;
-      const randomLeft = Math.random() * 80 + 5;
-      const randomCategory = categories[Math.floor(Math.random() * categories.length)];
-      const randomColor = randomColors[Math.floor(Math.random() * randomColors.length)];
-      const popupId = `${Date.now()}-${Math.random()}`;
-
-      setVisibleCategories(prev => [...prev, {
-        id: popupId,
-        category: randomCategory,
-        randomPosition: { top: `${randomTop}%`, left: `${randomLeft}%` },
-        color: randomColor
-      }]);
-
-      setTimeout(() => {
-        setVisibleCategories(prev => prev.filter(item => item.id !== popupId));
-      }, 3000);
-    };
-
-    showNextCategory();
-    intervalRef.current = setInterval(showNextCategory, 1000);
-
-    return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
-    };
-  }, [categories]);
 
   return (
     <div ref={heroRef} className="relative text-white overflow-hidden h-screen">

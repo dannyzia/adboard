@@ -6,7 +6,7 @@ interface DrawerMenuProps {
     transparent?: boolean;
 }
 
-export const DrawerMenu: React.FC<DrawerMenuProps> = ({ transparent }) => {
+export const DrawerMenu: React.FC<DrawerMenuProps> = ({ transparent: _transparent }) => {
     const [isOpen, setIsOpen] = useState(false);
     const navigate = useNavigate();
     const { isAuthenticated, logout } = useAuth();
