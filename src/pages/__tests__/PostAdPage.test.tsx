@@ -44,10 +44,8 @@ vi.mock('../../services/ad.service', () => ({
 }));
 
 // mock location utils that would otherwise attempt network calls
-vi.mock('../../utils/constants', () => ({
-  getCountries: async () => [],
-  getStates: async (_country?: string) => [],
-  getCities: async (_state?: string) => [],
+vi.mock('../../components/ui/ToastContext', () => ({
+  useToast: () => ({ showToast: vi.fn() })
 }));
 
 // Minimal mock for react-router-dom hooks used in the component
@@ -57,6 +55,7 @@ vi.mock('react-router-dom', async () => {
     ...actual,
     useNavigate: () => vi.fn(),
     useSearchParams: () => [new URLSearchParams(), vi.fn()],
+    useLocation: () => ({ pathname: '/', search: '', hash: '' }),
   };
 });
 
@@ -79,9 +78,9 @@ describe('PostAdPage (basic)', () => {
     if (!select) throw new Error('Category select not found');
     await userEvent.selectOptions(select, 'TestCat');
 
-  // Brand and Model fields should appear
-  expect(await screen.findByLabelText('Brand')).toBeTruthy();
-  expect(screen.getByLabelText('Model')).toBeTruthy();
+    // Brand and Model fields should appear
+    expect(await screen.findByLabelText('Brand')).toBeTruthy();
+    expect(screen.getByLabelText('Model')).toBeTruthy();
   });
 
   it('shows validation error when title missing on submit', async () => {
@@ -90,6 +89,6 @@ describe('PostAdPage (basic)', () => {
     const submit = screen.getByRole('button', { name: /post ad/i });
     await userEvent.click(submit);
 
-  expect(await screen.findByText(/Title is required/i)).toBeTruthy();
+    expect(await screen.findByText(/Title is required/i)).toBeTruthy();
   });
 });
