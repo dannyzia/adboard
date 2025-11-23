@@ -21,6 +21,12 @@
         "react",
         "@typescript-eslint"
     ],
+    "ignorePatterns": [
+        "node_modules/",
+        "dist/",
+        "build/",
+        "adboard resources/"
+    ],
     "rules": {
         "react/react-in-jsx-scope": "off",
         "@typescript-eslint/no-unused-vars": [
@@ -29,7 +35,11 @@
                 "argsIgnorePattern": "^_"
             }
         ],
-        "@typescript-eslint/no-explicit-any": "warn"
+        "@typescript-eslint/no-explicit-any": "warn",
+        "react/no-unescaped-entities": "warn",
+        "prefer-const": "warn",
+        "react-hooks/exhaustive-deps": "warn",
+        "react-hooks/set-state-in-effect": "warn"
     },
     "settings": {
         "react": {
