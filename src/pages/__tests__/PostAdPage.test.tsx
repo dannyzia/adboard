@@ -96,7 +96,7 @@ describe('PostAdPage (basic)', () => {
 
     // Wait for async effects to complete
     await waitFor(() => {
-      expect(screen.getByRole('button', { name: /post ad/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /submit ad/i })).toBeInTheDocument();
     });
 
     // find the correct combobox which contains our TestCat option
@@ -122,10 +122,10 @@ describe('PostAdPage (basic)', () => {
 
     // Wait for async effects to complete
     await waitFor(() => {
-      expect(screen.getByRole('button', { name: /post ad/i })).toBeInTheDocument();
+      expect(screen.getByRole('button', { name: /submit ad/i })).toBeInTheDocument();
     });
 
-    const submit = screen.getByRole('button', { name: /post ad/i });
+    const submit = screen.getByRole('button', { name: /submit ad/i });
     await userEvent.click(submit);
 
     // The form uses native HTML5 validation, so we check if the title input has the required attribute
