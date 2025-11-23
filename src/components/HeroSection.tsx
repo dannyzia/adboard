@@ -24,7 +24,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
   useEffect(() => {
     const wordInterval = setInterval(() => {
       setCurrentWordIndex((prev) => (prev + 1) % words.length);
-    }, 2000); // Change word every 2 seconds
+    }, 2000);
 
     return () => clearInterval(wordInterval);
   }, []);
@@ -38,40 +38,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
     ];
 
     const showNextCategory = () => {
-      // Generate completely random position
-      const randomTop = Math.random() * 80 + 5; // 5% to 85%
-      const randomLeft = Math.random() * 80 + 5; // 5% to 85%
-      
-      // Get a random category
+      const randomTop = Math.random() * 80 + 5;
+      const randomLeft = Math.random() * 80 + 5;
       const randomCategory = categories[Math.floor(Math.random() * categories.length)];
-      
-      // Get a random color (generated once and stored in state)
       const randomColor = randomColors[Math.floor(Math.random() * randomColors.length)];
-
-      // Create unique ID for this popup
       const popupId = `${Date.now()}-${Math.random()}`;
 
-      // Add the new category to the array
-      setVisibleCategories(prev => [...prev, { 
+      setVisibleCategories(prev => [...prev, {
         id: popupId,
-        category: randomCategory, 
-        randomPosition: { 
-          top: `${randomTop}%`, 
-          left: `${randomLeft}%` 
-        },
+        category: randomCategory,
+        randomPosition: { top: `${randomTop}%`, left: `${randomLeft}%` },
         color: randomColor
       }]);
 
-      // Remove this specific popup after 3 seconds
       setTimeout(() => {
         setVisibleCategories(prev => prev.filter(item => item.id !== popupId));
       }, 3000);
     };
 
-    // Show first category immediately
     showNextCategory();
-
-    // Then show new category every 1 second
     intervalRef.current = setInterval(showNextCategory, 1000);
 
     return () => {
@@ -80,64 +65,29 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
   }, [categories]);
 
   return (
-    <div ref={heroRef} className="relative text-white overflow-hidden h-[50vh] md:h-[60vh]">
-      {/* Enhanced Categories popping up randomly across the entire hero section */}
-      {/* COMMENTED OUT - Category Popups */}
-      {/* <div className="absolute inset-0 z-30 pointer-events-none">
-        {visibleCategories.map((item) => (
-            <button
-              key={item.id}
-              onClick={() => handleCategoryClick(item.category.value)}
-              className="absolute px-4 py-2 font-semibold rounded-full transition-all transform hover:scale-110 shadow-lg hover:shadow-xl border-2 border-white/30 whitespace-nowrap backdrop-blur-sm pointer-events-auto"
-              style={{
-                top: item.randomPosition.top,
-                left: item.randomPosition.left,
-                animation: 'popUpDisappear 3s ease-in-out forwards',
-                background: 'linear-gradient(135deg, rgba(212, 175, 55, 0.8) 0%, rgba(255, 192, 203, 0.8) 50%, rgba(238, 130, 238, 0.8) 100%)',
-                color: '#333',
-                backdropFilter: 'blur(10px)',
-              }}
-            >
-              <span className="flex items-center gap-2">
-                <span className="text-lg">{item.category.icon || '📦'}</span>
-                {item.category.label}
-              </span>
-            </button>
-          ))}
-      </div> */
+    <div ref={heroRef} className="relative text-white overflow-hidden h-screen">
 
       {/* Responsive Background Images */}
-      {/* COMMENTED OUT - Background Images */}
-      {/* <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0">
         <img
           src="/9x16.webp"
           alt="Background"
           className="block md:hidden w-full h-full object-cover object-top"
-          style={{
-            objectPosition: 'top center',
-            objectFit: 'cover'
-          }}
+          style={{ objectPosition: 'top center', objectFit: 'cover' }}
         />
         <img
           src="/16x9.webp"
           alt="Background"
           className="hidden md:block 2xl:hidden w-full h-full object-cover"
-          style={{
-            objectPosition: 'center center'
-          }}
+          style={{ objectPosition: 'center center' }}
         />
         <img
           src="/hero-21x9.png"
           alt="Background"
           className="hidden 2xl:block w-full h-full object-cover"
-          style={{
-            objectPosition: 'center center'
-          }}
+          style={{ objectPosition: 'center center' }}
         />
-      </div> */}
-      
-      {/* Solid background color instead of images */}
-      <div className="absolute inset-0 z-0 bg-gradient-to-br from-teal-600 via-cyan-600 to-blue-700"></div>
+      </div>
 
       {/* Enhanced Decorative shapes */}
       <div className="absolute top-0 left-0 w-72 h-72 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl animate-pulse z-10"></div>
@@ -146,8 +96,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-0 pb-8 md:pt-16 lg:pt-20 lg:pb-12 z-20">
         <div className="text-center mb-6 mt-12 md:mt-0">
-
-          {/* Enhanced Headline */}
           <h1 className="text-3xl lg:text-5xl font-bold mb-3 leading-tight text-yellow-400 whitespace-nowrap" style={{
             textShadow: '0 4px 8px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2), 0 8px 16px rgba(0, 0, 0, 0.15)'
           }}>
@@ -166,33 +114,14 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onCategorySelect }) =>
 
         <style>{`
           @keyframes popUpDisappear {
-            0% {
-              opacity: 0;
-              transform: scale(0.5) translateY(20px);
-            }
-            20% {
-              opacity: 1;
-              transform: scale(1) translateY(0);
-            }
-            80% {
-              opacity: 1;
-              transform: scale(1) translateY(0);
-            }
-            100% {
-              opacity: 0;
-              transform: scale(0.5) translateY(20px);
-            }
+            0% { opacity: 0; transform: scale(0.5) translateY(20px); }
+            20% { opacity: 1; transform: scale(1) translateY(0); }
+            80% { opacity: 1; transform: scale(1) translateY(0); }
+            100% { opacity: 0; transform: scale(0.5) translateY(20px); }
           }
-          
           @keyframes slideIn {
-            from {
-              opacity: 0;
-              transform: translateX(-20px);
-            }
-            to {
-              opacity: 1;
-              transform: translateX(0);
-            }
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
           }
         `}</style>
       </div>

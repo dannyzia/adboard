@@ -1,0 +1,192 @@
+/* Animated Navigation Menu Styles */
+
+/* Keyframe animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px) translateZ(0px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px) translateZ(0px);
+  }
+}
+
+@keyframes slideOutDown {
+  from {
+    opacity: 1;
+    transform: translateY(0px) translateZ(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(10px) translateZ(0px);
+  }
+}
+
+/* Animation classes */
+.nav-item-hidden {
+  animation: slideOutDown 0.3s ease-out forwards;
+}
+
+.nav-item-visible {
+  animation: slideInUp 0.4s ease-out forwards;
+}
+
+/* Base navigation styles */
+.animated-nav {
+  position: relative;
+}
+
+.animated-nav-toggle {
+  transition: transform 0.3s ease;
+}
+
+.animated-nav-toggle:hover {
+  transform: scale(1.05);
+}
+
+.animated-nav-items {
+  /* Container for navigation items */
+}
+
+.animated-nav-item {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+  transform: translateZ(0px); /* Hardware acceleration */
+}
+
+.animated-nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.animated-nav-item:hover::before {
+  left: 100%;
+}
+
+/* Active indicator bar */
+.animated-nav-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #14b8a6, #06b6d4);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translateZ(0px);
+  box-shadow: 0 2px 4px rgba(20, 184, 166, 0.3);
+}
+
+/* Mobile overlay */
+.animated-nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(2px);
+  z-index: 40;
+  transition: opacity 0.3s ease;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .animated-nav-items {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin-top: 0.5rem;
+    z-index: 50;
+  }
+
+  .animated-nav-item {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 0.25rem;
+  }
+
+  .animated-nav-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 769px) {
+  .animated-nav-items {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .animated-nav-item {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+}
+
+/* Staggered animation delays */
+.stagger-delay-1 { transition-delay: 50ms; }
+.stagger-delay-2 { transition-delay: 100ms; }
+.stagger-delay-3 { transition-delay: 150ms; }
+.stagger-delay-4 { transition-delay: 200ms; }
+.stagger-delay-5 { transition-delay: 250ms; }
+.stagger-delay-6 { transition-delay: 300ms; }
+.stagger-delay-7 { transition-delay: 350ms; }
+.stagger-delay-8 { transition-delay: 400ms; }
+
+/* Hover effects */
+.animated-nav-item:hover {
+  background: rgba(20, 184, 166, 0.1);
+  color: #14b8a6;
+  transform: translateY(-2px) translateZ(0px);
+}
+
+.animated-nav-item.active {
+  color: #14b8a6;
+  font-weight: 600;
+}
+
+/* Icon animations */
+.animated-nav-icon {
+  transition: transform 0.3s ease;
+}
+
+.animated-nav-item:hover .animated-nav-icon {
+  transform: scale(1.1) translateZ(0px);
+}
+
+/* Mobile menu button animation */
+.menu-icon-lines {
+  transition: all 0.3s ease;
+}
+
+.menu-icon-lines.line-1 {
+  transform-origin: top left;
+}
+
+.menu-icon-lines.line-3 {
+  transform-origin: bottom left;
+}
+
+.menu-open .menu-icon-lines.line-1 {
+  transform: rotate(45deg) translate(2px, -2px);
+}
+
+.menu-open .menu-icon-lines.line-2 {
+  opacity: 0;
+}
+
+.menu-open .menu-icon-lines.line-3 {
+  transform: rotate(-45deg) translate(2px, 2px);
+}
