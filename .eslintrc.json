@@ -25,7 +25,7 @@
         "node_modules/",
         "dist/",
         "build/",
-        "adboard resources/"
+        "adboard resources/**"
     ],
     "rules": {
         "react/react-in-jsx-scope": "off",
