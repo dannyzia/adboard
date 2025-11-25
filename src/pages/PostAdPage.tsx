@@ -409,8 +409,9 @@ export const PostAdPage: React.FC = () => {
                 <form onSubmit={handleSubmit} className="max-w-xl mx-auto bg-white rounded-lg shadow-md p-8 space-y-6 border border-gray-200">
                     {/* Category (moved to top) */}
                     <div>
-                        <label className="block mb-2 font-semibold text-gray-700">Category</label>
+                        <label htmlFor="category" className="block mb-2 font-semibold text-gray-700">Category</label>
                         <select
+                            id="category"
                             className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                             value={formData.category}
                             onChange={(e) => setFormData({ ...formData, category: e.target.value })}
@@ -425,9 +426,10 @@ export const PostAdPage: React.FC = () => {
 
                     {/* Title */}
                     <div>
-                        <label className="block mb-2 font-semibold text-gray-700">Title</label>
+                        <label htmlFor="title" className="block mb-2 font-semibold text-gray-700">Title</label>
                         <input
                             type="text"
+                            id="title"
                             className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                             value={formData.title}
                             onChange={(e) => setFormData({ ...formData, title: e.target.value })}
@@ -436,8 +438,9 @@ export const PostAdPage: React.FC = () => {
                     </div>
                     {/* Description */}
                     <div>
-                        <label className="block mb-2 font-semibold text-gray-700">Description</label>
+                        <label htmlFor="description" className="block mb-2 font-semibold text-gray-700">Description</label>
                         <textarea
+                            id="description"
                             className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                             value={formData.description}
                             onChange={(e) => setFormData({ ...formData, description: e.target.value })}
@@ -492,8 +495,9 @@ export const PostAdPage: React.FC = () => {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             {[1,2].map((i) => (
                                 <div key={i}>
-                                    <label className="block mb-1 font-medium text-gray-600">Link {i}</label>
+                                    <label htmlFor={`external-link-${i}`} className="block mb-1 font-medium text-gray-600">Link {i}</label>
                                     <input
+                                        id={`external-link-${i}`}
                                         type="text"
                                         className={`w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 ${
                                             linkErrors[`link${i}` as 'link1' | 'link2'] 
@@ -542,8 +546,9 @@ export const PostAdPage: React.FC = () => {
                     {/* Location Selection */}
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         <div>
-                            <label className="block mb-2 font-semibold text-gray-700">Country</label>
+                            <label htmlFor="country" className="block mb-2 font-semibold text-gray-700">Country</label>
                             <select
+                                id="country"
                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 value={formData.location.country}
                                 onChange={(e) => setFormData({
@@ -559,8 +564,9 @@ export const PostAdPage: React.FC = () => {
                             </select>
                         </div>
                         <div>
-                            <label className="block mb-2 font-semibold text-gray-700">State</label>
+                            <label htmlFor="state" className="block mb-2 font-semibold text-gray-700">State</label>
                             <select
+                                id="state"
                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 value={formData.location.state}
                                 onChange={(e) => setFormData({
@@ -576,8 +582,9 @@ export const PostAdPage: React.FC = () => {
                             </select>
                         </div>
                         <div>
-                            <label className="block mb-2 font-semibold text-gray-700">City</label>
+                            <label htmlFor="city" className="block mb-2 font-semibold text-gray-700">City</label>
                             <select
+                                id="city"
                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 value={formData.location.city}
                                 onChange={(e) => setFormData({
@@ -596,9 +603,10 @@ export const PostAdPage: React.FC = () => {
                     {/* Contact Info */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
-                            <label className="block mb-2 font-semibold text-gray-700">Contact Email</label>
+                            <label htmlFor="contact-email" className="block mb-2 font-semibold text-gray-700">Contact Email</label>
                             <input
                                 type="email"
+                                id="contact-email"
                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 value={formData.contactEmail}
                                 onChange={(e) => setFormData({ ...formData, contactEmail: e.target.value })}
@@ -606,9 +614,10 @@ export const PostAdPage: React.FC = () => {
                             />
                         </div>
                         <div>
-                            <label className="block mb-2 font-semibold text-gray-700">Contact Phone</label>
+                            <label htmlFor="contact-phone" className="block mb-2 font-semibold text-gray-700">Contact Phone</label>
                             <input
                                 type="tel"
+                                id="contact-phone"
                                 className="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-400"
                                 value={formData.contactPhone}
                                 onChange={(e) => setFormData({ ...formData, contactPhone: e.target.value })}
@@ -618,13 +627,14 @@ export const PostAdPage: React.FC = () => {
 
                     {/* Ad Duration Section */}
                     <div className="mb-6">
-                        <label className="block mb-2 font-semibold text-gray-700">Ad Duration (days)</label>
+                        <label htmlFor="ad-duration" className="block mb-2 font-semibold text-gray-700">Ad Duration (days)</label>
                         <div className="flex items-center gap-2">
                             <button type="button" className="px-3 py-1 bg-gray-200 rounded" onClick={() => setFormData({ ...formData, customDuration: Math.max(1, (formData.customDuration || 1) - 1) })}>-</button>
                             <input
                                 type="number"
                                 min={1}
                                 max={7}
+                                id="ad-duration"
                                 value={formData.customDuration || 1}
                                 onChange={e => {
                                     const val = Number(e.target.value);
@@ -655,15 +665,18 @@ export const PostAdPage: React.FC = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 {orderedDynamicFields.map((field: any) => {
                                     if (["title", "description", "category", "images", "contactEmail", "contactPhone"].includes(field.name)) return null;
+                                    const fieldId = `details-${field.name}`;
 
                                     // If this is the price field, render currency first (if category doesn't already declare it)
                                     if (field.name === 'price') {
+                                        const currencyFieldId = `${fieldId}-currency`;
                                         return (
                                             <div key={field.name} className="mb-2">
                                                 {!hasCurrencyField && (
                                                     <div className="mb-2">
-                                                        <label className="block mb-1 font-medium text-gray-600">Currency</label>
+                                                        <label htmlFor={currencyFieldId} className="block mb-1 font-medium text-gray-600">Currency</label>
                                                         <select
+                                                            id={currencyFieldId}
                                                             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
                                                             value={formData.currency}
                                                             onChange={e => setFormData({ ...formData, currency: e.target.value })}
@@ -678,9 +691,10 @@ export const PostAdPage: React.FC = () => {
                                                         </select>
                                                     </div>
                                                 )}
-                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <label htmlFor={fieldId} className="block mb-1 font-medium text-gray-600">{field.label}</label>
                                                 <input
                                                     type={field.type}
+                                                    id={fieldId}
                                                     className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
                                                     value={formData.details[field.name] || ''}
                                                     onChange={e => setFormData({
@@ -694,12 +708,14 @@ export const PostAdPage: React.FC = () => {
 
                                     // If this is the startingBid field (auction), render currency first (if category doesn't already declare it)
                                     if (field.name === 'startingBid') {
+                                        const currencyFieldId = `${fieldId}-currency`;
                                         return (
                                             <div key={field.name} className="mb-2">
                                                 {!hasCurrencyField && (
                                                     <div className="mb-2">
-                                                        <label className="block mb-1 font-medium text-gray-600">Currency</label>
+                                                        <label htmlFor={currencyFieldId} className="block mb-1 font-medium text-gray-600">Currency</label>
                                                         <select
+                                                            id={currencyFieldId}
                                                             className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
                                                             value={formData.currency}
                                                             onChange={e => setFormData({ ...formData, currency: e.target.value })}
@@ -714,9 +730,10 @@ export const PostAdPage: React.FC = () => {
                                                         </select>
                                                     </div>
                                                 )}
-                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <label htmlFor={fieldId} className="block mb-1 font-medium text-gray-600">{field.label}</label>
                                                 <input
                                                     type={field.type}
+                                                    id={fieldId}
                                                     className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
                                                     value={formData.details[field.name] || ''}
                                                     onChange={e => setFormData({
@@ -732,8 +749,9 @@ export const PostAdPage: React.FC = () => {
                                     if (field.type === 'currency-select') {
                                         return (
                                             <div key={field.name} className="mb-2">
-                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <label htmlFor={fieldId} className="block mb-1 font-medium text-gray-600">{field.label}</label>
                                                 <select
+                                                    id={fieldId}
                                                     className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
                                                     value={formData.currency}
                                                     onChange={e => setFormData({ ...formData, currency: e.target.value })}
@@ -753,8 +771,9 @@ export const PostAdPage: React.FC = () => {
                                     if (field.type === 'select') {
                                         return (
                                             <div key={field.name} className="mb-2">
-                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <label htmlFor={fieldId} className="block mb-1 font-medium text-gray-600">{field.label}</label>
                                                 <select
+                                                    id={fieldId}
                                                     className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
                                                     value={formData.details[field.name] || ''}
                                                     onChange={e => setFormData({
@@ -773,8 +792,9 @@ export const PostAdPage: React.FC = () => {
                                     if (field.type === 'textarea') {
                                         return (
                                             <div key={field.name} className="mb-2">
-                                                <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                                <label htmlFor={fieldId} className="block mb-1 font-medium text-gray-600">{field.label}</label>
                                                 <textarea
+                                                    id={fieldId}
                                                     className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
                                                     value={formData.details[field.name] || ''}
                                                     onChange={e => setFormData({
@@ -788,9 +808,10 @@ export const PostAdPage: React.FC = () => {
                                     // Default to text/number
                                     return (
                                         <div key={field.name} className="mb-2">
-                                            <label className="block mb-1 font-medium text-gray-600">{field.label}</label>
+                                            <label htmlFor={fieldId} className="block mb-1 font-medium text-gray-600">{field.label}</label>
                                             <input
                                                 type={field.type}
+                                                id={fieldId}
                                                 className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-300"
                                                 value={formData.details[field.name] || ''}
                                                 onChange={e => setFormData({

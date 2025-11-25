@@ -3,7 +3,7 @@
 // Ensure Vitest's expect is available before jest-dom registers matchers.
 import { expect as vitestExpect } from 'vitest';
 (globalThis as any).expect = vitestExpect;
-import '@testing-library/jest-dom';
+import '@testing-library/jest-dom/vitest';
 
 // Optionally set any globals you need for tests, e.g.:
 // (globalThis as any).fetch = (...args) => fetchMock(...args);
